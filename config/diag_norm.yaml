@@ -1,0 +1,320 @@
+default_category: unknown
+
+rules:
+  # -------------------------
+  # Preprocessor / includes
+  # -------------------------
+  # NOTE: 收紧 include 相关规则，避免吞掉语义错误。
+  - category: missing_header
+    compiler: gcc
+    field: message
+    regex: (?i)\bno such file or directory\b
+  - category: missing_header
+    compiler: clang
+    field: message
+    regex: (?i)\bfile not found\b|\bno such file or directory\b
+
+  - category: include_not_found
+    compiler: gcc
+    field: message
+    regex: (?i)\bfatal error:\b.*\b(no such file or directory|file not found)\b
+  - category: include_not_found
+    compiler: clang
+    field: message
+    regex: (?i)\bfatal error:\b.*\b(file not found|no such file or directory)\b
+
+  - category: bad_include_path
+    compiler: gcc
+    field: message
+    regex: (?i)\binclude\b.*\bsearch\b.*\bpath\b|\bcannot open include file\b
+  - category: bad_include_path
+    compiler: clang
+    field: message
+    regex: (?i)\binclude\b.*\bsearch\b.*\bpath\b|\bcannot open include file\b
+
+  - category: unterminated_construct
+    compiler: gcc
+    field: message
+    regex: (?i)\bunterminated\b|missing terminating
+  - category: unterminated_construct
+    compiler: clang
+    field: message
+    regex: (?i)\bunterminated\b|missing terminating
+
+  # -------------------------
+  # Identifiers / declarations
+  # -------------------------
+  - category: undeclared_identifier
+    compiler: gcc
+    field: message
+    regex: (?i)\bundeclared\b|\bnot declared\b
+  - category: undeclared_identifier
+    compiler: clang
+    field: message
+    regex: (?i)\buse of undeclared identifier\b|\bundeclared identifier\b
+
+  - category: implicit_function_declaration
+    compiler: gcc
+    field: message
+    regex: (?i)\bimplicit declaration of function\b
+  - category: implicit_function_declaration
+    compiler: clang
+    field: message
+    regex: (?i)\bimplicit declaration of function\b
+
+  - category: unknown_type_name
+    compiler: gcc
+    field: message
+    regex: (?i)\bunknown type name\b
+  - category: unknown_type_name
+    compiler: clang
+    field: message
+    regex: (?i)\bunknown type name\b
+
+  # -------------------------
+  # Incomplete types / sizes
+  # -------------------------
+  - category: storage_size_unknown
+    compiler: gcc
+    field: message
+    regex: (?i)\bstorage size of .* isn'?t known\b
+  - category: storage_size_unknown
+    compiler: clang
+    field: message
+    regex: (?i)\bvariable has incomplete type\b|\bstorage size of .* isn'?t known\b
+
+  # NEW: incomplete type in parameter / return type (covers prune_struct... 的 unknown)
+  - category: incomplete_type
+    compiler: gcc
+    field: message
+    regex: (?i)\btype of formal parameter \d+ is incomplete\b|\breturn type is an incomplete type\b|\binvalid use of incomplete type\b|\bdereferencing pointer to incomplete type\b
+  - category: incomplete_type
+    compiler: clang
+    field: message
+    regex: (?i)\bincomplete result type\b|\bparameter .* has incomplete type\b
+  - category: incomplete_type
+    compiler: clang
+    field: ruleId
+    regex: ^3432$
+
+  # -------------------------
+  # Struct/Member access
+  # -------------------------
+  # NEW: no member named ... (covers insert_struct_type_mismatch 的 L1157)
+  - category: no_member_named
+    compiler: gcc
+    field: message
+    regex: (?i)\bhas no member named\b
+  - category: no_member_named
+    compiler: clang
+    field: message
+    regex: (?i)\bno member named\b
+  - category: no_member_named
+    compiler: clang
+    field: ruleId
+    regex: ^3811$
+
+  # NEW: member reference base type ... is not a structure or union (covers var_static... 的 unknown 4783)
+  - category: invalid_member_access
+    compiler: gcc
+    field: message
+    regex: (?i)\bnot a structure or union\b|\brequest for member\b
+  - category: invalid_member_access
+    compiler: clang
+    field: message
+    regex: (?i)\bmember reference base type\b.*\bnot a structure or union\b
+  - category: invalid_member_access
+    compiler: clang
+    field: ruleId
+    regex: ^4783$
+
+  # -------------------------
+  # Redefinition / conflicts
+  # -------------------------
+  # CHANGE: 把 clang 的 “redeclaration … with a different type” 归到 conflicting_types。
+  - category: conflicting_types
+    compiler: clang
+    field: message
+    regex: (?i)\bredeclaration of\b.*\bwith a different type\b
+
+  - category: conflicting_types
+    compiler: gcc
+    field: message
+    regex: (?i)\bconflicting types for\b
+  - category: conflicting_types
+    compiler: clang
+    field: message
+    regex: (?i)\bconflicting types for\b
+
+  - category: conflicting_types
+    compiler: clang
+    field: message
+    regex: (?i)\bwith a different type\b.*\bvs\b
+
+  - category: redefinition
+    compiler: gcc
+    field: message
+    regex: (?i)\bredefinition of\b
+  - category: redefinition
+    compiler: clang
+    field: message
+    regex: (?i)\bredefinition of\b
+
+  - category: duplicate_symbol
+    compiler: gcc
+    field: message
+    regex: (?i)\bmultiple definition of\b
+  - category: duplicate_symbol
+    compiler: clang
+    field: message
+    regex: (?i)\bduplicate symbol\b|\bmultiple definition of\b
+
+  # -------------------------
+  # Type system / conversions
+  # -------------------------
+  # CHANGE: 补齐 GCC “makes integer from pointer …” 这种（你 param_type_conflict 里很多）
+  - category: incompatible_pointer_integer
+    compiler: gcc
+    field: message
+    regex: (?i)\bmakes (?:pointer from integer|integer from pointer) without a cast\b|\bpointer from integer\b|\binteger from pointer\b
+  - category: incompatible_pointer_integer
+    compiler: clang
+    field: message
+    regex: (?i)\bincompatible (?:integer to pointer|pointer to integer) conversion\b|\bmakes pointer from integer without a cast\b
+
+  - category: incompatible_pointer_types
+    compiler: gcc
+    field: message
+    regex: (?i)\bincompatible pointer type\b|\bfrom incompatible pointer type\b
+  - category: incompatible_pointer_types
+    compiler: clang
+    field: message
+    regex: (?i)\bincompatible pointer types\b|\bfrom incompatible pointer type\b
+
+  - category: invalid_conversion
+    compiler: gcc
+    field: message
+    regex: (?i)\binvalid conversion\b|\bcannot convert\b
+  - category: invalid_conversion
+    compiler: clang
+    field: message
+    regex: (?i)\binvalid conversion\b|\bcannot convert\b
+
+  - category: invalid_operands
+    compiler: gcc
+    field: message
+    regex: (?i)\binvalid operands to\b
+  - category: invalid_operands
+    compiler: clang
+    field: message
+    regex: (?i)\binvalid operands to\b
+
+  # NEW: invalid unary operand (covers GCC wrong type argument to bit-complement / Clang invalid argument type ... to unary expression)
+  - category: invalid_unary_operand
+    compiler: gcc
+    field: message
+    regex: (?i)\bwrong type argument to\b|\binvalid argument to unary\b
+  - category: invalid_unary_operand
+    compiler: clang
+    field: message
+    regex: (?i)\binvalid argument type\b.*\bto unary expression\b|\binvalid argument to unary expression\b
+  - category: invalid_unary_operand
+    compiler: clang
+    field: ruleId
+    regex: ^4807$
+
+  # -------------------------
+  # Function calls / arguments
+  # -------------------------
+  - category: too_few_arguments
+    compiler: gcc
+    field: message
+    regex: (?i)\btoo few arguments to function\b
+  - category: too_few_arguments
+    compiler: clang
+    field: message
+    regex: (?i)\btoo few arguments to function\b
+
+  - category: too_many_arguments
+    compiler: gcc
+    field: message
+    regex: (?i)\btoo many arguments to function\b
+  - category: too_many_arguments
+    compiler: clang
+    field: message
+    regex: (?i)\btoo many arguments to function\b
+
+  - category: no_matching_function
+    compiler: gcc
+    field: message
+    regex: (?i)\bno matching function\b|\bno known conversion\b|\bincompatible type for argument\b
+  - category: no_matching_function
+    compiler: clang
+    field: message
+    regex: (?i)\bno matching function\b|\bno known conversion\b|\bincompatible type for argument\b
+
+  # -------------------------
+  # printf/scanf format diagnostics
+  # -------------------------
+  - category: format_string_error
+    compiler: gcc
+    field: message
+    regex: (?i)\bformat\b.*\bexpects argument of type\b|\bformat string is not a string literal\b|\bmissing format string argument\b
+  - category: format_string_error
+    compiler: clang
+    field: message
+    regex: (?i)\bformat specifies type\b|\bformat string is not a string literal\b|\bmissing format string argument\b
+
+  # -------------------------
+  # Syntax / parse errors
+  # -------------------------
+  - category: syntax_error
+    compiler: gcc
+    field: message
+    regex: (?i)\bexpected\b.*\bbefore\b|\bexpected\b.*\btoken\b
+  - category: syntax_error
+    compiler: clang
+    field: message
+    regex: (?i)\bexpected\b
+
+  - category: stray_token
+    compiler: gcc
+    field: message
+    regex: (?i)\bstray '\\\\'\b
+  - category: stray_token
+    compiler: clang
+    field: message
+    regex: (?i)\bstray '\\\\'\b
+
+  - category: invalid_suffix
+    compiler: gcc
+    field: message
+    regex: (?i)\binvalid suffix\b
+  - category: invalid_suffix
+    compiler: clang
+    field: message
+    regex: (?i)\binvalid suffix\b
+
+  # -------------------------
+  # Macro / preprocessing oddities
+  # -------------------------
+  - category: macro_redefinition
+    compiler: gcc
+    field: message
+    regex: (?i)\bmacro\b.*\bredefined\b
+  - category: macro_redefinition
+    compiler: clang
+    field: message
+    regex: (?i)\bmacro\b.*\bredefined\b
+
+  # -------------------------
+  # Catch-alls (keep last, keep strict)
+  # -------------------------
+  - category: preprocessor_error
+    compiler: gcc
+    field: message
+    regex: (?i)\binvalid preprocessing directive\b|\bunterminated #\b|(^|[^A-Za-z0-9_])#error\b
+  - category: preprocessor_error
+    compiler: clang
+    field: message
+    regex: (?i)\binvalid preprocessing directive\b|\bunterminated (?:#if|#ifdef|#ifndef)\b|(^|[^A-Za-z0-9_])#error\b
