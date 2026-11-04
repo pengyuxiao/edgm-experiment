@@ -7,6 +7,8 @@ import time
 import shutil
 import argparse
 import importlib
+import inspect
+import random
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -99,6 +101,20 @@ def drop_output(outp: Path, meta: Path, drop_dir: Path | None, reason: str):
         shutil.move(str(meta), str(drop_dir / meta.name))
     print(f"[DROP] {outp.name} {reason}（已移入 {drop_dir}）")
 
+def mutation_succeeded(ret, inp: Path, outp: Path) -> bool:
+    """Strict adapter: None means file-based legacy mutator, not automatic success."""
+    if not outp.is_file() or outp.stat().st_size == 0:
+        return False
+    if inp.read_bytes() == outp.read_bytes():
+        return False
+    if isinstance(ret, bool):
+        return ret
+    if ret is None:
+        return True
+    if hasattr(ret, "ok"):
+        return ret.ok is True
+    return False
+
 def resolve_from_wrapper_script(arm: str):
     """
     If arm is like '19_mutate_param_type_conflict.py', try parse scripts/<arm>
@@ -135,6 +151,8 @@ def main():
                     help="Only keep mutants that trigger syntax error (based on -fsyntax-only)")
     ap.add_argument("--drop-dir", default="", help="If set, move dropped outputs here; empty means delete")
     ap.add_argument("--print-entry", action="store_true", help="Print resolved module and entry fn, then exit")
+    ap.add_argument("--strict-result", action="store_true", help="Require a changed, nonempty output and a successful return contract")
+    ap.add_argument("--mutation-seed", type=int, default=None, help="seed for strict-mode mutator randomness")
     args = ap.parse_args()
 
     # 1) resolve module+fn
@@ -176,6 +194,34 @@ def main():
     meta_path = Path(str(outp) + ".meta.json")
 
     fn = getattr(mod, chosen_name)
+
+    if args.strict_result:
+        # Refuse pre-existing paths; strict callers use a unique output per attempt.
+        if outp.exists() or meta_path.exists():
+            print(f"[ERR] strict output already exists: {outp}", file=sys.stderr)
+            return 2
+        try:
+            if args.mutation_seed is not None:
+                random.seed(args.mutation_seed)
+            kwargs = {"seed": args.mutation_seed} if args.mutation_seed is not None and "seed" in inspect.signature(fn).parameters else {}
+            ret = fn(str(inp), str(outp), **kwargs)
+        except Exception as e:
+            print(f"[ERR] mutator call failed: {modname}.{chosen_name}: {e}", file=sys.stderr)
+            return 2
+        if not mutation_succeeded(ret, inp, outp):
+            drop_output(outp, meta_path, drop_dir, f"strict mutation failed (fn={chosen_name})")
+            return 2
+        include_dir = ROOT / "src" / "csmithedge" / "csmith" / "runtime"
+        if not require_error_ok(args.require_error, outp, include_dir):
+            drop_output(outp, meta_path, drop_dir, f"no error (fn={chosen_name})")
+            return 2
+        meta = {"arm": args.arm, "module": modname, "fn": chosen_name,
+                "parent": str(inp), "out": str(outp), "ts": int(time.time()),
+                "require_error": args.require_error, "applied": True,
+                "mutation_seed": args.mutation_seed}
+        meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"[OK] wrote {outp} (fn={chosen_name})")
+        return 0
 
     ok = False
     try:

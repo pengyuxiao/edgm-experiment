@@ -3,7 +3,7 @@
 
 import json, glob, hashlib
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime,UTC
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -42,7 +42,7 @@ def main():
         content_id = r.get("content_id") or sha1_text((r.get("view_file","") + file_path))
 
         lines.append({
-            "time": datetime.utcnow().isoformat() + "Z",
+            "time": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
             "sha1": content_id,            # 用 view 的 content_id 作为稳定去重键
             "file": file_path,
             "model": model,

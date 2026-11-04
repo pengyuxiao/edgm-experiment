@@ -194,9 +194,11 @@ def sample_function(lines: List[str], start: int, end: int,
     out.append(lines[end])
     return out
 
-def build_program_view(raw_src: str, max_tokens: int) -> str:
+def build_program_view(raw_src: str, max_tokens: int, view_mode: str = "legacy-operator-v1") -> str:
+    if view_mode not in ("legacy-operator-v1", "program-content-v2"):
+        raise ValueError(f"unknown view mode: {view_mode}")
     # 0) extract applied arms from raw source before stripping comments
-    arms_csv = extract_applied_arms(raw_src)
+    arms_csv = extract_applied_arms(raw_src) if view_mode == "legacy-operator-v1" else ""
 
     # 1) strip comments
     stripped = strip_c_comments(raw_src)
@@ -223,10 +225,11 @@ def build_program_view(raw_src: str, max_tokens: int) -> str:
         out_lines.append("/* === EDGM_PROGRAM_VIEW === */\n")
 
         # IMPORTANT: inject applied arms in NON-comment form so it survives stripping
-        if arms_csv:
-            out_lines.append(f"#define EDGM_APPLIED_ARMS \"{arms_csv}\"\n")
-        else:
-            out_lines.append("#define EDGM_APPLIED_ARMS \"\"\n")
+        if view_mode == "legacy-operator-v1":
+            if arms_csv:
+                out_lines.append(f"#define EDGM_APPLIED_ARMS \"{arms_csv}\"\n")
+            else:
+                out_lines.append("#define EDGM_APPLIED_ARMS \"\"\n")
 
         out_lines.append("/* === INCLUDES === */\n")
         out_lines.extend(includes[:80])
@@ -299,11 +302,13 @@ def main() -> int:
     ap.add_argument("cfile", help="input C file")
     ap.add_argument("--out", default="", help="output file path (default: stdout)")
     ap.add_argument("--max-tokens", type=int, default=7800, help="token budget (approx)")
+    ap.add_argument("--view-mode", choices=["legacy-operator-v1", "program-content-v2"],
+                    default="legacy-operator-v1")
     args = ap.parse_args()
 
     cpath = Path(args.cfile)
     raw = cpath.read_text(encoding="utf-8", errors="ignore")
-    view = build_program_view(raw, args.max_tokens)
+    view = build_program_view(raw, args.max_tokens, args.view_mode)
 
     if args.out:
         Path(args.out).write_text(view, encoding="utf-8")

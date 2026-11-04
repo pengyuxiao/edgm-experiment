@@ -41,6 +41,7 @@ prepend_applied_arms_header() {
 }
 
 echo "[INFO] chain-run rounds=${ROUNDS} seeds_per_round=${TARGET_SEEDS_PER_ROUND}"
+echo "[INFO] policy_id=bootstrap_legacy reward_version=legacy-eq6"
 echo "[INFO] MAX_TRIES_PER_SEED=${MAX_TRIES_PER_SEED} MAX_TOTAL_ATTEMPTS_PER_ROUND=${MAX_TOTAL_ATTEMPTS_PER_ROUND}"
 
 for round in $(seq 1 "$ROUNDS"); do

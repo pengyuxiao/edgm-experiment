@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import argparse, json, os, re, shlex, subprocess, hashlib
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime,UTC
 from json import JSONDecoder
 
 # ---------------- utils ----------------
@@ -488,7 +488,7 @@ def main():
         record = {
             "src": str(src),
             "id": sid,
-            "time": datetime.utcnow().isoformat() + "Z",
+            "time": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
             "diag_norm": str(diag_norm_path),
             "sig_mode": "doctor_line_align(category∩≠∅)+earliest_line_equal",
             "gcc": {"rc": gcc_rc, "errcount": len(gcc_diags), "errors": gcc_diags},
