@@ -1,0 +1,20 @@
+{
+  "review": "C11 nested pointer qualifier mismatch diagnostic policy",
+  "files": [
+    {
+      "path": "/home/pyx/toolchains/src/llvm-project-22.1.0.src/clang/include/clang/Basic/DiagnosticSemaKinds.td",
+      "sha256": "e57a3ba7476665663ffc3d3961540a06bb062dcbecca92a1a293d74bf9baa5a6"
+    },
+    {
+      "path": "/home/pyx/toolchains/src/llvm-project-22.1.0.src/clang/lib/Sema/SemaExpr.cpp",
+      "sha256": "9438d7119b59fe7740dea19f685cf5e2c2fd6cbe6da7de617d5b7d6c653b1bba"
+    }
+  ],
+  "c_branch_source_line": 17409,
+  "c_branch_diagnostic": "ext_nested_pointer_qualifier_mismatch",
+  "definition_line": 9212,
+  "definition_kind": "ExtWarn",
+  "cpp_branch_diagnostic": "err_nested_pointer_qualifier_mismatch",
+  "runtime_p1_probe_performed": false,
+  "decision": "Do not recommend this design under fixed C11/-w error-only contract; source review, not measured P1 stderr"
+}

@@ -1,0 +1,48 @@
+{
+  "proposals": [
+    {
+      "rank": 1,
+      "mr_name": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+      "implementation_status": "DESIGN_ONLY",
+      "supporting_relation": "member_to_address",
+      "related_seed_count": 19,
+      "relation_instances": 2410,
+      "confirmed_full_precondition_candidate_count": null,
+      "mr_applicability_rate": null,
+      "recommended_for_implementation": true,
+      "severity_screen": "REQUIRES_FUTURE_MINIMAL_VALIDATION",
+      "reason": "complete impact closure, exact editable token ranges and independent proof not yet implemented"
+    },
+    {
+      "rank": 2,
+      "mr_name": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+      "implementation_status": "DESIGN_ONLY",
+      "supporting_relation": "record_type_to_assignment",
+      "related_seed_count": 10,
+      "relation_instances": 59,
+      "confirmed_full_precondition_candidate_count": null,
+      "mr_applicability_rate": null,
+      "recommended_for_implementation": true,
+      "severity_screen": "REQUIRES_FUTURE_MINIMAL_VALIDATION",
+      "reason": "complete impact closure, exact editable token ranges and independent proof not yet implemented"
+    },
+    {
+      "rank": 3,
+      "mr_name": "MR_DEEP_QUALIFIER_CALL_INVARIANCE",
+      "implementation_status": "DESIGN_ONLY",
+      "supporting_relation": "nested_pointer_formal_actual",
+      "related_seed_count": 10,
+      "relation_instances": 70,
+      "confirmed_full_precondition_candidate_count": null,
+      "mr_applicability_rate": null,
+      "recommended_for_implementation": false,
+      "severity_screen": "C_EXTWARN_SOURCE_PATH_NOT_ELIGIBLE",
+      "reason": "complete impact closure, exact editable token ranges and independent proof not yet implemented"
+    }
+  ],
+  "investigated_but_not_selected": {
+    "array_constant_dependency": 0,
+    "typedef_operation_dependency": 0,
+    "nested_switches": 0
+  }
+}

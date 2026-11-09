@@ -1,0 +1,49 @@
+{
+  "total_seeds": 50,
+  "legal_seeds": 50,
+  "ast_success_seeds": 50,
+  "effective_seeds": 50,
+  "applicable_seeds": 0,
+  "candidate_positions": 0,
+  "applicability_rate": 0.0,
+  "applicability_denominator": "legal, unchanged, AST OK and completed APPLICABLE/NOT_APPLICABLE scans",
+  "status_counts": {
+    "NOT_APPLICABLE": 50
+  },
+  "nonapplicable_reason_seed_counts": {
+    "CURRENT_LAYOUT_RESTRICTION": 50,
+    "NO_STRUCT_FUNCTION_POINTER_MEMBER": 50,
+    "NO_RELEVANT_STRUCT_TYPEDEF_CHAIN": 50,
+    "NO_MEMBER_INDIRECT_CALL": 50,
+    "NO_DISTINCT_COMPLETE_STRUCT_PAIR": 40
+  },
+  "nonapplicable_primary_reason_counts": {
+    "CURRENT_LAYOUT_RESTRICTION": 50
+  },
+  "primary_rule": "lexicographically first category",
+  "structural_totals": {
+    "struct_definitions": 30,
+    "union_definitions": 28,
+    "typedef_count": 1301,
+    "struct_function_pointer_members": 0,
+    "member_indirect_call_count": 0,
+    "record_typedef_chain_count": 0,
+    "seeds_with_structs": 15,
+    "seeds_with_struct_function_pointer_members": 0,
+    "seeds_with_relevant_struct_typedef_chain": 0
+  },
+  "validation_seconds": 5.7338636226486415,
+  "worker_seconds": 160.66335149132647,
+  "phase_seconds": {
+    "parse_seconds": 3.4754543881863356,
+    "traversal_seconds": 122.09830017318018,
+    "index_seconds": 10.28556340909563,
+    "inventory_seconds": 2.9459567565936595,
+    "candidate_seconds": 16.133343612542376
+  },
+  "wall_seconds": 168.75376061885618,
+  "random_seed": 20261108,
+  "limit": 100,
+  "reproducible_results_sha256": "6b7a33858699eb82e86cfbf598ac0480ce3e0d562e5432acf48540c540bf3446",
+  "real_mutations_performed": 0
+}

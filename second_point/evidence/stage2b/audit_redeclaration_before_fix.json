@@ -1,0 +1,89 @@
+{
+  "p0_source": "/* UTF-8 \u4f4d\u7f6e\u68c0\u67e5\uff1a\u53ea\u6539\u53d8 typedef \u7684\u4e00\u6761\u4f9d\u8d56\u8fb9\u3002 */\nstruct Payload { int value; };\nstruct DifferentPayload { int value; };\ntypedef struct Payload Stable;\ntypedef Stable ArgumentBase;\ntypedef Stable ArgumentBase;\ntypedef ArgumentBase Argument;\ntypedef int (*Callback)(Stable);\nstruct Dispatch { Callback invoke; };\nstatic int consume(Stable input) { return input.value; }\nint main(void) {\n    struct Dispatch dispatch = { consume };\n    Argument value = { 0 };\n    return dispatch.invoke(value);\n}\n",
+  "p0_validation": {
+    "source": "/home/pyx/edgm-experiment/second_point/tmpxwfjx0fi/P0.c",
+    "status": "valid",
+    "checks": {
+      "gcc": {
+        "command": [
+          "/opt/gcc-15.1.0/bin/gcc",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/second_point/tmpxwfjx0fi/P0.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "status": "ok",
+        "exception": null,
+        "elapsed_seconds": 0.05328563484363258
+      },
+      "clang": {
+        "command": [
+          "/opt/llvm-22.1.0/bin/clang-22",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/second_point/tmpxwfjx0fi/P0.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "status": "ok",
+        "exception": null,
+        "elapsed_seconds": 0.04709244892001152
+      }
+    },
+    "sha256": "469c627f04f03a15b2c74e21ee733d2195026b977f5eb077ecd5e6638ab012fd",
+    "source_unchanged": true
+  },
+  "status_before_fix": "APPLIED",
+  "p1_source": "/* UTF-8 \u4f4d\u7f6e\u68c0\u67e5\uff1a\u53ea\u6539\u53d8 typedef \u7684\u4e00\u6761\u4f9d\u8d56\u8fb9\u3002 */\nstruct Payload { int value; };\nstruct DifferentPayload { int value; };\ntypedef struct Payload Stable;\ntypedef Stable ArgumentBase;\ntypedef struct DifferentPayload ArgumentBase;\ntypedef ArgumentBase Argument;\ntypedef int (*Callback)(Stable);\nstruct Dispatch { Callback invoke; };\nstatic int consume(Stable input) { return input.value; }\nint main(void) {\n    struct Dispatch dispatch = { consume };\n    Argument value = { 0 };\n    return dispatch.invoke(value);\n}\n",
+  "p1_validation": {
+    "source": "/home/pyx/edgm-experiment/second_point/tmpxwfjx0fi/P1.c",
+    "status": "rejected",
+    "checks": {
+      "gcc": {
+        "command": [
+          "/opt/gcc-15.1.0/bin/gcc",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/second_point/tmpxwfjx0fi/P1.c"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "/home/pyx/edgm-experiment/second_point/tmpxwfjx0fi/P1.c:6:33: error: conflicting types for 'ArgumentBase'; have 'struct DifferentPayload'\n    6 | typedef struct DifferentPayload ArgumentBase;\n      |                                 ^~~~~~~~~~~~\n/home/pyx/edgm-experiment/second_point/tmpxwfjx0fi/P1.c:5:16: note: previous declaration of 'ArgumentBase' with type 'ArgumentBase' {aka 'struct Payload'}\n    5 | typedef Stable ArgumentBase;\n      |                ^~~~~~~~~~~~\n/home/pyx/edgm-experiment/second_point/tmpxwfjx0fi/P1.c: In function 'main':\n/home/pyx/edgm-experiment/second_point/tmpxwfjx0fi/P1.c:14:28: error: incompatible type for argument 1 of 'dispatch.invoke'\n   14 |     return dispatch.invoke(value);\n      |                            ^~~~~\n      |                            |\n      |                            Argument {aka struct DifferentPayload}\n/home/pyx/edgm-experiment/second_point/tmpxwfjx0fi/P1.c:14:28: note: expected 'Stable' {aka 'struct Payload'} but argument is of type 'Argument' {aka 'struct DifferentPayload'}\n",
+        "status": "nonzero",
+        "exception": null,
+        "elapsed_seconds": 0.008190881926566362
+      },
+      "clang": {
+        "command": [
+          "/opt/llvm-22.1.0/bin/clang-22",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/second_point/tmpxwfjx0fi/P1.c"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "/home/pyx/edgm-experiment/second_point/tmpxwfjx0fi/P1.c:6:33: error: typedef redefinition with different types ('struct DifferentPayload' vs 'Stable' (aka 'struct Payload'))\n    6 | typedef struct DifferentPayload ArgumentBase;\n      |                                 ^\n/home/pyx/edgm-experiment/second_point/tmpxwfjx0fi/P1.c:5:16: note: previous definition is here\n    5 | typedef Stable ArgumentBase;\n      |                ^\n1 error generated.\n",
+        "status": "nonzero",
+        "exception": null,
+        "elapsed_seconds": 0.03190409415401518
+      }
+    },
+    "sha256": "f7369c452af99de5781c39839a721af76dd3936e35a50a8dd0b379f392ca3e4a",
+    "source_unchanged": true
+  }
+}

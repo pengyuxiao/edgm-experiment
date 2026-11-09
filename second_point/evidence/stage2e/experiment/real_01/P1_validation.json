@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_01/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_01/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_01/P1.c: In function 'main':\n/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_01/P1.c:2257:12: error: cannot take address of bit-field 'edgm_sp_074a51ddf75c_0_value'\n 2257 |     if ((*(&((struct edgm_sp_074a51ddf75c_0 { signed int edgm_sp_074a51ddf75c_0_value : 32; }){ .edgm_sp_074a51ddf75c_0_value = (argc) }).edgm_sp_074a51ddf75c_0_value)) == 2 && strcmp(argv[1], \"1\") == 0) print_hash_value = 1;\n      |            ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.07374380202963948
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_01/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_01/P1.c:2257:12: error: address of bit-field requested\n 2257 |     if ((*(&((struct edgm_sp_074a51ddf75c_0 { signed int edgm_sp_074a51ddf75c_0_value : 32; }){ .edgm_sp_074a51ddf75c_0_value = (argc) }).edgm_sp_074a51ddf75c_0_value)) == 2 && strcmp(argv[1], \"1\") == 0) print_hash_value = 1;\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.1268088819924742
+    }
+  },
+  "sha256": "eaa25e779d8b4fdf6d8a7868c30b683b5fcb1e05d9a641ef2dac64775a515fae",
+  "source_unchanged": true
+}

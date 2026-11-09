@@ -1,0 +1,8 @@
+--- /home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/manual_P0.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/manual/P1.c
+@@ -1,4 +1,4 @@
+-struct Payload { int value; };
++struct Payload { signed int value : 32; };
+ int compute(int input) {
+     struct Payload object = {0};
+     int *first = &object.value;

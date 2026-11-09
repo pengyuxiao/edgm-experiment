@@ -1,0 +1,437 @@
+{
+  "original_path": "/home/pyx/edgm-experiment/second_point/examples/stage2d/original.c",
+  "status": "ENRICHED_UNVALIDATED",
+  "preprocessing_type": "INT_PARAMETER_MEMBER_ADDRESS_READ",
+  "origin": "seed_preprocessing",
+  "is_research_contribution": false,
+  "reasons": {},
+  "candidate_count": 1,
+  "original_sha256": "412843c06266bbad5629d2f48ab9b7336080e68c8c4046d86edfc600212065ac",
+  "main_file_node_count": 34,
+  "selected_declaration": {
+    "file": "/home/pyx/edgm-experiment/second_point/examples/stage2d/original.c",
+    "line": 3,
+    "column": 24,
+    "offset": 130,
+    "start_offset": 126,
+    "end_offset": 135,
+    "node_identity": "c:original.c@126@F@compute@input:PARM_DECL:126",
+    "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+    "source_text": "int input",
+    "usr": "c:original.c@126@F@compute@input",
+    "referenced_usr": "c:original.c@126@F@compute@input",
+    "kind": "PARM_DECL"
+  },
+  "selected_use": {
+    "file": "/home/pyx/edgm-experiment/second_point/examples/stage2d/original.c",
+    "line": 3,
+    "column": 41,
+    "offset": 147,
+    "start_offset": 147,
+    "end_offset": 152,
+    "node_identity": "c:original.c@126@F@compute@input:DECL_REF_EXPR:147",
+    "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+    "source_text": "input",
+    "usr": "",
+    "referenced_usr": "c:original.c@126@F@compute@input",
+    "kind": "DECL_REF_EXPR"
+  },
+  "original_operation": {
+    "file": "/home/pyx/edgm-experiment/second_point/examples/stage2d/original.c",
+    "line": 3,
+    "column": 41,
+    "offset": 147,
+    "start_offset": 147,
+    "end_offset": 156,
+    "node_identity": ":BINARY_OPERATOR:147",
+    "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+    "source_text": "input + 3",
+    "usr": "",
+    "referenced_usr": "",
+    "kind": "BINARY_OPERATOR"
+  },
+  "edit": {
+    "start": 147,
+    "end": 152,
+    "before": "input",
+    "after": "(*(&((struct edgm_sp_412843c06266_0 { int edgm_sp_412843c06266_0_value; }){ .edgm_sp_412843c06266_0_value = (input) }).edgm_sp_412843c06266_0_value))"
+  },
+  "enhanced_sha256": "9202017ad77ca63730e88bae4f573adaa2bbb22b0352336239c4c996885476e5",
+  "semantic_preservation": {
+    "original_type": "INT",
+    "replacement_value_type": "INT",
+    "original_category": "int value read",
+    "replacement_category": "int lvalue followed by original value conversion",
+    "value_preserved": true,
+    "original_expression_evaluations": 1,
+    "replacement_expression_evaluations": 1,
+    "observable_side_effects_added": false,
+    "variable_scope_changed": false,
+    "declaration_visibility_changed": false,
+    "fresh_tag_scope_added": true,
+    "new_undefined_behavior": false,
+    "parameter_definitely_initialized": true,
+    "parameter_all_references_read_only": true,
+    "macro_overlap": false,
+    "proof_scope": "local contextual equivalence on every defined evaluation of the original read; not a whole-program UB proof",
+    "reasoning": [
+      "By-value int parameter is initialized on function entry; all references are proven reads.",
+      "C11 6.5.2.5 block-scope compound literal creates a fresh automatic struct object.",
+      "C11 6.7.9 initializes its sole int member from the one original int read without conversion loss.",
+      "C11 6.5.3.2 & and * cancel on the ordinary non-bit-field member; the original value conversion yields the same int.",
+      "No volatile, escaping pointer, double evaluation, allocation call or externally observable store is added.",
+      "Existing source bytes and evaluation context outside this read are unchanged; the fresh tag shadows no existing name."
+    ]
+  },
+  "new_names": {
+    "tag": "edgm_sp_412843c06266_0",
+    "member": "edgm_sp_412843c06266_0_value"
+  },
+  "dependency": {
+    "kind": "original_parameter_read -> int member initialization -> &member -> dereference -> original_operation",
+    "original_declaration_usr": "c:original.c@126@F@compute@input"
+  },
+  "future_mr": {
+    "name": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "status": "POTENTIAL_ENTRY_ONLY",
+    "complete_mr_applicability": "NOT_ASSESSED"
+  },
+  "enhanced_path": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/minimal_P0.c",
+  "source_unchanged": true,
+  "source_map": {
+    "coordinates": "byte offsets, half-open; physical byte line/column",
+    "original_path": "/home/pyx/edgm-experiment/second_point/examples/stage2d/original.c",
+    "enhanced_path": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/minimal_P0.c",
+    "segments": [
+      {
+        "kind": "identity",
+        "original": [
+          0,
+          147
+        ],
+        "enhanced": [
+          0,
+          147
+        ]
+      },
+      {
+        "kind": "replaced_expression",
+        "original": [
+          147,
+          152
+        ],
+        "enhanced": [
+          147,
+          296
+        ],
+        "nested_original_read": [
+          256,
+          261
+        ]
+      },
+      {
+        "kind": "identity",
+        "original": [
+          152,
+          261
+        ],
+        "enhanced": [
+          296,
+          405
+        ]
+      }
+    ]
+  },
+  "new_structure": {
+    "field": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/minimal_P0.c",
+      "line": 3,
+      "column": 83,
+      "offset": 189,
+      "start_offset": 185,
+      "end_offset": 217,
+      "node_identity": "c:minimal_P0.c@153@F@compute@S@edgm_sp_412843c06266_0@FI@edgm_sp_412843c06266_0_value:FIELD_DECL:185",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int edgm_sp_412843c06266_0_value",
+      "usr": "c:minimal_P0.c@153@F@compute@S@edgm_sp_412843c06266_0@FI@edgm_sp_412843c06266_0_value",
+      "referenced_usr": "c:minimal_P0.c@153@F@compute@S@edgm_sp_412843c06266_0@FI@edgm_sp_412843c06266_0_value",
+      "kind": "FIELD_DECL"
+    },
+    "member_uses": [
+      {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/minimal_P0.c",
+        "line": 3,
+        "column": 160,
+        "offset": 266,
+        "start_offset": 151,
+        "end_offset": 294,
+        "node_identity": "c:minimal_P0.c@153@F@compute@S@edgm_sp_412843c06266_0@FI@edgm_sp_412843c06266_0_value:MEMBER_REF_EXPR:151",
+        "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+        "source_text": "((struct edgm_sp_412843c06266_0 { int edgm_sp_412843c06266_0_value; }){ .edgm_sp_412843c06266_0_value = (input) }).edgm_sp_412843c06266_0_value",
+        "usr": "",
+        "referenced_usr": "c:minimal_P0.c@153@F@compute@S@edgm_sp_412843c06266_0@FI@edgm_sp_412843c06266_0_value",
+        "kind": "MEMBER_REF_EXPR"
+      }
+    ],
+    "address": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/minimal_P0.c",
+      "line": 3,
+      "column": 44,
+      "offset": 150,
+      "start_offset": 150,
+      "end_offset": 294,
+      "node_identity": ":UNARY_OPERATOR:150",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "&((struct edgm_sp_412843c06266_0 { int edgm_sp_412843c06266_0_value; }){ .edgm_sp_412843c06266_0_value = (input) }).edgm_sp_412843c06266_0_value",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "UNARY_OPERATOR"
+    },
+    "field_canonical_type": "INT",
+    "address_relation_count": 1,
+    "ast_status": "OK",
+    "original_read": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/minimal_P0.c",
+      "line": 3,
+      "column": 150,
+      "offset": 256,
+      "start_offset": 256,
+      "end_offset": 261,
+      "node_identity": "c:minimal_P0.c@126@F@compute@input:DECL_REF_EXPR:256",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "input",
+      "usr": "",
+      "referenced_usr": "c:minimal_P0.c@126@F@compute@input",
+      "kind": "DECL_REF_EXPR"
+    },
+    "original_declaration": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/minimal_P0.c",
+      "line": 3,
+      "column": 24,
+      "offset": 130,
+      "start_offset": 126,
+      "end_offset": 135,
+      "node_identity": "c:minimal_P0.c@126@F@compute@input:PARM_DECL:126",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int input",
+      "usr": "c:minimal_P0.c@126@F@compute@input",
+      "referenced_usr": "c:minimal_P0.c@126@F@compute@input",
+      "kind": "PARM_DECL"
+    },
+    "mapped_declaration_verified": true,
+    "replacement_canonical_type": "INT"
+  },
+  "original_validation": {
+    "source": "/home/pyx/edgm-experiment/second_point/examples/stage2d/original.c",
+    "status": "valid",
+    "checks": {
+      "gcc": {
+        "command": [
+          "/opt/gcc-15.1.0/bin/gcc",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/second_point/examples/stage2d/original.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "status": "ok",
+        "exception": null,
+        "elapsed_seconds": 0.01574612082913518
+      },
+      "clang": {
+        "command": [
+          "/opt/llvm-22.1.0/bin/clang-22",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/second_point/examples/stage2d/original.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "status": "ok",
+        "exception": null,
+        "elapsed_seconds": 0.01552103296853602
+      }
+    },
+    "sha256": "412843c06266bbad5629d2f48ab9b7336080e68c8c4046d86edfc600212065ac",
+    "source_unchanged": true
+  },
+  "enhanced_validation": {
+    "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/minimal_P0.c",
+    "status": "valid",
+    "checks": {
+      "gcc": {
+        "command": [
+          "/opt/gcc-15.1.0/bin/gcc",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/minimal_P0.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "status": "ok",
+        "exception": null,
+        "elapsed_seconds": 0.013026901986449957
+      },
+      "clang": {
+        "command": [
+          "/opt/llvm-22.1.0/bin/clang-22",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/minimal_P0.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "status": "ok",
+        "exception": null,
+        "elapsed_seconds": 0.014164973050355911
+      }
+    },
+    "sha256": "9202017ad77ca63730e88bae4f573adaa2bbb22b0352336239c4c996885476e5",
+    "source_unchanged": true
+  },
+  "dynamic": {
+    "gcc": {
+      "runs": [
+        {
+          "build": {
+            "command": [
+              "/opt/gcc-15.1.0/bin/gcc",
+              "-std=c11",
+              "-w",
+              "/home/pyx/edgm-experiment/second_point/examples/stage2d/original.c",
+              "-o",
+              "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/gcc_original"
+            ],
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "status": "ok",
+            "exception": null,
+            "elapsed_seconds": 0.06509389798156917
+          },
+          "execution": {
+            "command": [
+              "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/gcc_original"
+            ],
+            "returncode": 0,
+            "stdout": "6 20 -10\n",
+            "stderr": "",
+            "status": "ok",
+            "exception": null,
+            "elapsed_seconds": 0.0010835740249603987
+          }
+        },
+        {
+          "build": {
+            "command": [
+              "/opt/gcc-15.1.0/bin/gcc",
+              "-std=c11",
+              "-w",
+              "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/minimal_P0.c",
+              "-o",
+              "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/gcc_enhanced"
+            ],
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "status": "ok",
+            "exception": null,
+            "elapsed_seconds": 0.0696397100109607
+          },
+          "execution": {
+            "command": [
+              "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/gcc_enhanced"
+            ],
+            "returncode": 0,
+            "stdout": "6 20 -10\n",
+            "stderr": "",
+            "status": "ok",
+            "exception": null,
+            "elapsed_seconds": 0.0008879269007593393
+          }
+        }
+      ],
+      "equal": true
+    },
+    "clang": {
+      "runs": [
+        {
+          "build": {
+            "command": [
+              "/opt/llvm-22.1.0/bin/clang-22",
+              "-std=c11",
+              "-w",
+              "/home/pyx/edgm-experiment/second_point/examples/stage2d/original.c",
+              "-o",
+              "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/clang_original"
+            ],
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "status": "ok",
+            "exception": null,
+            "elapsed_seconds": 0.05404925113543868
+          },
+          "execution": {
+            "command": [
+              "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/clang_original"
+            ],
+            "returncode": 0,
+            "stdout": "6 20 -10\n",
+            "stderr": "",
+            "status": "ok",
+            "exception": null,
+            "elapsed_seconds": 0.0010888990946114063
+          }
+        },
+        {
+          "build": {
+            "command": [
+              "/opt/llvm-22.1.0/bin/clang-22",
+              "-std=c11",
+              "-w",
+              "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/minimal_P0.c",
+              "-o",
+              "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/clang_enhanced"
+            ],
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "status": "ok",
+            "exception": null,
+            "elapsed_seconds": 0.054331446066498756
+          },
+          "execution": {
+            "command": [
+              "/home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/clang_enhanced"
+            ],
+            "returncode": 0,
+            "stdout": "6 20 -10\n",
+            "stderr": "",
+            "status": "ok",
+            "exception": null,
+            "elapsed_seconds": 0.0009129832033067942
+          }
+        }
+      ],
+      "equal": true
+    }
+  },
+  "diff": "--- /home/pyx/edgm-experiment/second_point/examples/stage2d/original.c\n+++ /home/pyx/edgm-experiment/second_point/evidence/stage2d/final_checks/minimal_P0.c\n@@ -1,6 +1,6 @@\n /* 受控动态验证：参数只读，数据必须经过新成员返回原计算。 */\n #include <stdio.h>\n-static int compute(int input) { return (input + 3) * 2; }\n+static int compute(int input) { return ((*(&((struct edgm_sp_412843c06266_0 { int edgm_sp_412843c06266_0_value; }){ .edgm_sp_412843c06266_0_value = (input) }).edgm_sp_412843c06266_0_value)) + 3) * 2; }\n int main(void) {\n     printf(\"%d %d %d\\n\", compute(0), compute(7), compute(-8));\n     return 0;\n"
+}

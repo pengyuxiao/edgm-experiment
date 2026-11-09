@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Controlled experiment executables; source and validation receipts are retained.
+evidence/stage2d/**/gcc_original
+evidence/stage2d/**/gcc_enhanced
+evidence/stage2d/**/clang_original
+evidence/stage2d/**/clang_enhanced
+
+# Large historical JSON evidence is stored losslessly as .json.gz on GitHub.
+evidence/stage2b/corpus/records.json
+evidence/stage2b/corpus/reproducible_results.json
+evidence/stage2c/final_corpus/records.json

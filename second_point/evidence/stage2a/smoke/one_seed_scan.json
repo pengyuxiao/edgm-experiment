@@ -1,0 +1,57 @@
+{
+  "source": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0001_997117443.c",
+  "validation": {
+    "source": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0001_997117443.c",
+    "status": "valid",
+    "checks": {
+      "gcc": {
+        "command": [
+          "/opt/gcc-15.1.0/bin/gcc",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0001_997117443.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "status": "ok",
+        "exception": null,
+        "elapsed_seconds": 0.03810207196511328
+      },
+      "clang": {
+        "command": [
+          "/opt/llvm-22.1.0/bin/clang-22",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0001_997117443.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "status": "ok",
+        "exception": null,
+        "elapsed_seconds": 0.057882637018337846
+      }
+    },
+    "sha256": "036d98f596ba6ded685b885bb54b9ab9375ecec42f0998544929cb656ebbd0cb",
+    "source_unchanged": true
+  },
+  "candidate_scan": {
+    "status": "NOT_APPLICABLE",
+    "reasons": [
+      "NOT_MEMBER_INDIRECT_CALL",
+      "REQUIRES_ONE_ARGUMENT"
+    ],
+    "source_sha256": "036d98f596ba6ded685b885bb54b9ab9375ecec42f0998544929cb656ebbd0cb",
+    "main_file_nodes": 21050,
+    "supported_records": 0,
+    "simple_typedef_edges": 3
+  },
+  "source_unchanged": true
+}

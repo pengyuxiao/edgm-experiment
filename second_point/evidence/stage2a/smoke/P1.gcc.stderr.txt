@@ -1,0 +1,7 @@
+/home/pyx/edgm-experiment/second_point/evidence/stage2a/smoke/P1.c: In function 'main':
+/home/pyx/edgm-experiment/second_point/evidence/stage2a/smoke/P1.c:13:28: error: incompatible type for argument 1 of 'dispatch.invoke'
+   13 |     return dispatch.invoke(value);
+      |                            ^~~~~
+      |                            |
+      |                            Argument {aka struct DifferentPayload}
+/home/pyx/edgm-experiment/second_point/evidence/stage2a/smoke/P1.c:13:28: note: expected 'Stable' {aka 'struct Payload'} but argument is of type 'Argument' {aka 'struct DifferentPayload'}

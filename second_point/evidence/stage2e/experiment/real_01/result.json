@@ -1,0 +1,63 @@
+{
+  "status": "VALIDATED",
+  "p0": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/experiment/seed_0002_1430124932_P0.c",
+  "p1": "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_01/P1.c",
+  "p0_sha256": "7ae57f094d9d1761364c9d610e7df5540226086ab9cad44925b7c4dfff449aec",
+  "p1_sha256": "eaa25e779d8b4fdf6d8a7868c30b683b5fcb1e05d9a641ef2dac64775a515fae",
+  "original_sha256": "074a51ddf75cb6cfc13fd7705cca775b8d9d9395ad69be0142ba803a179a7104",
+  "candidate_fields": 1,
+  "selected_field": "c:seed_0002_1430124932_P0.c@224646@F@main@S@edgm_sp_074a51ddf75c_0@FI@edgm_sp_074a51ddf75c_0_value",
+  "all_expected_address_points": 1,
+  "observations": {
+    "gcc": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_01/P1.c",
+          "line": 2257,
+          "column": 12,
+          "severity": "error",
+          "message": "cannot take address of bit-field 'edgm_sp_074a51ddf75c_0_value'",
+          "category": "address_of_bitfield",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_01/P1.c:2257:12: error: cannot take address of bit-field 'edgm_sp_074a51ddf75c_0_value'",
+          "matched_anchors": [
+            {
+              "violation": 0,
+              "anchor": "address"
+            }
+          ]
+        }
+      ],
+      "confirmed_bug": false,
+      "expected_violation_count": 1,
+      "exact_coordinate_comparison": true
+    },
+    "clang": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_01/P1.c",
+          "line": 2257,
+          "column": 12,
+          "severity": "error",
+          "message": "address of bit-field requested",
+          "category": "address_of_bitfield",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_01/P1.c:2257:12: error: address of bit-field requested",
+          "matched_anchors": [
+            {
+              "violation": 0,
+              "anchor": "address"
+            }
+          ]
+        }
+      ],
+      "confirmed_bug": false,
+      "expected_violation_count": 1,
+      "exact_coordinate_comparison": true
+    }
+  },
+  "oracle_unchanged_after_compilation": true,
+  "p0_unchanged": true,
+  "complexity": "simple_local_enhancement",
+  "confirmed_bug": false
+}

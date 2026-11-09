@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2a/smoke/P0.c",
+  "status": "valid",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2a/smoke/P0.c"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.008671017829328775
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2a/smoke/P0.c"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.00942704314365983
+    }
+  },
+  "sha256": "0572112c8bc192942ea85054002f36c01cb1da9e449e0845ac72d032cbfb1be0",
+  "source_unchanged": true
+}

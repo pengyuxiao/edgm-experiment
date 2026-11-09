@@ -1,0 +1,345 @@
+{
+  "p0_still_accepted": "valid",
+  "scan": {
+    "status": "NOT_APPLICABLE",
+    "ast_status": "OK",
+    "candidate_count": 0,
+    "candidates": [],
+    "main_file_nodes": 46,
+    "reasons": [
+      "AFFECTED_TYPEDEF_REDECLARED"
+    ],
+    "reason_categories": [
+      "AFFECTED_TYPEDEF_REDECLARED"
+    ],
+    "diagnostics": [],
+    "timing_seconds": {
+      "parse_seconds": 0.002520881127566099,
+      "traversal_seconds": 0.0037320100236684084,
+      "index_seconds": 0.0010138880461454391,
+      "inventory_seconds": 0.0017346821259707212,
+      "candidate_seconds": 0.0011881659738719463
+    },
+    "source_sha256": "469c627f04f03a15b2c74e21ee733d2195026b977f5eb077ecd5e6638ab012fd",
+    "supported_records": 2,
+    "simple_typedef_edges": 3,
+    "inventory": {
+      "structs": [
+        {
+          "usr": "c:@S@Payload",
+          "anchor": {
+            "file": "/home/pyx/edgm-experiment/second_point/stage2b-audit-ash8pqn2/P0.c",
+            "line": 2,
+            "column": 8,
+            "offset": 74,
+            "start_offset": 67,
+            "end_offset": 96,
+            "node_identity": {
+              "kind": "STRUCT_DECL",
+              "usr": "c:@S@Payload",
+              "referenced_usr": "c:@S@Payload",
+              "p0_hash": "469c627f04f03a15b2c74e21ee733d2195026b977f5eb077ecd5e6638ab012fd",
+              "origin_key": "STRUCT_DECL:67:96"
+            },
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "struct Payload { int value; }"
+          },
+          "scope": "TRANSLATION_UNIT",
+          "fields": [
+            {
+              "usr": "c:@S@Payload@FI@value",
+              "kind": "INT",
+              "bitfield": false
+            }
+          ]
+        },
+        {
+          "usr": "c:@S@DifferentPayload",
+          "anchor": {
+            "file": "/home/pyx/edgm-experiment/second_point/stage2b-audit-ash8pqn2/P0.c",
+            "line": 3,
+            "column": 8,
+            "offset": 105,
+            "start_offset": 98,
+            "end_offset": 136,
+            "node_identity": {
+              "kind": "STRUCT_DECL",
+              "usr": "c:@S@DifferentPayload",
+              "referenced_usr": "c:@S@DifferentPayload",
+              "p0_hash": "469c627f04f03a15b2c74e21ee733d2195026b977f5eb077ecd5e6638ab012fd",
+              "origin_key": "STRUCT_DECL:98:136"
+            },
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "struct DifferentPayload { int value; }"
+          },
+          "scope": "TRANSLATION_UNIT",
+          "fields": [
+            {
+              "usr": "c:@S@DifferentPayload@FI@value",
+              "kind": "INT",
+              "bitfield": false
+            }
+          ]
+        },
+        {
+          "usr": "c:@S@Dispatch",
+          "anchor": {
+            "file": "/home/pyx/edgm-experiment/second_point/stage2b-audit-ash8pqn2/P0.c",
+            "line": 9,
+            "column": 8,
+            "offset": 298,
+            "start_offset": 291,
+            "end_offset": 327,
+            "node_identity": {
+              "kind": "STRUCT_DECL",
+              "usr": "c:@S@Dispatch",
+              "referenced_usr": "c:@S@Dispatch",
+              "p0_hash": "469c627f04f03a15b2c74e21ee733d2195026b977f5eb077ecd5e6638ab012fd",
+              "origin_key": "STRUCT_DECL:291:327"
+            },
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "struct Dispatch { Callback invoke; }"
+          },
+          "scope": "TRANSLATION_UNIT",
+          "fields": [
+            {
+              "usr": "c:@S@Dispatch@FI@invoke",
+              "kind": "POINTER",
+              "bitfield": false
+            }
+          ]
+        }
+      ],
+      "unions": [],
+      "function_pointer_members": [
+        {
+          "usr": "c:@S@Dispatch@FI@invoke",
+          "owner_kind": "STRUCT_DECL",
+          "owner_usr": "c:@S@Dispatch",
+          "type": "int (*)(struct Payload)",
+          "anchor": {
+            "file": "/home/pyx/edgm-experiment/second_point/stage2b-audit-ash8pqn2/P0.c",
+            "line": 9,
+            "column": 28,
+            "offset": 318,
+            "start_offset": 309,
+            "end_offset": 324,
+            "node_identity": {
+              "kind": "FIELD_DECL",
+              "usr": "c:@S@Dispatch@FI@invoke",
+              "referenced_usr": "c:@S@Dispatch@FI@invoke",
+              "p0_hash": "469c627f04f03a15b2c74e21ee733d2195026b977f5eb077ecd5e6638ab012fd",
+              "origin_key": "FIELD_DECL:309:324"
+            },
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "Callback invoke"
+          }
+        }
+      ],
+      "member_indirect_calls": [
+        {
+          "anchor": {
+            "file": "/home/pyx/edgm-experiment/second_point/stage2b-audit-ash8pqn2/P0.c",
+            "line": 14,
+            "column": 12,
+            "offset": 486,
+            "start_offset": 486,
+            "end_offset": 508,
+            "node_identity": {
+              "kind": "CALL_EXPR",
+              "usr": "",
+              "referenced_usr": "c:@S@Dispatch@FI@invoke",
+              "p0_hash": "469c627f04f03a15b2c74e21ee733d2195026b977f5eb077ecd5e6638ab012fd",
+              "origin_key": "CALL_EXPR:486:508"
+            },
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "dispatch.invoke(value)"
+          },
+          "member_usr": "c:@S@Dispatch@FI@invoke",
+          "argument_count": 1
+        }
+      ],
+      "typedefs": [
+        {
+          "usr": "c:P0.c@T@Stable",
+          "chain": [
+            "c:P0.c@T@Stable"
+          ],
+          "chain_length": 1,
+          "canonical_kind": "RECORD",
+          "record_kind": "STRUCT_DECL",
+          "record_usr": "c:@S@Payload",
+          "scope": "TRANSLATION_UNIT",
+          "anchor": {
+            "file": "/home/pyx/edgm-experiment/second_point/stage2b-audit-ash8pqn2/P0.c",
+            "line": 4,
+            "column": 24,
+            "offset": 161,
+            "start_offset": 138,
+            "end_offset": 167,
+            "node_identity": {
+              "kind": "TYPEDEF_DECL",
+              "usr": "c:P0.c@T@Stable",
+              "referenced_usr": "c:P0.c@T@Stable",
+              "p0_hash": "469c627f04f03a15b2c74e21ee733d2195026b977f5eb077ecd5e6638ab012fd",
+              "origin_key": "TYPEDEF_DECL:138:167"
+            },
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "typedef struct Payload Stable"
+          }
+        },
+        {
+          "usr": "c:P0.c@T@ArgumentBase",
+          "chain": [
+            "c:P0.c@T@ArgumentBase",
+            "c:P0.c@T@Stable"
+          ],
+          "chain_length": 2,
+          "canonical_kind": "RECORD",
+          "record_kind": "STRUCT_DECL",
+          "record_usr": "c:@S@Payload",
+          "scope": "TRANSLATION_UNIT",
+          "anchor": {
+            "file": "/home/pyx/edgm-experiment/second_point/stage2b-audit-ash8pqn2/P0.c",
+            "line": 5,
+            "column": 16,
+            "offset": 184,
+            "start_offset": 169,
+            "end_offset": 196,
+            "node_identity": {
+              "kind": "TYPEDEF_DECL",
+              "usr": "c:P0.c@T@ArgumentBase",
+              "referenced_usr": "c:P0.c@T@ArgumentBase",
+              "p0_hash": "469c627f04f03a15b2c74e21ee733d2195026b977f5eb077ecd5e6638ab012fd",
+              "origin_key": "TYPEDEF_DECL:169:196"
+            },
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "typedef Stable ArgumentBase"
+          }
+        },
+        {
+          "usr": "c:P0.c@T@ArgumentBase",
+          "chain": [
+            "c:P0.c@T@ArgumentBase",
+            "c:P0.c@T@Stable"
+          ],
+          "chain_length": 2,
+          "canonical_kind": "RECORD",
+          "record_kind": "STRUCT_DECL",
+          "record_usr": "c:@S@Payload",
+          "scope": "TRANSLATION_UNIT",
+          "anchor": {
+            "file": "/home/pyx/edgm-experiment/second_point/stage2b-audit-ash8pqn2/P0.c",
+            "line": 6,
+            "column": 16,
+            "offset": 213,
+            "start_offset": 198,
+            "end_offset": 225,
+            "node_identity": {
+              "kind": "TYPEDEF_DECL",
+              "usr": "c:P0.c@T@ArgumentBase",
+              "referenced_usr": "c:P0.c@T@ArgumentBase",
+              "p0_hash": "469c627f04f03a15b2c74e21ee733d2195026b977f5eb077ecd5e6638ab012fd",
+              "origin_key": "TYPEDEF_DECL:198:225"
+            },
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "typedef Stable ArgumentBase"
+          }
+        },
+        {
+          "usr": "c:P0.c@T@Argument",
+          "chain": [
+            "c:P0.c@T@Argument",
+            "c:P0.c@T@ArgumentBase",
+            "c:P0.c@T@Stable"
+          ],
+          "chain_length": 3,
+          "canonical_kind": "RECORD",
+          "record_kind": "STRUCT_DECL",
+          "record_usr": "c:@S@Payload",
+          "scope": "TRANSLATION_UNIT",
+          "anchor": {
+            "file": "/home/pyx/edgm-experiment/second_point/stage2b-audit-ash8pqn2/P0.c",
+            "line": 7,
+            "column": 22,
+            "offset": 248,
+            "start_offset": 227,
+            "end_offset": 256,
+            "node_identity": {
+              "kind": "TYPEDEF_DECL",
+              "usr": "c:P0.c@T@Argument",
+              "referenced_usr": "c:P0.c@T@Argument",
+              "p0_hash": "469c627f04f03a15b2c74e21ee733d2195026b977f5eb077ecd5e6638ab012fd",
+              "origin_key": "TYPEDEF_DECL:227:256"
+            },
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "typedef ArgumentBase Argument"
+          }
+        },
+        {
+          "usr": "c:P0.c@T@Callback",
+          "chain": [
+            "c:P0.c@T@Callback"
+          ],
+          "chain_length": 1,
+          "canonical_kind": "POINTER",
+          "record_kind": "NO_DECL_FOUND",
+          "record_usr": null,
+          "scope": "TRANSLATION_UNIT",
+          "anchor": {
+            "file": "/home/pyx/edgm-experiment/second_point/stage2b-audit-ash8pqn2/P0.c",
+            "line": 8,
+            "column": 15,
+            "offset": 272,
+            "start_offset": 258,
+            "end_offset": 289,
+            "node_identity": {
+              "kind": "TYPEDEF_DECL",
+              "usr": "c:P0.c@T@Callback",
+              "referenced_usr": "c:P0.c@T@Callback",
+              "p0_hash": "469c627f04f03a15b2c74e21ee733d2195026b977f5eb077ecd5e6638ab012fd",
+              "origin_key": "TYPEDEF_DECL:258:289"
+            },
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "typedef int (*Callback)(Stable)"
+          }
+        }
+      ],
+      "struct_definitions": 3,
+      "union_definitions": 0,
+      "struct_function_pointer_members": 1,
+      "member_indirect_call_count": 1,
+      "typedef_count": 5,
+      "record_typedef_chain_count": 3
+    },
+    "rejected_calls": [
+      {
+        "call": {
+          "file": "/home/pyx/edgm-experiment/second_point/stage2b-audit-ash8pqn2/P0.c",
+          "line": 14,
+          "column": 12,
+          "offset": 486,
+          "start_offset": 486,
+          "end_offset": 508,
+          "node_identity": {
+            "kind": "CALL_EXPR",
+            "usr": "",
+            "referenced_usr": "c:@S@Dispatch@FI@invoke",
+            "p0_hash": "469c627f04f03a15b2c74e21ee733d2195026b977f5eb077ecd5e6638ab012fd",
+            "origin_key": "CALL_EXPR:486:508"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "dispatch.invoke(value)"
+        },
+        "reason": "AFFECTED_TYPEDEF_REDECLARED"
+      }
+    ],
+    "rejected_reason_call_counts": {
+      "AFFECTED_TYPEDEF_REDECLARED": 1
+    },
+    "candidate_count_unit": "unique call sites; first safe edge/replacement per site",
+    "elapsed_seconds": 0.010465087834745646
+  },
+  "mutation_status": "NOT_APPLICABLE",
+  "output_exists": false
+}

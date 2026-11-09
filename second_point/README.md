@@ -1,7 +1,10 @@
-# EDGM 第二研究点：阶段 0/1 基础与阶段 2A 单条 MR
+# EDGM 第二研究点：阶段 0–2E
 
 独立于 EDGM 的只读基础框架。已实现环境记录、合法候选 P0 加载与双编译器验证、主文件 AST 提取。
 阶段 2A 已新增单条 typedef 依赖变换及独立约束见证；完整诊断比较与强化学习尚未实现。
+阶段 2E 已实现受限的 `MR_MEMBER_BITFIELD_ADDRESSABILITY`，见
+[位域 MR 验收](docs/STAGE2E_BITFIELD_MR_VALIDATION.md)。5 个既有增强 P0 均有安全候选，
+固定前三个完成 P0→P1+Oracle 和双编译器目标 error 验证；真实关系属于简单局部增强。
 本阶段真实结果见 [阶段 2A 验收](docs/STAGE2A_MR_VALIDATION.md)。方法和边界见 [设计文档](docs/RESEARCH_DESIGN.md)，
 代码发现见 [阅读报告](docs/EDGM_CODE_REVIEW.md)，实测结果见 [验收记录](docs/STAGE1_VALIDATION.md)。
 
@@ -101,3 +104,16 @@ PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m edgm_second.sem
 
 机器结果为 JSON/CSV，当前正式结果在 `evidence/stage2c/final_corpus/`。
 解析失败、工作进程异常和超时单列；PROFILED 只表示画像完成，不表示任何新 MR 可用。
+
+## 阶段 2D：合法种子预处理
+
+[验证报告](docs/STAGE2D_ENRICHMENT_VALIDATION.md)区分原生安全候选与增强后的潜在入口。
+只实现普通 int 只读参数经成员地址/解引用返回原运算的合法预处理，不生成 P1。
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m edgm_second.enrichment_run \
+  --out-dir second_point/evidence/stage2d/reproduction --scan-timeout 45
+```
+
+输出目录必须不存在；只读扫描原阶段 2B 清单，固定前五个真实种子作合法增强。
+报告中的 0 原生候选是当前保守证明子集的结果，不是语言层面的穷尽结论。

@@ -1,0 +1,131 @@
+{
+  "stage": 1,
+  "config": {
+    "gcc": "gcc",
+    "clang": "clang",
+    "expected_versions": {
+      "gcc": "15.1.0",
+      "clang": "22.1.0"
+    },
+    "runtime": "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+    "seed_dirs": [
+      "data/seeds/clean",
+      "data/seeds/diverse/clean_diversify_syntax"
+    ],
+    "timeout_seconds": 20
+  },
+  "environment": {
+    "created_utc": "2026-11-08T07:12:53.299989+00:00",
+    "python": "/usr/bin/python3",
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "compilers": {
+      "gcc": {
+        "requested": "gcc",
+        "path": "/opt/gcc-15.1.0/bin/gcc",
+        "expected_version": "15.1.0",
+        "status": "ok",
+        "version_check": {
+          "command": [
+            "/opt/gcc-15.1.0/bin/gcc",
+            "--version"
+          ],
+          "returncode": 0,
+          "stdout": "gcc (GCC) 15.1.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+          "stderr": "",
+          "status": "ok",
+          "exception": null,
+          "elapsed_seconds": 0.0013972148299217224
+        },
+        "version": "gcc (GCC) 15.1.0",
+        "version_matches": true
+      },
+      "clang": {
+        "requested": "clang",
+        "path": "/opt/llvm-22.1.0/bin/clang-22",
+        "expected_version": "22.1.0",
+        "status": "ok",
+        "version_check": {
+          "command": [
+            "/opt/llvm-22.1.0/bin/clang-22",
+            "--version"
+          ],
+          "returncode": 0,
+          "stdout": "clang version 22.1.0\nTarget: x86_64-unknown-linux-gnu\nThread model: posix\nInstalledDir: /opt/llvm-22.1.0/bin\n",
+          "stderr": "",
+          "status": "ok",
+          "exception": null,
+          "elapsed_seconds": 0.007814429933205247
+        },
+        "version": "clang version 22.1.0",
+        "version_matches": true
+      }
+    },
+    "runtime": {
+      "path": "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+      "header": "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime/csmith.h",
+      "available": true
+    },
+    "libclang": {
+      "status": "ok",
+      "binding_path": "/home/pyx/.local/lib/python3.12/site-packages/clang/cindex.py",
+      "probe_diagnostics": [],
+      "library_name": "libclang.so",
+      "version": "Ubuntu clang version 18.1.3 (1ubuntu1)",
+      "loaded_library_paths": [
+        "/usr/lib/x86_64-linux-gnu/libclang-18.so.18"
+      ]
+    },
+    "ready": true
+  },
+  "seed_discovery": [],
+  "provenance": "explicit_input",
+  "validation": {
+    "source": "/tmp/edgm-second-negative-hc4jvlty/invalid.c",
+    "status": "rejected",
+    "checks": {
+      "gcc": {
+        "command": [
+          "/opt/gcc-15.1.0/bin/gcc",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/tmp/edgm-second-negative-hc4jvlty/invalid.c"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "/tmp/edgm-second-negative-hc4jvlty/invalid.c: In function 'main':\n/tmp/edgm-second-negative-hc4jvlty/invalid.c:1:25: error: 'undeclared' undeclared (first use in this function)\n    1 | int main(void) { return undeclared; }\n      |                         ^~~~~~~~~~\n/tmp/edgm-second-negative-hc4jvlty/invalid.c:1:25: note: each undeclared identifier is reported only once for each function it appears in\n",
+        "status": "nonzero",
+        "exception": null,
+        "elapsed_seconds": 0.008761605015024543
+      },
+      "clang": {
+        "command": [
+          "/opt/llvm-22.1.0/bin/clang-22",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/tmp/edgm-second-negative-hc4jvlty/invalid.c"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "/tmp/edgm-second-negative-hc4jvlty/invalid.c:1:25: error: use of undeclared identifier 'undeclared'\n    1 | int main(void) { return undeclared; }\n      |                         ^~~~~~~~~~\n1 error generated.\n",
+        "status": "nonzero",
+        "exception": null,
+        "elapsed_seconds": 0.00838287896476686
+      }
+    },
+    "sha256": "70eab92bc06921f68790e13efdd3eb4b815a9d84a6df2d0027b5687c9de87fc8",
+    "source_unchanged": true
+  },
+  "ast": {
+    "status": "not_run_invalid_p0",
+    "nodes": []
+  },
+  "success": false,
+  "fixture_source": "int main(void) { return undeclared; }\n",
+  "fixture_purpose": "Negative test only; not a generated mutant or CsmithEdge result"
+}

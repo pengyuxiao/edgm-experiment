@@ -1,0 +1,48 @@
+{
+  "gcc": {
+    "status": "TARGET_ERRORS_OBSERVED",
+    "errors": [
+      {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_02/P1.c",
+        "line": 392,
+        "column": 625,
+        "severity": "error",
+        "message": "cannot take address of bit-field 'edgm_sp_fdc4e62fe869_0_value'",
+        "category": "address_of_bitfield",
+        "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_02/P1.c:392:625: error: cannot take address of bit-field 'edgm_sp_fdc4e62fe869_0_value'",
+        "matched_anchors": [
+          {
+            "violation": 0,
+            "anchor": "address"
+          }
+        ]
+      }
+    ],
+    "confirmed_bug": false,
+    "expected_violation_count": 1,
+    "exact_coordinate_comparison": true
+  },
+  "clang": {
+    "status": "TARGET_ERRORS_OBSERVED",
+    "errors": [
+      {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_02/P1.c",
+        "line": 392,
+        "column": 625,
+        "severity": "error",
+        "message": "address of bit-field requested",
+        "category": "address_of_bitfield",
+        "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2e/experiment/real_02/P1.c:392:625: error: address of bit-field requested",
+        "matched_anchors": [
+          {
+            "violation": 0,
+            "anchor": "address"
+          }
+        ]
+      }
+    ],
+    "confirmed_bug": false,
+    "expected_violation_count": 1,
+    "exact_coordinate_comparison": true
+  }
+}

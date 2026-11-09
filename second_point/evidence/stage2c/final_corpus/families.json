@@ -1,0 +1,301 @@
+{
+  "typedef_declaration_use": {
+    "seed_count": 50,
+    "components": {
+      "typedef_declarations": {
+        "seed_count": 50,
+        "instances": 1301,
+        "dependency_relations": 0
+      },
+      "typedef_type_uses": {
+        "seed_count": 50,
+        "instances": 834,
+        "dependency_relations": 834
+      }
+    },
+    "dependency_instances": 834,
+    "dependency_kinds": [
+      "typedef_to_type_use"
+    ],
+    "note": "component counts are roles, not disjoint AST partitions; relation counts are occurrence/path instances"
+  },
+  "typedef_chain_propagation": {
+    "seed_count": 50,
+    "components": {
+      "typedef_declarations": {
+        "seed_count": 50,
+        "instances": 1301,
+        "dependency_relations": 0
+      }
+    },
+    "dependency_instances": 0,
+    "dependency_kinds": [
+      "typedef_to_operation"
+    ],
+    "note": "component counts are roles, not disjoint AST partitions; relation counts are occurrence/path instances"
+  },
+  "function_declaration_call": {
+    "seed_count": 50,
+    "components": {
+      "functions": {
+        "seed_count": 50,
+        "instances": 872,
+        "dependency_relations": 0
+      },
+      "function_definitions": {
+        "seed_count": 50,
+        "instances": 461,
+        "dependency_relations": 0
+      },
+      "parameters": {
+        "seed_count": 50,
+        "instances": 2292,
+        "dependency_relations": 0
+      },
+      "main_function_calls": {
+        "seed_count": 50,
+        "instances": 444,
+        "dependency_relations": 1177
+      }
+    },
+    "dependency_instances": 1588,
+    "dependency_kinds": [
+      "function_redeclaration",
+      "formal_call_argument"
+    ],
+    "note": "component counts are roles, not disjoint AST partitions; relation counts are occurrence/path instances"
+  },
+  "record_member_operation": {
+    "seed_count": 26,
+    "components": {
+      "structs": {
+        "seed_count": 15,
+        "instances": 30,
+        "dependency_relations": 0
+      },
+      "unions": {
+        "seed_count": 17,
+        "instances": 28,
+        "dependency_relations": 0
+      },
+      "fields": {
+        "seed_count": 26,
+        "instances": 268,
+        "dependency_relations": 0
+      },
+      "member_accesses": {
+        "seed_count": 26,
+        "instances": 9804,
+        "dependency_relations": 9759
+      }
+    },
+    "dependency_instances": 22035,
+    "dependency_kinds": [
+      "member_to_access",
+      "member_to_operation",
+      "record_contains_record",
+      "member_to_address",
+      "record_type_to_assignment"
+    ],
+    "note": "component counts are roles, not disjoint AST partitions; relation counts are occurrence/path instances"
+  },
+  "pointer_dereference_write": {
+    "seed_count": 50,
+    "components": {
+      "pointer_declarations": {
+        "seed_count": 50,
+        "instances": 15276,
+        "dependency_relations": 0
+      },
+      "dereferences": {
+        "seed_count": 45,
+        "instances": 14332,
+        "dependency_relations": 14332
+      },
+      "indirect_writes": {
+        "seed_count": 44,
+        "instances": 8279,
+        "dependency_relations": 5796
+      }
+    },
+    "dependency_instances": 27066,
+    "dependency_kinds": [
+      "pointer_to_dereference",
+      "pointer_to_indirect_write",
+      "address_binding"
+    ],
+    "note": "component counts are roles, not disjoint AST partitions; relation counts are occurrence/path instances"
+  },
+  "qualifier_use": {
+    "seed_count": 47,
+    "components": {
+      "qualified_declarations": {
+        "seed_count": 47,
+        "instances": 6757,
+        "dependency_relations": 0
+      },
+      "qualified_uses": {
+        "seed_count": 47,
+        "instances": 27103,
+        "dependency_relations": 27103
+      }
+    },
+    "dependency_instances": 27103,
+    "dependency_kinds": [
+      "qualified_decl_to_use"
+    ],
+    "note": "component counts are roles, not disjoint AST partitions; relation counts are occurrence/path instances"
+  },
+  "array_bound_subscript": {
+    "seed_count": 50,
+    "components": {
+      "arrays": {
+        "seed_count": 50,
+        "instances": 5780,
+        "dependency_relations": 0
+      },
+      "array_dimensions": {
+        "seed_count": 50,
+        "instances": 10053,
+        "dependency_relations": 0
+      },
+      "array_subscripts": {
+        "seed_count": 50,
+        "instances": 54128,
+        "dependency_relations": 54128
+      }
+    },
+    "dependency_instances": 54128,
+    "dependency_kinds": [
+      "bound_declaration_dependency",
+      "array_decl_to_subscript"
+    ],
+    "note": "component counts are roles, not disjoint AST partitions; relation counts are occurrence/path instances"
+  },
+  "integer_enum_constant": {
+    "seed_count": 50,
+    "components": {
+      "integer_literals": {
+        "seed_count": 50,
+        "instances": 283784,
+        "dependency_relations": 0
+      },
+      "enum_constants": {
+        "seed_count": 50,
+        "instances": 1011,
+        "dependency_relations": 0
+      },
+      "enum_references": {
+        "seed_count": 43,
+        "instances": 287,
+        "dependency_relations": 287
+      },
+      "ice_subset_expressions": {
+        "seed_count": 50,
+        "instances": 317947,
+        "dependency_relations": 0
+      }
+    },
+    "dependency_instances": 287,
+    "dependency_kinds": [
+      "enum_to_reference",
+      "constant_to_ice_context"
+    ],
+    "note": "component counts are roles, not disjoint AST partitions; relation counts are occurrence/path instances"
+  },
+  "switch_control_labels": {
+    "seed_count": 47,
+    "components": {
+      "switches": {
+        "seed_count": 47,
+        "instances": 468,
+        "dependency_relations": 1404
+      },
+      "case_labels": {
+        "seed_count": 47,
+        "instances": 936,
+        "dependency_relations": 0
+      },
+      "default_labels": {
+        "seed_count": 47,
+        "instances": 468,
+        "dependency_relations": 0
+      },
+      "nested_switches": {
+        "seed_count": 0,
+        "instances": 0,
+        "dependency_relations": 0
+      }
+    },
+    "dependency_instances": 1404,
+    "dependency_kinds": [
+      "switch_to_label"
+    ],
+    "note": "component counts are roles, not disjoint AST partitions; relation counts are occurrence/path instances"
+  },
+  "goto_label_scope": {
+    "seed_count": 50,
+    "components": {
+      "gotos": {
+        "seed_count": 38,
+        "instances": 137,
+        "dependency_relations": 137
+      },
+      "labels": {
+        "seed_count": 38,
+        "instances": 121,
+        "dependency_relations": 0
+      },
+      "local_scopes": {
+        "seed_count": 50,
+        "instances": 8767,
+        "dependency_relations": 0
+      }
+    },
+    "dependency_instances": 137,
+    "dependency_kinds": [
+      "goto_to_label"
+    ],
+    "note": "component counts are roles, not disjoint AST partitions; relation counts are occurrence/path instances"
+  },
+  "bitfield_width": {
+    "seed_count": 18,
+    "components": {
+      "bitfields": {
+        "seed_count": 18,
+        "instances": 133,
+        "dependency_relations": 133
+      }
+    },
+    "dependency_instances": 133,
+    "dependency_kinds": [
+      "bitfield_width_to_field"
+    ],
+    "note": "component counts are roles, not disjoint AST partitions; relation counts are occurrence/path instances"
+  },
+  "integer_operation_conversion": {
+    "seed_count": 50,
+    "components": {
+      "integer_operations": {
+        "seed_count": 50,
+        "instances": 96366,
+        "dependency_relations": 150047
+      },
+      "explicit_casts": {
+        "seed_count": 50,
+        "instances": 30061,
+        "dependency_relations": 0
+      },
+      "implicit_type_changes": {
+        "seed_count": 50,
+        "instances": 312577,
+        "dependency_relations": 312577
+      }
+    },
+    "dependency_instances": 462624,
+    "dependency_kinds": [
+      "integer_operand_to_operation"
+    ],
+    "note": "component counts are roles, not disjoint AST partitions; relation counts are occurrence/path instances; includes implicit AST type-change wrapper edges"
+  }
+}

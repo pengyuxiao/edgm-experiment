@@ -1,0 +1,333 @@
+{
+  "original_path": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0004_1594631173.c",
+  "status": "ENRICHED_UNVALIDATED",
+  "preprocessing_type": "INT_PARAMETER_MEMBER_ADDRESS_READ",
+  "origin": "seed_preprocessing",
+  "is_research_contribution": false,
+  "reasons": {
+    "NOT_DEFINITION_PARAMETER": 29,
+    "NOT_PLAIN_UNQUALIFIED_INT": 27,
+    "PARAMETER_NOT_PROVEN_READ_ONLY_OR_MACRO_USE": 2
+  },
+  "candidate_count": 4,
+  "original_sha256": "fdc4e62fe8697c04fef9631b56f308adf68184e8f1dd99981d560b93bb8509df",
+  "main_file_node_count": 28311,
+  "selected_declaration": {
+    "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0004_1594631173.c",
+    "line": 379,
+    "column": 70,
+    "offset": 30697,
+    "start_offset": 30688,
+    "end_offset": 30700,
+    "node_identity": "c:seed_0004_1594631173.c@30688@F@func_6@p_9:PARM_DECL:30688",
+    "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+    "source_text": "int32_t  p_9",
+    "usr": "c:seed_0004_1594631173.c@30688@F@func_6@p_9",
+    "referenced_usr": "c:seed_0004_1594631173.c@30688@F@func_6@p_9",
+    "kind": "PARM_DECL"
+  },
+  "selected_use": {
+    "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0004_1594631173.c",
+    "line": 392,
+    "column": 622,
+    "offset": 31882,
+    "start_offset": 31882,
+    "end_offset": 31885,
+    "node_identity": "c:seed_0004_1594631173.c@30688@F@func_6@p_9:DECL_REF_EXPR:31882",
+    "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+    "source_text": "p_9",
+    "usr": "",
+    "referenced_usr": "c:seed_0004_1594631173.c@30688@F@func_6@p_9",
+    "kind": "DECL_REF_EXPR"
+  },
+  "original_operation": {
+    "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0004_1594631173.c",
+    "line": 392,
+    "column": 72,
+    "offset": 31332,
+    "start_offset": 31332,
+    "end_offset": 31885,
+    "node_identity": ":BINARY_OPERATOR:31332",
+    "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+    "source_text": "((-1L) != (safe_lshift_func_int16_t_s_s(((*l_1881) = (safe_div_func_uint8_t_u_u((safe_lshift_func_uint16_t_u_u(((g_1860[4] = g_1860[4]) == (g_1862 = &g_1861)), ((safe_lshift_func_int8_t_s_s((((safe_div_func_uint8_t_u_u((((safe_add_func_uint32_t_u_u(((safe_unary_minus_func_int32_t_s(((*g_1594) = ((safe_rshift_func_int32_t_s_u((l_1851 = ((l_1874 = l_1874) != (l_1875 = l_1875))), 12)) < l_1850)))) & (safe_unary_minus_func_uint16_t_u(l_1878))), (-1L))) > l_1879) ^ 0xD8C3L), l_1880)) ^ 65535UL) >= 0UL), 4)) <= (***g_105)))), (*g_1493)))), p_9))) != p_9",
+    "usr": "",
+    "referenced_usr": "",
+    "kind": "BINARY_OPERATOR"
+  },
+  "edit": {
+    "start": 31882,
+    "end": 31885,
+    "before": "p_9",
+    "after": "(*(&((struct edgm_sp_fdc4e62fe869_0 { int edgm_sp_fdc4e62fe869_0_value; }){ .edgm_sp_fdc4e62fe869_0_value = (p_9) }).edgm_sp_fdc4e62fe869_0_value))"
+  },
+  "enhanced_sha256": "89b26b1fa1175af0bcb025c853006830f8816aa963cbe18ee40628d2b968ece2",
+  "semantic_preservation": {
+    "original_type": "INT",
+    "replacement_value_type": "INT",
+    "original_category": "int value read",
+    "replacement_category": "int lvalue followed by original value conversion",
+    "value_preserved": true,
+    "original_expression_evaluations": 1,
+    "replacement_expression_evaluations": 1,
+    "observable_side_effects_added": false,
+    "variable_scope_changed": false,
+    "declaration_visibility_changed": false,
+    "fresh_tag_scope_added": true,
+    "new_undefined_behavior": false,
+    "parameter_definitely_initialized": true,
+    "parameter_all_references_read_only": true,
+    "macro_overlap": false,
+    "proof_scope": "local contextual equivalence on every defined evaluation of the original read; not a whole-program UB proof",
+    "reasoning": [
+      "By-value int parameter is initialized on function entry; all references are proven reads.",
+      "C11 6.5.2.5 block-scope compound literal creates a fresh automatic struct object.",
+      "C11 6.7.9 initializes its sole int member from the one original int read without conversion loss.",
+      "C11 6.5.3.2 & and * cancel on the ordinary non-bit-field member; the original value conversion yields the same int.",
+      "No volatile, escaping pointer, double evaluation, allocation call or externally observable store is added.",
+      "Existing source bytes and evaluation context outside this read are unchanged; the fresh tag shadows no existing name."
+    ]
+  },
+  "new_names": {
+    "tag": "edgm_sp_fdc4e62fe869_0",
+    "member": "edgm_sp_fdc4e62fe869_0_value"
+  },
+  "dependency": {
+    "kind": "original_parameter_read -> int member initialization -> &member -> dereference -> original_operation",
+    "original_declaration_usr": "c:seed_0004_1594631173.c@30688@F@func_6@p_9"
+  },
+  "future_mr": {
+    "name": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "status": "POTENTIAL_ENTRY_ONLY",
+    "complete_mr_applicability": "NOT_ASSESSED"
+  },
+  "enhanced_path": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/experiment/seed_0004_1594631173_P0.c",
+  "source_unchanged": true,
+  "source_map": {
+    "coordinates": "byte offsets, half-open; physical byte line/column",
+    "original_path": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0004_1594631173.c",
+    "enhanced_path": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/experiment/seed_0004_1594631173_P0.c",
+    "segments": [
+      {
+        "kind": "identity",
+        "original": [
+          0,
+          31882
+        ],
+        "enhanced": [
+          0,
+          31882
+        ]
+      },
+      {
+        "kind": "replaced_expression",
+        "original": [
+          31882,
+          31885
+        ],
+        "enhanced": [
+          31882,
+          32029
+        ],
+        "nested_original_read": [
+          31991,
+          31994
+        ]
+      },
+      {
+        "kind": "identity",
+        "original": [
+          31885,
+          139031
+        ],
+        "enhanced": [
+          32029,
+          139175
+        ]
+      }
+    ]
+  },
+  "new_structure": {
+    "field": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/experiment/seed_0004_1594631173_P0.c",
+      "line": 392,
+      "column": 664,
+      "offset": 31924,
+      "start_offset": 31920,
+      "end_offset": 31952,
+      "node_identity": "c:seed_0004_1594631173_P0.c@31888@F@func_6@S@edgm_sp_fdc4e62fe869_0@FI@edgm_sp_fdc4e62fe869_0_value:FIELD_DECL:31920",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int edgm_sp_fdc4e62fe869_0_value",
+      "usr": "c:seed_0004_1594631173_P0.c@31888@F@func_6@S@edgm_sp_fdc4e62fe869_0@FI@edgm_sp_fdc4e62fe869_0_value",
+      "referenced_usr": "c:seed_0004_1594631173_P0.c@31888@F@func_6@S@edgm_sp_fdc4e62fe869_0@FI@edgm_sp_fdc4e62fe869_0_value",
+      "kind": "FIELD_DECL"
+    },
+    "member_uses": [
+      {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/experiment/seed_0004_1594631173_P0.c",
+        "line": 392,
+        "column": 739,
+        "offset": 31999,
+        "start_offset": 31886,
+        "end_offset": 32027,
+        "node_identity": "c:seed_0004_1594631173_P0.c@31888@F@func_6@S@edgm_sp_fdc4e62fe869_0@FI@edgm_sp_fdc4e62fe869_0_value:MEMBER_REF_EXPR:31886",
+        "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+        "source_text": "((struct edgm_sp_fdc4e62fe869_0 { int edgm_sp_fdc4e62fe869_0_value; }){ .edgm_sp_fdc4e62fe869_0_value = (p_9) }).edgm_sp_fdc4e62fe869_0_value",
+        "usr": "",
+        "referenced_usr": "c:seed_0004_1594631173_P0.c@31888@F@func_6@S@edgm_sp_fdc4e62fe869_0@FI@edgm_sp_fdc4e62fe869_0_value",
+        "kind": "MEMBER_REF_EXPR"
+      }
+    ],
+    "address": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/experiment/seed_0004_1594631173_P0.c",
+      "line": 392,
+      "column": 625,
+      "offset": 31885,
+      "start_offset": 31885,
+      "end_offset": 32027,
+      "node_identity": ":UNARY_OPERATOR:31885",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "&((struct edgm_sp_fdc4e62fe869_0 { int edgm_sp_fdc4e62fe869_0_value; }){ .edgm_sp_fdc4e62fe869_0_value = (p_9) }).edgm_sp_fdc4e62fe869_0_value",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "UNARY_OPERATOR"
+    },
+    "field_canonical_type": "INT",
+    "address_relation_count": 1,
+    "ast_status": "OK",
+    "original_read": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/experiment/seed_0004_1594631173_P0.c",
+      "line": 392,
+      "column": 731,
+      "offset": 31991,
+      "start_offset": 31991,
+      "end_offset": 31994,
+      "node_identity": "c:seed_0004_1594631173_P0.c@30688@F@func_6@p_9:DECL_REF_EXPR:31991",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_9",
+      "usr": "",
+      "referenced_usr": "c:seed_0004_1594631173_P0.c@30688@F@func_6@p_9",
+      "kind": "DECL_REF_EXPR"
+    },
+    "original_declaration": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/experiment/seed_0004_1594631173_P0.c",
+      "line": 379,
+      "column": 70,
+      "offset": 30697,
+      "start_offset": 30688,
+      "end_offset": 30700,
+      "node_identity": "c:seed_0004_1594631173_P0.c@30688@F@func_6@p_9:PARM_DECL:30688",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int32_t  p_9",
+      "usr": "c:seed_0004_1594631173_P0.c@30688@F@func_6@p_9",
+      "referenced_usr": "c:seed_0004_1594631173_P0.c@30688@F@func_6@p_9",
+      "kind": "PARM_DECL"
+    },
+    "mapped_declaration_verified": true,
+    "replacement_canonical_type": "INT"
+  },
+  "worker": {
+    "command": [
+      "/usr/bin/python3",
+      "-m",
+      "edgm_second.enrichment_run",
+      "--worker",
+      "enrich",
+      "--seed",
+      "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0004_1594631173.c",
+      "--runtime",
+      "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+      "--output",
+      "second_point/evidence/stage2d/experiment/seed_0004_1594631173_P0.c"
+    ],
+    "returncode": 0,
+    "stderr": ""
+  },
+  "elapsed_seconds": 6.273999087046832,
+  "seed_id": "seed_0004_1594631173",
+  "original_validation": {
+    "source": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0004_1594631173.c",
+    "status": "valid",
+    "checks": {
+      "gcc": {
+        "command": [
+          "/opt/gcc-15.1.0/bin/gcc",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0004_1594631173.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "status": "ok",
+        "exception": null,
+        "elapsed_seconds": 0.04646896501071751
+      },
+      "clang": {
+        "command": [
+          "/opt/llvm-22.1.0/bin/clang-22",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0004_1594631173.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "status": "ok",
+        "exception": null,
+        "elapsed_seconds": 0.06664146692492068
+      }
+    },
+    "sha256": "fdc4e62fe8697c04fef9631b56f308adf68184e8f1dd99981d560b93bb8509df",
+    "source_unchanged": true
+  },
+  "enhanced_validation": {
+    "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2d/experiment/seed_0004_1594631173_P0.c",
+    "status": "valid",
+    "checks": {
+      "gcc": {
+        "command": [
+          "/opt/gcc-15.1.0/bin/gcc",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/second_point/evidence/stage2d/experiment/seed_0004_1594631173_P0.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "status": "ok",
+        "exception": null,
+        "elapsed_seconds": 0.049486669013276696
+      },
+      "clang": {
+        "command": [
+          "/opt/llvm-22.1.0/bin/clang-22",
+          "-std=c11",
+          "-fsyntax-only",
+          "-w",
+          "-I",
+          "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+          "/home/pyx/edgm-experiment/second_point/evidence/stage2d/experiment/seed_0004_1594631173_P0.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "status": "ok",
+        "exception": null,
+        "elapsed_seconds": 0.07041626004502177
+      }
+    },
+    "sha256": "89b26b1fa1175af0bcb025c853006830f8816aa963cbe18ee40628d2b968ece2",
+    "source_unchanged": true
+  },
+  "diff": "--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0004_1594631173.c\n+++ second_point/evidence/stage2d/experiment/seed_0004_1594631173_P0.c\n@@ -389,7 +389,7 @@\n     int16_t *l_1881 = &g_456[5];\n     int i, j;\n     l_1851 = l_1850;\n-    g_902 |= (l_1850 <= ((p_10 | ((((safe_lshift_func_uint64_t_u_s(((((((-1L) != (safe_lshift_func_int16_t_s_s(((*l_1881) = (safe_div_func_uint8_t_u_u((safe_lshift_func_uint16_t_u_u(((g_1860[4] = g_1860[4]) == (g_1862 = &g_1861)), ((safe_lshift_func_int8_t_s_s((((safe_div_func_uint8_t_u_u((((safe_add_func_uint32_t_u_u(((safe_unary_minus_func_int32_t_s(((*g_1594) = ((safe_rshift_func_int32_t_s_u((l_1851 = ((l_1874 = l_1874) != (l_1875 = l_1875))), 12)) < l_1850)))) & (safe_unary_minus_func_uint16_t_u(l_1878))), (-1L))) > l_1879) ^ 0xD8C3L), l_1880)) ^ 65535UL) >= 0UL), 4)) <= (***g_105)))), (*g_1493)))), p_9))) != p_9) != g_2[8][1]) | (*g_1124)) , p_9), 44)) && 0x326DBE9726E5E8FALL) || 1UL) <= p_9)) == g_1677.f0));\n+    g_902 |= (l_1850 <= ((p_10 | ((((safe_lshift_func_uint64_t_u_s(((((((-1L) != (safe_lshift_func_int16_t_s_s(((*l_1881) = (safe_div_func_uint8_t_u_u((safe_lshift_func_uint16_t_u_u(((g_1860[4] = g_1860[4]) == (g_1862 = &g_1861)), ((safe_lshift_func_int8_t_s_s((((safe_div_func_uint8_t_u_u((((safe_add_func_uint32_t_u_u(((safe_unary_minus_func_int32_t_s(((*g_1594) = ((safe_rshift_func_int32_t_s_u((l_1851 = ((l_1874 = l_1874) != (l_1875 = l_1875))), 12)) < l_1850)))) & (safe_unary_minus_func_uint16_t_u(l_1878))), (-1L))) > l_1879) ^ 0xD8C3L), l_1880)) ^ 65535UL) >= 0UL), 4)) <= (***g_105)))), (*g_1493)))), p_9))) != (*(&((struct edgm_sp_fdc4e62fe869_0 { int edgm_sp_fdc4e62fe869_0_value; }){ .edgm_sp_fdc4e62fe869_0_value = (p_9) }).edgm_sp_fdc4e62fe869_0_value))) != g_2[8][1]) | (*g_1124)) , p_9), 44)) && 0x326DBE9726E5E8FALL) || 1UL) <= p_9)) == g_1677.f0));\n     return p_7;\n }\n \n",
+  "original_hash_matches_manifest": true
+}

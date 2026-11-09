@@ -1,0 +1,116 @@
+test_compound_address_escape_rejected (test_stage2e_bitfield.BitfieldTests.test_compound_address_escape_rejected) ... ERROR
+test_compound_extra_member_use_type_escape_and_sizeof_rejected (test_stage2e_bitfield.BitfieldTests.test_compound_extra_member_use_type_escape_and_sizeof_rejected) ... ERROR
+test_enriched_identity_original_path_and_target_error (test_stage2e_bitfield.BitfieldTests.test_enriched_identity_original_path_and_target_error) ... ERROR
+test_enrichment_source_map_tampering_refused (test_stage2e_bitfield.BitfieldTests.test_enrichment_source_map_tampering_refused) ... ERROR
+test_existing_real_enhanced_smoke_identity_and_provenance (test_stage2e_bitfield.BitfieldTests.test_existing_real_enhanced_smoke_identity_and_provenance) ... ok
+test_full_range_controlled_bitfields_both_targets (test_stage2e_bitfield.BitfieldTests.test_full_range_controlled_bitfields_both_targets) ... ok
+test_invalid_parse_separate_from_zero (test_stage2e_bitfield.BitfieldTests.test_invalid_parse_separate_from_zero) ... ok
+test_layout_escape_macro_and_initialization_refusals (test_stage2e_bitfield.BitfieldTests.test_layout_escape_macro_and_initialization_refusals) ... ok
+test_manual_native_two_addresses_exact_errors (test_stage2e_bitfield.BitfieldTests.test_manual_native_two_addresses_exact_errors) ... ok
+test_no_diagnostics_unknown_or_location_tolerance (test_stage2e_bitfield.BitfieldTests.test_no_diagnostics_unknown_or_location_tolerance) ... ok
+test_oracle_before_compile_no_p1_ast_or_diagnostics (test_stage2e_bitfield.BitfieldTests.test_oracle_before_compile_no_p1_ast_or_diagnostics) ... ERROR
+test_profile_mismatch_and_unknown_refused (test_stage2e_bitfield.BitfieldTests.test_profile_mismatch_and_unknown_refused) ... ok
+test_readonly_deterministic_and_all_50_hashes (test_stage2e_bitfield.BitfieldTests.test_readonly_deterministic_and_all_50_hashes) ... ok
+test_real_worker_deadline_not_zero (test_stage2e_bitfield.BitfieldTests.test_real_worker_deadline_not_zero) ... ok
+test_renamed_record_and_field_no_fixed_names (test_stage2e_bitfield.BitfieldTests.test_renamed_record_and_field_no_fixed_names) ... ok
+test_same_name_fields_not_merged_and_all_candidates (test_stage2e_bitfield.BitfieldTests.test_same_name_fields_not_merged_and_all_candidates) ... ok
+test_stale_admission_and_existing_output_refused (test_stage2e_bitfield.BitfieldTests.test_stale_admission_and_existing_output_refused) ... ok
+test_tampered_width_identity_policy_and_maps_refused (test_stage2e_bitfield.BitfieldTests.test_tampered_width_identity_policy_and_maps_refused) ... ok
+test_unsigned_and_bool_full_width (test_stage2e_bitfield.BitfieldTests.test_unsigned_and_bool_full_width) ... ok
+test_unsupported_type_and_qualifiers (test_stage2e_bitfield.BitfieldTests.test_unsupported_type_and_qualifiers) ... ok
+test_utf8_crlf_exact_anchor_transport (test_stage2e_bitfield.BitfieldTests.test_utf8_crlf_exact_anchor_transport) ... ok
+
+======================================================================
+ERROR: test_compound_address_escape_rejected (test_stage2e_bitfield.BitfieldTests.test_compound_address_escape_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pyx/edgm-experiment/second_point/tests/test_stage2e_bitfield.py", line 129, in test_compound_address_escape_rejected
+    _,receipt,_=self.enhanced()
+                ^^^^^^^^^^^^^^^
+  File "/home/pyx/edgm-experiment/second_point/tests/test_stage2e_bitfield.py", line 44, in enhanced
+    receipt=enrich_seed(original,self.p0,self.runtime)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pyx/edgm-experiment/second_point/src/edgm_second/seed_enrichment.py", line 209, in enrich_seed
+    with output.open('xb') as stream:
+         ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/home/pyx/edgm-experiment/second_point/tmpoineqz3y/P0.c'
+
+======================================================================
+ERROR: test_compound_extra_member_use_type_escape_and_sizeof_rejected (test_stage2e_bitfield.BitfieldTests.test_compound_extra_member_use_type_escape_and_sizeof_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pyx/edgm-experiment/second_point/tests/test_stage2e_bitfield.py", line 120, in test_compound_extra_member_use_type_escape_and_sizeof_rejected
+    _,receipt,_=self.enhanced();text=self.p0.read_text();tag=receipt['new_names']['tag']
+                ^^^^^^^^^^^^^^^
+  File "/home/pyx/edgm-experiment/second_point/tests/test_stage2e_bitfield.py", line 44, in enhanced
+    receipt=enrich_seed(original,self.p0,self.runtime)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pyx/edgm-experiment/second_point/src/edgm_second/seed_enrichment.py", line 209, in enrich_seed
+    with output.open('xb') as stream:
+         ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/home/pyx/edgm-experiment/second_point/tmpvmel1z87/P0.c'
+
+======================================================================
+ERROR: test_enriched_identity_original_path_and_target_error (test_stage2e_bitfield.BitfieldTests.test_enriched_identity_original_path_and_target_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pyx/edgm-experiment/second_point/tests/test_stage2e_bitfield.py", line 61, in test_enriched_identity_original_path_and_target_error
+    original,receipt,provenance=self.enhanced()
+                                ^^^^^^^^^^^^^^^
+  File "/home/pyx/edgm-experiment/second_point/tests/test_stage2e_bitfield.py", line 44, in enhanced
+    receipt=enrich_seed(original,self.p0,self.runtime)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pyx/edgm-experiment/second_point/src/edgm_second/seed_enrichment.py", line 209, in enrich_seed
+    with output.open('xb') as stream:
+         ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/home/pyx/edgm-experiment/second_point/tmpjaoxj00b/P0.c'
+
+======================================================================
+ERROR: test_enrichment_source_map_tampering_refused (test_stage2e_bitfield.BitfieldTests.test_enrichment_source_map_tampering_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pyx/edgm-experiment/second_point/tests/test_stage2e_bitfield.py", line 169, in test_enrichment_source_map_tampering_refused
+    original,r,provenance=self.enhanced()
+                          ^^^^^^^^^^^^^^^
+  File "/home/pyx/edgm-experiment/second_point/tests/test_stage2e_bitfield.py", line 44, in enhanced
+    receipt=enrich_seed(original,self.p0,self.runtime)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pyx/edgm-experiment/second_point/src/edgm_second/seed_enrichment.py", line 209, in enrich_seed
+    with output.open('xb') as stream:
+         ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/home/pyx/edgm-experiment/second_point/tmpzd_4q7m4/P0.c'
+
+======================================================================
+ERROR: test_oracle_before_compile_no_p1_ast_or_diagnostics (test_stage2e_bitfield.BitfieldTests.test_oracle_before_compile_no_p1_ast_or_diagnostics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pyx/edgm-experiment/second_point/tests/test_stage2e_bitfield.py", line 72, in test_oracle_before_compile_no_p1_ast_or_diagnostics
+    original,_,provenance=self.enhanced(); admission=validate_seed(self.p0,self.env)
+                          ^^^^^^^^^^^^^^^
+  File "/home/pyx/edgm-experiment/second_point/tests/test_stage2e_bitfield.py", line 44, in enhanced
+    receipt=enrich_seed(original,self.p0,self.runtime)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pyx/edgm-experiment/second_point/src/edgm_second/seed_enrichment.py", line 209, in enrich_seed
+    with output.open('xb') as stream:
+         ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/home/pyx/edgm-experiment/second_point/tmp4jfawq75/P0.c'
+
+----------------------------------------------------------------------
+Ran 21 tests in 10.869s
+
+FAILED (errors=5)
