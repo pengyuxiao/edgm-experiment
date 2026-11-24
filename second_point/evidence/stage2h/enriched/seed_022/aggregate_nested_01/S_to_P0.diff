@@ -1,0 +1,20 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0015_2068675736.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_022/aggregate_nested_01/P0.c
+@@ -2204,9 +2204,16 @@
+ /* ---------------------------------------- */
+ int main (int argc, char* argv[])
+ {
++struct ag_e271f42963_165140_0_0_record { int ag_e271f42963_165140_0_0_value; };
++struct ag_e271f42963_165140_0_0_other { struct ag_e271f42963_165140_0_0_record ag_e271f42963_165140_0_0_right; int ag_e271f42963_165140_0_0_input; };
++struct ag_e271f42963_165140_0_0_other ag_e271f42963_165140_0_0_left = {{ argc }, 0};
++struct ag_e271f42963_165140_0_0_other ag_e271f42963_165140_0_0_object = {{0}, 0};
++ag_e271f42963_165140_0_0_object = ag_e271f42963_165140_0_0_left;
++ag_e271f42963_165140_0_0_object = ag_e271f42963_165140_0_0_left;
++
+     int i, j, k;
+     int print_hash_value = 0;
+-    if (argc == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
++    if ((ag_e271f42963_165140_0_0_object.ag_e271f42963_165140_0_0_right.ag_e271f42963_165140_0_0_value) == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
+     platform_main_begin();
+     crc32_gentab();
+     func_1();

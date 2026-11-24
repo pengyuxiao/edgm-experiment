@@ -1,0 +1,85 @@
+{
+  "result": {
+    "candidate_id": "a5f5d2fac2c82afc97943d858e5f6cf6077e107cf6e456ebefa1af42ec656b25",
+    "seed_id": "seed_0044_901282285",
+    "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "family": "split_pointer",
+    "semantic_context_signature": "296d8f676a186d79260783b5284fdfd2694ce4ca1d11627524dcf76932326722",
+    "origin_stage": "2G",
+    "status": "TARGET_ERRORS_OBSERVED",
+    "observations": {
+      "gcc": {
+        "status": "TARGET_ERRORS_OBSERVED",
+        "errors": [
+          {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_058/P1.c",
+            "line": 602,
+            "column": 46,
+            "severity": "error",
+            "message": "cannot take address of bit-field 'ag_1dfd952939_62645_0_0_value'",
+            "category": "address_of_bitfield",
+            "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_058/P1.c:602:46: error: cannot take address of bit-field 'ag_1dfd952939_62645_0_0_value'",
+            "matched_anchors": [
+              {
+                "violation": 0,
+                "anchor": "address"
+              }
+            ]
+          }
+        ],
+        "confirmed_bug": false,
+        "expected_violation_count": 1,
+        "exact_coordinate_comparison": true
+      },
+      "clang": {
+        "status": "TARGET_ERRORS_OBSERVED",
+        "errors": [
+          {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_058/P1.c",
+            "line": 602,
+            "column": 46,
+            "severity": "error",
+            "message": "address of bit-field requested",
+            "category": "address_of_bitfield",
+            "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_058/P1.c:602:46: error: address of bit-field requested",
+            "matched_anchors": [
+              {
+                "violation": 0,
+                "anchor": "address"
+              }
+            ]
+          }
+        ],
+        "confirmed_bug": false,
+        "expected_violation_count": 1,
+        "exact_coordinate_comparison": true
+      }
+    },
+    "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_013/split_pointer_01/P0.c",
+    "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_058/P1.c",
+    "p0_sha256": "0a257cd7d4d3e7f9a8ff5a6d5ad81f63547dd031f90d1df7e06d495ade91479a",
+    "p1_sha256": "db353e59f21ecacfd4b7f06f66726b860a21d30a25ed072e4917c9496c8af510",
+    "oracle_replay": true,
+    "oracle_unchanged": true,
+    "confirmed_bug": false
+  },
+  "worker": {
+    "command": [
+      "/usr/bin/python3",
+      "-m",
+      "edgm_second.aggregate_run",
+      "--phase",
+      "execute_worker",
+      "--out-dir",
+      "/home/pyx/edgm-experiment/second_point/evidence/stage2h",
+      "--index",
+      "58"
+    ],
+    "returncode": 0,
+    "stdout": "see result file",
+    "stderr": "",
+    "status": "ok",
+    "exception": null,
+    "elapsed_seconds": 16.00775987212546
+  }
+}

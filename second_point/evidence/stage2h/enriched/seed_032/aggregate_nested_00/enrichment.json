@@ -1,0 +1,191 @@
+{
+  "schema": "stage2h-enrichment-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0046_1192167540.c",
+  "s_sha256": "42a56ca00d15c4ef14afbfb78eb7cb7a3f8d1743b966fd2b542a237e063e6485",
+  "p0_sha256": "3d36c0204064baf82d6b3ce938f4c23ddb2694845e9276c1263a66e65c0686fc",
+  "position": {
+    "position_id": "42a56ca00d15c4ef14afbfb78eb7cb7a3f8d1743b966fd2b542a237e063e6485:c:seed_0046_1192167540.c@158005@F@main@argc:158086",
+    "read": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0046_1192167540.c",
+      "line": 2303,
+      "column": 9,
+      "offset": 158086,
+      "start_offset": 158086,
+      "end_offset": 158090,
+      "node_identity": "c:seed_0046_1192167540.c@158005@F@main@argc:DECL_REF_EXPR:158086",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "argc",
+      "usr": "",
+      "referenced_usr": "c:seed_0046_1192167540.c@158005@F@main@argc",
+      "kind": "DECL_REF_EXPR"
+    },
+    "declaration": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0046_1192167540.c",
+      "line": 2299,
+      "column": 15,
+      "offset": 158009,
+      "start_offset": 158005,
+      "end_offset": 158013,
+      "node_identity": "c:seed_0046_1192167540.c@158005@F@main@argc:PARM_DECL:158005",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int argc",
+      "usr": "c:seed_0046_1192167540.c@158005@F@main@argc",
+      "referenced_usr": "c:seed_0046_1192167540.c@158005@F@main@argc",
+      "kind": "PARM_DECL"
+    },
+    "function_offset": 157995,
+    "body_start": 158029,
+    "kind": "INT",
+    "parameter": "argc",
+    "function_name": "main",
+    "function_usr": "c:@F@main",
+    "operator": "==",
+    "operation": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0046_1192167540.c",
+      "line": 2303,
+      "column": 9,
+      "offset": 158086,
+      "start_offset": 158086,
+      "end_offset": 158095,
+      "node_identity": ":BINARY_OPERATOR:158086",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "argc == 2",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "BINARY_OPERATOR"
+    },
+    "unit": [
+      158082,
+      158147
+    ],
+    "nested_supported": true,
+    "ancestor_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ]
+  },
+  "enrichment_family": "aggregate_nested",
+  "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+  "semantic_context": {
+    "family": "aggregate_nested",
+    "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "entry_control",
+    "original_operator": "==",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ],
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": false,
+    "record_depth": 2,
+    "target_use_points": 1,
+    "value_route": "parameter -> initialized source -> whole-record copy -> destination member -> original operation"
+  },
+  "semantic_context_signature": "586233872f751fbbef6569d6862bcda274ef1f3109f5609afd317c5666175ccb",
+  "names": {
+    "record": "ag_42a56ca00d_158086_0_0_record",
+    "other": "ag_42a56ca00d_158086_0_0_other",
+    "value": "ag_42a56ca00d_158086_0_0_value",
+    "object": "ag_42a56ca00d_158086_0_0_object",
+    "left": "ag_42a56ca00d_158086_0_0_left",
+    "right": "ag_42a56ca00d_158086_0_0_right",
+    "root": "ag_42a56ca00d_158086_0_0_root",
+    "middle": "ag_42a56ca00d_158086_0_0_middle",
+    "argument": "ag_42a56ca00d_158086_0_0_argument",
+    "callback": "ag_42a56ca00d_158086_0_0_callback",
+    "dispatch_type": "ag_42a56ca00d_158086_0_0_dispatch_type",
+    "dispatch": "ag_42a56ca00d_158086_0_0_dispatch",
+    "extract": "ag_42a56ca00d_158086_0_0_extract",
+    "input": "ag_42a56ca00d_158086_0_0_input",
+    "invoke": "ag_42a56ca00d_158086_0_0_invoke"
+  },
+  "replacement": "(ag_42a56ca00d_158086_0_0_object.ag_42a56ca00d_158086_0_0_right.ag_42a56ca00d_158086_0_0_value)",
+  "edits": [
+    {
+      "start": 158030,
+      "end": 158030,
+      "before": "",
+      "after": "\nstruct ag_42a56ca00d_158086_0_0_record { int ag_42a56ca00d_158086_0_0_value; };\nstruct ag_42a56ca00d_158086_0_0_other { struct ag_42a56ca00d_158086_0_0_record ag_42a56ca00d_158086_0_0_right; int ag_42a56ca00d_158086_0_0_input; };\nstruct ag_42a56ca00d_158086_0_0_other ag_42a56ca00d_158086_0_0_left = {{ argc }, 0};\nstruct ag_42a56ca00d_158086_0_0_other ag_42a56ca00d_158086_0_0_object = {{0}, 0};\nag_42a56ca00d_158086_0_0_object = ag_42a56ca00d_158086_0_0_left;\n"
+    },
+    {
+      "start": 158086,
+      "end": 158090,
+      "before": "argc",
+      "after": "(ag_42a56ca00d_158086_0_0_object.ag_42a56ca00d_158086_0_0_right.ag_42a56ca00d_158086_0_0_value)"
+    }
+  ],
+  "source_map": [
+    {
+      "kind": "identity",
+      "s": [
+        0,
+        158030
+      ],
+      "p0": [
+        0,
+        158030
+      ]
+    },
+    {
+      "kind": "generated",
+      "s": [
+        158030,
+        158030
+      ],
+      "p0": [
+        158030,
+        158493
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        158030,
+        158086
+      ],
+      "p0": [
+        158493,
+        158549
+      ]
+    },
+    {
+      "kind": "replacement",
+      "s": [
+        158086,
+        158090
+      ],
+      "p0": [
+        158549,
+        158644
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        158090,
+        167272
+      ],
+      "p0": [
+        158644,
+        167826
+      ]
+    }
+  ],
+  "local_equivalence": {
+    "parameter_initialized": true,
+    "all_parameter_references_read_only": true,
+    "early_nonvolatile_read_has_no_observable_effect": true,
+    "value_type_preserved": true,
+    "new_objects_private": true,
+    "new_calls_pure_identity": false,
+    "original_expression_evaluation_path_preserved": true,
+    "global_ub_proof": false
+  },
+  "assignment_count": 1
+}

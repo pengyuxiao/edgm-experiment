@@ -1,0 +1,25 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0027_755910469.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_048/aggregate_direct_00/P0.c
+@@ -187,7 +187,12 @@
+  * writes: g_263
+  */
+ static uint64_t  func_14(int32_t  p_15, int64_t  p_16, int32_t * p_17)
+-{ /* block id: 629 */
++{
++struct ag_3dd9d57378_18045_0_0_record { int ag_3dd9d57378_18045_0_0_value; };
++struct ag_3dd9d57378_18045_0_0_record ag_3dd9d57378_18045_0_0_left = { p_15 };
++struct ag_3dd9d57378_18045_0_0_record ag_3dd9d57378_18045_0_0_object = {0};
++ag_3dd9d57378_18045_0_0_object = ag_3dd9d57378_18045_0_0_left;
++ /* block id: 629 */
+     int16_t l_1440 = 0L;
+     uint32_t *l_1445[4] = {&g_263,&g_263,&g_263,&g_263};
+     int32_t l_1446 = (-1L);
+@@ -212,7 +217,7 @@
+     uint16_t ***l_1460[4] = {(void*)0,(void*)0,(void*)0,(void*)0};
+     uint16_t **l_1461 = (void*)0;
+     int i, j, k;
+-    l_1446 ^= ((((((~l_1440) , (*p_17)) , (safe_add_func_uint8_t_u_u(((safe_mul_func_uint32_t_u_u((g_263--), l_1440)) , (safe_mul_func_int8_t_s_s(((l_1447 & (g_811[4][0].f3 , (l_1452 != ((safe_div_func_uint64_t_u_u((safe_mod_func_uint8_t_u_u(((l_1458[6][3][0] != (l_1461 = l_1458[6][3][1])) ^ (p_15 , p_15)), p_16)), g_501)) , &l_1453)))) | 0xD0166733CA5B96AELL), g_141))), l_1440))) != l_1440) || l_1447) > p_15);
++    l_1446 ^= ((((((~l_1440) , (*p_17)) , (safe_add_func_uint8_t_u_u(((safe_mul_func_uint32_t_u_u((g_263--), l_1440)) , (safe_mul_func_int8_t_s_s(((l_1447 & (g_811[4][0].f3 , (l_1452 != ((safe_div_func_uint64_t_u_u((safe_mod_func_uint8_t_u_u(((l_1458[6][3][0] != (l_1461 = l_1458[6][3][1])) ^ (p_15 , p_15)), p_16)), g_501)) , &l_1453)))) | 0xD0166733CA5B96AELL), g_141))), l_1440))) != l_1440) || l_1447) > (ag_3dd9d57378_18045_0_0_object.ag_3dd9d57378_18045_0_0_value));
+     return l_1440;
+ }
+ 

@@ -1,0 +1,191 @@
+{
+  "schema": "stage2h-enrichment-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0003_192201221.c",
+  "s_sha256": "eedfc54b85f55c7b0eecbfec53d44d7cae2be6577e30c36071dd95f2a6544233",
+  "p0_sha256": "81273373deb50544d0925b805e47e7cc695e82f74bf84ff64b760952ee06bd8f",
+  "position": {
+    "position_id": "eedfc54b85f55c7b0eecbfec53d44d7cae2be6577e30c36071dd95f2a6544233:c:seed_0003_192201221.c@18410@F@func_17@p_19:21979",
+    "read": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0003_192201221.c",
+      "line": 418,
+      "column": 403,
+      "offset": 21979,
+      "start_offset": 21979,
+      "end_offset": 21983,
+      "node_identity": "c:seed_0003_192201221.c@18410@F@func_17@p_19:DECL_REF_EXPR:21979",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_19",
+      "usr": "",
+      "referenced_usr": "c:seed_0003_192201221.c@18410@F@func_17@p_19",
+      "kind": "DECL_REF_EXPR"
+    },
+    "declaration": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0003_192201221.c",
+      "line": 360,
+      "column": 49,
+      "offset": 18419,
+      "start_offset": 18410,
+      "end_offset": 18423,
+      "node_identity": "c:seed_0003_192201221.c@18410@F@func_17@p_19:PARM_DECL:18410",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int32_t  p_19",
+      "usr": "c:seed_0003_192201221.c@18410@F@func_17@p_19",
+      "referenced_usr": "c:seed_0003_192201221.c@18410@F@func_17@p_19",
+      "kind": "PARM_DECL"
+    },
+    "function_offset": 18371,
+    "body_start": 18463,
+    "kind": "INT",
+    "parameter": "p_19",
+    "function_name": "func_17",
+    "function_usr": "c:seed_0003_192201221.c@F@func_17",
+    "operator": "<",
+    "operation": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0003_192201221.c",
+      "line": 418,
+      "column": 130,
+      "offset": 21706,
+      "start_offset": 21706,
+      "end_offset": 21983,
+      "node_identity": ":BINARY_OPERATOR:21706",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "(safe_mul_func_int8_t_s_s((((safe_lshift_func_uint64_t_u_s(0UL, g_249)) && 0xDF80L) || (safe_rshift_func_int32_t_s_u((safe_rshift_func_int32_t_s_s((safe_rshift_func_int64_t_s_s((l_450 != l_451[1][6][3]), (safe_rshift_func_int16_t_s_s(g_16, 12)))), 2)), l_454))), l_417)) < p_19",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "BINARY_OPERATOR"
+    },
+    "unit": [
+      21589,
+      22022
+    ],
+    "nested_supported": true,
+    "ancestor_context": [
+      "BINARY_OPERATOR",
+      "COMPOUND_ASSIGNMENT_OPERATOR",
+      "COMPOUND_STMT"
+    ]
+  },
+  "enrichment_family": "aggregate_nested",
+  "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+  "semantic_context": {
+    "family": "aggregate_nested",
+    "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "<",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "COMPOUND_ASSIGNMENT_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": false,
+    "record_depth": 2,
+    "target_use_points": 1,
+    "value_route": "parameter -> initialized source -> whole-record copy -> destination member -> original operation"
+  },
+  "semantic_context_signature": "57667361c55421bf09701db575978621e0d43b04c5a03cc2edef7d488d1694ab",
+  "names": {
+    "record": "ag_eedfc54b85_21979_0_0_record",
+    "other": "ag_eedfc54b85_21979_0_0_other",
+    "value": "ag_eedfc54b85_21979_0_0_value",
+    "object": "ag_eedfc54b85_21979_0_0_object",
+    "left": "ag_eedfc54b85_21979_0_0_left",
+    "right": "ag_eedfc54b85_21979_0_0_right",
+    "root": "ag_eedfc54b85_21979_0_0_root",
+    "middle": "ag_eedfc54b85_21979_0_0_middle",
+    "argument": "ag_eedfc54b85_21979_0_0_argument",
+    "callback": "ag_eedfc54b85_21979_0_0_callback",
+    "dispatch_type": "ag_eedfc54b85_21979_0_0_dispatch_type",
+    "dispatch": "ag_eedfc54b85_21979_0_0_dispatch",
+    "extract": "ag_eedfc54b85_21979_0_0_extract",
+    "input": "ag_eedfc54b85_21979_0_0_input",
+    "invoke": "ag_eedfc54b85_21979_0_0_invoke"
+  },
+  "replacement": "(ag_eedfc54b85_21979_0_0_object.ag_eedfc54b85_21979_0_0_right.ag_eedfc54b85_21979_0_0_value)",
+  "edits": [
+    {
+      "start": 18464,
+      "end": 18464,
+      "before": "",
+      "after": "\nstruct ag_eedfc54b85_21979_0_0_record { int ag_eedfc54b85_21979_0_0_value; };\nstruct ag_eedfc54b85_21979_0_0_other { struct ag_eedfc54b85_21979_0_0_record ag_eedfc54b85_21979_0_0_right; int ag_eedfc54b85_21979_0_0_input; };\nstruct ag_eedfc54b85_21979_0_0_other ag_eedfc54b85_21979_0_0_left = {{ p_19 }, 0};\nstruct ag_eedfc54b85_21979_0_0_other ag_eedfc54b85_21979_0_0_object = {{0}, 0};\nag_eedfc54b85_21979_0_0_object = ag_eedfc54b85_21979_0_0_left;\n"
+    },
+    {
+      "start": 21979,
+      "end": 21983,
+      "before": "p_19",
+      "after": "(ag_eedfc54b85_21979_0_0_object.ag_eedfc54b85_21979_0_0_right.ag_eedfc54b85_21979_0_0_value)"
+    }
+  ],
+  "source_map": [
+    {
+      "kind": "identity",
+      "s": [
+        0,
+        18464
+      ],
+      "p0": [
+        0,
+        18464
+      ]
+    },
+    {
+      "kind": "generated",
+      "s": [
+        18464,
+        18464
+      ],
+      "p0": [
+        18464,
+        18915
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        18464,
+        21979
+      ],
+      "p0": [
+        18915,
+        22430
+      ]
+    },
+    {
+      "kind": "replacement",
+      "s": [
+        21979,
+        21983
+      ],
+      "p0": [
+        22430,
+        22522
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        21983,
+        58367
+      ],
+      "p0": [
+        22522,
+        58906
+      ]
+    }
+  ],
+  "local_equivalence": {
+    "parameter_initialized": true,
+    "all_parameter_references_read_only": true,
+    "early_nonvolatile_read_has_no_observable_effect": true,
+    "value_type_preserved": true,
+    "new_objects_private": true,
+    "new_calls_pure_identity": false,
+    "original_expression_evaluation_path_preserved": true,
+    "global_ub_proof": false
+  },
+  "assignment_count": 1
+}

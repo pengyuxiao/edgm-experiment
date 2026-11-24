@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_180/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_180/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_180/P1.c: In function 'main':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_180/P1.c:1608:38: error: cannot take address of bit-field 'ag_1cea2eeec6_131469_0_0_value'\n 1608 | int *ag_1cea2eeec6_131469_0_0_left = &ag_1cea2eeec6_131469_0_0_object.ag_1cea2eeec6_131469_0_0_value;\n      |                                      ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.0484088200610131
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_180/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_180/P1.c:1608:38: error: address of bit-field requested\n 1608 | int *ag_1cea2eeec6_131469_0_0_left = &ag_1cea2eeec6_131469_0_0_object.ag_1cea2eeec6_131469_0_0_value;\n      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.07531111501157284
+    }
+  },
+  "sha256": "22fc1b5b33d0a8e8aa9b2ac86432db8bc8ec3d472f7382bb24d0550bdf881bab",
+  "source_unchanged": true
+}

@@ -1,0 +1,1117 @@
+{
+  "schema": "stage2g-active-oracle-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+  "s_sha256": "ea3b354b090dd68d80abe17b2bef359c2147fa3d321270fa03e094db764144af",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+  "p0_sha256": "6ca6286b19453f07ee15abec384ee83627cbb495e163eaa014dfb3d49dbc9dd3",
+  "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_075/P1.c",
+  "p1_sha256": "224f2e7518b46496a5d044a268f97a6dc79f1aaa1a3e814b0fc89faddf1110cd",
+  "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+  "active_enrichment": {
+    "schema": "stage2g-enrichment-v1",
+    "source_kind": "Enriched",
+    "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+    "s_sha256": "ea3b354b090dd68d80abe17b2bef359c2147fa3d321270fa03e094db764144af",
+    "p0_sha256": "6ca6286b19453f07ee15abec384ee83627cbb495e163eaa014dfb3d49dbc9dd3",
+    "position": {
+      "position_id": "ea3b354b090dd68d80abe17b2bef359c2147fa3d321270fa03e094db764144af:c:seed_0023_9745728.c@34115@F@func_20@p_21:44758",
+      "read": {
+        "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+        "line": 546,
+        "column": 254,
+        "offset": 44758,
+        "start_offset": 44758,
+        "end_offset": 44762,
+        "node_identity": "c:seed_0023_9745728.c@34115@F@func_20@p_21:DECL_REF_EXPR:44758",
+        "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+        "source_text": "p_21",
+        "usr": "",
+        "referenced_usr": "c:seed_0023_9745728.c@34115@F@func_20@p_21",
+        "kind": "DECL_REF_EXPR"
+      },
+      "declaration": {
+        "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+        "line": 403,
+        "column": 35,
+        "offset": 34125,
+        "start_offset": 34115,
+        "end_offset": 34129,
+        "node_identity": "c:seed_0023_9745728.c@34115@F@func_20@p_21:PARM_DECL:34115",
+        "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+        "source_text": "uint32_t  p_21",
+        "usr": "c:seed_0023_9745728.c@34115@F@func_20@p_21",
+        "referenced_usr": "c:seed_0023_9745728.c@34115@F@func_20@p_21",
+        "kind": "PARM_DECL"
+      },
+      "function_offset": 34091,
+      "body_start": 34162,
+      "kind": "UINT",
+      "parameter": "p_21",
+      "function_name": "func_20",
+      "function_usr": "c:seed_0023_9745728.c@F@func_20",
+      "operator": "|",
+      "operation": {
+        "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+        "line": 546,
+        "column": 151,
+        "offset": 44655,
+        "start_offset": 44655,
+        "end_offset": 44762,
+        "node_identity": ":BINARY_OPERATOR:44655",
+        "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+        "source_text": "((l_1008 , (safe_sub_func_int8_t_s_s((((l_1023 , (l_1024 != g_1025)) > 8L) , 0x02L), l_1026))) | 0L) | p_21",
+        "usr": "",
+        "referenced_usr": "",
+        "kind": "BINARY_OPERATOR"
+      },
+      "unit": [
+        44529,
+        44948
+      ],
+      "nested_supported": true,
+      "ancestor_context": [
+        "BINARY_OPERATOR",
+        "BINARY_OPERATOR",
+        "COMPOUND_STMT"
+      ]
+    },
+    "enrichment_family": "nested_two_addresses",
+    "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "semantic_context": {
+      "family": "nested_two_addresses",
+      "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+      "input_type": "UINT",
+      "input_role": "immutable_by_value_parameter",
+      "function_role": "ordinary_function",
+      "original_operator": "|",
+      "original_context": [
+        "BINARY_OPERATOR",
+        "BINARY_OPERATOR",
+        "COMPOUND_STMT"
+      ],
+      "address_points": 2,
+      "cross_statement": true,
+      "cross_scope": true,
+      "cross_function": false,
+      "target_use_points": 2,
+      "record_shape": "single_integer_member",
+      "access_form": "private_pointer_dereference",
+      "value_route": "private member -> address -> pointer selection -> dereference",
+      "typedef_depth": 0
+    },
+    "semantic_context_signature": "d525395b600c86ba8bb323096ab18cf5453f39db005aeb7f563338c63064d439",
+    "names": {
+      "record": "ag_ea3b354b09_44758_1_0_record",
+      "other": "ag_ea3b354b09_44758_1_0_other",
+      "value": "ag_ea3b354b09_44758_1_0_value",
+      "object": "ag_ea3b354b09_44758_1_0_object",
+      "left": "ag_ea3b354b09_44758_1_0_left",
+      "right": "ag_ea3b354b09_44758_1_0_right",
+      "root": "ag_ea3b354b09_44758_1_0_root",
+      "middle": "ag_ea3b354b09_44758_1_0_middle",
+      "argument": "ag_ea3b354b09_44758_1_0_argument",
+      "callback": "ag_ea3b354b09_44758_1_0_callback",
+      "dispatch_type": "ag_ea3b354b09_44758_1_0_dispatch_type",
+      "dispatch": "ag_ea3b354b09_44758_1_0_dispatch",
+      "extract": "ag_ea3b354b09_44758_1_0_extract",
+      "input": "ag_ea3b354b09_44758_1_0_input",
+      "invoke": "ag_ea3b354b09_44758_1_0_invoke"
+    },
+    "replacement": "(*(ag_ea3b354b09_44758_1_0_left == ag_ea3b354b09_44758_1_0_right ? ag_ea3b354b09_44758_1_0_left : ag_ea3b354b09_44758_1_0_right))",
+    "edits": [
+      {
+        "start": 34163,
+        "end": 34163,
+        "before": "",
+        "after": "\nstruct ag_ea3b354b09_44758_1_0_record { unsigned int ag_ea3b354b09_44758_1_0_value; };\nstruct ag_ea3b354b09_44758_1_0_record ag_ea3b354b09_44758_1_0_object = { p_21 };\n"
+      },
+      {
+        "start": 44529,
+        "end": 44948,
+        "before": "l_1031 = (l_1030 = (l_1020 < (((((p_23 , ((**l_1010) = func_37(((((((((p_23 = (((((void*)0 != (*g_81)) | (0x35DEL >= (p_23 , (((l_1008 , (safe_sub_func_int8_t_s_s((((l_1023 , (l_1024 != g_1025)) > 8L) , 0x02L), l_1026))) | 0L) | p_21)))) && l_1023.f0) , p_23)) & p_21) && g_785[0].f0) != p_21) ^ l_999[1]) == l_1028[2][7]) == l_999[1]) != 0x80L), p_22, p_21, &g_8, g_508[6]))) == p_22) , 0xB326L) != l_1029) >= g_56)));",
+        "after": "{\nunsigned int *ag_ea3b354b09_44758_1_0_left = &ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value;\nunsigned int *ag_ea3b354b09_44758_1_0_right = &ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value;\nl_1031 = (l_1030 = (l_1020 < (((((p_23 , ((**l_1010) = func_37(((((((((p_23 = (((((void*)0 != (*g_81)) | (0x35DEL >= (p_23 , (((l_1008 , (safe_sub_func_int8_t_s_s((((l_1023 , (l_1024 != g_1025)) > 8L) , 0x02L), l_1026))) | 0L) | (*(ag_ea3b354b09_44758_1_0_left == ag_ea3b354b09_44758_1_0_right ? ag_ea3b354b09_44758_1_0_left : ag_ea3b354b09_44758_1_0_right)))))) && l_1023.f0) , p_23)) & p_21) && g_785[0].f0) != p_21) ^ l_999[1]) == l_1028[2][7]) == l_999[1]) != 0x80L), p_22, p_21, &g_8, g_508[6]))) == p_22) , 0xB326L) != l_1029) >= g_56)));\n}"
+      }
+    ],
+    "source_map": [
+      {
+        "kind": "identity",
+        "s": [
+          0,
+          34163
+        ],
+        "p0": [
+          0,
+          34163
+        ]
+      },
+      {
+        "kind": "generated",
+        "s": [
+          34163,
+          34163
+        ],
+        "p0": [
+          34163,
+          34332
+        ]
+      },
+      {
+        "kind": "identity",
+        "s": [
+          34163,
+          44529
+        ],
+        "p0": [
+          34332,
+          44698
+        ]
+      },
+      {
+        "kind": "replacement",
+        "s": [
+          44529,
+          44948
+        ],
+        "p0": [
+          44698,
+          45463
+        ]
+      },
+      {
+        "kind": "identity",
+        "s": [
+          44948,
+          123182
+        ],
+        "p0": [
+          45463,
+          123697
+        ]
+      }
+    ],
+    "local_equivalence": {
+      "parameter_initialized": true,
+      "all_parameter_references_read_only": true,
+      "early_nonvolatile_read_has_no_observable_effect": true,
+      "value_type_preserved": true,
+      "new_objects_private": true,
+      "new_calls_pure_identity": false,
+      "original_expression_evaluation_path_preserved": true,
+      "global_ub_proof": false
+    }
+  },
+  "value_route": {
+    "parameter": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+      "line": 403,
+      "column": 35,
+      "offset": 34125,
+      "start_offset": 34115,
+      "end_offset": 34129,
+      "node_identity": "c:P0.c@34115@F@func_20@p_21:PARM_DECL:34115",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "uint32_t  p_21",
+      "usr": "c:P0.c@34115@F@func_20@p_21",
+      "referenced_usr": "c:P0.c@34115@F@func_20@p_21",
+      "kind": "PARM_DECL"
+    },
+    "initializer_read": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+      "line": 406,
+      "column": 74,
+      "offset": 34324,
+      "start_offset": 34324,
+      "end_offset": 34328,
+      "node_identity": "c:P0.c@34115@F@func_20@p_21:DECL_REF_EXPR:34324",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_21",
+      "usr": "",
+      "referenced_usr": "c:P0.c@34115@F@func_20@p_21",
+      "kind": "DECL_REF_EXPR"
+    },
+    "object": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+      "line": 406,
+      "column": 39,
+      "offset": 34289,
+      "start_offset": 34251,
+      "end_offset": 34330,
+      "node_identity": "c:P0.c@34251@F@func_20@ag_ea3b354b09_44758_1_0_object:VAR_DECL:34251",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "struct ag_ea3b354b09_44758_1_0_record ag_ea3b354b09_44758_1_0_object = { p_21 }",
+      "usr": "c:P0.c@34251@F@func_20@ag_ea3b354b09_44758_1_0_object",
+      "referenced_usr": "c:P0.c@34251@F@func_20@ag_ea3b354b09_44758_1_0_object",
+      "kind": "VAR_DECL"
+    },
+    "original_operation": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+      "line": 552,
+      "column": 127,
+      "offset": 45043,
+      "start_offset": 45043,
+      "end_offset": 45275,
+      "node_identity": ":BINARY_OPERATOR:45043",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "((l_1008 , (safe_sub_func_int8_t_s_s((((l_1023 , (l_1024 != g_1025)) > 8L) , 0x02L), l_1026))) | 0L) | (*(ag_ea3b354b09_44758_1_0_left == ag_ea3b354b09_44758_1_0_right ? ag_ea3b354b09_44758_1_0_left : ag_ea3b354b09_44758_1_0_right))",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "BINARY_OPERATOR"
+    },
+    "route_expression": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+      "line": 552,
+      "column": 230,
+      "offset": 45146,
+      "start_offset": 45146,
+      "end_offset": 45275,
+      "node_identity": ":PAREN_EXPR:45146",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "(*(ag_ea3b354b09_44758_1_0_left == ag_ea3b354b09_44758_1_0_right ? ag_ea3b354b09_44758_1_0_left : ag_ea3b354b09_44758_1_0_right))",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "PAREN_EXPR"
+    },
+    "record_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record",
+    "helper_usr": null,
+    "helper_anchor": null,
+    "cross_function_value_route": false,
+    "proof": "immutable initialized parameter -> private member initialized once -> known pointer/identity-callback -> same original binary operation"
+  },
+  "formal_witness": {
+    "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "seed_id": "ea3b354b090dd68d80abe17b2bef359c2147fa3d321270fa03e094db764144af",
+    "constraint_id": "C11:6.5.3.2p1",
+    "provenance": {
+      "source_kind": "Enriched",
+      "original_path": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+      "original_sha256": "ea3b354b090dd68d80abe17b2bef359c2147fa3d321270fa03e094db764144af",
+      "active_enrichment": {
+        "schema": "stage2g-enrichment-v1",
+        "source_kind": "Enriched",
+        "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+        "s_sha256": "ea3b354b090dd68d80abe17b2bef359c2147fa3d321270fa03e094db764144af",
+        "p0_sha256": "6ca6286b19453f07ee15abec384ee83627cbb495e163eaa014dfb3d49dbc9dd3",
+        "position": {
+          "position_id": "ea3b354b090dd68d80abe17b2bef359c2147fa3d321270fa03e094db764144af:c:seed_0023_9745728.c@34115@F@func_20@p_21:44758",
+          "read": {
+            "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+            "line": 546,
+            "column": 254,
+            "offset": 44758,
+            "start_offset": 44758,
+            "end_offset": 44762,
+            "node_identity": "c:seed_0023_9745728.c@34115@F@func_20@p_21:DECL_REF_EXPR:44758",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "p_21",
+            "usr": "",
+            "referenced_usr": "c:seed_0023_9745728.c@34115@F@func_20@p_21",
+            "kind": "DECL_REF_EXPR"
+          },
+          "declaration": {
+            "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+            "line": 403,
+            "column": 35,
+            "offset": 34125,
+            "start_offset": 34115,
+            "end_offset": 34129,
+            "node_identity": "c:seed_0023_9745728.c@34115@F@func_20@p_21:PARM_DECL:34115",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "uint32_t  p_21",
+            "usr": "c:seed_0023_9745728.c@34115@F@func_20@p_21",
+            "referenced_usr": "c:seed_0023_9745728.c@34115@F@func_20@p_21",
+            "kind": "PARM_DECL"
+          },
+          "function_offset": 34091,
+          "body_start": 34162,
+          "kind": "UINT",
+          "parameter": "p_21",
+          "function_name": "func_20",
+          "function_usr": "c:seed_0023_9745728.c@F@func_20",
+          "operator": "|",
+          "operation": {
+            "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+            "line": 546,
+            "column": 151,
+            "offset": 44655,
+            "start_offset": 44655,
+            "end_offset": 44762,
+            "node_identity": ":BINARY_OPERATOR:44655",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "((l_1008 , (safe_sub_func_int8_t_s_s((((l_1023 , (l_1024 != g_1025)) > 8L) , 0x02L), l_1026))) | 0L) | p_21",
+            "usr": "",
+            "referenced_usr": "",
+            "kind": "BINARY_OPERATOR"
+          },
+          "unit": [
+            44529,
+            44948
+          ],
+          "nested_supported": true,
+          "ancestor_context": [
+            "BINARY_OPERATOR",
+            "BINARY_OPERATOR",
+            "COMPOUND_STMT"
+          ]
+        },
+        "enrichment_family": "nested_two_addresses",
+        "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+        "semantic_context": {
+          "family": "nested_two_addresses",
+          "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+          "input_type": "UINT",
+          "input_role": "immutable_by_value_parameter",
+          "function_role": "ordinary_function",
+          "original_operator": "|",
+          "original_context": [
+            "BINARY_OPERATOR",
+            "BINARY_OPERATOR",
+            "COMPOUND_STMT"
+          ],
+          "address_points": 2,
+          "cross_statement": true,
+          "cross_scope": true,
+          "cross_function": false,
+          "target_use_points": 2,
+          "record_shape": "single_integer_member",
+          "access_form": "private_pointer_dereference",
+          "value_route": "private member -> address -> pointer selection -> dereference",
+          "typedef_depth": 0
+        },
+        "semantic_context_signature": "d525395b600c86ba8bb323096ab18cf5453f39db005aeb7f563338c63064d439",
+        "names": {
+          "record": "ag_ea3b354b09_44758_1_0_record",
+          "other": "ag_ea3b354b09_44758_1_0_other",
+          "value": "ag_ea3b354b09_44758_1_0_value",
+          "object": "ag_ea3b354b09_44758_1_0_object",
+          "left": "ag_ea3b354b09_44758_1_0_left",
+          "right": "ag_ea3b354b09_44758_1_0_right",
+          "root": "ag_ea3b354b09_44758_1_0_root",
+          "middle": "ag_ea3b354b09_44758_1_0_middle",
+          "argument": "ag_ea3b354b09_44758_1_0_argument",
+          "callback": "ag_ea3b354b09_44758_1_0_callback",
+          "dispatch_type": "ag_ea3b354b09_44758_1_0_dispatch_type",
+          "dispatch": "ag_ea3b354b09_44758_1_0_dispatch",
+          "extract": "ag_ea3b354b09_44758_1_0_extract",
+          "input": "ag_ea3b354b09_44758_1_0_input",
+          "invoke": "ag_ea3b354b09_44758_1_0_invoke"
+        },
+        "replacement": "(*(ag_ea3b354b09_44758_1_0_left == ag_ea3b354b09_44758_1_0_right ? ag_ea3b354b09_44758_1_0_left : ag_ea3b354b09_44758_1_0_right))",
+        "edits": [
+          {
+            "start": 34163,
+            "end": 34163,
+            "before": "",
+            "after": "\nstruct ag_ea3b354b09_44758_1_0_record { unsigned int ag_ea3b354b09_44758_1_0_value; };\nstruct ag_ea3b354b09_44758_1_0_record ag_ea3b354b09_44758_1_0_object = { p_21 };\n"
+          },
+          {
+            "start": 44529,
+            "end": 44948,
+            "before": "l_1031 = (l_1030 = (l_1020 < (((((p_23 , ((**l_1010) = func_37(((((((((p_23 = (((((void*)0 != (*g_81)) | (0x35DEL >= (p_23 , (((l_1008 , (safe_sub_func_int8_t_s_s((((l_1023 , (l_1024 != g_1025)) > 8L) , 0x02L), l_1026))) | 0L) | p_21)))) && l_1023.f0) , p_23)) & p_21) && g_785[0].f0) != p_21) ^ l_999[1]) == l_1028[2][7]) == l_999[1]) != 0x80L), p_22, p_21, &g_8, g_508[6]))) == p_22) , 0xB326L) != l_1029) >= g_56)));",
+            "after": "{\nunsigned int *ag_ea3b354b09_44758_1_0_left = &ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value;\nunsigned int *ag_ea3b354b09_44758_1_0_right = &ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value;\nl_1031 = (l_1030 = (l_1020 < (((((p_23 , ((**l_1010) = func_37(((((((((p_23 = (((((void*)0 != (*g_81)) | (0x35DEL >= (p_23 , (((l_1008 , (safe_sub_func_int8_t_s_s((((l_1023 , (l_1024 != g_1025)) > 8L) , 0x02L), l_1026))) | 0L) | (*(ag_ea3b354b09_44758_1_0_left == ag_ea3b354b09_44758_1_0_right ? ag_ea3b354b09_44758_1_0_left : ag_ea3b354b09_44758_1_0_right)))))) && l_1023.f0) , p_23)) & p_21) && g_785[0].f0) != p_21) ^ l_999[1]) == l_1028[2][7]) == l_999[1]) != 0x80L), p_22, p_21, &g_8, g_508[6]))) == p_22) , 0xB326L) != l_1029) >= g_56)));\n}"
+          }
+        ],
+        "source_map": [
+          {
+            "kind": "identity",
+            "s": [
+              0,
+              34163
+            ],
+            "p0": [
+              0,
+              34163
+            ]
+          },
+          {
+            "kind": "generated",
+            "s": [
+              34163,
+              34163
+            ],
+            "p0": [
+              34163,
+              34332
+            ]
+          },
+          {
+            "kind": "identity",
+            "s": [
+              34163,
+              44529
+            ],
+            "p0": [
+              34332,
+              44698
+            ]
+          },
+          {
+            "kind": "replacement",
+            "s": [
+              44529,
+              44948
+            ],
+            "p0": [
+              44698,
+              45463
+            ]
+          },
+          {
+            "kind": "identity",
+            "s": [
+              44948,
+              123182
+            ],
+            "p0": [
+              45463,
+              123697
+            ]
+          }
+        ],
+        "local_equivalence": {
+          "parameter_initialized": true,
+          "all_parameter_references_read_only": true,
+          "early_nonvolatile_read_has_no_observable_effect": true,
+          "value_type_preserved": true,
+          "new_objects_private": true,
+          "new_calls_pure_identity": false,
+          "original_expression_evaluation_path_preserved": true,
+          "global_ub_proof": false
+        }
+      }
+    },
+    "changed_declaration": {
+      "field_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+      "record_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record",
+      "p0": {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+        "line": 405,
+        "column": 54,
+        "offset": 34217,
+        "start_offset": 34204,
+        "end_offset": 34246,
+        "node_identity": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value:FIELD_DECL:34204",
+        "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+        "source_text": "unsigned int ag_ea3b354b09_44758_1_0_value",
+        "usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+        "referenced_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+        "kind": "FIELD_DECL"
+      },
+      "p1": {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_075/P1.c",
+        "line": 405,
+        "column": 54,
+        "offset": 34217,
+        "start_offset": 34204,
+        "end_offset": 34251,
+        "node_identity": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value:FIELD_DECL:34204",
+        "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+        "source_text": "unsigned int ag_ea3b354b09_44758_1_0_value : 32",
+        "p1_ast_observed": false,
+        "referenced_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+        "usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+        "kind": "FIELD_DECL"
+      },
+      "record_p0": {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+        "line": 405,
+        "column": 8,
+        "offset": 34171,
+        "start_offset": 34164,
+        "end_offset": 34249,
+        "node_identity": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record:STRUCT_DECL:34164",
+        "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+        "source_text": "struct ag_ea3b354b09_44758_1_0_record { unsigned int ag_ea3b354b09_44758_1_0_value; }",
+        "usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record",
+        "referenced_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record",
+        "kind": "STRUCT_DECL"
+      },
+      "record_p1": {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_075/P1.c",
+        "line": 405,
+        "column": 8,
+        "offset": 34171,
+        "start_offset": 34164,
+        "end_offset": 34254,
+        "node_identity": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record:STRUCT_DECL:34164",
+        "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+        "source_text": "struct ag_ea3b354b09_44758_1_0_record { unsigned int ag_ea3b354b09_44758_1_0_value : 32; }",
+        "p1_ast_observed": false,
+        "referenced_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record",
+        "usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record",
+        "kind": "STRUCT_DECL"
+      },
+      "before_bitfield": false,
+      "after_bitfield": true,
+      "edit": {
+        "start": 34204,
+        "end": 34246,
+        "before": "unsigned int ag_ea3b354b09_44758_1_0_value",
+        "after": "unsigned int ag_ea3b354b09_44758_1_0_value : 32"
+      }
+    },
+    "width_proof": {
+      "base_type": "unsigned int",
+      "canonical_kind": "UINT",
+      "width": 32,
+      "target_profile": {
+        "status": "VERIFIED",
+        "facts": {
+          "int_width": 32,
+          "sizeof_int": 4,
+          "char_bit": 8,
+          "int_max": 2147483647
+        },
+        "evidence": {
+          "gcc": {
+            "command": [
+              "/opt/gcc-15.1.0/bin/gcc",
+              "-std=c11",
+              "-dM",
+              "-E",
+              "-x",
+              "c",
+              "/dev/null"
+            ],
+            "returncode": 0,
+            "stdout": "#define __DBL_MIN_EXP__ (-1021)\n#define __LDBL_MANT_DIG__ 64\n#define __UINT_LEAST16_MAX__ 0xffff\n#define __FLT16_HAS_QUIET_NAN__ 1\n#define __ATOMIC_ACQUIRE 2\n#define __WCHAR_MAX__ 0x7fffffff\n#define __FLT128_MAX_10_EXP__ 4932\n#define __FLT_MIN__ 1.17549435082228750796873653722224568e-38F\n#define __GCC_IEC_559_COMPLEX 2\n#define __UINT_LEAST8_TYPE__ unsigned char\n#define __SIZEOF_FLOAT80__ 16\n#define __BFLT16_DENORM_MIN__ 9.18354961579912115600575419704879436e-41BF16\n#define __INTMAX_C(c) c ## L\n#define __CHAR_BIT__ 8\n#define __UINT8_MAX__ 0xff\n#define __SCHAR_WIDTH__ 8\n#define __WINT_MAX__ 0xffffffffU\n#define __FLT32_MIN_EXP__ (-125)\n#define __BFLT16_NORM_MAX__ 3.38953138925153547590470800371487867e+38BF16\n#define __BFLT16_MIN_10_EXP__ (-37)\n#define __ORDER_LITTLE_ENDIAN__ 1234\n#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1\n#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1\n#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_8 1\n#define __GCC_ATOMIC_CHAR_LOCK_FREE 2\n#define __GCC_IEC_559 2\n#define __FLT32X_DECIMAL_DIG__ 17\n#define __FLT_EVAL_METHOD__ 0\n#define __FLT64_DECIMAL_DIG__ 17\n#define __GCC_ATOMIC_CHAR32_T_LOCK_FREE 2\n#define __UINT_FAST64_MAX__ 0xffffffffffffffffUL\n#define __SIG_ATOMIC_TYPE__ int\n#define __DBL_MIN_10_EXP__ (-307)\n#define __FINITE_MATH_ONLY__ 0\n#define __FLT32X_MAX_EXP__ 1024\n#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1\n#define __FLT32_HAS_DENORM__ 1\n#define __UINT_FAST8_MAX__ 0xff\n#define __FLT32_MAX_10_EXP__ 38\n#define __DEC64_MAX_EXP__ 385\n#define __INT8_C(c) c\n#define __INT_LEAST8_WIDTH__ 8\n#define __UINT_LEAST64_MAX__ 0xffffffffffffffffUL\n#define __SHRT_MAX__ 0x7fff\n#define __LDBL_MAX__ 1.18973149535723176502126385303097021e+4932L\n#define __FLT64X_MAX_10_EXP__ 4932\n#define __BFLT16_MAX_10_EXP__ 38\n#define __BFLT16_MAX_EXP__ 128\n#define __LDBL_IS_IEC_60559__ 1\n#define __FLT64X_HAS_QUIET_NAN__ 1\n#define __UINT_LEAST8_MAX__ 0xff\n#define __GCC_ATOMIC_BOOL_LOCK_FREE 2\n#define __FLT128_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F128\n#define __UINTMAX_TYPE__ long unsigned int\n#define __BFLT16_DECIMAL_DIG__ 4\n#define __linux 1\n#define __DEC32_EPSILON__ 1E-6DF\n#define __FLT_EVAL_METHOD_TS_18661_3__ 0\n#define __UINT32_MAX__ 0xffffffffU\n#define __DBL_DENORM_MIN__ ((double)4.94065645841246544176568792868221372e-324L)\n#define __FLT128_MIN_EXP__ (-16381)\n#define __DEC64X_MAX_EXP__ 6145\n#define __WINT_MIN__ 0U\n#define __FLT128_MIN_10_EXP__ (-4931)\n#define __FLT32X_IS_IEC_60559__ 1\n#define __INT_LEAST16_WIDTH__ 16\n#define __SCHAR_MAX__ 0x7f\n#define __FLT128_MANT_DIG__ 113\n#define __WCHAR_MIN__ (-__WCHAR_MAX__ - 1)\n#define __INT64_C(c) c ## L\n#define __GCC_ATOMIC_POINTER_LOCK_FREE 2\n#define __ATOMIC_SEQ_CST 5\n#define __unix 1\n#define __INT_LEAST64_MAX__ 0x7fffffffffffffffL\n#define __FLT32X_MANT_DIG__ 53\n#define __FLT64X_EPSILON__ 1.08420217248550443400745280086994171e-19F64x\n#define __STDC_HOSTED__ 1\n#define __DEC64_MIN_EXP__ (-382)\n#define __DBL_DIG__ 15\n#define __STDC_EMBED_EMPTY__ 2\n#define __FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F\n#define __SHRT_WIDTH__ 16\n#define __FLT32_IS_IEC_60559__ 1\n#define __LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L\n#define __STDC_UTF_16__ 1\n#define __DBL_IS_IEC_60559__ 1\n#define __DEC32_MAX__ 9.999999E96DF\n#define __FLT64X_DENORM_MIN__ 3.64519953188247460252840593361941982e-4951F64x\n#define __FLT32X_HAS_INFINITY__ 1\n#define __unix__ 1\n#define __INT_WIDTH__ 32\n#define __STDC_IEC_559__ 1\n#define __STDC_ISO_10646__ 201706L\n#define __DECIMAL_DIG__ 21\n#define __STDC_IEC_559_COMPLEX__ 1\n#define __FLT64_EPSILON__ 2.22044604925031308084726333618164062e-16F64\n#define __gnu_linux__ 1\n#define __FLT64X_MIN_10_EXP__ (-4931)\n#define __LDBL_HAS_QUIET_NAN__ 1\n#define __FLT16_MIN_EXP__ (-13)\n#define __FLT64_MANT_DIG__ 53\n#define __FLT64X_MANT_DIG__ 64\n#define __BFLT16_DIG__ 2\n#define __GNUC__ 15\n#define __MMX__ 1\n#define __FLT_HAS_DENORM__ 1\n#define __SIZEOF_LONG_DOUBLE__ 16\n#define __LDBL_DIG__ 18\n#define __BIGGEST_ALIGNMENT__ 16\n#define __FLT64_MAX_10_EXP__ 308\n#define __BFLT16_IS_IEC_60559__ 0\n#define __FLT16_MAX_10_EXP__ 4\n#define __DBL_MAX__ ((double)1.79769313486231570814527423731704357e+308L)\n#define __INT_FAST32_MAX__ 0x7fffffffffffffffL\n#define __DBL_HAS_INFINITY__ 1\n#define __INT64_MAX__ 0x7fffffffffffffffL\n#define __SIZEOF_FLOAT__ 4\n#define __HAVE_SPECULATION_SAFE_VALUE 1\n#define __DEC32_MIN_EXP__ (-94)\n#define __INTPTR_WIDTH__ 64\n#define __UINT_LEAST32_MAX__ 0xffffffffU\n#define __FLT32X_HAS_DENORM__ 1\n#define __INT_FAST16_TYPE__ long int\n#define __STRICT_ANSI__ 1\n#define __MMX_WITH_SSE__ 1\n#define __LDBL_HAS_DENORM__ 1\n#define __SEG_GS 1\n#define __BFLT16_EPSILON__ 7.81250000000000000000000000000000000e-3BF16\n#define __FLT128_HAS_INFINITY__ 1\n#define __DEC32_MIN__ 1E-95DF\n#define __DBL_MAX_EXP__ 1024\n#define __WCHAR_WIDTH__ 32\n#define __FLT32_MAX__ 3.40282346638528859811704183484516925e+38F32\n#define __DEC128_EPSILON__ 1E-33DL\n#define __FLT16_DECIMAL_DIG__ 5\n#define __SSE2_MATH__ 1\n#define __ATOMIC_HLE_RELEASE 131072\n#define __PTRDIFF_MAX__ 0x7fffffffffffffffL\n#define __amd64 1\n#define __DEC64X_MAX__ 9.999999999999999999999999999999999E6144D64x\n#define __ATOMIC_HLE_ACQUIRE 65536\n#define __LONG_LONG_MAX__ 0x7fffffffffffffffLL\n#define __SIZEOF_SIZE_T__ 8\n#define __BFLT16_HAS_INFINITY__ 1\n#define __FLT64X_MIN_EXP__ (-16381)\n#define __SIZEOF_WINT_T__ 4\n#define __LONG_LONG_WIDTH__ 64\n#define __FLT32_MAX_EXP__ 128\n#define __GXX_ABI_VERSION 1020\n#define __FLT_MIN_EXP__ (-125)\n#define __GCC_HAVE_DWARF2_CFI_ASM 1\n#define __INT16_MAX__ 0x7fff\n#define __x86_64 1\n#define __INT_FAST64_TYPE__ long int\n#define __BFLT16_MAX__ 3.38953138925153547590470800371487867e+38BF16\n#define __BFLT16_HAS_DENORM__ 1\n#define __FLT64_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F64\n#define __FLT16_DENORM_MIN__ 5.96046447753906250000000000000000000e-8F16\n#define __FLT128_EPSILON__ 1.92592994438723585305597794258492732e-34F128\n#define __FLT64X_NORM_MAX__ 1.18973149535723176502126385303097021e+4932F64x\n#define __SIZEOF_POINTER__ 8\n#define __SIZE_TYPE__ long unsigned int\n#define __LP64__ 1\n#define __DBL_HAS_QUIET_NAN__ 1\n#define __FLT32X_EPSILON__ 2.22044604925031308084726333618164062e-16F32x\n#define __LDBL_MAX_EXP__ 16384\n#define __DECIMAL_BID_FORMAT__ 1\n#define __FLT64_MIN_EXP__ (-1021)\n#define __FLT64_MIN_10_EXP__ (-307)\n#define __FLT16_MIN_10_EXP__ (-4)\n#define __FLT64X_DECIMAL_DIG__ 21\n#define __DEC128_MIN__ 1E-6143DL\n#define __REGISTER_PREFIX__ \n#define __UINT16_MAX__ 0xffff\n#define __DBL_HAS_DENORM__ 1\n#define __FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32\n#define __UINT8_TYPE__ unsigned char\n#define __FLT_DIG__ 6\n#define __NO_INLINE__ 1\n#define __DEC_EVAL_METHOD__ 2\n#define __FLT_MANT_DIG__ 24\n#define __LDBL_DECIMAL_DIG__ 21\n#define __VERSION__ \"15.1.0\"\n#define __UINT64_C(c) c ## UL\n#define __DEC64X_MIN__ 1E-6143D64x\n#define _STDC_PREDEF_H 1\n#define __INT_LEAST32_MAX__ 0x7fffffff\n#define __GCC_ATOMIC_INT_LOCK_FREE 2\n#define __FLT128_MAX_EXP__ 16384\n#define __FLT32_MANT_DIG__ 24\n#define __FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\n#define __FLT32X_MIN_EXP__ (-1021)\n#define __STDC_IEC_60559_COMPLEX__ 201404L\n#define __BFLT16_MIN__ 1.17549435082228750796873653722224568e-38BF16\n#define __FLT128_HAS_DENORM__ 1\n#define __FLT32_DECIMAL_DIG__ 9\n#define __FLT128_DIG__ 33\n#define __INT32_C(c) c\n#define __DEC64_EPSILON__ 1E-15DD\n#define __ORDER_PDP_ENDIAN__ 3412\n#define __DEC128_MIN_EXP__ (-6142)\n#define __DEC128_MAX__ 9.999999999999999999999999999999999E6144DL\n#define __INT_FAST32_TYPE__ long int\n#define __UINT_LEAST16_TYPE__ short unsigned int\n#define __DEC64X_MANT_DIG__ 34\n#define __DEC128_MAX_EXP__ 6145\n#define __UINT64_MAX__ 0xffffffffffffffffUL\n#define __FLT_IS_IEC_60559__ 1\n#define __GNUC_WIDE_EXECUTION_CHARSET_NAME \"UTF-32LE\"\n#define __FLT64X_DIG__ 18\n#define __INT8_TYPE__ signed char\n#define __ELF__ 1\n#define __GCC_ASM_FLAG_OUTPUTS__ 1\n#define __UINT32_TYPE__ unsigned int\n#define __BFLT16_HAS_QUIET_NAN__ 1\n#define __FLT_RADIX__ 2\n#define __INT_LEAST16_TYPE__ short int\n#define __LDBL_EPSILON__ 1.08420217248550443400745280086994171e-19L\n#define __UINTMAX_C(c) c ## UL\n#define __DEC64X_EPSILON__ 1E-33D64x\n#define __FLT16_DIG__ 3\n#define __SSE_MATH__ 1\n#define __k8 1\n#define __FLT32X_MIN__ 2.22507385850720138309023271733240406e-308F32x\n#define __SIG_ATOMIC_MAX__ 0x7fffffff\n#define __GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\n#define __USER_LABEL_PREFIX__ \n#define __STDC_IEC_60559_BFP__ 201404L\n#define __SIZEOF_PTRDIFF_T__ 8\n#define __FLT64X_HAS_INFINITY__ 1\n#define __SIZEOF_LONG__ 8\n#define __FLT64_IS_IEC_60559__ 1\n#define __x86_64__ 1\n#define __FLT16_IS_IEC_60559__ 1\n#define __FLT16_MAX_EXP__ 16\n#define __DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\n#define __STDC_EMBED_FOUND__ 1\n#define __INT_FAST16_MAX__ 0x7fffffffffffffffL\n#define __GCC_CONSTRUCTIVE_SIZE 64\n#define __FLT64_DIG__ 15\n#define __UINT_FAST32_MAX__ 0xffffffffffffffffUL\n#define __UINT_LEAST64_TYPE__ long unsigned int\n#define __FLT16_EPSILON__ 9.76562500000000000000000000000000000e-4F16\n#define __FLT_HAS_QUIET_NAN__ 1\n#define __FLT_MAX_10_EXP__ 38\n#define __LONG_MAX__ 0x7fffffffffffffffL\n#define __FLT64X_HAS_DENORM__ 1\n#define __DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL\n#define __FLT_HAS_INFINITY__ 1\n#define __GNUC_EXECUTION_CHARSET_NAME \"UTF-8\"\n#define __UINT_FAST16_TYPE__ long unsigned int\n#define __DEC64_MAX__ 9.999999999999999E384DD\n#define __STDC_EMBED_NOT_FOUND__ 0\n#define __INT_FAST32_WIDTH__ 64\n#define __CHAR16_TYPE__ short unsigned int\n#define __PRAGMA_REDEFINE_EXTNAME 1\n#define __DEC64X_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143D64x\n#define __SIZE_WIDTH__ 64\n#define __SEG_FS 1\n#define __BITINT_MAXWIDTH__ 65535\n#define __INT_LEAST16_MAX__ 0x7fff\n#define __FLT16_NORM_MAX__ 6.55040000000000000000000000000000000e+4F16\n#define __DEC64_MANT_DIG__ 16\n#define __FLT32_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F32\n#define __SIG_ATOMIC_WIDTH__ 32\n#define __INT_LEAST64_TYPE__ long int\n#define __INT16_TYPE__ short int\n#define __INT_LEAST8_TYPE__ signed char\n#define __FLT16_MAX__ 6.55040000000000000000000000000000000e+4F16\n#define __FLT128_MIN__ 3.36210314311209350626267781732175260e-4932F128\n#define __STDC_VERSION__ 201112L\n#define __SIZEOF_INT__ 4\n#define __DEC32_MAX_EXP__ 97\n#define __INT_FAST8_MAX__ 0x7f\n#define __FLT128_MAX__ 1.18973149535723176508575932662800702e+4932F128\n#define __INTPTR_MAX__ 0x7fffffffffffffffL\n#define __FLT64_HAS_QUIET_NAN__ 1\n#define __FLT32_MIN_10_EXP__ (-37)\n#define __FLT32X_DIG__ 15\n#define __UINT16_C(c) c\n#define __PTRDIFF_WIDTH__ 64\n#define __INT_FAST16_WIDTH__ 64\n#define __FLT64_HAS_INFINITY__ 1\n#define __FLT64X_MAX__ 1.18973149535723176502126385303097021e+4932F64x\n#define __FLT16_HAS_INFINITY__ 1\n#define __SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\n#define __code_model_small__ 1\n#define __GCC_ATOMIC_LONG_LOCK_FREE 2\n#define __DEC32_MANT_DIG__ 7\n#define __FLT16_MANT_DIG__ 11\n#define __k8__ 1\n#define __INTPTR_TYPE__ long int\n#define __UINT16_TYPE__ short unsigned int\n#define __WCHAR_TYPE__ int\n#define __UINTPTR_MAX__ 0xffffffffffffffffUL\n#define __INT_FAST64_WIDTH__ 64\n#define __LDBL_HAS_INFINITY__ 1\n#define __INT_FAST64_MAX__ 0x7fffffffffffffffL\n#define __GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\n#define __FLT_NORM_MAX__ 3.40282346638528859811704183484516925e+38F\n#define __FLT32_HAS_INFINITY__ 1\n#define __FLT64X_MAX_EXP__ 16384\n#define __UINT_FAST64_TYPE__ long unsigned int\n#define __BFLT16_MIN_EXP__ (-125)\n#define __INT_MAX__ 0x7fffffff\n#define __linux__ 1\n#define __INT64_TYPE__ long int\n#define __FLT_MAX_EXP__ 128\n#define __ORDER_BIG_ENDIAN__ 4321\n#define __DBL_MANT_DIG__ 53\n#define __SIZEOF_FLOAT128__ 16\n#define __BFLT16_MANT_DIG__ 8\n#define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 2\n#define __DEC64_MIN__ 1E-383DD\n#define __WINT_TYPE__ unsigned int\n#define __UINT_LEAST32_TYPE__ unsigned int\n#define __SIZEOF_SHORT__ 2\n#define __FLT32_NORM_MAX__ 3.40282346638528859811704183484516925e+38F32\n#define __SSE__ 1\n#define __LDBL_MIN_EXP__ (-16381)\n#define __FLT64_MAX__ 1.79769313486231570814527423731704357e+308F64\n#define __DEC64X_MIN_EXP__ (-6142)\n#define __amd64__ 1\n#define __WINT_WIDTH__ 32\n#define __INT_LEAST8_MAX__ 0x7f\n#define __INT_LEAST64_WIDTH__ 64\n#define __FLT32X_MAX_10_EXP__ 308\n#define __SIZEOF_INT128__ 16\n#define __FLT16_MIN__ 6.10351562500000000000000000000000000e-5F16\n#define __FLT64X_IS_IEC_60559__ 1\n#define __LDBL_MAX_10_EXP__ 4932\n#define __ATOMIC_RELAXED 0\n#define __DBL_EPSILON__ ((double)2.22044604925031308084726333618164062e-16L)\n#define __INT_LEAST32_TYPE__ int\n#define _LP64 1\n#define __UINT8_C(c) c\n#define __FLT64_MAX_EXP__ 1024\n#define __SIZEOF_WCHAR_T__ 4\n#define __UINT64_TYPE__ long unsigned int\n#define __GNUC_PATCHLEVEL__ 0\n#define __FLT128_NORM_MAX__ 1.18973149535723176508575932662800702e+4932F128\n#define __FLT64_NORM_MAX__ 1.79769313486231570814527423731704357e+308F64\n#define __FLT128_HAS_QUIET_NAN__ 1\n#define __INTMAX_MAX__ 0x7fffffffffffffffL\n#define __INT_FAST8_TYPE__ signed char\n#define __FLT64X_MIN__ 3.36210314311209350626267781732175260e-4932F64x\n#define __GNUC_STDC_INLINE__ 1\n#define __FLT64_HAS_DENORM__ 1\n#define __FLT32_EPSILON__ 1.19209289550781250000000000000000000e-7F32\n#define __FLT16_HAS_DENORM__ 1\n#define __DBL_DECIMAL_DIG__ 17\n#define __STDC_UTF_32__ 1\n#define __INT_FAST8_WIDTH__ 8\n#define __FXSR__ 1\n#define __FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x\n#define __DBL_NORM_MAX__ ((double)1.79769313486231570814527423731704357e+308L)\n#define __BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\n#define __GCC_DESTRUCTIVE_SIZE 64\n#define __INTMAX_WIDTH__ 64\n#define __FLT32_DIG__ 6\n#define __UINT32_C(c) c ## U\n#define __FLT_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F\n#define __FLT128_IS_IEC_60559__ 1\n#define __INT8_MAX__ 0x7f\n#define __LONG_WIDTH__ 64\n#define __DBL_MIN__ ((double)2.22507385850720138309023271733240406e-308L)\n#define __INT32_MAX__ 0x7fffffff\n#define __UINT_FAST32_TYPE__ long unsigned int\n#define __FLT32X_NORM_MAX__ 1.79769313486231570814527423731704357e+308F32x\n#define __CHAR32_TYPE__ unsigned int\n#define __FLT_MAX__ 3.40282346638528859811704183484516925e+38F\n#define __SSE2__ 1\n#define __INT32_TYPE__ int\n#define __SIZEOF_DOUBLE__ 8\n#define __FLT_MIN_10_EXP__ (-37)\n#define __FLT64_MIN__ 2.22507385850720138309023271733240406e-308F64\n#define __INT_LEAST32_WIDTH__ 32\n#define __INTMAX_TYPE__ long int\n#define __FLT32X_HAS_QUIET_NAN__ 1\n#define __ATOMIC_CONSUME 1\n#define __GNUC_MINOR__ 1\n#define __UINTMAX_MAX__ 0xffffffffffffffffUL\n#define __FLT32X_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F32x\n#define __DBL_MAX_10_EXP__ 308\n#define __LDBL_DENORM_MIN__ 3.64519953188247460252840593361941982e-4951L\n#define __INT16_C(c) c\n#define __ATOMIC_RELEASE 3\n#define __STDC__ 1\n#define __PTRDIFF_TYPE__ long int\n#define __FLT32X_MIN_10_EXP__ (-307)\n#define __UINTPTR_TYPE__ long unsigned int\n#define __DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\n#define __DEC128_MANT_DIG__ 34\n#define __LDBL_MIN_10_EXP__ (-4931)\n#define __SIZEOF_LONG_LONG__ 8\n#define __FLT128_DECIMAL_DIG__ 36\n#define __GCC_ATOMIC_LLONG_LOCK_FREE 2\n#define __FLT32_HAS_QUIET_NAN__ 1\n#define __FLT_DECIMAL_DIG__ 9\n#define __UINT_FAST16_MAX__ 0xffffffffffffffffUL\n#define __LDBL_NORM_MAX__ 1.18973149535723176502126385303097021e+4932L\n#define __GCC_ATOMIC_SHORT_LOCK_FREE 2\n#define __SIZE_MAX__ 0xffffffffffffffffUL\n#define __UINT_FAST8_TYPE__ unsigned char\n#define __ATOMIC_ACQ_REL 4\n",
+            "stderr": "",
+            "status": "ok",
+            "exception": null,
+            "elapsed_seconds": 0.007089095190167427
+          },
+          "clang": {
+            "command": [
+              "/opt/llvm-22.1.0/bin/clang-22",
+              "-std=c11",
+              "-dM",
+              "-E",
+              "-x",
+              "c",
+              "/dev/null"
+            ],
+            "returncode": 0,
+            "stdout": "#define _LP64 1\n#define __ATOMIC_ACQUIRE 2\n#define __ATOMIC_ACQ_REL 4\n#define __ATOMIC_CONSUME 1\n#define __ATOMIC_RELAXED 0\n#define __ATOMIC_RELEASE 3\n#define __ATOMIC_SEQ_CST 5\n#define __BIGGEST_ALIGNMENT__ 16\n#define __BITINT_MAXWIDTH__ 8388608\n#define __BOOL_WIDTH__ 1\n#define __BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\n#define __CHAR16_TYPE__ unsigned short\n#define __CHAR32_TYPE__ unsigned int\n#define __CHAR_BIT__ 8\n#define __CLANG_ATOMIC_BOOL_LOCK_FREE 2\n#define __CLANG_ATOMIC_CHAR16_T_LOCK_FREE 2\n#define __CLANG_ATOMIC_CHAR32_T_LOCK_FREE 2\n#define __CLANG_ATOMIC_CHAR_LOCK_FREE 2\n#define __CLANG_ATOMIC_INT_LOCK_FREE 2\n#define __CLANG_ATOMIC_LLONG_LOCK_FREE 2\n#define __CLANG_ATOMIC_LONG_LOCK_FREE 2\n#define __CLANG_ATOMIC_POINTER_LOCK_FREE 2\n#define __CLANG_ATOMIC_SHORT_LOCK_FREE 2\n#define __CLANG_ATOMIC_WCHAR_T_LOCK_FREE 2\n#define __CONSTANT_CFSTRINGS__ 1\n#define __DBL_DECIMAL_DIG__ 17\n#define __DBL_DENORM_MIN__ 4.9406564584124654e-324\n#define __DBL_DIG__ 15\n#define __DBL_EPSILON__ 2.2204460492503131e-16\n#define __DBL_HAS_DENORM__ 1\n#define __DBL_HAS_INFINITY__ 1\n#define __DBL_HAS_QUIET_NAN__ 1\n#define __DBL_MANT_DIG__ 53\n#define __DBL_MAX_10_EXP__ 308\n#define __DBL_MAX_EXP__ 1024\n#define __DBL_MAX__ 1.7976931348623157e+308\n#define __DBL_MIN_10_EXP__ (-307)\n#define __DBL_MIN_EXP__ (-1021)\n#define __DBL_MIN__ 2.2250738585072014e-308\n#define __DBL_NORM_MAX__ 1.7976931348623157e+308\n#define __DECIMAL_DIG__ __LDBL_DECIMAL_DIG__\n#define __ELF__ 1\n#define __FINITE_MATH_ONLY__ 0\n#define __FLOAT128__ 1\n#define __FLT16_DECIMAL_DIG__ 5\n#define __FLT16_DENORM_MIN__ 5.9604644775390625e-8F16\n#define __FLT16_DIG__ 3\n#define __FLT16_EPSILON__ 9.765625e-4F16\n#define __FLT16_HAS_DENORM__ 1\n#define __FLT16_HAS_INFINITY__ 1\n#define __FLT16_HAS_QUIET_NAN__ 1\n#define __FLT16_MANT_DIG__ 11\n#define __FLT16_MAX_10_EXP__ 4\n#define __FLT16_MAX_EXP__ 16\n#define __FLT16_MAX__ 6.5504e+4F16\n#define __FLT16_MIN_10_EXP__ (-4)\n#define __FLT16_MIN_EXP__ (-13)\n#define __FLT16_MIN__ 6.103515625e-5F16\n#define __FLT16_NORM_MAX__ 6.5504e+4F16\n#define __FLT_DECIMAL_DIG__ 9\n#define __FLT_DENORM_MIN__ 1.40129846e-45F\n#define __FLT_DIG__ 6\n#define __FLT_EPSILON__ 1.19209290e-7F\n#define __FLT_HAS_DENORM__ 1\n#define __FLT_HAS_INFINITY__ 1\n#define __FLT_HAS_QUIET_NAN__ 1\n#define __FLT_MANT_DIG__ 24\n#define __FLT_MAX_10_EXP__ 38\n#define __FLT_MAX_EXP__ 128\n#define __FLT_MAX__ 3.40282347e+38F\n#define __FLT_MIN_10_EXP__ (-37)\n#define __FLT_MIN_EXP__ (-125)\n#define __FLT_MIN__ 1.17549435e-38F\n#define __FLT_NORM_MAX__ 3.40282347e+38F\n#define __FLT_RADIX__ 2\n#define __FPCLASS_NEGINF 0x0004\n#define __FPCLASS_NEGNORMAL 0x0008\n#define __FPCLASS_NEGSUBNORMAL 0x0010\n#define __FPCLASS_NEGZERO 0x0020\n#define __FPCLASS_POSINF 0x0200\n#define __FPCLASS_POSNORMAL 0x0100\n#define __FPCLASS_POSSUBNORMAL 0x0080\n#define __FPCLASS_POSZERO 0x0040\n#define __FPCLASS_QNAN 0x0002\n#define __FPCLASS_SNAN 0x0001\n#define __FXSR__ 1\n#define __GCC_ASM_FLAG_OUTPUTS__ 1\n#define __GCC_ATOMIC_BOOL_LOCK_FREE 2\n#define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 2\n#define __GCC_ATOMIC_CHAR32_T_LOCK_FREE 2\n#define __GCC_ATOMIC_CHAR_LOCK_FREE 2\n#define __GCC_ATOMIC_INT_LOCK_FREE 2\n#define __GCC_ATOMIC_LLONG_LOCK_FREE 2\n#define __GCC_ATOMIC_LONG_LOCK_FREE 2\n#define __GCC_ATOMIC_POINTER_LOCK_FREE 2\n#define __GCC_ATOMIC_SHORT_LOCK_FREE 2\n#define __GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\n#define __GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\n#define __GCC_CONSTRUCTIVE_SIZE 64\n#define __GCC_DESTRUCTIVE_SIZE 64\n#define __GCC_HAVE_DWARF2_CFI_ASM 1\n#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1\n#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1\n#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1\n#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_8 1\n#define __GNUC_MINOR__ 2\n#define __GNUC_PATCHLEVEL__ 1\n#define __GNUC_STDC_INLINE__ 1\n#define __GNUC__ 4\n#define __GXX_ABI_VERSION 1002\n#define __INT16_C(c) c\n#define __INT16_C_SUFFIX__ \n#define __INT16_FMTd__ \"hd\"\n#define __INT16_FMTi__ \"hi\"\n#define __INT16_MAX__ 32767\n#define __INT16_TYPE__ short\n#define __INT32_C(c) c\n#define __INT32_C_SUFFIX__ \n#define __INT32_FMTd__ \"d\"\n#define __INT32_FMTi__ \"i\"\n#define __INT32_MAX__ 2147483647\n#define __INT32_TYPE__ int\n#define __INT64_C(c) c##L\n#define __INT64_C_SUFFIX__ L\n#define __INT64_FMTd__ \"ld\"\n#define __INT64_FMTi__ \"li\"\n#define __INT64_MAX__ 9223372036854775807L\n#define __INT64_TYPE__ long int\n#define __INT8_C(c) c\n#define __INT8_C_SUFFIX__ \n#define __INT8_FMTd__ \"hhd\"\n#define __INT8_FMTi__ \"hhi\"\n#define __INT8_MAX__ 127\n#define __INT8_TYPE__ signed char\n#define __INTMAX_C(c) c##L\n#define __INTMAX_C_SUFFIX__ L\n#define __INTMAX_FMTd__ \"ld\"\n#define __INTMAX_FMTi__ \"li\"\n#define __INTMAX_MAX__ 9223372036854775807L\n#define __INTMAX_TYPE__ long int\n#define __INTMAX_WIDTH__ 64\n#define __INTPTR_FMTd__ \"ld\"\n#define __INTPTR_FMTi__ \"li\"\n#define __INTPTR_MAX__ 9223372036854775807L\n#define __INTPTR_TYPE__ long int\n#define __INTPTR_WIDTH__ 64\n#define __INT_FAST16_FMTd__ \"hd\"\n#define __INT_FAST16_FMTi__ \"hi\"\n#define __INT_FAST16_MAX__ 32767\n#define __INT_FAST16_TYPE__ short\n#define __INT_FAST16_WIDTH__ 16\n#define __INT_FAST32_FMTd__ \"d\"\n#define __INT_FAST32_FMTi__ \"i\"\n#define __INT_FAST32_MAX__ 2147483647\n#define __INT_FAST32_TYPE__ int\n#define __INT_FAST32_WIDTH__ 32\n#define __INT_FAST64_FMTd__ \"ld\"\n#define __INT_FAST64_FMTi__ \"li\"\n#define __INT_FAST64_MAX__ 9223372036854775807L\n#define __INT_FAST64_TYPE__ long int\n#define __INT_FAST64_WIDTH__ 64\n#define __INT_FAST8_FMTd__ \"hhd\"\n#define __INT_FAST8_FMTi__ \"hhi\"\n#define __INT_FAST8_MAX__ 127\n#define __INT_FAST8_TYPE__ signed char\n#define __INT_FAST8_WIDTH__ 8\n#define __INT_LEAST16_FMTd__ \"hd\"\n#define __INT_LEAST16_FMTi__ \"hi\"\n#define __INT_LEAST16_MAX__ 32767\n#define __INT_LEAST16_TYPE__ short\n#define __INT_LEAST16_WIDTH__ 16\n#define __INT_LEAST32_FMTd__ \"d\"\n#define __INT_LEAST32_FMTi__ \"i\"\n#define __INT_LEAST32_MAX__ 2147483647\n#define __INT_LEAST32_TYPE__ int\n#define __INT_LEAST32_WIDTH__ 32\n#define __INT_LEAST64_FMTd__ \"ld\"\n#define __INT_LEAST64_FMTi__ \"li\"\n#define __INT_LEAST64_MAX__ 9223372036854775807L\n#define __INT_LEAST64_TYPE__ long int\n#define __INT_LEAST64_WIDTH__ 64\n#define __INT_LEAST8_FMTd__ \"hhd\"\n#define __INT_LEAST8_FMTi__ \"hhi\"\n#define __INT_LEAST8_MAX__ 127\n#define __INT_LEAST8_TYPE__ signed char\n#define __INT_LEAST8_WIDTH__ 8\n#define __INT_MAX__ 2147483647\n#define __INT_WIDTH__ 32\n#define __LDBL_DECIMAL_DIG__ 21\n#define __LDBL_DENORM_MIN__ 3.64519953188247460253e-4951L\n#define __LDBL_DIG__ 18\n#define __LDBL_EPSILON__ 1.08420217248550443401e-19L\n#define __LDBL_HAS_DENORM__ 1\n#define __LDBL_HAS_INFINITY__ 1\n#define __LDBL_HAS_QUIET_NAN__ 1\n#define __LDBL_MANT_DIG__ 64\n#define __LDBL_MAX_10_EXP__ 4932\n#define __LDBL_MAX_EXP__ 16384\n#define __LDBL_MAX__ 1.18973149535723176502e+4932L\n#define __LDBL_MIN_10_EXP__ (-4931)\n#define __LDBL_MIN_EXP__ (-16381)\n#define __LDBL_MIN__ 3.36210314311209350626e-4932L\n#define __LDBL_NORM_MAX__ 1.18973149535723176502e+4932L\n#define __LITTLE_ENDIAN__ 1\n#define __LLONG_WIDTH__ 64\n#define __LONG_LONG_MAX__ 9223372036854775807LL\n#define __LONG_MAX__ 9223372036854775807L\n#define __LONG_WIDTH__ 64\n#define __LP64__ 1\n#define __MEMORY_SCOPE_CLUSTR 5\n#define __MEMORY_SCOPE_DEVICE 1\n#define __MEMORY_SCOPE_SINGLE 4\n#define __MEMORY_SCOPE_SYSTEM 0\n#define __MEMORY_SCOPE_WRKGRP 2\n#define __MEMORY_SCOPE_WVFRNT 3\n#define __MMX__ 1\n#define __NO_INLINE__ 1\n#define __NO_MATH_INLINES 1\n#define __OBJC_BOOL_IS_BOOL 0\n#define __OPENCL_MEMORY_SCOPE_ALL_SVM_DEVICES 3\n#define __OPENCL_MEMORY_SCOPE_DEVICE 2\n#define __OPENCL_MEMORY_SCOPE_SUB_GROUP 4\n#define __OPENCL_MEMORY_SCOPE_WORK_GROUP 1\n#define __OPENCL_MEMORY_SCOPE_WORK_ITEM 0\n#define __ORDER_BIG_ENDIAN__ 4321\n#define __ORDER_LITTLE_ENDIAN__ 1234\n#define __ORDER_PDP_ENDIAN__ 3412\n#define __PIC__ 2\n#define __PIE__ 2\n#define __POINTER_WIDTH__ 64\n#define __PRAGMA_REDEFINE_EXTNAME 1\n#define __PTRDIFF_FMTd__ \"ld\"\n#define __PTRDIFF_FMTi__ \"li\"\n#define __PTRDIFF_MAX__ 9223372036854775807L\n#define __PTRDIFF_TYPE__ long int\n#define __PTRDIFF_WIDTH__ 64\n#define __REGISTER_PREFIX__ \n#define __SCHAR_MAX__ 127\n#define __SEG_FS 1\n#define __SEG_GS 1\n#define __SHRT_MAX__ 32767\n#define __SHRT_WIDTH__ 16\n#define __SIG_ATOMIC_MAX__ 2147483647\n#define __SIG_ATOMIC_WIDTH__ 32\n#define __SIZEOF_DOUBLE__ 8\n#define __SIZEOF_FLOAT128__ 16\n#define __SIZEOF_FLOAT__ 4\n#define __SIZEOF_INT128__ 16\n#define __SIZEOF_INT__ 4\n#define __SIZEOF_LONG_DOUBLE__ 16\n#define __SIZEOF_LONG_LONG__ 8\n#define __SIZEOF_LONG__ 8\n#define __SIZEOF_POINTER__ 8\n#define __SIZEOF_PTRDIFF_T__ 8\n#define __SIZEOF_SHORT__ 2\n#define __SIZEOF_SIZE_T__ 8\n#define __SIZEOF_WCHAR_T__ 4\n#define __SIZEOF_WINT_T__ 4\n#define __SIZE_FMTX__ \"lX\"\n#define __SIZE_FMTo__ \"lo\"\n#define __SIZE_FMTu__ \"lu\"\n#define __SIZE_FMTx__ \"lx\"\n#define __SIZE_MAX__ 18446744073709551615UL\n#define __SIZE_TYPE__ long unsigned int\n#define __SIZE_WIDTH__ 64\n#define __SSE2_MATH__ 1\n#define __SSE2__ 1\n#define __SSE_MATH__ 1\n#define __SSE__ 1\n#define __STDC_EMBED_EMPTY__ 2\n#define __STDC_EMBED_FOUND__ 1\n#define __STDC_EMBED_NOT_FOUND__ 0\n#define __STDC_HOSTED__ 1\n#define __STDC_UTF_16__ 1\n#define __STDC_UTF_32__ 1\n#define __STDC_VERSION__ 201112L\n#define __STDC__ 1\n#define __STRICT_ANSI__ 1\n#define __UINT16_C(c) c\n#define __UINT16_C_SUFFIX__ \n#define __UINT16_FMTX__ \"hX\"\n#define __UINT16_FMTo__ \"ho\"\n#define __UINT16_FMTu__ \"hu\"\n#define __UINT16_FMTx__ \"hx\"\n#define __UINT16_MAX__ 65535\n#define __UINT16_TYPE__ unsigned short\n#define __UINT32_C(c) c##U\n#define __UINT32_C_SUFFIX__ U\n#define __UINT32_FMTX__ \"X\"\n#define __UINT32_FMTo__ \"o\"\n#define __UINT32_FMTu__ \"u\"\n#define __UINT32_FMTx__ \"x\"\n#define __UINT32_MAX__ 4294967295U\n#define __UINT32_TYPE__ unsigned int\n#define __UINT64_C(c) c##UL\n#define __UINT64_C_SUFFIX__ UL\n#define __UINT64_FMTX__ \"lX\"\n#define __UINT64_FMTo__ \"lo\"\n#define __UINT64_FMTu__ \"lu\"\n#define __UINT64_FMTx__ \"lx\"\n#define __UINT64_MAX__ 18446744073709551615UL\n#define __UINT64_TYPE__ long unsigned int\n#define __UINT8_C(c) c\n#define __UINT8_C_SUFFIX__ \n#define __UINT8_FMTX__ \"hhX\"\n#define __UINT8_FMTo__ \"hho\"\n#define __UINT8_FMTu__ \"hhu\"\n#define __UINT8_FMTx__ \"hhx\"\n#define __UINT8_MAX__ 255\n#define __UINT8_TYPE__ unsigned char\n#define __UINTMAX_C(c) c##UL\n#define __UINTMAX_C_SUFFIX__ UL\n#define __UINTMAX_FMTX__ \"lX\"\n#define __UINTMAX_FMTo__ \"lo\"\n#define __UINTMAX_FMTu__ \"lu\"\n#define __UINTMAX_FMTx__ \"lx\"\n#define __UINTMAX_MAX__ 18446744073709551615UL\n#define __UINTMAX_TYPE__ long unsigned int\n#define __UINTMAX_WIDTH__ 64\n#define __UINTPTR_FMTX__ \"lX\"\n#define __UINTPTR_FMTo__ \"lo\"\n#define __UINTPTR_FMTu__ \"lu\"\n#define __UINTPTR_FMTx__ \"lx\"\n#define __UINTPTR_MAX__ 18446744073709551615UL\n#define __UINTPTR_TYPE__ long unsigned int\n#define __UINTPTR_WIDTH__ 64\n#define __UINT_FAST16_FMTX__ \"hX\"\n#define __UINT_FAST16_FMTo__ \"ho\"\n#define __UINT_FAST16_FMTu__ \"hu\"\n#define __UINT_FAST16_FMTx__ \"hx\"\n#define __UINT_FAST16_MAX__ 65535\n#define __UINT_FAST16_TYPE__ unsigned short\n#define __UINT_FAST32_FMTX__ \"X\"\n#define __UINT_FAST32_FMTo__ \"o\"\n#define __UINT_FAST32_FMTu__ \"u\"\n#define __UINT_FAST32_FMTx__ \"x\"\n#define __UINT_FAST32_MAX__ 4294967295U\n#define __UINT_FAST32_TYPE__ unsigned int\n#define __UINT_FAST64_FMTX__ \"lX\"\n#define __UINT_FAST64_FMTo__ \"lo\"\n#define __UINT_FAST64_FMTu__ \"lu\"\n#define __UINT_FAST64_FMTx__ \"lx\"\n#define __UINT_FAST64_MAX__ 18446744073709551615UL\n#define __UINT_FAST64_TYPE__ long unsigned int\n#define __UINT_FAST8_FMTX__ \"hhX\"\n#define __UINT_FAST8_FMTo__ \"hho\"\n#define __UINT_FAST8_FMTu__ \"hhu\"\n#define __UINT_FAST8_FMTx__ \"hhx\"\n#define __UINT_FAST8_MAX__ 255\n#define __UINT_FAST8_TYPE__ unsigned char\n#define __UINT_LEAST16_FMTX__ \"hX\"\n#define __UINT_LEAST16_FMTo__ \"ho\"\n#define __UINT_LEAST16_FMTu__ \"hu\"\n#define __UINT_LEAST16_FMTx__ \"hx\"\n#define __UINT_LEAST16_MAX__ 65535\n#define __UINT_LEAST16_TYPE__ unsigned short\n#define __UINT_LEAST32_FMTX__ \"X\"\n#define __UINT_LEAST32_FMTo__ \"o\"\n#define __UINT_LEAST32_FMTu__ \"u\"\n#define __UINT_LEAST32_FMTx__ \"x\"\n#define __UINT_LEAST32_MAX__ 4294967295U\n#define __UINT_LEAST32_TYPE__ unsigned int\n#define __UINT_LEAST64_FMTX__ \"lX\"\n#define __UINT_LEAST64_FMTo__ \"lo\"\n#define __UINT_LEAST64_FMTu__ \"lu\"\n#define __UINT_LEAST64_FMTx__ \"lx\"\n#define __UINT_LEAST64_MAX__ 18446744073709551615UL\n#define __UINT_LEAST64_TYPE__ long unsigned int\n#define __UINT_LEAST8_FMTX__ \"hhX\"\n#define __UINT_LEAST8_FMTo__ \"hho\"\n#define __UINT_LEAST8_FMTu__ \"hhu\"\n#define __UINT_LEAST8_FMTx__ \"hhx\"\n#define __UINT_LEAST8_MAX__ 255\n#define __UINT_LEAST8_TYPE__ unsigned char\n#define __USER_LABEL_PREFIX__ \n#define __VERSION__ \"Clang 22.1.0\"\n#define __WCHAR_MAX__ 2147483647\n#define __WCHAR_TYPE__ int\n#define __WCHAR_WIDTH__ 32\n#define __WINT_MAX__ 4294967295U\n#define __WINT_TYPE__ unsigned int\n#define __WINT_UNSIGNED__ 1\n#define __WINT_WIDTH__ 32\n#define __amd64 1\n#define __amd64__ 1\n#define __clang__ 1\n#define __clang_literal_encoding__ \"UTF-8\"\n#define __clang_major__ 22\n#define __clang_minor__ 1\n#define __clang_patchlevel__ 0\n#define __clang_version__ \"22.1.0 \"\n#define __clang_wide_literal_encoding__ \"UTF-32\"\n#define __code_model_small__ 1\n#define __gnu_linux__ 1\n#define __k8 1\n#define __k8__ 1\n#define __linux 1\n#define __linux__ 1\n#define __llvm__ 1\n#define __pic__ 2\n#define __pie__ 2\n#define __seg_fs __attribute__((address_space(257)))\n#define __seg_gs __attribute__((address_space(256)))\n#define __tune_k8__ 1\n#define __unix 1\n#define __unix__ 1\n#define __x86_64 1\n#define __x86_64__ 1\n",
+            "stderr": "",
+            "status": "ok",
+            "exception": null,
+            "elapsed_seconds": 0.008004412986338139
+          }
+        },
+        "scope": "default local GCC/Clang targets only; no cross compilation or user ABI flags"
+      },
+      "ordinary_bitfield_before": false,
+      "bitfield_after": true,
+      "full_value_range_preserved": true,
+      "plain_int_signedness_ambiguity_avoided": true,
+      "reasoning": "Explicit signed/unsigned int uses all sign/value bits of the verified no-padding target int; _Bool uses its entire 0/1 value range. No narrowing width is used.",
+      "standard": [
+        "C11:6.7.2.1p4",
+        "C11:6.7.2.1p5",
+        "C11:6.7.2.1p10"
+      ]
+    },
+    "affected_uses": [
+      {
+        "address": {
+          "p0": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+            "line": 550,
+            "column": 46,
+            "offset": 44745,
+            "start_offset": 44745,
+            "end_offset": 44806,
+            "node_identity": ":UNARY_OPERATOR:44745",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "&ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+            "usr": "",
+            "referenced_usr": "",
+            "kind": "UNARY_OPERATOR"
+          },
+          "p1": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_075/P1.c",
+            "line": 550,
+            "column": 46,
+            "offset": 44750,
+            "start_offset": 44750,
+            "end_offset": 44811,
+            "node_identity": ":UNARY_OPERATOR:44745",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "&ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+            "p1_ast_observed": false,
+            "referenced_usr": "",
+            "usr": "",
+            "kind": "UNARY_OPERATOR"
+          }
+        },
+        "member": {
+          "p0": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+            "line": 550,
+            "column": 78,
+            "offset": 44777,
+            "start_offset": 44746,
+            "end_offset": 44806,
+            "node_identity": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value:MEMBER_REF_EXPR:44746",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+            "usr": "",
+            "referenced_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+            "kind": "MEMBER_REF_EXPR"
+          },
+          "p1": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_075/P1.c",
+            "line": 550,
+            "column": 78,
+            "offset": 44782,
+            "start_offset": 44751,
+            "end_offset": 44811,
+            "node_identity": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value:MEMBER_REF_EXPR:44746",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+            "p1_ast_observed": false,
+            "referenced_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+            "usr": "",
+            "kind": "MEMBER_REF_EXPR"
+          }
+        },
+        "field_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+        "constraint_id": "C11:6.5.3.2p1"
+      },
+      {
+        "address": {
+          "p0": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+            "line": 551,
+            "column": 47,
+            "offset": 44854,
+            "start_offset": 44854,
+            "end_offset": 44915,
+            "node_identity": ":UNARY_OPERATOR:44854",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "&ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+            "usr": "",
+            "referenced_usr": "",
+            "kind": "UNARY_OPERATOR"
+          },
+          "p1": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_075/P1.c",
+            "line": 551,
+            "column": 47,
+            "offset": 44859,
+            "start_offset": 44859,
+            "end_offset": 44920,
+            "node_identity": ":UNARY_OPERATOR:44854",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "&ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+            "p1_ast_observed": false,
+            "referenced_usr": "",
+            "usr": "",
+            "kind": "UNARY_OPERATOR"
+          }
+        },
+        "member": {
+          "p0": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+            "line": 551,
+            "column": 79,
+            "offset": 44886,
+            "start_offset": 44855,
+            "end_offset": 44915,
+            "node_identity": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value:MEMBER_REF_EXPR:44855",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+            "usr": "",
+            "referenced_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+            "kind": "MEMBER_REF_EXPR"
+          },
+          "p1": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_075/P1.c",
+            "line": 551,
+            "column": 79,
+            "offset": 44891,
+            "start_offset": 44860,
+            "end_offset": 44920,
+            "node_identity": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value:MEMBER_REF_EXPR:44855",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+            "p1_ast_observed": false,
+            "referenced_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+            "usr": "",
+            "kind": "MEMBER_REF_EXPR"
+          }
+        },
+        "field_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+        "constraint_id": "C11:6.5.3.2p1"
+      }
+    ],
+    "source_map": {
+      "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+      "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_075/P1.c",
+      "p0_sha256": "6ca6286b19453f07ee15abec384ee83627cbb495e163eaa014dfb3d49dbc9dd3",
+      "p1_sha256": "224f2e7518b46496a5d044a268f97a6dc79f1aaa1a3e814b0fc89faddf1110cd",
+      "edit": {
+        "start": 34204,
+        "end": 34246,
+        "before": "unsigned int ag_ea3b354b09_44758_1_0_value",
+        "after": "unsigned int ag_ea3b354b09_44758_1_0_value : 32"
+      },
+      "segments": [
+        {
+          "kind": "identity",
+          "p0": [
+            0,
+            34204
+          ],
+          "p1": [
+            0,
+            34204
+          ]
+        },
+        {
+          "kind": "field_declaration_replacement",
+          "p0": [
+            34204,
+            34246
+          ],
+          "p1": [
+            34204,
+            34251
+          ]
+        },
+        {
+          "kind": "identity",
+          "p0": [
+            34246,
+            123697
+          ],
+          "p1": [
+            34251,
+            123702
+          ]
+        }
+      ]
+    },
+    "isolation": {
+      "subset": "stage2d_closed_automatic_objects_address_only",
+      "native_proof": {
+        "field": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+          "line": 405,
+          "column": 54,
+          "offset": 34217,
+          "start_offset": 34204,
+          "end_offset": 34246,
+          "node_identity": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value:FIELD_DECL:34204",
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "unsigned int ag_ea3b354b09_44758_1_0_value",
+          "usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+          "referenced_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+          "kind": "FIELD_DECL"
+        },
+        "record_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record",
+        "address_anchors": [
+          {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+            "line": 550,
+            "column": 46,
+            "offset": 44745,
+            "start_offset": 44745,
+            "end_offset": 44806,
+            "node_identity": ":UNARY_OPERATOR:44745",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "&ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+            "usr": "",
+            "referenced_usr": "",
+            "kind": "UNARY_OPERATOR"
+          },
+          {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+            "line": 551,
+            "column": 47,
+            "offset": 44854,
+            "start_offset": 44854,
+            "end_offset": 44915,
+            "node_identity": ":UNARY_OPERATOR:44854",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "&ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+            "usr": "",
+            "referenced_usr": "",
+            "kind": "UNARY_OPERATOR"
+          }
+        ],
+        "impact_closed": true,
+        "reasons": [],
+        "controlled_flow": {
+          "schema": "stage2g-private-routing-v1",
+          "p0_sha256": "6ca6286b19453f07ee15abec384ee83627cbb495e163eaa014dfb3d49dbc9dd3",
+          "field_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+          "record_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record",
+          "record": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+            "line": 405,
+            "column": 8,
+            "offset": 34171,
+            "start_offset": 34164,
+            "end_offset": 34249,
+            "node_identity": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record:STRUCT_DECL:34164",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "struct ag_ea3b354b09_44758_1_0_record { unsigned int ag_ea3b354b09_44758_1_0_value; }",
+            "usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record",
+            "referenced_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record",
+            "kind": "STRUCT_DECL"
+          },
+          "object": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+            "line": 406,
+            "column": 39,
+            "offset": 34289,
+            "start_offset": 34251,
+            "end_offset": 34330,
+            "node_identity": "c:P0.c@34251@F@func_20@ag_ea3b354b09_44758_1_0_object:VAR_DECL:34251",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "struct ag_ea3b354b09_44758_1_0_record ag_ea3b354b09_44758_1_0_object = { p_21 }",
+            "usr": "c:P0.c@34251@F@func_20@ag_ea3b354b09_44758_1_0_object",
+            "referenced_usr": "c:P0.c@34251@F@func_20@ag_ea3b354b09_44758_1_0_object",
+            "kind": "VAR_DECL"
+          },
+          "parameter_read": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+            "line": 406,
+            "column": 74,
+            "offset": 34324,
+            "start_offset": 34324,
+            "end_offset": 34328,
+            "node_identity": "c:P0.c@34115@F@func_20@p_21:DECL_REF_EXPR:34324",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "p_21",
+            "usr": "",
+            "referenced_usr": "c:P0.c@34115@F@func_20@p_21",
+            "kind": "DECL_REF_EXPR"
+          },
+          "parameter_declaration": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+            "line": 403,
+            "column": 35,
+            "offset": 34125,
+            "start_offset": 34115,
+            "end_offset": 34129,
+            "node_identity": "c:P0.c@34115@F@func_20@p_21:PARM_DECL:34115",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "uint32_t  p_21",
+            "usr": "c:P0.c@34115@F@func_20@p_21",
+            "referenced_usr": "c:P0.c@34115@F@func_20@p_21",
+            "kind": "PARM_DECL"
+          },
+          "dereference": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+            "line": 552,
+            "column": 231,
+            "offset": 45147,
+            "start_offset": 45147,
+            "end_offset": 45274,
+            "node_identity": ":UNARY_OPERATOR:45147",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "*(ag_ea3b354b09_44758_1_0_left == ag_ea3b354b09_44758_1_0_right ? ag_ea3b354b09_44758_1_0_left : ag_ea3b354b09_44758_1_0_right)",
+            "usr": "",
+            "referenced_usr": "",
+            "kind": "UNARY_OPERATOR"
+          },
+          "pointer_declarations": [
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+              "line": 550,
+              "column": 15,
+              "offset": 44714,
+              "start_offset": 44700,
+              "end_offset": 44806,
+              "node_identity": "c:P0.c@44700@F@func_20@ag_ea3b354b09_44758_1_0_left:VAR_DECL:44700",
+              "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+              "source_text": "unsigned int *ag_ea3b354b09_44758_1_0_left = &ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+              "usr": "c:P0.c@44700@F@func_20@ag_ea3b354b09_44758_1_0_left",
+              "referenced_usr": "c:P0.c@44700@F@func_20@ag_ea3b354b09_44758_1_0_left",
+              "kind": "VAR_DECL"
+            },
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+              "line": 551,
+              "column": 15,
+              "offset": 44822,
+              "start_offset": 44808,
+              "end_offset": 44915,
+              "node_identity": "c:P0.c@44808@F@func_20@ag_ea3b354b09_44758_1_0_right:VAR_DECL:44808",
+              "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+              "source_text": "unsigned int *ag_ea3b354b09_44758_1_0_right = &ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+              "usr": "c:P0.c@44808@F@func_20@ag_ea3b354b09_44758_1_0_right",
+              "referenced_usr": "c:P0.c@44808@F@func_20@ag_ea3b354b09_44758_1_0_right",
+              "kind": "VAR_DECL"
+            }
+          ],
+          "pointer_uses": [
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+              "line": 552,
+              "column": 233,
+              "offset": 45149,
+              "start_offset": 45149,
+              "end_offset": 45177,
+              "node_identity": "c:P0.c@44700@F@func_20@ag_ea3b354b09_44758_1_0_left:DECL_REF_EXPR:45149",
+              "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+              "source_text": "ag_ea3b354b09_44758_1_0_left",
+              "usr": "",
+              "referenced_usr": "c:P0.c@44700@F@func_20@ag_ea3b354b09_44758_1_0_left",
+              "kind": "DECL_REF_EXPR"
+            },
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+              "line": 552,
+              "column": 297,
+              "offset": 45213,
+              "start_offset": 45213,
+              "end_offset": 45241,
+              "node_identity": "c:P0.c@44700@F@func_20@ag_ea3b354b09_44758_1_0_left:DECL_REF_EXPR:45213",
+              "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+              "source_text": "ag_ea3b354b09_44758_1_0_left",
+              "usr": "",
+              "referenced_usr": "c:P0.c@44700@F@func_20@ag_ea3b354b09_44758_1_0_left",
+              "kind": "DECL_REF_EXPR"
+            },
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+              "line": 552,
+              "column": 265,
+              "offset": 45181,
+              "start_offset": 45181,
+              "end_offset": 45210,
+              "node_identity": "c:P0.c@44808@F@func_20@ag_ea3b354b09_44758_1_0_right:DECL_REF_EXPR:45181",
+              "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+              "source_text": "ag_ea3b354b09_44758_1_0_right",
+              "usr": "",
+              "referenced_usr": "c:P0.c@44808@F@func_20@ag_ea3b354b09_44758_1_0_right",
+              "kind": "DECL_REF_EXPR"
+            },
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+              "line": 552,
+              "column": 328,
+              "offset": 45244,
+              "start_offset": 45244,
+              "end_offset": 45273,
+              "node_identity": "c:P0.c@44808@F@func_20@ag_ea3b354b09_44758_1_0_right:DECL_REF_EXPR:45244",
+              "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+              "source_text": "ag_ea3b354b09_44758_1_0_right",
+              "usr": "",
+              "referenced_usr": "c:P0.c@44808@F@func_20@ag_ea3b354b09_44758_1_0_right",
+              "kind": "DECL_REF_EXPR"
+            }
+          ],
+          "addresses": [
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+              "line": 550,
+              "column": 46,
+              "offset": 44745,
+              "start_offset": 44745,
+              "end_offset": 44806,
+              "node_identity": ":UNARY_OPERATOR:44745",
+              "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+              "source_text": "&ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+              "usr": "",
+              "referenced_usr": "",
+              "kind": "UNARY_OPERATOR"
+            },
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+              "line": 551,
+              "column": 47,
+              "offset": 44854,
+              "start_offset": 44854,
+              "end_offset": 44915,
+              "node_identity": ":UNARY_OPERATOR:44854",
+              "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+              "source_text": "&ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+              "usr": "",
+              "referenced_usr": "",
+              "kind": "UNARY_OPERATOR"
+            }
+          ],
+          "address_count": 2,
+          "pointer_read_count": 4,
+          "entry_initialized": true,
+          "type_and_value_uses_closed": true,
+          "no_layout_use": true,
+          "no_address_escape": true,
+          "cross_statement": true,
+          "cross_scope": true,
+          "cross_function": false,
+          "seal": "0612565c65b9f6051828b14bacb2a2c1df95da251a7a581599b473cda3448cba"
+        },
+        "proof": [
+          "private record/type/object uses closed",
+          "full target width selected independently by formal MR"
+        ]
+      },
+      "record_uses_closed": true,
+      "no_layout_observation": true,
+      "no_address_escape": false,
+      "complexity": "native_declaration_use_dependency",
+      "all_related_uses": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+          "line": 405,
+          "column": 54,
+          "offset": 34217,
+          "start_offset": 34204,
+          "end_offset": 34246,
+          "node_identity": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value:FIELD_DECL:34204",
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "unsigned int ag_ea3b354b09_44758_1_0_value",
+          "usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+          "referenced_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+          "kind": "FIELD_DECL"
+        },
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+          "line": 550,
+          "column": 78,
+          "offset": 44777,
+          "start_offset": 44746,
+          "end_offset": 44806,
+          "node_identity": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value:MEMBER_REF_EXPR:44746",
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+          "usr": "",
+          "referenced_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+          "kind": "MEMBER_REF_EXPR"
+        },
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/nested_two_addresses_01/P0.c",
+          "line": 551,
+          "column": 79,
+          "offset": 44886,
+          "start_offset": 44855,
+          "end_offset": 44915,
+          "node_identity": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value:MEMBER_REF_EXPR:44855",
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "ag_ea3b354b09_44758_1_0_object.ag_ea3b354b09_44758_1_0_value",
+          "usr": "",
+          "referenced_usr": "c:P0.c@34164@F@func_20@S@ag_ea3b354b09_44758_1_0_record@FI@ag_ea3b354b09_44758_1_0_value",
+          "kind": "MEMBER_REF_EXPR"
+        }
+      ],
+      "proof_boundary": "P0 AST facts plus verified target ABI; no general C11 or whole-program UB proof"
+    },
+    "expected_error": {
+      "category": "address_of_bitfield",
+      "required_severities": [
+        "error",
+        "fatal"
+      ],
+      "warning_satisfies": false,
+      "exact_caret_mandated_by_standard": false,
+      "expected_violation_count": 2
+    },
+    "schema_version": "stage2e-bitfield-v1"
+  },
+  "proof_boundary": "local immutable-parameter routing plus closed controlled MR subset; not a whole-program C11/UB verifier"
+}

@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_153/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_153/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_153/P1.c: In function 'main':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_153/P1.c:2303:38: error: cannot take address of bit-field 'ag_42a56ca00d_158086_0_0_value'\n 2303 | int *ag_42a56ca00d_158086_0_0_left = &ag_42a56ca00d_158086_0_0_object.ag_42a56ca00d_158086_0_0_value;\n      |                                      ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.04821318993344903
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_153/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_153/P1.c:2303:38: error: address of bit-field requested\n 2303 | int *ag_42a56ca00d_158086_0_0_left = &ag_42a56ca00d_158086_0_0_object.ag_42a56ca00d_158086_0_0_value;\n      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.07273731008172035
+    }
+  },
+  "sha256": "a8bac77464147ed97b6da05f0104d8e5e5d09731e28c7395f5165424b7f6e594",
+  "source_unchanged": true
+}

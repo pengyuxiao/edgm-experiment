@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_018/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_018/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_018/P1.c: In function 'main':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_018/P1.c:105:36: error: cannot take address of bit-field 'ag_0b862f2f44_2828_0_0_value'\n  105 | int *ag_0b862f2f44_2828_0_0_left = &ag_0b862f2f44_2828_0_0_object.ag_0b862f2f44_2828_0_0_value;\n      |                                    ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.024513178039342165
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_018/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_018/P1.c:105:36: error: address of bit-field requested\n  105 | int *ag_0b862f2f44_2828_0_0_left = &ag_0b862f2f44_2828_0_0_object.ag_0b862f2f44_2828_0_0_value;\n      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.032904828898608685
+    }
+  },
+  "sha256": "6201b69810c3a3281ea36a06db7fb7eb6c55f2b9d0ef18f9520519c5f0971b99",
+  "source_unchanged": true
+}

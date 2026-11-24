@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_069/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_069/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_069/P1.c: In function 'main':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_069/P1.c:93:36: error: cannot take address of bit-field 'ag_be8532d1ea_3665_0_0_value'\n   93 | int *ag_be8532d1ea_3665_0_0_left = &ag_be8532d1ea_3665_0_0_object.ag_be8532d1ea_3665_0_0_value;\n      |                                    ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.025655443081632257
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_069/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_069/P1.c:93:36: error: address of bit-field requested\n   93 | int *ag_be8532d1ea_3665_0_0_left = &ag_be8532d1ea_3665_0_0_object.ag_be8532d1ea_3665_0_0_value;\n      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.03420636593364179
+    }
+  },
+  "sha256": "774823b1955e692e7a534186fad0c14b5c011597357df32828edfe2b69567a4f",
+  "source_unchanged": true
+}

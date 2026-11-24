@@ -1,0 +1,115 @@
+{
+  "result": {
+    "candidate_id": "c29c42261f2b0f814db4eb20195ec8cc6efe9766ba808ab67b4af98f9be5b8d0",
+    "seed_id": "seed_0019_368916147",
+    "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "family": "nested_two_addresses",
+    "semantic_context_signature": "9a70470986a5e6b3251072a1601ae3000e7286fda69125baec089c64e5d1e7ca",
+    "origin_stage": "2G",
+    "status": "TARGET_ERRORS_OBSERVED",
+    "observations": {
+      "gcc": {
+        "status": "TARGET_ERRORS_OBSERVED",
+        "errors": [
+          {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_206/P1.c",
+            "line": 1979,
+            "column": 38,
+            "severity": "error",
+            "message": "cannot take address of bit-field 'ag_cf68a3aea0_143916_1_0_value'",
+            "category": "address_of_bitfield",
+            "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_206/P1.c:1979:38: error: cannot take address of bit-field 'ag_cf68a3aea0_143916_1_0_value'",
+            "matched_anchors": [
+              {
+                "violation": 0,
+                "anchor": "address"
+              }
+            ]
+          },
+          {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_206/P1.c",
+            "line": 1980,
+            "column": 39,
+            "severity": "error",
+            "message": "cannot take address of bit-field 'ag_cf68a3aea0_143916_1_0_value'",
+            "category": "address_of_bitfield",
+            "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_206/P1.c:1980:39: error: cannot take address of bit-field 'ag_cf68a3aea0_143916_1_0_value'",
+            "matched_anchors": [
+              {
+                "violation": 1,
+                "anchor": "address"
+              }
+            ]
+          }
+        ],
+        "confirmed_bug": false,
+        "expected_violation_count": 2,
+        "exact_coordinate_comparison": true
+      },
+      "clang": {
+        "status": "TARGET_ERRORS_OBSERVED",
+        "errors": [
+          {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_206/P1.c",
+            "line": 1979,
+            "column": 38,
+            "severity": "error",
+            "message": "address of bit-field requested",
+            "category": "address_of_bitfield",
+            "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_206/P1.c:1979:38: error: address of bit-field requested",
+            "matched_anchors": [
+              {
+                "violation": 0,
+                "anchor": "address"
+              }
+            ]
+          },
+          {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_206/P1.c",
+            "line": 1980,
+            "column": 39,
+            "severity": "error",
+            "message": "address of bit-field requested",
+            "category": "address_of_bitfield",
+            "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_206/P1.c:1980:39: error: address of bit-field requested",
+            "matched_anchors": [
+              {
+                "violation": 1,
+                "anchor": "address"
+              }
+            ]
+          }
+        ],
+        "confirmed_bug": false,
+        "expected_violation_count": 2,
+        "exact_coordinate_comparison": true
+      }
+    },
+    "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_045/nested_two_addresses_01/P0.c",
+    "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_206/P1.c",
+    "p0_sha256": "a5bb0bfe8709c10e0351d0e0d36a12c7a5c0de6ba7e1de6d3f5edb3cd546f863",
+    "p1_sha256": "3c5e63defaf963122c1a38c4632476ec490857feeb7490f6ee831f07802ee631",
+    "oracle_replay": true,
+    "oracle_unchanged": true,
+    "confirmed_bug": false
+  },
+  "worker": {
+    "command": [
+      "/usr/bin/python3",
+      "-m",
+      "edgm_second.aggregate_run",
+      "--phase",
+      "execute_worker",
+      "--out-dir",
+      "/home/pyx/edgm-experiment/second_point/evidence/stage2h",
+      "--index",
+      "206"
+    ],
+    "returncode": 0,
+    "stdout": "see result file",
+    "stderr": "",
+    "status": "ok",
+    "exception": null,
+    "elapsed_seconds": 19.31616587098688
+  }
+}

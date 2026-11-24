@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_230/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_230/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_230/P1.c: In function 'func_12':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_230/P1.c:403:576: error: incompatible type for argument 1 of 'ag_9f6bac5ada_46655_2_0_dispatch.ag_9f6bac5ada_46655_2_0_invoke'\n  403 |     (*g_56) = ((safe_add_func_uint8_t_u_u(((safe_add_func_int16_t_s_s((***g_2227), (safe_add_func_int32_t_s_s((safe_sub_func_int64_t_s_s((p_14 >= (safe_mul_func_int16_t_s_s(((safe_add_func_int16_t_s_s(p_14, (*g_2054))) & (((*l_3170) = (safe_lshift_func_uint8_t_u_s(((p_15 , (safe_rshift_func_int64_t_s_s((safe_mod_func_uint32_t_u_u((l_3166 != ((safe_mul_func_int64_t_s_s((1UL < ((***g_610) = p_17)), (((**g_2758) & (*g_2466)) || 0x714D70BDE575C00ALL))) , (void*)0)), l_3169[8][0])), p_17))) , 0xAFL), p_15))) ^ ag_9f6bac5ada_46655_2_0_dispatch.ag_9f6bac5ada_46655_2_0_invoke(ag_9f6bac5ada_46655_2_0_object))), (***g_2757)))), l_3169[1][3])), (***g_1278))))) <= p_15), l_3171)) >= l_3172);\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ag_9f6bac5ada_46655_2_0_argument {aka struct ag_9f6bac5ada_46655_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_230/P1.c:403:576: note: expected 'ag_9f6bac5ada_46655_2_0_root' {aka 'struct ag_9f6bac5ada_46655_2_0_record'} but argument is of type 'ag_9f6bac5ada_46655_2_0_argument' {aka 'struct ag_9f6bac5ada_46655_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.044948328053578734
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_230/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_230/P1.c:403:576: error: passing 'ag_9f6bac5ada_46655_2_0_argument' (aka 'struct ag_9f6bac5ada_46655_2_0_other') to parameter of incompatible type 'ag_9f6bac5ada_46655_2_0_root' (aka 'struct ag_9f6bac5ada_46655_2_0_record')\n  403 |     (*g_56) = ((safe_add_func_uint8_t_u_u(((safe_add_func_int16_t_s_s((***g_2227), (safe_add_func_int32_t_s_s((safe_sub_func_int64_t_s_s((p_14 >= (safe_mul_func_int16_t_s_s(((safe_add_func_int16_t_s_s(p_14, (*g_2054))) & (((*l_3170) = (safe_lshift_func_uint8_t_u_s(((p_15 , (safe_rshift_func_int64_t_s_s((safe_mod_func_uint32_t_u_u((l_3166 != ((safe_mul_func_int64_t_s_s((1UL < ((***g_610) = p_17)), (((**g_2758) & (*g_2466)) || 0x714D70BDE575C00ALL))) , (void*)0)), l_3169[8][0])), p_17))) , 0xAFL), p_15))) ^ ag_9f6bac5ada_46655_2_0_dispatch.ag_9f6bac5ada_46655_2_0_invoke(ag_9f6bac5ada_46655_2_0_object))), (***g_2757)))), l_3169[1][3])), (***g_1278))))) <= p_15), l_3171)) >= l_3172);\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.06910337507724762
+    }
+  },
+  "sha256": "2f6d9c7ab2ca2a9fd5b175ed3b40e688fa670546ea53d8529fb7d0d5f36815ec",
+  "source_unchanged": true
+}

@@ -1,0 +1,191 @@
+{
+  "schema": "stage2h-enrichment-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0007_325097610.c",
+  "s_sha256": "74e2fb34964b2524734fd67d8410a36592be41dbdbcf9a0a16b0a70066daa673",
+  "p0_sha256": "0ec3bcb3f0702fafbb21216e97ed44553d3ce3d25f93e43b51abda75fda5b9ed",
+  "position": {
+    "position_id": "74e2fb34964b2524734fd67d8410a36592be41dbdbcf9a0a16b0a70066daa673:c:seed_0007_325097610.c@22066@F@func_2@p_3:33337",
+    "read": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0007_325097610.c",
+      "line": 363,
+      "column": 495,
+      "offset": 33337,
+      "start_offset": 33337,
+      "end_offset": 33340,
+      "node_identity": "c:seed_0007_325097610.c@22066@F@func_2@p_3:DECL_REF_EXPR:33337",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_3",
+      "usr": "",
+      "referenced_usr": "c:seed_0007_325097610.c@22066@F@func_2@p_3",
+      "kind": "DECL_REF_EXPR"
+    },
+    "declaration": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0007_325097610.c",
+      "line": 240,
+      "column": 33,
+      "offset": 22075,
+      "start_offset": 22066,
+      "end_offset": 22078,
+      "node_identity": "c:seed_0007_325097610.c@22066@F@func_2@p_3:PARM_DECL:22066",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int32_t  p_3",
+      "usr": "c:seed_0007_325097610.c@22066@F@func_2@p_3",
+      "referenced_usr": "c:seed_0007_325097610.c@22066@F@func_2@p_3",
+      "kind": "PARM_DECL"
+    },
+    "function_offset": 22043,
+    "body_start": 22114,
+    "kind": "INT",
+    "parameter": "p_3",
+    "function_name": "func_2",
+    "function_usr": "c:seed_0007_325097610.c@F@func_2",
+    "operator": "==",
+    "operation": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0007_325097610.c",
+      "line": 363,
+      "column": 458,
+      "offset": 33300,
+      "start_offset": 33300,
+      "end_offset": 33340,
+      "node_identity": ":BINARY_OPERATOR:33300",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "((g_834.f0 ^= 0x35L) & l_1169[0]) == p_3",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "BINARY_OPERATOR"
+    },
+    "unit": [
+      32851,
+      33578
+    ],
+    "nested_supported": true,
+    "ancestor_context": [
+      "BINARY_OPERATOR",
+      "COMPOUND_ASSIGNMENT_OPERATOR",
+      "COMPOUND_STMT"
+    ]
+  },
+  "enrichment_family": "aggregate_direct",
+  "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+  "semantic_context": {
+    "family": "aggregate_direct",
+    "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "==",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "COMPOUND_ASSIGNMENT_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": false,
+    "record_depth": 1,
+    "target_use_points": 1,
+    "value_route": "parameter -> initialized source -> whole-record copy -> destination member -> original operation"
+  },
+  "semantic_context_signature": "d80f104f6bb254209654285078ab5238674bdc8b31171901df55d90edbd4e029",
+  "names": {
+    "record": "ag_74e2fb3496_33337_0_0_record",
+    "other": "ag_74e2fb3496_33337_0_0_other",
+    "value": "ag_74e2fb3496_33337_0_0_value",
+    "object": "ag_74e2fb3496_33337_0_0_object",
+    "left": "ag_74e2fb3496_33337_0_0_left",
+    "right": "ag_74e2fb3496_33337_0_0_right",
+    "root": "ag_74e2fb3496_33337_0_0_root",
+    "middle": "ag_74e2fb3496_33337_0_0_middle",
+    "argument": "ag_74e2fb3496_33337_0_0_argument",
+    "callback": "ag_74e2fb3496_33337_0_0_callback",
+    "dispatch_type": "ag_74e2fb3496_33337_0_0_dispatch_type",
+    "dispatch": "ag_74e2fb3496_33337_0_0_dispatch",
+    "extract": "ag_74e2fb3496_33337_0_0_extract",
+    "input": "ag_74e2fb3496_33337_0_0_input",
+    "invoke": "ag_74e2fb3496_33337_0_0_invoke"
+  },
+  "replacement": "(ag_74e2fb3496_33337_0_0_object.ag_74e2fb3496_33337_0_0_value)",
+  "edits": [
+    {
+      "start": 22115,
+      "end": 22115,
+      "before": "",
+      "after": "\nstruct ag_74e2fb3496_33337_0_0_record { int ag_74e2fb3496_33337_0_0_value; };\nstruct ag_74e2fb3496_33337_0_0_record ag_74e2fb3496_33337_0_0_left = { p_3 };\nstruct ag_74e2fb3496_33337_0_0_record ag_74e2fb3496_33337_0_0_object = {0};\nag_74e2fb3496_33337_0_0_object = ag_74e2fb3496_33337_0_0_left;\n"
+    },
+    {
+      "start": 33337,
+      "end": 33340,
+      "before": "p_3",
+      "after": "(ag_74e2fb3496_33337_0_0_object.ag_74e2fb3496_33337_0_0_value)"
+    }
+  ],
+  "source_map": [
+    {
+      "kind": "identity",
+      "s": [
+        0,
+        22115
+      ],
+      "p0": [
+        0,
+        22115
+      ]
+    },
+    {
+      "kind": "generated",
+      "s": [
+        22115,
+        22115
+      ],
+      "p0": [
+        22115,
+        22411
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        22115,
+        33337
+      ],
+      "p0": [
+        22411,
+        33633
+      ]
+    },
+    {
+      "kind": "replacement",
+      "s": [
+        33337,
+        33340
+      ],
+      "p0": [
+        33633,
+        33695
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        33340,
+        106608
+      ],
+      "p0": [
+        33695,
+        106963
+      ]
+    }
+  ],
+  "local_equivalence": {
+    "parameter_initialized": true,
+    "all_parameter_references_read_only": true,
+    "early_nonvolatile_read_has_no_observable_effect": true,
+    "value_type_preserved": true,
+    "new_objects_private": true,
+    "new_calls_pure_identity": false,
+    "original_expression_evaluation_path_preserved": true,
+    "global_ub_proof": false
+  },
+  "assignment_count": 1
+}

@@ -1,0 +1,27 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0047_1704664439.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_012/aggregate_nested_01/P0.c
+@@ -427,7 +427,14 @@
+  * writes: g_1042 g_26 g_849.f7 g_35 g_206.f7 g_276 g_2212 g_79 g_88 g_91 g_105 g_143 g_89 g_58 g_167 g_172 g_173 g_174 g_57 g_222 g_116 g_1195 g_1417 g_487
+  */
+ static uint32_t  func_8(uint64_t  p_9, int32_t * p_10, int32_t  p_11, int64_t  p_12)
+-{ 
++{
++struct ag_e43cc34c28_46538_0_0_record { int ag_e43cc34c28_46538_0_0_value; };
++struct ag_e43cc34c28_46538_0_0_other { struct ag_e43cc34c28_46538_0_0_record ag_e43cc34c28_46538_0_0_right; int ag_e43cc34c28_46538_0_0_input; };
++struct ag_e43cc34c28_46538_0_0_other ag_e43cc34c28_46538_0_0_left = {{ p_11 }, 0};
++struct ag_e43cc34c28_46538_0_0_other ag_e43cc34c28_46538_0_0_object = {{0}, 0};
++ag_e43cc34c28_46538_0_0_object = ag_e43cc34c28_46538_0_0_left;
++ag_e43cc34c28_46538_0_0_object = ag_e43cc34c28_46538_0_0_left;
++ 
+ /* edgm diversify: while + continue/break (tag=60290) */
+ do {
+     volatile unsigned edgm_w_60290 = ((((((((((unsigned)1u) ^ 0xA5u)) << 1) & 0xFFu)) & 0xFFu)) & 7u);
+@@ -543,7 +550,7 @@
+         uint64_t *l_2223 = &g_198[7][3][0];
+         int32_t **l_2224 = &g_1417;
+         int32_t **l_2225 = &g_487;
+-        (*l_2225) = ((*l_2224) = (g_2206 , func_38(((~p_11) , (*g_754)), ((l_1734 != (g_2212 = l_2210)) & ((safe_mul_func_uint32_t_u_u((((*g_466) = ((safe_lshift_func_uint8_t_u_u(((-10L) ^ ((safe_mul_func_uint8_t_u_u(((*l_1756) = (+((*l_1756) == (safe_mod_func_uint64_t_u_u(l_2222, ((*g_174) = 1UL)))))), (*g_1409))) || p_11)), p_11)) == (***g_1765))) ^ (***g_1765)), (*g_844))) <= p_9)), l_2223)));
++        (*l_2225) = ((*l_2224) = (g_2206 , func_38(((~p_11) , (*g_754)), ((l_1734 != (g_2212 = l_2210)) & ((safe_mul_func_uint32_t_u_u((((*g_466) = ((safe_lshift_func_uint8_t_u_u(((-10L) ^ ((safe_mul_func_uint8_t_u_u(((*l_1756) = (+((*l_1756) == (safe_mod_func_uint64_t_u_u(l_2222, ((*g_174) = 1UL)))))), (*g_1409))) || (ag_e43cc34c28_46538_0_0_object.ag_e43cc34c28_46538_0_0_right.ag_e43cc34c28_46538_0_0_value))), p_11)) == (***g_1765))) ^ (***g_1765)), (*g_844))) <= p_9)), l_2223)));
+     }
+     return (*l_1756);
+ }

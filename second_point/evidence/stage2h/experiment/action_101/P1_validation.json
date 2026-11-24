@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_101/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_101/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_101/P1.c: In function 'func_68':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_101/P1.c:1321:38: error: cannot take address of bit-field 'ag_e271f42963_113959_0_0_value'\n 1321 | int *ag_e271f42963_113959_0_0_left = &ag_e271f42963_113959_0_0_object.ag_e271f42963_113959_0_0_value;\n      |                                      ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.05148748494684696
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_101/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_101/P1.c:1321:38: error: address of bit-field requested\n 1321 | int *ag_e271f42963_113959_0_0_left = &ag_e271f42963_113959_0_0_object.ag_e271f42963_113959_0_0_value;\n      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.08175180805847049
+    }
+  },
+  "sha256": "fd422a29e7c21aee1b846812546e89b5f430369847b77a056d43115ecfd7550e",
+  "source_unchanged": true
+}

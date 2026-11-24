@@ -1,0 +1,24 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0017_722706979.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_005/aggregate_nested_00/P0.c
+@@ -100,6 +100,12 @@
+ /* ---------------------------------------- */
+ int main (int argc, char* argv[])
+ {
++struct ag_0b862f2f44_2828_0_0_record { int ag_0b862f2f44_2828_0_0_value; };
++struct ag_0b862f2f44_2828_0_0_other { struct ag_0b862f2f44_2828_0_0_record ag_0b862f2f44_2828_0_0_right; int ag_0b862f2f44_2828_0_0_input; };
++struct ag_0b862f2f44_2828_0_0_other ag_0b862f2f44_2828_0_0_left = {{ argc }, 0};
++struct ag_0b862f2f44_2828_0_0_other ag_0b862f2f44_2828_0_0_object = {{0}, 0};
++ag_0b862f2f44_2828_0_0_object = ag_0b862f2f44_2828_0_0_left;
++
+ 
+     /* edgm diversify: do/while + nested while (tag=79157) */
+     do {
+@@ -111,7 +117,7 @@
+     } while (0);
+     int i, j, k;
+     int print_hash_value = 0;
+-    if (argc == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
++    if ((ag_0b862f2f44_2828_0_0_object.ag_0b862f2f44_2828_0_0_right.ag_0b862f2f44_2828_0_0_value) == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
+ 
+     /* edgm diversify: local typedef-chain (tag=70241) */
+     typedef int32_t edgm_ltd_70241_t0;

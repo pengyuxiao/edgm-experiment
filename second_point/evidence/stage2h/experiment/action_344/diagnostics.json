@@ -1,0 +1,48 @@
+{
+  "gcc": {
+    "status": "TARGET_ERRORS_OBSERVED",
+    "errors": [
+      {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_344/P1.c",
+        "line": 100,
+        "column": 31,
+        "severity": "error",
+        "message": "assignment of read-only variable 'ag_e4ecd8a586_2449_0_0_object'",
+        "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_344/P1.c:100:31: error: assignment of read-only variable 'ag_e4ecd8a586_2449_0_0_object'",
+        "category": "aggregate_not_modifiable_due_to_const_member",
+        "matched_anchors": [
+          {
+            "violation": 0,
+            "anchor": "operator"
+          }
+        ]
+      }
+    ],
+    "unparsed_error_headers": [],
+    "confirmed_bug": false,
+    "exact_coordinate_comparison": true
+  },
+  "clang": {
+    "status": "TARGET_ERRORS_OBSERVED",
+    "errors": [
+      {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_344/P1.c",
+        "line": 100,
+        "column": 31,
+        "severity": "error",
+        "message": "cannot assign to variable 'ag_e4ecd8a586_2449_0_0_object' with nested const-qualified data member 'ag_e4ecd8a586_2449_0_0_value'",
+        "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_344/P1.c:100:31: error: cannot assign to variable 'ag_e4ecd8a586_2449_0_0_object' with nested const-qualified data member 'ag_e4ecd8a586_2449_0_0_value'",
+        "category": "aggregate_not_modifiable_due_to_const_member",
+        "matched_anchors": [
+          {
+            "violation": 0,
+            "anchor": "operator"
+          }
+        ]
+      }
+    ],
+    "unparsed_error_headers": [],
+    "confirmed_bug": false,
+    "exact_coordinate_comparison": true
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "cwd": "/home/pyx/edgm-experiment",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "second_point/src"
+  },
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "second_point/tests",
+        "-v"
+      ],
+      "log": "baseline_all_tests.txt",
+      "exitcode": 0,
+      "tests": 141
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "edgm_second.aggregate_run",
+        "--phase",
+        "setup",
+        "--out-dir",
+        "second_point/evidence/stage2h"
+      ],
+      "log": "setup_stdout.txt",
+      "exitcode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "second_point/tools/stage2h_manual.py",
+        "--out-dir",
+        "second_point/evidence/stage2h"
+      ],
+      "log": "manual_stdout.txt",
+      "exitcode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "edgm_second.aggregate_run",
+        "--phase",
+        "prepare",
+        "--out-dir",
+        "second_point/evidence/stage2h"
+      ],
+      "log": "preparation_stdout.txt",
+      "exitcode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "edgm_second.aggregate_run",
+        "--phase",
+        "execute",
+        "--out-dir",
+        "second_point/evidence/stage2h"
+      ],
+      "log": "execution_stdout.txt",
+      "exitcode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "second_point/tests",
+        "-v"
+      ],
+      "log": "final_all_tests.txt",
+      "exitcode": 0,
+      "tests": 152
+    },
+    {
+      "command": [
+        "python3",
+        "second_point/tools/stage2h_audit.py",
+        "--out-dir",
+        "second_point/evidence/stage2h"
+      ],
+      "log": "audit_stdout.txt",
+      "exitcode": 0
+    }
+  ],
+  "compiler_argv_and_raw_streams": "per-action P0_validation.json/P1_validation.json and raw stderr/stdout",
+  "original_real_seed_execution": false,
+  "replay_note": "Object/field-identity consistency checks strengthened after generation; existing Oracle bytes/expectations unchanged and all replayed with final verifier",
+  "implementation_diff_check": "passed for code/tests/tools/docs; raw Csmith evidence retains exact source whitespace",
+  "reproducible_setup": "entrypoint_smoke.txt covers fresh setup and overwrite refusal"
+}

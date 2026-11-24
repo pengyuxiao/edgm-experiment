@@ -1,0 +1,94 @@
+{
+  "candidate_id": "893afdc94b51aee2a1c07f4765acfeef1c911ea97df77be7489be1ec9782c38a",
+  "seed_id": "seed_0034_760340181",
+  "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+  "family": "nested_two_addresses",
+  "semantic_context_signature": "91c02128d67c11bf761b2f3562823c8b4d85042026c2c4783ce6002ea6723210",
+  "origin_stage": "2G",
+  "status": "TARGET_ERRORS_OBSERVED",
+  "observations": {
+    "gcc": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_045/P1.c",
+          "line": 1039,
+          "column": 46,
+          "severity": "error",
+          "message": "cannot take address of bit-field 'ag_fe81a3e7f2_61692_1_0_value'",
+          "category": "address_of_bitfield",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_045/P1.c:1039:46: error: cannot take address of bit-field 'ag_fe81a3e7f2_61692_1_0_value'",
+          "matched_anchors": [
+            {
+              "violation": 0,
+              "anchor": "address"
+            }
+          ]
+        },
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_045/P1.c",
+          "line": 1040,
+          "column": 47,
+          "severity": "error",
+          "message": "cannot take address of bit-field 'ag_fe81a3e7f2_61692_1_0_value'",
+          "category": "address_of_bitfield",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_045/P1.c:1040:47: error: cannot take address of bit-field 'ag_fe81a3e7f2_61692_1_0_value'",
+          "matched_anchors": [
+            {
+              "violation": 1,
+              "anchor": "address"
+            }
+          ]
+        }
+      ],
+      "confirmed_bug": false,
+      "expected_violation_count": 2,
+      "exact_coordinate_comparison": true
+    },
+    "clang": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_045/P1.c",
+          "line": 1039,
+          "column": 46,
+          "severity": "error",
+          "message": "address of bit-field requested",
+          "category": "address_of_bitfield",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_045/P1.c:1039:46: error: address of bit-field requested",
+          "matched_anchors": [
+            {
+              "violation": 0,
+              "anchor": "address"
+            }
+          ]
+        },
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_045/P1.c",
+          "line": 1040,
+          "column": 47,
+          "severity": "error",
+          "message": "address of bit-field requested",
+          "category": "address_of_bitfield",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_045/P1.c:1040:47: error: address of bit-field requested",
+          "matched_anchors": [
+            {
+              "violation": 1,
+              "anchor": "address"
+            }
+          ]
+        }
+      ],
+      "confirmed_bug": false,
+      "expected_violation_count": 2,
+      "exact_coordinate_comparison": true
+    }
+  },
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_010/nested_two_addresses_01/P0.c",
+  "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_045/P1.c",
+  "p0_sha256": "9e27d57fb3c4a67f9423a369ecab15984d3fd2340e1b2f94ec3b3928ef286152",
+  "p1_sha256": "31663454d83da539c4fbbea56af2bd947cb70c0c571622b9c52b091894f3755b",
+  "oracle_replay": true,
+  "oracle_unchanged": true,
+  "confirmed_bug": false
+}

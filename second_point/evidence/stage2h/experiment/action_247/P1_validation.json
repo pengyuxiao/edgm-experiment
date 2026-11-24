@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_247/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_247/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_247/P1.c: In function 'main':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_247/P1.c:1827:33: error: assignment of read-only variable 'ag_6952dd2901_131818_0_0_object'\n 1827 | ag_6952dd2901_131818_0_0_object = ag_6952dd2901_131818_0_0_left;\n      |                                 ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.04567705513909459
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_247/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_247/P1.c:1827:33: error: cannot assign to variable 'ag_6952dd2901_131818_0_0_object' with const-qualified data member 'ag_6952dd2901_131818_0_0_value'\n 1827 | ag_6952dd2901_131818_0_0_object = ag_6952dd2901_131818_0_0_left;\n      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_247/P1.c:1824:52: note: data member 'ag_6952dd2901_131818_0_0_value' declared const here\n 1824 | struct ag_6952dd2901_131818_0_0_record { const int ag_6952dd2901_131818_0_0_value; };\n      |                                          ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.0670881608966738
+    }
+  },
+  "sha256": "5df794fa208555355a87485b79eb8075d5b7a512da5356a9e59a6db920d372e0",
+  "source_unchanged": true
+}

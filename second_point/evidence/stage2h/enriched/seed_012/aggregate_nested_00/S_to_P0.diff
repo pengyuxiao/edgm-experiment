@@ -1,0 +1,26 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0047_1704664439.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_012/aggregate_nested_00/P0.c
+@@ -305,7 +305,13 @@
+  * writes: g_315.f1 g_26 g_58 g_1092
+  */
+ static int32_t * func_2(uint32_t  p_3, int32_t * p_4, int32_t * p_5)
+-{ /* block id: 1007 */
++{
++struct ag_e43cc34c28_32367_0_0_record { unsigned int ag_e43cc34c28_32367_0_0_value; };
++struct ag_e43cc34c28_32367_0_0_other { struct ag_e43cc34c28_32367_0_0_record ag_e43cc34c28_32367_0_0_right; int ag_e43cc34c28_32367_0_0_input; };
++struct ag_e43cc34c28_32367_0_0_other ag_e43cc34c28_32367_0_0_left = {{ p_3 }, 0};
++struct ag_e43cc34c28_32367_0_0_other ag_e43cc34c28_32367_0_0_object = {{0}, 0};
++ag_e43cc34c28_32367_0_0_object = ag_e43cc34c28_32367_0_0_left;
++ /* block id: 1007 */
+     int32_t *l_2243 = &g_26[3];
+ 
+     /* edgm diversify: switch/case (tag=55311) */
+@@ -345,7 +351,7 @@
+             break;
+         }
+     } while (0);
+-    l_2243 = func_28(func_36(l_2243), ((*g_754) = l_2244), l_2244, l_2245, (((p_3 & l_2246) , g_147) , l_2246));
++    l_2243 = func_28(func_36(l_2243), ((*g_754) = l_2244), l_2244, l_2245, ((((ag_e43cc34c28_32367_0_0_object.ag_e43cc34c28_32367_0_0_right.ag_e43cc34c28_32367_0_0_value) & l_2246) , g_147) , l_2246));
+ 
+     /* edgm diversify: while + continue/break (tag=75640) */
+     do {

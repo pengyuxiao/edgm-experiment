@@ -1,0 +1,102 @@
+{
+  "result": {
+    "index": 33,
+    "seed_id": "seed_0039_1151129440",
+    "source": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0039_1151129440.c",
+    "sha256": "e4ecd8a586b1c0bed508b693b5dff15a7a79a3a89bc54a2cdd501ea466b96aa9",
+    "positions": 1,
+    "actions": [
+      {
+        "seed_id": "seed_0039_1151129440",
+        "seed_index": 33,
+        "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0039_1151129440.c",
+        "s_sha256": "e4ecd8a586b1c0bed508b693b5dff15a7a79a3a89bc54a2cdd501ea466b96aa9",
+        "source_kind": "Enriched",
+        "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+        "enrichment_family": "aggregate_direct",
+        "position_id": "e4ecd8a586b1c0bed508b693b5dff15a7a79a3a89bc54a2cdd501ea466b96aa9:c:seed_0039_1151129440.c@2374@F@main@argc:2449",
+        "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_033/aggregate_direct_00",
+        "origin_stage": "2H",
+        "status": "VALID_CANDIDATE",
+        "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_033/aggregate_direct_00/P0.c",
+        "P0_id": "4e2b5f30542714d717c22b85fc9a8ec07a8a89a51690c4b172e3f0eb0209d600",
+        "semantic_context": {
+          "family": "aggregate_direct",
+          "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+          "input_type": "INT",
+          "input_role": "immutable_by_value_parameter",
+          "function_role": "entry_control",
+          "original_operator": "==",
+          "original_context": [
+            "BINARY_OPERATOR",
+            "IF_STMT",
+            "COMPOUND_STMT"
+          ],
+          "cross_statement": true,
+          "cross_scope": false,
+          "cross_function": false,
+          "record_depth": 1,
+          "target_use_points": 1,
+          "value_route": "parameter -> initialized source -> whole-record copy -> destination member -> original operation"
+        },
+        "semantic_context_signature": "e02ed3e1477c8f9c088afc6ba881b923b9defa1b144142c66d6ed7f0709f2b99",
+        "candidate_id": "ef5ad07a13a204a245d592da8229518a9739f13fb1058988638f2c1614b861fd"
+      },
+      {
+        "seed_id": "seed_0039_1151129440",
+        "seed_index": 33,
+        "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0039_1151129440.c",
+        "s_sha256": "e4ecd8a586b1c0bed508b693b5dff15a7a79a3a89bc54a2cdd501ea466b96aa9",
+        "source_kind": "Enriched",
+        "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+        "enrichment_family": "aggregate_nested",
+        "position_id": "e4ecd8a586b1c0bed508b693b5dff15a7a79a3a89bc54a2cdd501ea466b96aa9:c:seed_0039_1151129440.c@2374@F@main@argc:2449",
+        "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_033/aggregate_nested_00",
+        "origin_stage": "2H",
+        "status": "VALID_CANDIDATE",
+        "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_033/aggregate_nested_00/P0.c",
+        "P0_id": "9d5b398bf3e27224977f0991e542c8dd5a7deef7d9fff821ad81e97e6c2cfd60",
+        "semantic_context": {
+          "family": "aggregate_nested",
+          "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+          "input_type": "INT",
+          "input_role": "immutable_by_value_parameter",
+          "function_role": "entry_control",
+          "original_operator": "==",
+          "original_context": [
+            "BINARY_OPERATOR",
+            "IF_STMT",
+            "COMPOUND_STMT"
+          ],
+          "cross_statement": true,
+          "cross_scope": false,
+          "cross_function": false,
+          "record_depth": 2,
+          "target_use_points": 1,
+          "value_route": "parameter -> initialized source -> whole-record copy -> destination member -> original operation"
+        },
+        "semantic_context_signature": "586233872f751fbbef6569d6862bcda274ef1f3109f5609afd317c5666175ccb",
+        "candidate_id": "baf321d0fb991e76d07dfbd1a9e083314ae9cf8ed91e0b9550fa2168dbd4e5f6"
+      }
+    ]
+  },
+  "worker": {
+    "command": [
+      "/usr/bin/python3",
+      "-m",
+      "edgm_second.aggregate_run",
+      "--phase",
+      "prepare_worker",
+      "--out-dir",
+      "/home/pyx/edgm-experiment/second_point/evidence/stage2h",
+      "--index",
+      "33"
+    ],
+    "returncode": 0,
+    "stdout": "see result file",
+    "stderr": "",
+    "status": "ok",
+    "exception": null,
+    "elapsed_seconds": 1.5907353779766709
+  }
+}

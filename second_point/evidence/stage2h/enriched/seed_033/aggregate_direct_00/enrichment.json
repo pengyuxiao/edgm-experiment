@@ -1,0 +1,191 @@
+{
+  "schema": "stage2h-enrichment-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0039_1151129440.c",
+  "s_sha256": "e4ecd8a586b1c0bed508b693b5dff15a7a79a3a89bc54a2cdd501ea466b96aa9",
+  "p0_sha256": "4e2b5f30542714d717c22b85fc9a8ec07a8a89a51690c4b172e3f0eb0209d600",
+  "position": {
+    "position_id": "e4ecd8a586b1c0bed508b693b5dff15a7a79a3a89bc54a2cdd501ea466b96aa9:c:seed_0039_1151129440.c@2374@F@main@argc:2449",
+    "read": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0039_1151129440.c",
+      "line": 98,
+      "column": 9,
+      "offset": 2449,
+      "start_offset": 2449,
+      "end_offset": 2453,
+      "node_identity": "c:seed_0039_1151129440.c@2374@F@main@argc:DECL_REF_EXPR:2449",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "argc",
+      "usr": "",
+      "referenced_usr": "c:seed_0039_1151129440.c@2374@F@main@argc",
+      "kind": "DECL_REF_EXPR"
+    },
+    "declaration": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0039_1151129440.c",
+      "line": 94,
+      "column": 15,
+      "offset": 2378,
+      "start_offset": 2374,
+      "end_offset": 2382,
+      "node_identity": "c:seed_0039_1151129440.c@2374@F@main@argc:PARM_DECL:2374",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int argc",
+      "usr": "c:seed_0039_1151129440.c@2374@F@main@argc",
+      "referenced_usr": "c:seed_0039_1151129440.c@2374@F@main@argc",
+      "kind": "PARM_DECL"
+    },
+    "function_offset": 2364,
+    "body_start": 2398,
+    "kind": "INT",
+    "parameter": "argc",
+    "function_name": "main",
+    "function_usr": "c:@F@main",
+    "operator": "==",
+    "operation": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0039_1151129440.c",
+      "line": 98,
+      "column": 9,
+      "offset": 2449,
+      "start_offset": 2449,
+      "end_offset": 2458,
+      "node_identity": ":BINARY_OPERATOR:2449",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "argc == 2",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "BINARY_OPERATOR"
+    },
+    "unit": [
+      2445,
+      2510
+    ],
+    "nested_supported": true,
+    "ancestor_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ]
+  },
+  "enrichment_family": "aggregate_direct",
+  "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+  "semantic_context": {
+    "family": "aggregate_direct",
+    "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "entry_control",
+    "original_operator": "==",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ],
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": false,
+    "record_depth": 1,
+    "target_use_points": 1,
+    "value_route": "parameter -> initialized source -> whole-record copy -> destination member -> original operation"
+  },
+  "semantic_context_signature": "e02ed3e1477c8f9c088afc6ba881b923b9defa1b144142c66d6ed7f0709f2b99",
+  "names": {
+    "record": "ag_e4ecd8a586_2449_0_0_record",
+    "other": "ag_e4ecd8a586_2449_0_0_other",
+    "value": "ag_e4ecd8a586_2449_0_0_value",
+    "object": "ag_e4ecd8a586_2449_0_0_object",
+    "left": "ag_e4ecd8a586_2449_0_0_left",
+    "right": "ag_e4ecd8a586_2449_0_0_right",
+    "root": "ag_e4ecd8a586_2449_0_0_root",
+    "middle": "ag_e4ecd8a586_2449_0_0_middle",
+    "argument": "ag_e4ecd8a586_2449_0_0_argument",
+    "callback": "ag_e4ecd8a586_2449_0_0_callback",
+    "dispatch_type": "ag_e4ecd8a586_2449_0_0_dispatch_type",
+    "dispatch": "ag_e4ecd8a586_2449_0_0_dispatch",
+    "extract": "ag_e4ecd8a586_2449_0_0_extract",
+    "input": "ag_e4ecd8a586_2449_0_0_input",
+    "invoke": "ag_e4ecd8a586_2449_0_0_invoke"
+  },
+  "replacement": "(ag_e4ecd8a586_2449_0_0_object.ag_e4ecd8a586_2449_0_0_value)",
+  "edits": [
+    {
+      "start": 2399,
+      "end": 2399,
+      "before": "",
+      "after": "\nstruct ag_e4ecd8a586_2449_0_0_record { int ag_e4ecd8a586_2449_0_0_value; };\nstruct ag_e4ecd8a586_2449_0_0_record ag_e4ecd8a586_2449_0_0_left = { argc };\nstruct ag_e4ecd8a586_2449_0_0_record ag_e4ecd8a586_2449_0_0_object = {0};\nag_e4ecd8a586_2449_0_0_object = ag_e4ecd8a586_2449_0_0_left;\n"
+    },
+    {
+      "start": 2449,
+      "end": 2453,
+      "before": "argc",
+      "after": "(ag_e4ecd8a586_2449_0_0_object.ag_e4ecd8a586_2449_0_0_value)"
+    }
+  ],
+  "source_map": [
+    {
+      "kind": "identity",
+      "s": [
+        0,
+        2399
+      ],
+      "p0": [
+        0,
+        2399
+      ]
+    },
+    {
+      "kind": "generated",
+      "s": [
+        2399,
+        2399
+      ],
+      "p0": [
+        2399,
+        2688
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        2399,
+        2449
+      ],
+      "p0": [
+        2688,
+        2738
+      ]
+    },
+    {
+      "kind": "replacement",
+      "s": [
+        2449,
+        2453
+      ],
+      "p0": [
+        2738,
+        2798
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        2453,
+        5139
+      ],
+      "p0": [
+        2798,
+        5484
+      ]
+    }
+  ],
+  "local_equivalence": {
+    "parameter_initialized": true,
+    "all_parameter_references_read_only": true,
+    "early_nonvolatile_read_has_no_observable_effect": true,
+    "value_type_preserved": true,
+    "new_objects_private": true,
+    "new_calls_pure_identity": false,
+    "original_expression_evaluation_path_preserved": true,
+    "global_ub_proof": false
+  },
+  "assignment_count": 1
+}

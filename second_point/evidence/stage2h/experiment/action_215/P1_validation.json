@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_215/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_215/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_215/P1.c: In function 'func_23':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_215/P1.c:486:37: error: cannot take address of bit-field 'ag_58fb5d4bba_51958_0_0_value'\n  486 | int *ag_58fb5d4bba_51958_0_0_left = &ag_58fb5d4bba_51958_0_0_object.ag_58fb5d4bba_51958_0_0_value;\n      |                                     ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.048685007030144334
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_215/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_215/P1.c:486:37: error: address of bit-field requested\n  486 | int *ag_58fb5d4bba_51958_0_0_left = &ag_58fb5d4bba_51958_0_0_object.ag_58fb5d4bba_51958_0_0_value;\n      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.07263301918283105
+    }
+  },
+  "sha256": "dd35999a2f868a65c28c97ba942102ee1bcbada49313d4147cef675eaba5ca1e",
+  "source_unchanged": true
+}

@@ -1,0 +1,50 @@
+{
+  "candidate_id": "8eb02fc00c8809adaa431623d27d2e2058c61957c494194a017478cca251dd4b",
+  "seed_id": "seed_0013_1579317268",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "family": "typedef_callback",
+  "semantic_context_signature": "e733e51609b6a00d3a3db754d12227dfe95bff962a69576c1affa3248513bf77",
+  "origin_stage": "2G",
+  "status": "TARGET_ERRORS_OBSERVED",
+  "observations": {
+    "gcc": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_199/P1.c",
+          "line": 2362,
+          "column": 75,
+          "severity": "error",
+          "category": "incompatible_struct_argument",
+          "message": "incompatible type for argument 1 of 'ag_f2129382fa_165988_2_0_dispatch.ag_f2129382fa_165988_2_0_invoke'",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_199/P1.c:2362:75: error: incompatible type for argument 1 of 'ag_f2129382fa_165988_2_0_dispatch.ag_f2129382fa_165988_2_0_invoke'",
+          "exact_target_anchor": true
+        }
+      ],
+      "confirmed_bug": false
+    },
+    "clang": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_199/P1.c",
+          "line": 2362,
+          "column": 75,
+          "severity": "error",
+          "category": "incompatible_struct_argument",
+          "message": "passing 'ag_f2129382fa_165988_2_0_argument' (aka 'struct ag_f2129382fa_165988_2_0_other') to parameter of incompatible type 'ag_f2129382fa_165988_2_0_root' (aka 'struct ag_f2129382fa_165988_2_0_record')",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_199/P1.c:2362:75: error: passing 'ag_f2129382fa_165988_2_0_argument' (aka 'struct ag_f2129382fa_165988_2_0_other') to parameter of incompatible type 'ag_f2129382fa_165988_2_0_root' (aka 'struct ag_f2129382fa_165988_2_0_record')",
+          "exact_target_anchor": true
+        }
+      ],
+      "confirmed_bug": false
+    }
+  },
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_043/typedef_callback_01/P0.c",
+  "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_199/P1.c",
+  "p0_sha256": "7b7c35a998a545d3ca52b63316491339d128f13b57226e0fcd163e824c7ca1ac",
+  "p1_sha256": "cd8ab9ee783cedff414d4aa6f7803244cf2c32b127ed7dfa5a32a96b9f505f42",
+  "oracle_replay": true,
+  "oracle_unchanged": true,
+  "confirmed_bug": false
+}

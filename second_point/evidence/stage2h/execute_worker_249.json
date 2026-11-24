@@ -1,0 +1,85 @@
+{
+  "result": {
+    "candidate_id": "b537a81af229b053d2cf1e4ff6f21b7ba4a090d0cafdf0aa4ea6316dfa325cc9",
+    "seed_id": "seed_0017_722706979",
+    "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+    "family": "aggregate_direct",
+    "semantic_context_signature": "e02ed3e1477c8f9c088afc6ba881b923b9defa1b144142c66d6ed7f0709f2b99",
+    "origin_stage": "2H",
+    "status": "TARGET_ERRORS_OBSERVED",
+    "observations": {
+      "gcc": {
+        "status": "TARGET_ERRORS_OBSERVED",
+        "errors": [
+          {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_249/P1.c",
+            "line": 106,
+            "column": 31,
+            "severity": "error",
+            "message": "assignment of read-only variable 'ag_0b862f2f44_2828_0_0_object'",
+            "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_249/P1.c:106:31: error: assignment of read-only variable 'ag_0b862f2f44_2828_0_0_object'",
+            "category": "aggregate_not_modifiable_due_to_const_member",
+            "matched_anchors": [
+              {
+                "violation": 0,
+                "anchor": "operator"
+              }
+            ]
+          }
+        ],
+        "unparsed_error_headers": [],
+        "confirmed_bug": false,
+        "exact_coordinate_comparison": true
+      },
+      "clang": {
+        "status": "TARGET_ERRORS_OBSERVED",
+        "errors": [
+          {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_249/P1.c",
+            "line": 106,
+            "column": 31,
+            "severity": "error",
+            "message": "cannot assign to variable 'ag_0b862f2f44_2828_0_0_object' with const-qualified data member 'ag_0b862f2f44_2828_0_0_value'",
+            "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_249/P1.c:106:31: error: cannot assign to variable 'ag_0b862f2f44_2828_0_0_object' with const-qualified data member 'ag_0b862f2f44_2828_0_0_value'",
+            "category": "aggregate_not_modifiable_due_to_const_member",
+            "matched_anchors": [
+              {
+                "violation": 0,
+                "anchor": "operator"
+              }
+            ]
+          }
+        ],
+        "unparsed_error_headers": [],
+        "confirmed_bug": false,
+        "exact_coordinate_comparison": true
+      }
+    },
+    "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_005/aggregate_direct_00/P0.c",
+    "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_249/P1.c",
+    "p0_sha256": "34dd088d99735904106927e36a5111b171cfa26e3fbe239f58f78ead9be2dcc4",
+    "p1_sha256": "f9d5ecd0908a4e0324d80cd4f4388fb0a95fb8f22924e3afc015e6a1506ed7fd",
+    "oracle_replay": true,
+    "oracle_unchanged": true,
+    "confirmed_bug": false
+  },
+  "worker": {
+    "command": [
+      "/usr/bin/python3",
+      "-m",
+      "edgm_second.aggregate_run",
+      "--phase",
+      "execute_worker",
+      "--out-dir",
+      "/home/pyx/edgm-experiment/second_point/evidence/stage2h",
+      "--index",
+      "249"
+    ],
+    "returncode": 0,
+    "stdout": "see result file",
+    "stderr": "",
+    "status": "ok",
+    "exception": null,
+    "elapsed_seconds": 0.8556173199322075
+  }
+}

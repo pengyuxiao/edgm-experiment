@@ -1,0 +1,34 @@
+{
+  "gcc": {
+    "status": "TARGET_ERRORS_OBSERVED",
+    "errors": [
+      {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_164/P1.c",
+        "line": 95,
+        "column": 71,
+        "severity": "error",
+        "category": "incompatible_struct_argument",
+        "message": "incompatible type for argument 1 of 'ag_886224ecdc_2007_2_0_dispatch.ag_886224ecdc_2007_2_0_invoke'",
+        "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_164/P1.c:95:71: error: incompatible type for argument 1 of 'ag_886224ecdc_2007_2_0_dispatch.ag_886224ecdc_2007_2_0_invoke'",
+        "exact_target_anchor": true
+      }
+    ],
+    "confirmed_bug": false
+  },
+  "clang": {
+    "status": "TARGET_ERRORS_OBSERVED",
+    "errors": [
+      {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_164/P1.c",
+        "line": 95,
+        "column": 71,
+        "severity": "error",
+        "category": "incompatible_struct_argument",
+        "message": "passing 'ag_886224ecdc_2007_2_0_argument' (aka 'struct ag_886224ecdc_2007_2_0_other') to parameter of incompatible type 'ag_886224ecdc_2007_2_0_root' (aka 'struct ag_886224ecdc_2007_2_0_record')",
+        "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_164/P1.c:95:71: error: passing 'ag_886224ecdc_2007_2_0_argument' (aka 'struct ag_886224ecdc_2007_2_0_other') to parameter of incompatible type 'ag_886224ecdc_2007_2_0_root' (aka 'struct ag_886224ecdc_2007_2_0_record')",
+        "exact_target_anchor": true
+      }
+    ],
+    "confirmed_bug": false
+  }
+}

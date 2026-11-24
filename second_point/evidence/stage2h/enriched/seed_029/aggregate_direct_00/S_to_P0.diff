@@ -1,0 +1,25 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0024_1641710402.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_029/aggregate_direct_00/P0.c
+@@ -1266,7 +1266,12 @@
+  * writes: g_768 g_83 g_430 g_724
+  */
+ static int32_t * func_36(int32_t * p_37, uint64_t * p_38, uint32_t  p_39, uint8_t  p_40)
+-{ 
++{
++struct ag_8ef07bfb0b_115248_0_0_record { unsigned int ag_8ef07bfb0b_115248_0_0_value; };
++struct ag_8ef07bfb0b_115248_0_0_record ag_8ef07bfb0b_115248_0_0_left = { p_39 };
++struct ag_8ef07bfb0b_115248_0_0_record ag_8ef07bfb0b_115248_0_0_object = {0};
++ag_8ef07bfb0b_115248_0_0_object = ag_8ef07bfb0b_115248_0_0_left;
++ 
+ /* edgm diversify: switch/case (tag=22017) */
+ do {
+     unsigned edgm_sw_22017 = (((((unsigned)((unsigned long)(g_1054))) >> 1) & 0xFFu)) & 3u;
+@@ -1341,7 +1346,7 @@
+         (*l_1851) = 1L;
+         ++l_1863;
+     }
+-    l_1885 = (safe_mod_func_int32_t_s_s((safe_lshift_func_uint8_t_u_s((((*l_1884) = (safe_sub_func_int64_t_s_s((p_39 & (safe_div_func_int64_t_s_s(((l_1874 != (l_1876 = g_1875)) , (safe_mod_func_int32_t_s_s((((*l_1877) = (*l_1877)) != (*g_1052)), 0xBC3757E7L))), g_8))), ((!((p_40 ^= (0x4466C060A495EA8CLL | ((*l_1882) = (g_114 == l_1863)))) , l_1860)) ^ p_39)))) > 0x305873C8L), 7)), (*p_37)));
++    l_1885 = (safe_mod_func_int32_t_s_s((safe_lshift_func_uint8_t_u_s((((*l_1884) = (safe_sub_func_int64_t_s_s(((ag_8ef07bfb0b_115248_0_0_object.ag_8ef07bfb0b_115248_0_0_value) & (safe_div_func_int64_t_s_s(((l_1874 != (l_1876 = g_1875)) , (safe_mod_func_int32_t_s_s((((*l_1877) = (*l_1877)) != (*g_1052)), 0xBC3757E7L))), g_8))), ((!((p_40 ^= (0x4466C060A495EA8CLL | ((*l_1882) = (g_114 == l_1863)))) , l_1860)) ^ p_39)))) > 0x305873C8L), 7)), (*p_37)));
+     return p_37;
+ }
+ 

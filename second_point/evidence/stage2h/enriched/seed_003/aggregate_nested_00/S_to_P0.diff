@@ -1,0 +1,26 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0008_2017672589.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_003/aggregate_nested_00/P0.c
+@@ -676,7 +676,13 @@
+  * writes: g_13 g_444 g_215 g_713 g_141 g_706 g_111 g_929 g_1517 g_1520 g_46 g_84 g_259
+  */
+ static int32_t * func_62(int32_t ** p_63, uint32_t  p_64, int32_t ** p_65)
+-{ /* block id: 556 */
++{
++struct ag_4fec05c15d_61994_0_0_record { unsigned int ag_4fec05c15d_61994_0_0_value; };
++struct ag_4fec05c15d_61994_0_0_other { struct ag_4fec05c15d_61994_0_0_record ag_4fec05c15d_61994_0_0_right; int ag_4fec05c15d_61994_0_0_input; };
++struct ag_4fec05c15d_61994_0_0_other ag_4fec05c15d_61994_0_0_left = {{ p_64 }, 0};
++struct ag_4fec05c15d_61994_0_0_other ag_4fec05c15d_61994_0_0_object = {{0}, 0};
++ag_4fec05c15d_61994_0_0_object = ag_4fec05c15d_61994_0_0_left;
++ /* block id: 556 */
+     uint64_t l_1207 = 0xBC7541D1F4C93B1FLL;
+     int32_t l_1220 = 0x7AD93552L;
+     int32_t l_1226 = (-1L);
+@@ -776,7 +782,7 @@
+             struct S0 *l_1484 = &g_1485;
+             int8_t l_1486 = 0x0DL;
+             int8_t *l_1489 = &g_215[2][2];
+-            (*g_1245) = ((0L | (((*l_1489) ^= (((l_1470[6] = (*l_1377)) >= (((safe_div_func_int64_t_s_s(p_64, l_1473)) & ((((*g_640)--) | l_1476) <= ((((l_1207 ^ ((safe_rshift_func_int32_t_s_u(l_1334, ((safe_mul_func_int8_t_s_s(((safe_mod_func_int64_t_s_s((1L >= (l_1487 = (l_1486 = ((+((*g_753) == l_1484)) > l_1473)))), p_64)) < 18446744073709551612UL), g_589.f0)) > l_1488))) , g_1108.f0)) && p_64) && 0x4034L) ^ l_1473))) == 0x4BC7L)) >= (*g_1245))) , l_1473)) < 1L);
++            (*g_1245) = ((0L | (((*l_1489) ^= (((l_1470[6] = (*l_1377)) >= (((safe_div_func_int64_t_s_s((ag_4fec05c15d_61994_0_0_object.ag_4fec05c15d_61994_0_0_right.ag_4fec05c15d_61994_0_0_value), l_1473)) & ((((*g_640)--) | l_1476) <= ((((l_1207 ^ ((safe_rshift_func_int32_t_s_u(l_1334, ((safe_mul_func_int8_t_s_s(((safe_mod_func_int64_t_s_s((1L >= (l_1487 = (l_1486 = ((+((*g_753) == l_1484)) > l_1473)))), p_64)) < 18446744073709551612UL), g_589.f0)) > l_1488))) , g_1108.f0)) && p_64) && 0x4034L) ^ l_1473))) == 0x4BC7L)) >= (*g_1245))) , l_1473)) < 1L);
+             if ((**g_87))
+                 continue;
+         }

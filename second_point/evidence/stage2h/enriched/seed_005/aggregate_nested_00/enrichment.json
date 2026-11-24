@@ -1,0 +1,191 @@
+{
+  "schema": "stage2h-enrichment-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0017_722706979.c",
+  "s_sha256": "0b862f2f44309b2d9a94f587f2f566d70e3ee5330e4eeb742024ff7ad2180950",
+  "p0_sha256": "8e9b8f6c0fba7e137a9c77da29362efbf3bf872798d460524b5c8ef34bacd06f",
+  "position": {
+    "position_id": "0b862f2f44309b2d9a94f587f2f566d70e3ee5330e4eeb742024ff7ad2180950:c:seed_0017_722706979.c@2437@F@main@argc:2828",
+    "read": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0017_722706979.c",
+      "line": 114,
+      "column": 9,
+      "offset": 2828,
+      "start_offset": 2828,
+      "end_offset": 2832,
+      "node_identity": "c:seed_0017_722706979.c@2437@F@main@argc:DECL_REF_EXPR:2828",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "argc",
+      "usr": "",
+      "referenced_usr": "c:seed_0017_722706979.c@2437@F@main@argc",
+      "kind": "DECL_REF_EXPR"
+    },
+    "declaration": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0017_722706979.c",
+      "line": 101,
+      "column": 15,
+      "offset": 2441,
+      "start_offset": 2437,
+      "end_offset": 2445,
+      "node_identity": "c:seed_0017_722706979.c@2437@F@main@argc:PARM_DECL:2437",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int argc",
+      "usr": "c:seed_0017_722706979.c@2437@F@main@argc",
+      "referenced_usr": "c:seed_0017_722706979.c@2437@F@main@argc",
+      "kind": "PARM_DECL"
+    },
+    "function_offset": 2427,
+    "body_start": 2461,
+    "kind": "INT",
+    "parameter": "argc",
+    "function_name": "main",
+    "function_usr": "c:@F@main",
+    "operator": "==",
+    "operation": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0017_722706979.c",
+      "line": 114,
+      "column": 9,
+      "offset": 2828,
+      "start_offset": 2828,
+      "end_offset": 2837,
+      "node_identity": ":BINARY_OPERATOR:2828",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "argc == 2",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "BINARY_OPERATOR"
+    },
+    "unit": [
+      2824,
+      2889
+    ],
+    "nested_supported": true,
+    "ancestor_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ]
+  },
+  "enrichment_family": "aggregate_nested",
+  "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+  "semantic_context": {
+    "family": "aggregate_nested",
+    "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "entry_control",
+    "original_operator": "==",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ],
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": false,
+    "record_depth": 2,
+    "target_use_points": 1,
+    "value_route": "parameter -> initialized source -> whole-record copy -> destination member -> original operation"
+  },
+  "semantic_context_signature": "586233872f751fbbef6569d6862bcda274ef1f3109f5609afd317c5666175ccb",
+  "names": {
+    "record": "ag_0b862f2f44_2828_0_0_record",
+    "other": "ag_0b862f2f44_2828_0_0_other",
+    "value": "ag_0b862f2f44_2828_0_0_value",
+    "object": "ag_0b862f2f44_2828_0_0_object",
+    "left": "ag_0b862f2f44_2828_0_0_left",
+    "right": "ag_0b862f2f44_2828_0_0_right",
+    "root": "ag_0b862f2f44_2828_0_0_root",
+    "middle": "ag_0b862f2f44_2828_0_0_middle",
+    "argument": "ag_0b862f2f44_2828_0_0_argument",
+    "callback": "ag_0b862f2f44_2828_0_0_callback",
+    "dispatch_type": "ag_0b862f2f44_2828_0_0_dispatch_type",
+    "dispatch": "ag_0b862f2f44_2828_0_0_dispatch",
+    "extract": "ag_0b862f2f44_2828_0_0_extract",
+    "input": "ag_0b862f2f44_2828_0_0_input",
+    "invoke": "ag_0b862f2f44_2828_0_0_invoke"
+  },
+  "replacement": "(ag_0b862f2f44_2828_0_0_object.ag_0b862f2f44_2828_0_0_right.ag_0b862f2f44_2828_0_0_value)",
+  "edits": [
+    {
+      "start": 2462,
+      "end": 2462,
+      "before": "",
+      "after": "\nstruct ag_0b862f2f44_2828_0_0_record { int ag_0b862f2f44_2828_0_0_value; };\nstruct ag_0b862f2f44_2828_0_0_other { struct ag_0b862f2f44_2828_0_0_record ag_0b862f2f44_2828_0_0_right; int ag_0b862f2f44_2828_0_0_input; };\nstruct ag_0b862f2f44_2828_0_0_other ag_0b862f2f44_2828_0_0_left = {{ argc }, 0};\nstruct ag_0b862f2f44_2828_0_0_other ag_0b862f2f44_2828_0_0_object = {{0}, 0};\nag_0b862f2f44_2828_0_0_object = ag_0b862f2f44_2828_0_0_left;\n"
+    },
+    {
+      "start": 2828,
+      "end": 2832,
+      "before": "argc",
+      "after": "(ag_0b862f2f44_2828_0_0_object.ag_0b862f2f44_2828_0_0_right.ag_0b862f2f44_2828_0_0_value)"
+    }
+  ],
+  "source_map": [
+    {
+      "kind": "identity",
+      "s": [
+        0,
+        2462
+      ],
+      "p0": [
+        0,
+        2462
+      ]
+    },
+    {
+      "kind": "generated",
+      "s": [
+        2462,
+        2462
+      ],
+      "p0": [
+        2462,
+        2901
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        2462,
+        2828
+      ],
+      "p0": [
+        2901,
+        3267
+      ]
+    },
+    {
+      "kind": "replacement",
+      "s": [
+        2828,
+        2832
+      ],
+      "p0": [
+        3267,
+        3356
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        2832,
+        6526
+      ],
+      "p0": [
+        3356,
+        7050
+      ]
+    }
+  ],
+  "local_equivalence": {
+    "parameter_initialized": true,
+    "all_parameter_references_read_only": true,
+    "early_nonvolatile_read_has_no_observable_effect": true,
+    "value_type_preserved": true,
+    "new_objects_private": true,
+    "new_calls_pure_identity": false,
+    "original_expression_evaluation_path_preserved": true,
+    "global_ub_proof": false
+  },
+  "assignment_count": 1
+}

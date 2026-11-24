@@ -1,0 +1,25 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0015_2068675736.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_022/aggregate_direct_00/P0.c
+@@ -1315,7 +1315,12 @@
+  * writes: g_394
+  */
+ static uint8_t * func_68(uint32_t  p_69, const int32_t  p_70, int32_t  p_71, uint32_t  p_72, uint16_t  p_73)
+-{ /* block id: 419 */
++{
++struct ag_e271f42963_113959_0_0_record { int ag_e271f42963_113959_0_0_value; };
++struct ag_e271f42963_113959_0_0_record ag_e271f42963_113959_0_0_left = { p_71 };
++struct ag_e271f42963_113959_0_0_record ag_e271f42963_113959_0_0_object = {0};
++ag_e271f42963_113959_0_0_object = ag_e271f42963_113959_0_0_left;
++ /* block id: 419 */
+     const int16_t l_795 = 0L;
+ 
+     /* edgm diversify: do/while + nested while (tag=75723) */
+@@ -1348,7 +1353,7 @@
+     int32_t *l_800 = &g_394;
+     uint8_t *l_801 = &g_37[0][1][0];
+     int i;
+-    (*l_800) |= ((0UL >= ((l_795 < p_70) < g_86.f0)) || (l_795 && (l_799 = ((safe_sub_func_int16_t_s_s((p_71 == p_71), (4294967289UL && (p_69 | l_795)))) && g_339.f2))));
++    (*l_800) |= ((0UL >= ((l_795 < p_70) < g_86.f0)) || (l_795 && (l_799 = ((safe_sub_func_int16_t_s_s(((ag_e271f42963_113959_0_0_object.ag_e271f42963_113959_0_0_value) == p_71), (4294967289UL && (p_69 | l_795)))) && g_339.f2))));
+     return l_801;
+ }
+ 

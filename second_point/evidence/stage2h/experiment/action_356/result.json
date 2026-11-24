@@ -1,0 +1,94 @@
+{
+  "candidate_id": "a38a9dab13b953b74d7560f0d62be6ad7c36251d53372a94bd2b21eebcb64f55",
+  "seed_id": "seed_0003_192201221",
+  "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+  "family": "aggregate_direct",
+  "semantic_context_signature": "523786722b04105049135d5ff6dc8b994665ccc2b032f7a14c573f93316f9463",
+  "origin_stage": "2H",
+  "status": "TARGET_ERRORS_OBSERVED",
+  "observations": {
+    "gcc": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_356/P1.c",
+          "line": 520,
+          "column": 32,
+          "severity": "error",
+          "message": "assignment of read-only variable 'ag_eedfc54b85_29307_0_0_object'",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_356/P1.c:520:32: error: assignment of read-only variable 'ag_eedfc54b85_29307_0_0_object'",
+          "category": "aggregate_not_modifiable_due_to_const_member",
+          "matched_anchors": [
+            {
+              "violation": 0,
+              "anchor": "operator"
+            }
+          ]
+        },
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_356/P1.c",
+          "line": 521,
+          "column": 32,
+          "severity": "error",
+          "message": "assignment of read-only variable 'ag_eedfc54b85_29307_0_0_object'",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_356/P1.c:521:32: error: assignment of read-only variable 'ag_eedfc54b85_29307_0_0_object'",
+          "category": "aggregate_not_modifiable_due_to_const_member",
+          "matched_anchors": [
+            {
+              "violation": 1,
+              "anchor": "operator"
+            }
+          ]
+        }
+      ],
+      "unparsed_error_headers": [],
+      "confirmed_bug": false,
+      "exact_coordinate_comparison": true
+    },
+    "clang": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_356/P1.c",
+          "line": 520,
+          "column": 32,
+          "severity": "error",
+          "message": "cannot assign to variable 'ag_eedfc54b85_29307_0_0_object' with const-qualified data member 'ag_eedfc54b85_29307_0_0_value'",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_356/P1.c:520:32: error: cannot assign to variable 'ag_eedfc54b85_29307_0_0_object' with const-qualified data member 'ag_eedfc54b85_29307_0_0_value'",
+          "category": "aggregate_not_modifiable_due_to_const_member",
+          "matched_anchors": [
+            {
+              "violation": 0,
+              "anchor": "operator"
+            }
+          ]
+        },
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_356/P1.c",
+          "line": 521,
+          "column": 32,
+          "severity": "error",
+          "message": "cannot assign to variable 'ag_eedfc54b85_29307_0_0_object' with const-qualified data member 'ag_eedfc54b85_29307_0_0_value'",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_356/P1.c:521:32: error: cannot assign to variable 'ag_eedfc54b85_29307_0_0_object' with const-qualified data member 'ag_eedfc54b85_29307_0_0_value'",
+          "category": "aggregate_not_modifiable_due_to_const_member",
+          "matched_anchors": [
+            {
+              "violation": 1,
+              "anchor": "operator"
+            }
+          ]
+        }
+      ],
+      "unparsed_error_headers": [],
+      "confirmed_bug": false,
+      "exact_coordinate_comparison": true
+    }
+  },
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_038/aggregate_direct_01/P0.c",
+  "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_356/P1.c",
+  "p0_sha256": "7496c5ebde4834b2a057a2b7ccfd7aea7f001c7ac8f34215d0e56de61ecec887",
+  "p1_sha256": "027e058e2796cb25543912660a99529ea78af0859e41f307e4765dff7b5f9632",
+  "oracle_replay": true,
+  "oracle_unchanged": true,
+  "confirmed_bug": false
+}

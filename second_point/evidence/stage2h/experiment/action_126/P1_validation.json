@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_126/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_126/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_126/P1.c: In function 'func_6':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_126/P1.c:543:379: error: incompatible type for argument 1 of 'ag_d584a7a569_36441_2_0_dispatch.ag_d584a7a569_36441_2_0_invoke'\n  543 |     (****g_548) |= (safe_mul_func_int32_t_s_s((l_2752 > ((*l_2765) &= (((l_2764 ^= (safe_div_func_int64_t_s_s(((g_311[6] , (safe_lshift_func_uint8_t_u_s(((0xE57BA105096AF425LL & ((-6L) | ((l_2752 , (((safe_mul_func_int8_t_s_s((0x3DL && ((((((((safe_rshift_func_int8_t_s_u((((safe_div_func_uint64_t_u_u((l_2763 != (ag_d584a7a569_36441_2_0_dispatch.ag_d584a7a569_36441_2_0_invoke(ag_d584a7a569_36441_2_0_object) && g_150[8])), l_2763)) & p_8) == p_9), 1)) == 65535UL) | l_2763) ^ l_2763) == l_2752) | (-7L)) <= (-1L)) <= l_2763)), 0xDFL)) && (**g_183)) >= p_8)) , p_10))) < 0UL), g_2221))) > l_2752), 0x3CEE95F5B1743C07LL))) ^ 5UL) || 246UL))), p_8));\n      |                                                                                                                                                                                                                                                                                                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                                                                                                                                                                                                                                                                                                                                           |\n      |                                                                                                                                                                                                                                                                                                                                                                                           ag_d584a7a569_36441_2_0_argument {aka struct ag_d584a7a569_36441_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_126/P1.c:543:379: note: expected 'ag_d584a7a569_36441_2_0_root' {aka 'struct ag_d584a7a569_36441_2_0_record'} but argument is of type 'ag_d584a7a569_36441_2_0_argument' {aka 'struct ag_d584a7a569_36441_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.04204799002036452
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_126/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_126/P1.c:543:379: error: passing 'ag_d584a7a569_36441_2_0_argument' (aka 'struct ag_d584a7a569_36441_2_0_other') to parameter of incompatible type 'ag_d584a7a569_36441_2_0_root' (aka 'struct ag_d584a7a569_36441_2_0_record')\n  543 |     (****g_548) |= (safe_mul_func_int32_t_s_s((l_2752 > ((*l_2765) &= (((l_2764 ^= (safe_div_func_int64_t_s_s(((g_311[6] , (safe_lshift_func_uint8_t_u_s(((0xE57BA105096AF425LL & ((-6L) | ((l_2752 , (((safe_mul_func_int8_t_s_s((0x3DL && ((((((((safe_rshift_func_int8_t_s_u((((safe_div_func_uint64_t_u_u((l_2763 != (ag_d584a7a569_36441_2_0_dispatch.ag_d584a7a569_36441_2_0_invoke(ag_d584a7a569_36441_2_0_object) && g_150[8])), l_2763)) & p_8) == p_9), 1)) == 65535UL) | l_2763) ^ l_2763) == l_2752) | (-7L)) <= (-1L)) <= l_2763)), 0xDFL)) && (**g_183)) >= p_8)) , p_10))) < 0UL), g_2221))) > l_2752), 0x3CEE95F5B1743C07LL))) ^ 5UL) || 246UL))), p_8));\n      |                                                                                                                                                                                                                                                                                                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.06459565204568207
+    }
+  },
+  "sha256": "be966198ded0f2ef01657d940a81606f964d3821ff1ab7e074d735cabe153344",
+  "source_unchanged": true
+}

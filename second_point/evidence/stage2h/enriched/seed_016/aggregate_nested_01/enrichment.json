@@ -1,0 +1,191 @@
+{
+  "schema": "stage2h-enrichment-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+  "s_sha256": "ea3b354b090dd68d80abe17b2bef359c2147fa3d321270fa03e094db764144af",
+  "p0_sha256": "63cbb2628c504ca77b754eb378f8b65dc994ef91092397d514f8de486ce5f8c6",
+  "position": {
+    "position_id": "ea3b354b090dd68d80abe17b2bef359c2147fa3d321270fa03e094db764144af:c:seed_0023_9745728.c@34115@F@func_20@p_21:44758",
+    "read": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+      "line": 546,
+      "column": 254,
+      "offset": 44758,
+      "start_offset": 44758,
+      "end_offset": 44762,
+      "node_identity": "c:seed_0023_9745728.c@34115@F@func_20@p_21:DECL_REF_EXPR:44758",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_21",
+      "usr": "",
+      "referenced_usr": "c:seed_0023_9745728.c@34115@F@func_20@p_21",
+      "kind": "DECL_REF_EXPR"
+    },
+    "declaration": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+      "line": 403,
+      "column": 35,
+      "offset": 34125,
+      "start_offset": 34115,
+      "end_offset": 34129,
+      "node_identity": "c:seed_0023_9745728.c@34115@F@func_20@p_21:PARM_DECL:34115",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "uint32_t  p_21",
+      "usr": "c:seed_0023_9745728.c@34115@F@func_20@p_21",
+      "referenced_usr": "c:seed_0023_9745728.c@34115@F@func_20@p_21",
+      "kind": "PARM_DECL"
+    },
+    "function_offset": 34091,
+    "body_start": 34162,
+    "kind": "UINT",
+    "parameter": "p_21",
+    "function_name": "func_20",
+    "function_usr": "c:seed_0023_9745728.c@F@func_20",
+    "operator": "|",
+    "operation": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+      "line": 546,
+      "column": 151,
+      "offset": 44655,
+      "start_offset": 44655,
+      "end_offset": 44762,
+      "node_identity": ":BINARY_OPERATOR:44655",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "((l_1008 , (safe_sub_func_int8_t_s_s((((l_1023 , (l_1024 != g_1025)) > 8L) , 0x02L), l_1026))) | 0L) | p_21",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "BINARY_OPERATOR"
+    },
+    "unit": [
+      44529,
+      44948
+    ],
+    "nested_supported": true,
+    "ancestor_context": [
+      "BINARY_OPERATOR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ]
+  },
+  "enrichment_family": "aggregate_nested",
+  "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+  "semantic_context": {
+    "family": "aggregate_nested",
+    "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+    "input_type": "UINT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "|",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": false,
+    "record_depth": 2,
+    "target_use_points": 2,
+    "value_route": "parameter -> initialized source -> whole-record copy -> destination member -> original operation"
+  },
+  "semantic_context_signature": "cbf0e438648fefcabbaab1f56dbcaceeee5a86ef34e878551f6da922025c0c86",
+  "names": {
+    "record": "ag_ea3b354b09_44758_0_0_record",
+    "other": "ag_ea3b354b09_44758_0_0_other",
+    "value": "ag_ea3b354b09_44758_0_0_value",
+    "object": "ag_ea3b354b09_44758_0_0_object",
+    "left": "ag_ea3b354b09_44758_0_0_left",
+    "right": "ag_ea3b354b09_44758_0_0_right",
+    "root": "ag_ea3b354b09_44758_0_0_root",
+    "middle": "ag_ea3b354b09_44758_0_0_middle",
+    "argument": "ag_ea3b354b09_44758_0_0_argument",
+    "callback": "ag_ea3b354b09_44758_0_0_callback",
+    "dispatch_type": "ag_ea3b354b09_44758_0_0_dispatch_type",
+    "dispatch": "ag_ea3b354b09_44758_0_0_dispatch",
+    "extract": "ag_ea3b354b09_44758_0_0_extract",
+    "input": "ag_ea3b354b09_44758_0_0_input",
+    "invoke": "ag_ea3b354b09_44758_0_0_invoke"
+  },
+  "replacement": "(ag_ea3b354b09_44758_0_0_object.ag_ea3b354b09_44758_0_0_right.ag_ea3b354b09_44758_0_0_value)",
+  "edits": [
+    {
+      "start": 34163,
+      "end": 34163,
+      "before": "",
+      "after": "\nstruct ag_ea3b354b09_44758_0_0_record { unsigned int ag_ea3b354b09_44758_0_0_value; };\nstruct ag_ea3b354b09_44758_0_0_other { struct ag_ea3b354b09_44758_0_0_record ag_ea3b354b09_44758_0_0_right; int ag_ea3b354b09_44758_0_0_input; };\nstruct ag_ea3b354b09_44758_0_0_other ag_ea3b354b09_44758_0_0_left = {{ p_21 }, 0};\nstruct ag_ea3b354b09_44758_0_0_other ag_ea3b354b09_44758_0_0_object = {{0}, 0};\nag_ea3b354b09_44758_0_0_object = ag_ea3b354b09_44758_0_0_left;\nag_ea3b354b09_44758_0_0_object = ag_ea3b354b09_44758_0_0_left;\n"
+    },
+    {
+      "start": 44758,
+      "end": 44762,
+      "before": "p_21",
+      "after": "(ag_ea3b354b09_44758_0_0_object.ag_ea3b354b09_44758_0_0_right.ag_ea3b354b09_44758_0_0_value)"
+    }
+  ],
+  "source_map": [
+    {
+      "kind": "identity",
+      "s": [
+        0,
+        34163
+      ],
+      "p0": [
+        0,
+        34163
+      ]
+    },
+    {
+      "kind": "generated",
+      "s": [
+        34163,
+        34163
+      ],
+      "p0": [
+        34163,
+        34686
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        34163,
+        44758
+      ],
+      "p0": [
+        34686,
+        45281
+      ]
+    },
+    {
+      "kind": "replacement",
+      "s": [
+        44758,
+        44762
+      ],
+      "p0": [
+        45281,
+        45373
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        44762,
+        123182
+      ],
+      "p0": [
+        45373,
+        123793
+      ]
+    }
+  ],
+  "local_equivalence": {
+    "parameter_initialized": true,
+    "all_parameter_references_read_only": true,
+    "early_nonvolatile_read_has_no_observable_effect": true,
+    "value_type_preserved": true,
+    "new_objects_private": true,
+    "new_calls_pure_identity": false,
+    "original_expression_evaluation_path_preserved": true,
+    "global_ub_proof": false
+  },
+  "assignment_count": 2
+}

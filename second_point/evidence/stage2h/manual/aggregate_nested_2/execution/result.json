@@ -1,0 +1,94 @@
+{
+  "candidate_id": "16e8365cf4b6e22953d58764f0b5ff1842b643ab355e188c1dc23633f959d747",
+  "seed_id": "artificial_control",
+  "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+  "family": "aggregate_nested",
+  "semantic_context_signature": "bb687ae46c9fa19682f0262c951f10eb63fb48f3d80fa680da1abdf36fab4c02",
+  "origin_stage": "manual",
+  "status": "TARGET_ERRORS_OBSERVED",
+  "observations": {
+    "gcc": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c",
+          "line": 7,
+          "column": 29,
+          "severity": "error",
+          "message": "assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c:7:29: error: assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+          "category": "aggregate_not_modifiable_due_to_const_member",
+          "matched_anchors": [
+            {
+              "violation": 0,
+              "anchor": "operator"
+            }
+          ]
+        },
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c",
+          "line": 8,
+          "column": 29,
+          "severity": "error",
+          "message": "assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c:8:29: error: assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+          "category": "aggregate_not_modifiable_due_to_const_member",
+          "matched_anchors": [
+            {
+              "violation": 1,
+              "anchor": "operator"
+            }
+          ]
+        }
+      ],
+      "unparsed_error_headers": [],
+      "confirmed_bug": false,
+      "exact_coordinate_comparison": true
+    },
+    "clang": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c",
+          "line": 7,
+          "column": 29,
+          "severity": "error",
+          "message": "cannot assign to variable 'ag_42846fbf77_50_0_0_object' with nested const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c:7:29: error: cannot assign to variable 'ag_42846fbf77_50_0_0_object' with nested const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+          "category": "aggregate_not_modifiable_due_to_const_member",
+          "matched_anchors": [
+            {
+              "violation": 0,
+              "anchor": "operator"
+            }
+          ]
+        },
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c",
+          "line": 8,
+          "column": 29,
+          "severity": "error",
+          "message": "cannot assign to variable 'ag_42846fbf77_50_0_0_object' with nested const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c:8:29: error: cannot assign to variable 'ag_42846fbf77_50_0_0_object' with nested const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+          "category": "aggregate_not_modifiable_due_to_const_member",
+          "matched_anchors": [
+            {
+              "violation": 1,
+              "anchor": "operator"
+            }
+          ]
+        }
+      ],
+      "unparsed_error_headers": [],
+      "confirmed_bug": false,
+      "exact_coordinate_comparison": true
+    }
+  },
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/P0.c",
+  "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c",
+  "p0_sha256": "4ce264ae0176164efa5162fc239020e366cb6cb3f7a9cdd4d214551e10a9b628",
+  "p1_sha256": "3e3f1806fd70f2f9347b62f1cccb7f4335183092ef98569fc7f7c858db75bdc7",
+  "oracle_replay": true,
+  "oracle_unchanged": true,
+  "confirmed_bug": false
+}

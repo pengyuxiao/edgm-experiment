@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_219/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_219/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_219/P1.c: In function 'func_23':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_219/P1.c:554:74: error: incompatible type for argument 1 of 'ag_58fb5d4bba_51958_2_0_dispatch.ag_58fb5d4bba_51958_2_0_invoke'\n  554 |     if ((ag_58fb5d4bba_51958_2_0_dispatch.ag_58fb5d4bba_51958_2_0_invoke(ag_58fb5d4bba_51958_2_0_object) != (g_64 | (((l_2065 = ((l_2064 && p_25) | l_2064)) , l_2066) != &g_1093[4][4][0]))))\n      |                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                          |\n      |                                                                          ag_58fb5d4bba_51958_2_0_argument {aka struct ag_58fb5d4bba_51958_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_219/P1.c:554:74: note: expected 'ag_58fb5d4bba_51958_2_0_root' {aka 'struct ag_58fb5d4bba_51958_2_0_record'} but argument is of type 'ag_58fb5d4bba_51958_2_0_argument' {aka 'struct ag_58fb5d4bba_51958_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.05387594900093973
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_219/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_219/P1.c:554:74: error: passing 'ag_58fb5d4bba_51958_2_0_argument' (aka 'struct ag_58fb5d4bba_51958_2_0_other') to parameter of incompatible type 'ag_58fb5d4bba_51958_2_0_root' (aka 'struct ag_58fb5d4bba_51958_2_0_record')\n  554 |     if ((ag_58fb5d4bba_51958_2_0_dispatch.ag_58fb5d4bba_51958_2_0_invoke(ag_58fb5d4bba_51958_2_0_object) != (g_64 | (((l_2065 = ((l_2064 && p_25) | l_2064)) , l_2066) != &g_1093[4][4][0]))))\n      |                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.08872387511655688
+    }
+  },
+  "sha256": "4a13bcef977dff3104897cc9f52cb6b738d2fda30c48d92f83c76746edfa5a69",
+  "source_unchanged": true
+}

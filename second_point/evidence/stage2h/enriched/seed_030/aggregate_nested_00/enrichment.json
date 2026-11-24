@@ -1,0 +1,191 @@
+{
+  "schema": "stage2h-enrichment-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0032_1083224268.c",
+  "s_sha256": "312d4f7d3a6231e084d1f0113f9bb29893e84f71e078d3324e44e0c4a5780b8d",
+  "p0_sha256": "29366779e54da75a9b46ad5a8bebd7a78efa6fa454973fcbb56bf588fedc0ab4",
+  "position": {
+    "position_id": "312d4f7d3a6231e084d1f0113f9bb29893e84f71e078d3324e44e0c4a5780b8d:c:seed_0032_1083224268.c@1841@F@main@argc:2219",
+    "read": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0032_1083224268.c",
+      "line": 89,
+      "column": 9,
+      "offset": 2219,
+      "start_offset": 2219,
+      "end_offset": 2223,
+      "node_identity": "c:seed_0032_1083224268.c@1841@F@main@argc:DECL_REF_EXPR:2219",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "argc",
+      "usr": "",
+      "referenced_usr": "c:seed_0032_1083224268.c@1841@F@main@argc",
+      "kind": "DECL_REF_EXPR"
+    },
+    "declaration": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0032_1083224268.c",
+      "line": 77,
+      "column": 15,
+      "offset": 1845,
+      "start_offset": 1841,
+      "end_offset": 1849,
+      "node_identity": "c:seed_0032_1083224268.c@1841@F@main@argc:PARM_DECL:1841",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int argc",
+      "usr": "c:seed_0032_1083224268.c@1841@F@main@argc",
+      "referenced_usr": "c:seed_0032_1083224268.c@1841@F@main@argc",
+      "kind": "PARM_DECL"
+    },
+    "function_offset": 1831,
+    "body_start": 1865,
+    "kind": "INT",
+    "parameter": "argc",
+    "function_name": "main",
+    "function_usr": "c:@F@main",
+    "operator": "==",
+    "operation": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0032_1083224268.c",
+      "line": 89,
+      "column": 9,
+      "offset": 2219,
+      "start_offset": 2219,
+      "end_offset": 2228,
+      "node_identity": ":BINARY_OPERATOR:2219",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "argc == 2",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "BINARY_OPERATOR"
+    },
+    "unit": [
+      2215,
+      2280
+    ],
+    "nested_supported": true,
+    "ancestor_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ]
+  },
+  "enrichment_family": "aggregate_nested",
+  "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+  "semantic_context": {
+    "family": "aggregate_nested",
+    "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "entry_control",
+    "original_operator": "==",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ],
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": false,
+    "record_depth": 2,
+    "target_use_points": 1,
+    "value_route": "parameter -> initialized source -> whole-record copy -> destination member -> original operation"
+  },
+  "semantic_context_signature": "586233872f751fbbef6569d6862bcda274ef1f3109f5609afd317c5666175ccb",
+  "names": {
+    "record": "ag_312d4f7d3a_2219_0_0_record",
+    "other": "ag_312d4f7d3a_2219_0_0_other",
+    "value": "ag_312d4f7d3a_2219_0_0_value",
+    "object": "ag_312d4f7d3a_2219_0_0_object",
+    "left": "ag_312d4f7d3a_2219_0_0_left",
+    "right": "ag_312d4f7d3a_2219_0_0_right",
+    "root": "ag_312d4f7d3a_2219_0_0_root",
+    "middle": "ag_312d4f7d3a_2219_0_0_middle",
+    "argument": "ag_312d4f7d3a_2219_0_0_argument",
+    "callback": "ag_312d4f7d3a_2219_0_0_callback",
+    "dispatch_type": "ag_312d4f7d3a_2219_0_0_dispatch_type",
+    "dispatch": "ag_312d4f7d3a_2219_0_0_dispatch",
+    "extract": "ag_312d4f7d3a_2219_0_0_extract",
+    "input": "ag_312d4f7d3a_2219_0_0_input",
+    "invoke": "ag_312d4f7d3a_2219_0_0_invoke"
+  },
+  "replacement": "(ag_312d4f7d3a_2219_0_0_object.ag_312d4f7d3a_2219_0_0_right.ag_312d4f7d3a_2219_0_0_value)",
+  "edits": [
+    {
+      "start": 1866,
+      "end": 1866,
+      "before": "",
+      "after": "\nstruct ag_312d4f7d3a_2219_0_0_record { int ag_312d4f7d3a_2219_0_0_value; };\nstruct ag_312d4f7d3a_2219_0_0_other { struct ag_312d4f7d3a_2219_0_0_record ag_312d4f7d3a_2219_0_0_right; int ag_312d4f7d3a_2219_0_0_input; };\nstruct ag_312d4f7d3a_2219_0_0_other ag_312d4f7d3a_2219_0_0_left = {{ argc }, 0};\nstruct ag_312d4f7d3a_2219_0_0_other ag_312d4f7d3a_2219_0_0_object = {{0}, 0};\nag_312d4f7d3a_2219_0_0_object = ag_312d4f7d3a_2219_0_0_left;\n"
+    },
+    {
+      "start": 2219,
+      "end": 2223,
+      "before": "argc",
+      "after": "(ag_312d4f7d3a_2219_0_0_object.ag_312d4f7d3a_2219_0_0_right.ag_312d4f7d3a_2219_0_0_value)"
+    }
+  ],
+  "source_map": [
+    {
+      "kind": "identity",
+      "s": [
+        0,
+        1866
+      ],
+      "p0": [
+        0,
+        1866
+      ]
+    },
+    {
+      "kind": "generated",
+      "s": [
+        1866,
+        1866
+      ],
+      "p0": [
+        1866,
+        2305
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        1866,
+        2219
+      ],
+      "p0": [
+        2305,
+        2658
+      ]
+    },
+    {
+      "kind": "replacement",
+      "s": [
+        2219,
+        2223
+      ],
+      "p0": [
+        2658,
+        2747
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        2223,
+        5548
+      ],
+      "p0": [
+        2747,
+        6072
+      ]
+    }
+  ],
+  "local_equivalence": {
+    "parameter_initialized": true,
+    "all_parameter_references_read_only": true,
+    "early_nonvolatile_read_has_no_observable_effect": true,
+    "value_type_preserved": true,
+    "new_objects_private": true,
+    "new_calls_pure_identity": false,
+    "original_expression_evaluation_path_preserved": true,
+    "global_ub_proof": false
+  },
+  "assignment_count": 1
+}

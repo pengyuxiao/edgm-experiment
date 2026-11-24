@@ -1,0 +1,84 @@
+{
+  "schema": "initial-mr-library-stage2h-v1",
+  "frozen_after_stage": "2H",
+  "learning_implemented": false,
+  "semantic_descriptor_scope": "deterministic bounded context facts, no formal feature encoder",
+  "research_contract": {
+    "flags": [
+      "-std=c11",
+      "-fsyntax-only",
+      "-w"
+    ],
+    "runtime_include": "environment.json/runtime/path",
+    "severities": [
+      "error",
+      "fatal"
+    ],
+    "unknown_passes": false,
+    "coordinate_tolerance": 0
+  },
+  "relations": [
+    {
+      "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+      "category": "address_of_bitfield",
+      "constraint": "C11:6.5.3.2p1",
+      "formal_schema": "stage2e-bitfield-v1",
+      "families": [
+        "split_pointer",
+        "nested_two_addresses"
+      ],
+      "effective_actions": 162
+    },
+    {
+      "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+      "category": "incompatible_struct_argument",
+      "constraint": "C11:6.5.2.2p2",
+      "formal_schema": "stage2a-witness-v1",
+      "families": [
+        "typedef_callback"
+      ],
+      "effective_actions": 74
+    },
+    {
+      "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+      "category": "aggregate_not_modifiable_due_to_const_member",
+      "constraint": "C11:6.5.16p2",
+      "formal_schema": "stage2h-const-aggregate-v1",
+      "families": [
+        "aggregate_direct",
+        "aggregate_nested"
+      ],
+      "effective_actions": 162
+    }
+  ],
+  "candidate_identity_fields": [
+    "seed_id",
+    "P0_id",
+    "mr_id",
+    "position_id",
+    "enrichment_family",
+    "semantic_context_signature",
+    "candidate_id"
+  ],
+  "pool": "combined_candidate_pool.json",
+  "selection": "selection_before_compilation.json",
+  "oracle_replay_entry": "edgm_second.aggregate_run.replay",
+  "confirmed_bug_inference": "never automatic; diagnostics obligations differ from exact experimental contract",
+  "compiler_result_states": [
+    "TARGET_ERRORS_OBSERVED",
+    "MISSING_TARGET_ERROR_CANDIDATE",
+    "TARGET_LOCATION_REVIEW",
+    "TARGET_CATEGORY_REVIEW",
+    "TARGET_COVERAGE_REVIEW",
+    "UNRELATED_ERROR_REVIEW",
+    "UNPARSED_ERROR_REVIEW",
+    "COMPILER_TIMEOUT",
+    "COMPILER_CRASH",
+    "EXECUTION_FAILED"
+  ],
+  "action_failure_states": [
+    "ORACLE_INVALID",
+    "WORKER_TIMEOUT",
+    "WORKER_FAILED"
+  ]
+}

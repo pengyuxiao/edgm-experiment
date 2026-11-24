@@ -1,0 +1,64 @@
+{
+  "candidate_id": "eea07d8a8add2da3f4eebc26cec50557702496cf1efc318db59ec5a18cae7f49",
+  "seed_id": "seed_0043_1742173162",
+  "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+  "family": "aggregate_nested",
+  "semantic_context_signature": "fdeb9b4e702519270848b190001d97cbbd5845757090d56bd8a771a177976c22",
+  "origin_stage": "2H",
+  "status": "TARGET_ERRORS_OBSERVED",
+  "observations": {
+    "gcc": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_353/P1.c",
+          "line": 2055,
+          "column": 33,
+          "severity": "error",
+          "message": "assignment of read-only variable 'ag_718620bd91_173164_0_0_object'",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_353/P1.c:2055:33: error: assignment of read-only variable 'ag_718620bd91_173164_0_0_object'",
+          "category": "aggregate_not_modifiable_due_to_const_member",
+          "matched_anchors": [
+            {
+              "violation": 0,
+              "anchor": "operator"
+            }
+          ]
+        }
+      ],
+      "unparsed_error_headers": [],
+      "confirmed_bug": false,
+      "exact_coordinate_comparison": true
+    },
+    "clang": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_353/P1.c",
+          "line": 2055,
+          "column": 33,
+          "severity": "error",
+          "message": "cannot assign to variable 'ag_718620bd91_173164_0_0_object' with nested const-qualified data member 'ag_718620bd91_173164_0_0_value'",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_353/P1.c:2055:33: error: cannot assign to variable 'ag_718620bd91_173164_0_0_object' with nested const-qualified data member 'ag_718620bd91_173164_0_0_value'",
+          "category": "aggregate_not_modifiable_due_to_const_member",
+          "matched_anchors": [
+            {
+              "violation": 0,
+              "anchor": "operator"
+            }
+          ]
+        }
+      ],
+      "unparsed_error_headers": [],
+      "confirmed_bug": false,
+      "exact_coordinate_comparison": true
+    }
+  },
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_037/aggregate_nested_00/P0.c",
+  "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_353/P1.c",
+  "p0_sha256": "3d7f899ba1c94dd8a1be9ee5883ad511c4ff36e7e71d6e87a89331440a428953",
+  "p1_sha256": "f9acb71eb741d8e4977fb4fbf539e6e6de0b1f271057d9ec5614ba2d3a63e914",
+  "oracle_replay": true,
+  "oracle_unchanged": true,
+  "confirmed_bug": false
+}

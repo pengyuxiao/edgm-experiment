@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_093/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_093/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_093/P1.c: In function 'main':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_093/P1.c:115:36: error: cannot take address of bit-field 'ag_3a6b41d757_3715_0_0_value'\n  115 | int *ag_3a6b41d757_3715_0_0_left = &ag_3a6b41d757_3715_0_0_object.ag_3a6b41d757_3715_0_0_value;\n      |                                    ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.024956293171271682
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_093/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_093/P1.c:115:36: error: address of bit-field requested\n  115 | int *ag_3a6b41d757_3715_0_0_left = &ag_3a6b41d757_3715_0_0_object.ag_3a6b41d757_3715_0_0_value;\n      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.03470025095157325
+    }
+  },
+  "sha256": "5b027b8b16b33f5d0031ef9c4067c59b0f3cea64f221b8ad7457b08342395938",
+  "source_unchanged": true
+}

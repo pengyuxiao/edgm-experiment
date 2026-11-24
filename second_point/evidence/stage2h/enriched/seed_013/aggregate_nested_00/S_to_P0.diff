@@ -1,0 +1,26 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0044_901282285.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_013/aggregate_nested_00/P0.c
+@@ -458,7 +458,13 @@
+  * writes:
+  */
+ static int8_t  func_13(const int16_t  p_14, uint32_t  p_15, int16_t  p_16, int32_t  p_17)
+-{ 
++{
++struct ag_1dfd952939_45963_0_0_record { int ag_1dfd952939_45963_0_0_value; };
++struct ag_1dfd952939_45963_0_0_other { struct ag_1dfd952939_45963_0_0_record ag_1dfd952939_45963_0_0_right; int ag_1dfd952939_45963_0_0_input; };
++struct ag_1dfd952939_45963_0_0_other ag_1dfd952939_45963_0_0_left = {{ p_17 }, 0};
++struct ag_1dfd952939_45963_0_0_other ag_1dfd952939_45963_0_0_object = {{0}, 0};
++ag_1dfd952939_45963_0_0_object = ag_1dfd952939_45963_0_0_left;
++ 
+ /* edgm diversify: switch/case (tag=76228) */
+ do {
+     unsigned edgm_sw_76228 = (((((unsigned)(sizeof(int) * 13u)) << 1) & 0xFFu)) & 3u;
+@@ -499,7 +505,7 @@
+     }
+ } while (0);
+ /* block id: 503 */
+-    return p_17;
++    return (ag_1dfd952939_45963_0_0_object.ag_1dfd952939_45963_0_0_right.ag_1dfd952939_45963_0_0_value);
+ }
+ 
+ 

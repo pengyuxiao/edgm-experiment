@@ -1,0 +1,322 @@
+{
+  "results": [
+    {
+      "candidate_id": "62f715163d771525ca3e0355d999182fb17faf878a94b3eb37c518a98fe523c1",
+      "seed_id": "artificial_control",
+      "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+      "family": "aggregate_direct",
+      "semantic_context_signature": "2d881821be56c4ecb7512fdeafc6528def029e7fcab1c8804607522506b4c82a",
+      "origin_stage": "manual",
+      "status": "TARGET_ERRORS_OBSERVED",
+      "observations": {
+        "gcc": {
+          "status": "TARGET_ERRORS_OBSERVED",
+          "errors": [
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_1/execution/P1.c",
+              "line": 6,
+              "column": 29,
+              "severity": "error",
+              "message": "assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+              "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_1/execution/P1.c:6:29: error: assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+              "category": "aggregate_not_modifiable_due_to_const_member",
+              "matched_anchors": [
+                {
+                  "violation": 0,
+                  "anchor": "operator"
+                }
+              ]
+            }
+          ],
+          "unparsed_error_headers": [],
+          "confirmed_bug": false,
+          "exact_coordinate_comparison": true
+        },
+        "clang": {
+          "status": "TARGET_ERRORS_OBSERVED",
+          "errors": [
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_1/execution/P1.c",
+              "line": 6,
+              "column": 29,
+              "severity": "error",
+              "message": "cannot assign to variable 'ag_42846fbf77_50_0_0_object' with const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+              "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_1/execution/P1.c:6:29: error: cannot assign to variable 'ag_42846fbf77_50_0_0_object' with const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+              "category": "aggregate_not_modifiable_due_to_const_member",
+              "matched_anchors": [
+                {
+                  "violation": 0,
+                  "anchor": "operator"
+                }
+              ]
+            }
+          ],
+          "unparsed_error_headers": [],
+          "confirmed_bug": false,
+          "exact_coordinate_comparison": true
+        }
+      },
+      "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_1/P0.c",
+      "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_1/execution/P1.c",
+      "p0_sha256": "cbe77fdaec4d19efe3456fe88b2755400ad570f8638766e32f9710d1911d7bf5",
+      "p1_sha256": "64f903ba46fc5a1e562621adba4fa3dd70952f39b9a16b4e1d808b84fe25d76b",
+      "oracle_replay": true,
+      "oracle_unchanged": true,
+      "confirmed_bug": false
+    },
+    {
+      "candidate_id": "ca95ce633481c4ea3cd3e0701b3e426c95567cbd29a85b9464b3b766f67c1586",
+      "seed_id": "artificial_control",
+      "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+      "family": "aggregate_direct",
+      "semantic_context_signature": "d88e479d050c9b7fbe27eed11979e9987335d51fa719b99959d1aaed623b6bba",
+      "origin_stage": "manual",
+      "status": "TARGET_ERRORS_OBSERVED",
+      "observations": {
+        "gcc": {
+          "status": "TARGET_ERRORS_OBSERVED",
+          "errors": [
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_2/execution/P1.c",
+              "line": 6,
+              "column": 29,
+              "severity": "error",
+              "message": "assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+              "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_2/execution/P1.c:6:29: error: assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+              "category": "aggregate_not_modifiable_due_to_const_member",
+              "matched_anchors": [
+                {
+                  "violation": 0,
+                  "anchor": "operator"
+                }
+              ]
+            },
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_2/execution/P1.c",
+              "line": 7,
+              "column": 29,
+              "severity": "error",
+              "message": "assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+              "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_2/execution/P1.c:7:29: error: assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+              "category": "aggregate_not_modifiable_due_to_const_member",
+              "matched_anchors": [
+                {
+                  "violation": 1,
+                  "anchor": "operator"
+                }
+              ]
+            }
+          ],
+          "unparsed_error_headers": [],
+          "confirmed_bug": false,
+          "exact_coordinate_comparison": true
+        },
+        "clang": {
+          "status": "TARGET_ERRORS_OBSERVED",
+          "errors": [
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_2/execution/P1.c",
+              "line": 6,
+              "column": 29,
+              "severity": "error",
+              "message": "cannot assign to variable 'ag_42846fbf77_50_0_0_object' with const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+              "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_2/execution/P1.c:6:29: error: cannot assign to variable 'ag_42846fbf77_50_0_0_object' with const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+              "category": "aggregate_not_modifiable_due_to_const_member",
+              "matched_anchors": [
+                {
+                  "violation": 0,
+                  "anchor": "operator"
+                }
+              ]
+            },
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_2/execution/P1.c",
+              "line": 7,
+              "column": 29,
+              "severity": "error",
+              "message": "cannot assign to variable 'ag_42846fbf77_50_0_0_object' with const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+              "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_2/execution/P1.c:7:29: error: cannot assign to variable 'ag_42846fbf77_50_0_0_object' with const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+              "category": "aggregate_not_modifiable_due_to_const_member",
+              "matched_anchors": [
+                {
+                  "violation": 1,
+                  "anchor": "operator"
+                }
+              ]
+            }
+          ],
+          "unparsed_error_headers": [],
+          "confirmed_bug": false,
+          "exact_coordinate_comparison": true
+        }
+      },
+      "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_2/P0.c",
+      "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_direct_2/execution/P1.c",
+      "p0_sha256": "6f9253b60aa95c1005aca9869fc6ace75d765c240f973efc72898505a793a7b8",
+      "p1_sha256": "3efc969749b030f94dc49f726fe98e55e478d80804936c88cfaefa5a3d23adfa",
+      "oracle_replay": true,
+      "oracle_unchanged": true,
+      "confirmed_bug": false
+    },
+    {
+      "candidate_id": "8ef18d508b8add2f54d50891dc88c06bdb046dd62c3709e454571c7320b44182",
+      "seed_id": "artificial_control",
+      "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+      "family": "aggregate_nested",
+      "semantic_context_signature": "e164fadcef555c32350021328e63f250f2ef0b34dc3bd5c5fbf4c92310d714d7",
+      "origin_stage": "manual",
+      "status": "TARGET_ERRORS_OBSERVED",
+      "observations": {
+        "gcc": {
+          "status": "TARGET_ERRORS_OBSERVED",
+          "errors": [
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_1/execution/P1.c",
+              "line": 7,
+              "column": 29,
+              "severity": "error",
+              "message": "assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+              "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_1/execution/P1.c:7:29: error: assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+              "category": "aggregate_not_modifiable_due_to_const_member",
+              "matched_anchors": [
+                {
+                  "violation": 0,
+                  "anchor": "operator"
+                }
+              ]
+            }
+          ],
+          "unparsed_error_headers": [],
+          "confirmed_bug": false,
+          "exact_coordinate_comparison": true
+        },
+        "clang": {
+          "status": "TARGET_ERRORS_OBSERVED",
+          "errors": [
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_1/execution/P1.c",
+              "line": 7,
+              "column": 29,
+              "severity": "error",
+              "message": "cannot assign to variable 'ag_42846fbf77_50_0_0_object' with nested const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+              "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_1/execution/P1.c:7:29: error: cannot assign to variable 'ag_42846fbf77_50_0_0_object' with nested const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+              "category": "aggregate_not_modifiable_due_to_const_member",
+              "matched_anchors": [
+                {
+                  "violation": 0,
+                  "anchor": "operator"
+                }
+              ]
+            }
+          ],
+          "unparsed_error_headers": [],
+          "confirmed_bug": false,
+          "exact_coordinate_comparison": true
+        }
+      },
+      "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_1/P0.c",
+      "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_1/execution/P1.c",
+      "p0_sha256": "a8e35b9e29af18310540561d39ff36994ba5c4fcc7c1608ca194c68c42176c7a",
+      "p1_sha256": "62e42765701d0e06f1186e1305c8dbabed9f29148e55d79332bb84eaea169295",
+      "oracle_replay": true,
+      "oracle_unchanged": true,
+      "confirmed_bug": false
+    },
+    {
+      "candidate_id": "16e8365cf4b6e22953d58764f0b5ff1842b643ab355e188c1dc23633f959d747",
+      "seed_id": "artificial_control",
+      "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+      "family": "aggregate_nested",
+      "semantic_context_signature": "bb687ae46c9fa19682f0262c951f10eb63fb48f3d80fa680da1abdf36fab4c02",
+      "origin_stage": "manual",
+      "status": "TARGET_ERRORS_OBSERVED",
+      "observations": {
+        "gcc": {
+          "status": "TARGET_ERRORS_OBSERVED",
+          "errors": [
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c",
+              "line": 7,
+              "column": 29,
+              "severity": "error",
+              "message": "assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+              "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c:7:29: error: assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+              "category": "aggregate_not_modifiable_due_to_const_member",
+              "matched_anchors": [
+                {
+                  "violation": 0,
+                  "anchor": "operator"
+                }
+              ]
+            },
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c",
+              "line": 8,
+              "column": 29,
+              "severity": "error",
+              "message": "assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+              "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c:8:29: error: assignment of read-only variable 'ag_42846fbf77_50_0_0_object'",
+              "category": "aggregate_not_modifiable_due_to_const_member",
+              "matched_anchors": [
+                {
+                  "violation": 1,
+                  "anchor": "operator"
+                }
+              ]
+            }
+          ],
+          "unparsed_error_headers": [],
+          "confirmed_bug": false,
+          "exact_coordinate_comparison": true
+        },
+        "clang": {
+          "status": "TARGET_ERRORS_OBSERVED",
+          "errors": [
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c",
+              "line": 7,
+              "column": 29,
+              "severity": "error",
+              "message": "cannot assign to variable 'ag_42846fbf77_50_0_0_object' with nested const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+              "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c:7:29: error: cannot assign to variable 'ag_42846fbf77_50_0_0_object' with nested const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+              "category": "aggregate_not_modifiable_due_to_const_member",
+              "matched_anchors": [
+                {
+                  "violation": 0,
+                  "anchor": "operator"
+                }
+              ]
+            },
+            {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c",
+              "line": 8,
+              "column": 29,
+              "severity": "error",
+              "message": "cannot assign to variable 'ag_42846fbf77_50_0_0_object' with nested const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+              "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c:8:29: error: cannot assign to variable 'ag_42846fbf77_50_0_0_object' with nested const-qualified data member 'ag_42846fbf77_50_0_0_value'",
+              "category": "aggregate_not_modifiable_due_to_const_member",
+              "matched_anchors": [
+                {
+                  "violation": 1,
+                  "anchor": "operator"
+                }
+              ]
+            }
+          ],
+          "unparsed_error_headers": [],
+          "confirmed_bug": false,
+          "exact_coordinate_comparison": true
+        }
+      },
+      "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/P0.c",
+      "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/manual/aggregate_nested_2/execution/P1.c",
+      "p0_sha256": "4ce264ae0176164efa5162fc239020e366cb6cb3f7a9cdd4d214551e10a9b628",
+      "p1_sha256": "3e3f1806fd70f2f9347b62f1cccb7f4335183092ef98569fc7f7c858db75bdc7",
+      "oracle_replay": true,
+      "oracle_unchanged": true,
+      "confirmed_bug": false
+    }
+  ],
+  "artificial_P1_count": 4,
+  "real_seed_count": 0
+}

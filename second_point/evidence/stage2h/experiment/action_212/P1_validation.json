@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_212/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_212/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_212/P1.c: In function 'func_2':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_212/P1.c:374:559: error: incompatible type for argument 1 of 'ag_74e2fb3496_33337_2_0_dispatch.ag_74e2fb3496_33337_2_0_invoke'\n  374 |         l_1171 ^= (safe_mod_func_int64_t_s_s(p_5, (safe_div_func_uint16_t_u_u(((((*l_1146) != (((safe_unary_minus_func_int16_t_s((***g_1058))) <= (safe_rshift_func_uint64_t_u_u(((((g_659 = (safe_lshift_func_int16_t_s_u((safe_add_func_int8_t_s_s((safe_add_func_int32_t_s_s((safe_sub_func_int64_t_s_s((((p_4 >= ((g_146.f0 , p_3) && p_5)) , ((((safe_lshift_func_int16_t_s_u((((18446744073709551613UL ^ ((safe_add_func_uint32_t_u_u((safe_mul_func_uint8_t_u_u(((((g_834.f0 ^= 0x35L) & l_1169[0]) == ag_74e2fb3496_33337_2_0_dispatch.ag_74e2fb3496_33337_2_0_invoke(ag_74e2fb3496_33337_2_0_object)) , p_4), p_5)), (****g_929))) , p_3)) <= 0xA72E36DFL) < g_95[0]), 6)) & p_3) , p_5) | (-1L))) & g_146.f6), (*l_1008))), 0x9A07F2CEL)), l_1169[1])), l_1169[1]))) , p_4) || g_109[3][1]) || l_1170), 53))) , 2L)) | 2L) > p_5), (*l_1146)))));\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ag_74e2fb3496_33337_2_0_argument {aka struct ag_74e2fb3496_33337_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_212/P1.c:374:559: note: expected 'ag_74e2fb3496_33337_2_0_root' {aka 'struct ag_74e2fb3496_33337_2_0_record'} but argument is of type 'ag_74e2fb3496_33337_2_0_argument' {aka 'struct ag_74e2fb3496_33337_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.03947423095814884
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_212/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_212/P1.c:374:559: error: passing 'ag_74e2fb3496_33337_2_0_argument' (aka 'struct ag_74e2fb3496_33337_2_0_other') to parameter of incompatible type 'ag_74e2fb3496_33337_2_0_root' (aka 'struct ag_74e2fb3496_33337_2_0_record')\n  374 |         l_1171 ^= (safe_mod_func_int64_t_s_s(p_5, (safe_div_func_uint16_t_u_u(((((*l_1146) != (((safe_unary_minus_func_int16_t_s((***g_1058))) <= (safe_rshift_func_uint64_t_u_u(((((g_659 = (safe_lshift_func_int16_t_s_u((safe_add_func_int8_t_s_s((safe_add_func_int32_t_s_s((safe_sub_func_int64_t_s_s((((p_4 >= ((g_146.f0 , p_3) && p_5)) , ((((safe_lshift_func_int16_t_s_u((((18446744073709551613UL ^ ((safe_add_func_uint32_t_u_u((safe_mul_func_uint8_t_u_u(((((g_834.f0 ^= 0x35L) & l_1169[0]) == ag_74e2fb3496_33337_2_0_dispatch.ag_74e2fb3496_33337_2_0_invoke(ag_74e2fb3496_33337_2_0_object)) , p_4), p_5)), (****g_929))) , p_3)) <= 0xA72E36DFL) < g_95[0]), 6)) & p_3) , p_5) | (-1L))) & g_146.f6), (*l_1008))), 0x9A07F2CEL)), l_1169[1])), l_1169[1]))) , p_4) || g_109[3][1]) || l_1170), 53))) , 2L)) | 2L) > p_5), (*l_1146)))));\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.057133630849421024
+    }
+  },
+  "sha256": "41aebacaaae31b352af67049714024215317d04ac3aa830bd21f7046d27da18c",
+  "source_unchanged": true
+}

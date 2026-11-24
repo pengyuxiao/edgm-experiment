@@ -1,0 +1,1093 @@
+{
+  "schema": "stage2g-active-oracle-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0039_1151129440.c",
+  "s_sha256": "e4ecd8a586b1c0bed508b693b5dff15a7a79a3a89bc54a2cdd501ea466b96aa9",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+  "p0_sha256": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+  "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+  "p1_sha256": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "active_enrichment": {
+    "schema": "stage2g-enrichment-v1",
+    "source_kind": "Enriched",
+    "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0039_1151129440.c",
+    "s_sha256": "e4ecd8a586b1c0bed508b693b5dff15a7a79a3a89bc54a2cdd501ea466b96aa9",
+    "p0_sha256": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+    "position": {
+      "position_id": "e4ecd8a586b1c0bed508b693b5dff15a7a79a3a89bc54a2cdd501ea466b96aa9:c:seed_0039_1151129440.c@2374@F@main@argc:2449",
+      "read": {
+        "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0039_1151129440.c",
+        "line": 98,
+        "column": 9,
+        "offset": 2449,
+        "start_offset": 2449,
+        "end_offset": 2453,
+        "node_identity": "c:seed_0039_1151129440.c@2374@F@main@argc:DECL_REF_EXPR:2449",
+        "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+        "source_text": "argc",
+        "usr": "",
+        "referenced_usr": "c:seed_0039_1151129440.c@2374@F@main@argc",
+        "kind": "DECL_REF_EXPR"
+      },
+      "declaration": {
+        "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0039_1151129440.c",
+        "line": 94,
+        "column": 15,
+        "offset": 2378,
+        "start_offset": 2374,
+        "end_offset": 2382,
+        "node_identity": "c:seed_0039_1151129440.c@2374@F@main@argc:PARM_DECL:2374",
+        "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+        "source_text": "int argc",
+        "usr": "c:seed_0039_1151129440.c@2374@F@main@argc",
+        "referenced_usr": "c:seed_0039_1151129440.c@2374@F@main@argc",
+        "kind": "PARM_DECL"
+      },
+      "function_offset": 2364,
+      "body_start": 2398,
+      "kind": "INT",
+      "parameter": "argc",
+      "function_name": "main",
+      "function_usr": "c:@F@main",
+      "operator": "==",
+      "operation": {
+        "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0039_1151129440.c",
+        "line": 98,
+        "column": 9,
+        "offset": 2449,
+        "start_offset": 2449,
+        "end_offset": 2458,
+        "node_identity": ":BINARY_OPERATOR:2449",
+        "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+        "source_text": "argc == 2",
+        "usr": "",
+        "referenced_usr": "",
+        "kind": "BINARY_OPERATOR"
+      },
+      "unit": [
+        2445,
+        2510
+      ],
+      "nested_supported": true,
+      "ancestor_context": [
+        "BINARY_OPERATOR",
+        "IF_STMT",
+        "COMPOUND_STMT"
+      ]
+    },
+    "enrichment_family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "semantic_context": {
+      "family": "typedef_callback",
+      "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+      "input_type": "INT",
+      "input_role": "immutable_by_value_parameter",
+      "function_role": "entry_control",
+      "original_operator": "==",
+      "original_context": [
+        "BINARY_OPERATOR",
+        "IF_STMT",
+        "COMPOUND_STMT"
+      ],
+      "address_points": 0,
+      "cross_statement": true,
+      "cross_scope": false,
+      "cross_function": true,
+      "target_use_points": 1,
+      "record_shape": "single_integer_member",
+      "access_form": "dot_member_function_pointer_call",
+      "value_route": "record_argument -> member callback -> identity return",
+      "typedef_depth": 3
+    },
+    "semantic_context_signature": "e733e51609b6a00d3a3db754d12227dfe95bff962a69576c1affa3248513bf77",
+    "names": {
+      "record": "ag_e4ecd8a586_2449_2_0_record",
+      "other": "ag_e4ecd8a586_2449_2_0_other",
+      "value": "ag_e4ecd8a586_2449_2_0_value",
+      "object": "ag_e4ecd8a586_2449_2_0_object",
+      "left": "ag_e4ecd8a586_2449_2_0_left",
+      "right": "ag_e4ecd8a586_2449_2_0_right",
+      "root": "ag_e4ecd8a586_2449_2_0_root",
+      "middle": "ag_e4ecd8a586_2449_2_0_middle",
+      "argument": "ag_e4ecd8a586_2449_2_0_argument",
+      "callback": "ag_e4ecd8a586_2449_2_0_callback",
+      "dispatch_type": "ag_e4ecd8a586_2449_2_0_dispatch_type",
+      "dispatch": "ag_e4ecd8a586_2449_2_0_dispatch",
+      "extract": "ag_e4ecd8a586_2449_2_0_extract",
+      "input": "ag_e4ecd8a586_2449_2_0_input",
+      "invoke": "ag_e4ecd8a586_2449_2_0_invoke"
+    },
+    "replacement": "ag_e4ecd8a586_2449_2_0_dispatch.ag_e4ecd8a586_2449_2_0_invoke(ag_e4ecd8a586_2449_2_0_object)",
+    "edits": [
+      {
+        "start": 2364,
+        "end": 2364,
+        "before": "",
+        "after": "struct ag_e4ecd8a586_2449_2_0_record { int ag_e4ecd8a586_2449_2_0_value; };\nstruct ag_e4ecd8a586_2449_2_0_other { int ag_e4ecd8a586_2449_2_0_value; };\ntypedef struct ag_e4ecd8a586_2449_2_0_record ag_e4ecd8a586_2449_2_0_root;\ntypedef ag_e4ecd8a586_2449_2_0_root ag_e4ecd8a586_2449_2_0_middle;\ntypedef ag_e4ecd8a586_2449_2_0_middle ag_e4ecd8a586_2449_2_0_argument;\ntypedef int (*ag_e4ecd8a586_2449_2_0_callback)(ag_e4ecd8a586_2449_2_0_root);\nstruct ag_e4ecd8a586_2449_2_0_dispatch_type { ag_e4ecd8a586_2449_2_0_callback ag_e4ecd8a586_2449_2_0_invoke; };\nstatic int ag_e4ecd8a586_2449_2_0_extract(ag_e4ecd8a586_2449_2_0_root ag_e4ecd8a586_2449_2_0_input) { return ag_e4ecd8a586_2449_2_0_input.ag_e4ecd8a586_2449_2_0_value; }\n"
+      },
+      {
+        "start": 2399,
+        "end": 2399,
+        "before": "",
+        "after": "\nag_e4ecd8a586_2449_2_0_argument ag_e4ecd8a586_2449_2_0_object = { argc };\nstruct ag_e4ecd8a586_2449_2_0_dispatch_type ag_e4ecd8a586_2449_2_0_dispatch = { ag_e4ecd8a586_2449_2_0_extract };\n"
+      },
+      {
+        "start": 2449,
+        "end": 2453,
+        "before": "argc",
+        "after": "ag_e4ecd8a586_2449_2_0_dispatch.ag_e4ecd8a586_2449_2_0_invoke(ag_e4ecd8a586_2449_2_0_object)"
+      }
+    ],
+    "source_map": [
+      {
+        "kind": "identity",
+        "s": [
+          0,
+          2364
+        ],
+        "p0": [
+          0,
+          2364
+        ]
+      },
+      {
+        "kind": "generated",
+        "s": [
+          2364,
+          2364
+        ],
+        "p0": [
+          2364,
+          3086
+        ]
+      },
+      {
+        "kind": "identity",
+        "s": [
+          2364,
+          2399
+        ],
+        "p0": [
+          3086,
+          3121
+        ]
+      },
+      {
+        "kind": "generated",
+        "s": [
+          2399,
+          2399
+        ],
+        "p0": [
+          3121,
+          3310
+        ]
+      },
+      {
+        "kind": "identity",
+        "s": [
+          2399,
+          2449
+        ],
+        "p0": [
+          3310,
+          3360
+        ]
+      },
+      {
+        "kind": "replacement",
+        "s": [
+          2449,
+          2453
+        ],
+        "p0": [
+          3360,
+          3452
+        ]
+      },
+      {
+        "kind": "identity",
+        "s": [
+          2453,
+          5139
+        ],
+        "p0": [
+          3452,
+          6138
+        ]
+      }
+    ],
+    "local_equivalence": {
+      "parameter_initialized": true,
+      "all_parameter_references_read_only": true,
+      "early_nonvolatile_read_has_no_observable_effect": true,
+      "value_type_preserved": true,
+      "new_objects_private": true,
+      "new_calls_pure_identity": true,
+      "original_expression_evaluation_path_preserved": true,
+      "global_ub_proof": false
+    }
+  },
+  "value_route": {
+    "parameter": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+      "line": 102,
+      "column": 15,
+      "offset": 3100,
+      "start_offset": 3096,
+      "end_offset": 3104,
+      "node_identity": "c:P0.c@3096@F@main@argc:PARM_DECL:3096",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int argc",
+      "usr": "c:P0.c@3096@F@main@argc",
+      "referenced_usr": "c:P0.c@3096@F@main@argc",
+      "kind": "PARM_DECL"
+    },
+    "initializer_read": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+      "line": 104,
+      "column": 67,
+      "offset": 3188,
+      "start_offset": 3188,
+      "end_offset": 3192,
+      "node_identity": "c:P0.c@3096@F@main@argc:DECL_REF_EXPR:3188",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "argc",
+      "usr": "",
+      "referenced_usr": "c:P0.c@3096@F@main@argc",
+      "kind": "DECL_REF_EXPR"
+    },
+    "object": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+      "line": 104,
+      "column": 33,
+      "offset": 3154,
+      "start_offset": 3122,
+      "end_offset": 3194,
+      "node_identity": "c:P0.c@3122@F@main@ag_e4ecd8a586_2449_2_0_object:VAR_DECL:3122",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "ag_e4ecd8a586_2449_2_0_argument ag_e4ecd8a586_2449_2_0_object = { argc }",
+      "usr": "c:P0.c@3122@F@main@ag_e4ecd8a586_2449_2_0_object",
+      "referenced_usr": "c:P0.c@3122@F@main@ag_e4ecd8a586_2449_2_0_object",
+      "kind": "VAR_DECL"
+    },
+    "original_operation": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+      "line": 109,
+      "column": 9,
+      "offset": 3360,
+      "start_offset": 3360,
+      "end_offset": 3457,
+      "node_identity": ":BINARY_OPERATOR:3360",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "ag_e4ecd8a586_2449_2_0_dispatch.ag_e4ecd8a586_2449_2_0_invoke(ag_e4ecd8a586_2449_2_0_object) == 2",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "BINARY_OPERATOR"
+    },
+    "route_expression": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+      "line": 109,
+      "column": 9,
+      "offset": 3360,
+      "start_offset": 3360,
+      "end_offset": 3452,
+      "node_identity": "c:@S@ag_e4ecd8a586_2449_2_0_dispatch_type@FI@ag_e4ecd8a586_2449_2_0_invoke:CALL_EXPR:3360",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "ag_e4ecd8a586_2449_2_0_dispatch.ag_e4ecd8a586_2449_2_0_invoke(ag_e4ecd8a586_2449_2_0_object)",
+      "usr": "",
+      "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_dispatch_type@FI@ag_e4ecd8a586_2449_2_0_invoke",
+      "kind": "CALL_EXPR"
+    },
+    "record_usr": "c:@S@ag_e4ecd8a586_2449_2_0_record",
+    "helper_usr": "c:P0.c@F@ag_e4ecd8a586_2449_2_0_extract",
+    "helper_anchor": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+      "line": 101,
+      "column": 12,
+      "offset": 2927,
+      "start_offset": 2916,
+      "end_offset": 3085,
+      "node_identity": "c:P0.c@F@ag_e4ecd8a586_2449_2_0_extract:FUNCTION_DECL:2916",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "static int ag_e4ecd8a586_2449_2_0_extract(ag_e4ecd8a586_2449_2_0_root ag_e4ecd8a586_2449_2_0_input) { return ag_e4ecd8a586_2449_2_0_input.ag_e4ecd8a586_2449_2_0_value; }",
+      "usr": "c:P0.c@F@ag_e4ecd8a586_2449_2_0_extract",
+      "referenced_usr": "c:P0.c@F@ag_e4ecd8a586_2449_2_0_extract",
+      "kind": "FUNCTION_DECL"
+    },
+    "cross_function_value_route": true,
+    "proof": "immutable initialized parameter -> private member initialized once -> known pointer/identity-callback -> same original binary operation"
+  },
+  "formal_witness": {
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "seed_id": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+    "constraint_id": "C11:6.5.2.2p2",
+    "preconditions": [
+      {
+        "id": "P0_DUAL_COMPILER_ACCEPTED",
+        "satisfied": true
+      },
+      {
+        "id": "P0_AST_NO_ERRORS",
+        "satisfied": true
+      },
+      {
+        "id": "TWO_COMPLETE_DISTINCT_FILE_SCOPE_STRUCTS",
+        "satisfied": true
+      },
+      {
+        "id": "TYPEDEF_CHAIN_IDENTITY_RESOLVED",
+        "satisfied": true
+      },
+      {
+        "id": "PROTOTYPED_MEMBER_FUNCTION_POINTER_CALL",
+        "satisfied": true
+      },
+      {
+        "id": "P0_PARAMETER_ARGUMENT_SAME_DECLARATION_IDENTITY",
+        "satisfied": true
+      },
+      {
+        "id": "ONE_ISOLATED_ARGUMENT_VARIABLE",
+        "satisfied": true
+      },
+      {
+        "id": "INT_PARAMETER_INITIALIZER_VALID_FOR_BOTH_RECORDS",
+        "satisfied": true
+      },
+      {
+        "id": "AFFECTED_TYPE_REFERENCES_CLOSED",
+        "satisfied": true
+      },
+      {
+        "id": "NO_MACROS_ATTRIBUTES_OR_TAG_CAPTURE",
+        "satisfied": true
+      }
+    ],
+    "changed_declaration": {
+      "usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle",
+      "spelling": "ag_e4ecd8a586_2449_2_0_middle",
+      "original_dependency_usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_root",
+      "new_dependency_usr": "c:@S@ag_e4ecd8a586_2449_2_0_other",
+      "before": "typedef ag_e4ecd8a586_2449_2_0_root ag_e4ecd8a586_2449_2_0_middle",
+      "after": "typedef struct ag_e4ecd8a586_2449_2_0_other ag_e4ecd8a586_2449_2_0_middle"
+    },
+    "expected_parameter_type": {
+      "kind": "struct",
+      "declaration_usr": "c:@S@ag_e4ecd8a586_2449_2_0_record",
+      "tag": "ag_e4ecd8a586_2449_2_0_record",
+      "scope": "translation_unit",
+      "complete": true,
+      "fields": [
+        {
+          "name": "ag_e4ecd8a586_2449_2_0_value",
+          "kind": "int"
+        }
+      ],
+      "declaration_anchor": {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+        "line": 94,
+        "column": 8,
+        "offset": 2371,
+        "start_offset": 2364,
+        "end_offset": 2438,
+        "node_identity": {
+          "kind": "STRUCT_DECL",
+          "usr": "c:@S@ag_e4ecd8a586_2449_2_0_record",
+          "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_record",
+          "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+          "origin_key": "STRUCT_DECL:2364:2438"
+        },
+        "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+        "source_text": "struct ag_e4ecd8a586_2449_2_0_record { int ag_e4ecd8a586_2449_2_0_value; }"
+      }
+    },
+    "actual_argument_type": {
+      "p0": {
+        "kind": "struct",
+        "declaration_usr": "c:@S@ag_e4ecd8a586_2449_2_0_record",
+        "tag": "ag_e4ecd8a586_2449_2_0_record",
+        "scope": "translation_unit",
+        "complete": true,
+        "fields": [
+          {
+            "name": "ag_e4ecd8a586_2449_2_0_value",
+            "kind": "int"
+          }
+        ],
+        "declaration_anchor": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 94,
+          "column": 8,
+          "offset": 2371,
+          "start_offset": 2364,
+          "end_offset": 2438,
+          "node_identity": {
+            "kind": "STRUCT_DECL",
+            "usr": "c:@S@ag_e4ecd8a586_2449_2_0_record",
+            "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_record",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "STRUCT_DECL:2364:2438"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "struct ag_e4ecd8a586_2449_2_0_record { int ag_e4ecd8a586_2449_2_0_value; }"
+        }
+      },
+      "p1": {
+        "kind": "struct",
+        "declaration_usr": "c:@S@ag_e4ecd8a586_2449_2_0_other",
+        "tag": "ag_e4ecd8a586_2449_2_0_other",
+        "scope": "translation_unit",
+        "complete": true,
+        "fields": [
+          {
+            "name": "ag_e4ecd8a586_2449_2_0_value",
+            "kind": "int"
+          }
+        ],
+        "declaration_anchor": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 95,
+          "column": 8,
+          "offset": 2447,
+          "start_offset": 2440,
+          "end_offset": 2513,
+          "node_identity": {
+            "kind": "STRUCT_DECL",
+            "usr": "c:@S@ag_e4ecd8a586_2449_2_0_other",
+            "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_other",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "STRUCT_DECL:2440:2513"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "struct ag_e4ecd8a586_2449_2_0_other { int ag_e4ecd8a586_2449_2_0_value; }"
+        }
+      }
+    },
+    "call_expression": {
+      "argument_index": 0,
+      "parameter_count": 1,
+      "variadic": false,
+      "callee_type": {
+        "member_surface_type": "ag_e4ecd8a586_2449_2_0_callback",
+        "canonical_function_type": "int (struct ag_e4ecd8a586_2449_2_0_record)",
+        "parameter_record_usr": "c:@S@ag_e4ecd8a586_2449_2_0_record"
+      },
+      "member_usr": "c:@S@ag_e4ecd8a586_2449_2_0_dispatch_type@FI@ag_e4ecd8a586_2449_2_0_invoke",
+      "argument_variable_usr": "c:P0.c@3122@F@main@ag_e4ecd8a586_2449_2_0_object",
+      "p0_compatible": true,
+      "p1_compatible": false,
+      "p0_argument_chain": [
+        "c:P0.c@T@ag_e4ecd8a586_2449_2_0_argument",
+        "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle",
+        "c:P0.c@T@ag_e4ecd8a586_2449_2_0_root"
+      ],
+      "p1_argument_chain": [
+        "c:P0.c@T@ag_e4ecd8a586_2449_2_0_argument",
+        "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle"
+      ]
+    },
+    "source_anchors": {
+      "changed_declaration": {
+        "p0": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 97,
+          "column": 37,
+          "offset": 2625,
+          "start_offset": 2589,
+          "end_offset": 2654,
+          "node_identity": {
+            "kind": "TYPEDEF_DECL",
+            "usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle",
+            "referenced_usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "TYPEDEF_DECL:2589:2654"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "typedef ag_e4ecd8a586_2449_2_0_root ag_e4ecd8a586_2449_2_0_middle"
+        },
+        "p1": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+          "line": 97,
+          "column": 45,
+          "offset": 2633,
+          "start_offset": 2589,
+          "end_offset": 2662,
+          "node_identity": {
+            "kind": "TYPEDEF_DECL",
+            "usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle",
+            "referenced_usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "TYPEDEF_DECL:2589:2654",
+            "identity_basis": "P0 AST identity transported through exact byte edit",
+            "p1_hash": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+            "p1_ast_observed": false
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "typedef struct ag_e4ecd8a586_2449_2_0_other ag_e4ecd8a586_2449_2_0_middle"
+        }
+      },
+      "expected_struct": {
+        "p0": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 94,
+          "column": 8,
+          "offset": 2371,
+          "start_offset": 2364,
+          "end_offset": 2438,
+          "node_identity": {
+            "kind": "STRUCT_DECL",
+            "usr": "c:@S@ag_e4ecd8a586_2449_2_0_record",
+            "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_record",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "STRUCT_DECL:2364:2438"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "struct ag_e4ecd8a586_2449_2_0_record { int ag_e4ecd8a586_2449_2_0_value; }"
+        },
+        "p1": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+          "line": 94,
+          "column": 8,
+          "offset": 2371,
+          "start_offset": 2364,
+          "end_offset": 2438,
+          "node_identity": {
+            "kind": "STRUCT_DECL",
+            "usr": "c:@S@ag_e4ecd8a586_2449_2_0_record",
+            "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_record",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "STRUCT_DECL:2364:2438",
+            "identity_basis": "P0 AST identity transported through exact byte edit",
+            "p1_hash": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+            "p1_ast_observed": false
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "struct ag_e4ecd8a586_2449_2_0_record { int ag_e4ecd8a586_2449_2_0_value; }"
+        }
+      },
+      "replacement_struct": {
+        "p0": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 95,
+          "column": 8,
+          "offset": 2447,
+          "start_offset": 2440,
+          "end_offset": 2513,
+          "node_identity": {
+            "kind": "STRUCT_DECL",
+            "usr": "c:@S@ag_e4ecd8a586_2449_2_0_other",
+            "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_other",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "STRUCT_DECL:2440:2513"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "struct ag_e4ecd8a586_2449_2_0_other { int ag_e4ecd8a586_2449_2_0_value; }"
+        },
+        "p1": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+          "line": 95,
+          "column": 8,
+          "offset": 2447,
+          "start_offset": 2440,
+          "end_offset": 2513,
+          "node_identity": {
+            "kind": "STRUCT_DECL",
+            "usr": "c:@S@ag_e4ecd8a586_2449_2_0_other",
+            "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_other",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "STRUCT_DECL:2440:2513",
+            "identity_basis": "P0 AST identity transported through exact byte edit",
+            "p1_hash": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+            "p1_ast_observed": false
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "struct ag_e4ecd8a586_2449_2_0_other { int ag_e4ecd8a586_2449_2_0_value; }"
+        }
+      },
+      "call": {
+        "p0": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 109,
+          "column": 9,
+          "offset": 3360,
+          "start_offset": 3360,
+          "end_offset": 3452,
+          "node_identity": {
+            "kind": "CALL_EXPR",
+            "usr": "",
+            "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_dispatch_type@FI@ag_e4ecd8a586_2449_2_0_invoke",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "CALL_EXPR:3360:3452"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "ag_e4ecd8a586_2449_2_0_dispatch.ag_e4ecd8a586_2449_2_0_invoke(ag_e4ecd8a586_2449_2_0_object)"
+        },
+        "p1": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+          "line": 109,
+          "column": 9,
+          "offset": 3368,
+          "start_offset": 3368,
+          "end_offset": 3460,
+          "node_identity": {
+            "kind": "CALL_EXPR",
+            "usr": "",
+            "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_dispatch_type@FI@ag_e4ecd8a586_2449_2_0_invoke",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "CALL_EXPR:3360:3452",
+            "identity_basis": "P0 AST identity transported through exact byte edit",
+            "p1_hash": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+            "p1_ast_observed": false
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "ag_e4ecd8a586_2449_2_0_dispatch.ag_e4ecd8a586_2449_2_0_invoke(ag_e4ecd8a586_2449_2_0_object)"
+        }
+      },
+      "argument": {
+        "p0": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 109,
+          "column": 71,
+          "offset": 3422,
+          "start_offset": 3422,
+          "end_offset": 3451,
+          "node_identity": {
+            "kind": "DECL_REF_EXPR",
+            "usr": "",
+            "referenced_usr": "c:P0.c@3122@F@main@ag_e4ecd8a586_2449_2_0_object",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "DECL_REF_EXPR:3422:3451"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "ag_e4ecd8a586_2449_2_0_object"
+        },
+        "p1": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+          "line": 109,
+          "column": 71,
+          "offset": 3430,
+          "start_offset": 3430,
+          "end_offset": 3459,
+          "node_identity": {
+            "kind": "DECL_REF_EXPR",
+            "usr": "",
+            "referenced_usr": "c:P0.c@3122@F@main@ag_e4ecd8a586_2449_2_0_object",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "DECL_REF_EXPR:3422:3451",
+            "identity_basis": "P0 AST identity transported through exact byte edit",
+            "p1_hash": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+            "p1_ast_observed": false
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "ag_e4ecd8a586_2449_2_0_object"
+        }
+      },
+      "argument_declaration": {
+        "p0": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 104,
+          "column": 33,
+          "offset": 3154,
+          "start_offset": 3122,
+          "end_offset": 3194,
+          "node_identity": {
+            "kind": "VAR_DECL",
+            "usr": "c:P0.c@3122@F@main@ag_e4ecd8a586_2449_2_0_object",
+            "referenced_usr": "c:P0.c@3122@F@main@ag_e4ecd8a586_2449_2_0_object",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "VAR_DECL:3122:3194"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "ag_e4ecd8a586_2449_2_0_argument ag_e4ecd8a586_2449_2_0_object = { argc }"
+        },
+        "p1": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+          "line": 104,
+          "column": 33,
+          "offset": 3162,
+          "start_offset": 3130,
+          "end_offset": 3202,
+          "node_identity": {
+            "kind": "VAR_DECL",
+            "usr": "c:P0.c@3122@F@main@ag_e4ecd8a586_2449_2_0_object",
+            "referenced_usr": "c:P0.c@3122@F@main@ag_e4ecd8a586_2449_2_0_object",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "VAR_DECL:3122:3194",
+            "identity_basis": "P0 AST identity transported through exact byte edit",
+            "p1_hash": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+            "p1_ast_observed": false
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "ag_e4ecd8a586_2449_2_0_argument ag_e4ecd8a586_2449_2_0_object = { argc }"
+        }
+      },
+      "member": {
+        "p0": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 109,
+          "column": 41,
+          "offset": 3392,
+          "start_offset": 3360,
+          "end_offset": 3421,
+          "node_identity": {
+            "kind": "MEMBER_REF_EXPR",
+            "usr": "",
+            "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_dispatch_type@FI@ag_e4ecd8a586_2449_2_0_invoke",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "MEMBER_REF_EXPR:3360:3421"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "ag_e4ecd8a586_2449_2_0_dispatch.ag_e4ecd8a586_2449_2_0_invoke"
+        },
+        "p1": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+          "line": 109,
+          "column": 41,
+          "offset": 3400,
+          "start_offset": 3368,
+          "end_offset": 3429,
+          "node_identity": {
+            "kind": "MEMBER_REF_EXPR",
+            "usr": "",
+            "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_dispatch_type@FI@ag_e4ecd8a586_2449_2_0_invoke",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "MEMBER_REF_EXPR:3360:3421",
+            "identity_basis": "P0 AST identity transported through exact byte edit",
+            "p1_hash": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+            "p1_ast_observed": false
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "ag_e4ecd8a586_2449_2_0_dispatch.ag_e4ecd8a586_2449_2_0_invoke"
+        }
+      },
+      "member_declaration": {
+        "p0": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 100,
+          "column": 79,
+          "offset": 2882,
+          "start_offset": 2850,
+          "end_offset": 2911,
+          "node_identity": {
+            "kind": "FIELD_DECL",
+            "usr": "c:@S@ag_e4ecd8a586_2449_2_0_dispatch_type@FI@ag_e4ecd8a586_2449_2_0_invoke",
+            "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_dispatch_type@FI@ag_e4ecd8a586_2449_2_0_invoke",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "FIELD_DECL:2850:2911"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "ag_e4ecd8a586_2449_2_0_callback ag_e4ecd8a586_2449_2_0_invoke"
+        },
+        "p1": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+          "line": 100,
+          "column": 79,
+          "offset": 2890,
+          "start_offset": 2858,
+          "end_offset": 2919,
+          "node_identity": {
+            "kind": "FIELD_DECL",
+            "usr": "c:@S@ag_e4ecd8a586_2449_2_0_dispatch_type@FI@ag_e4ecd8a586_2449_2_0_invoke",
+            "referenced_usr": "c:@S@ag_e4ecd8a586_2449_2_0_dispatch_type@FI@ag_e4ecd8a586_2449_2_0_invoke",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "FIELD_DECL:2850:2911",
+            "identity_basis": "P0 AST identity transported through exact byte edit",
+            "p1_hash": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+            "p1_ast_observed": false
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "ag_e4ecd8a586_2449_2_0_callback ag_e4ecd8a586_2449_2_0_invoke"
+        }
+      },
+      "callback_typedef": {
+        "p0": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 99,
+          "column": 15,
+          "offset": 2741,
+          "start_offset": 2727,
+          "end_offset": 2802,
+          "node_identity": {
+            "kind": "TYPEDEF_DECL",
+            "usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_callback",
+            "referenced_usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_callback",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "TYPEDEF_DECL:2727:2802"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "typedef int (*ag_e4ecd8a586_2449_2_0_callback)(ag_e4ecd8a586_2449_2_0_root)"
+        },
+        "p1": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+          "line": 99,
+          "column": 15,
+          "offset": 2749,
+          "start_offset": 2735,
+          "end_offset": 2810,
+          "node_identity": {
+            "kind": "TYPEDEF_DECL",
+            "usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_callback",
+            "referenced_usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_callback",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "TYPEDEF_DECL:2727:2802",
+            "identity_basis": "P0 AST identity transported through exact byte edit",
+            "p1_hash": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+            "p1_ast_observed": false
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "typedef int (*ag_e4ecd8a586_2449_2_0_callback)(ag_e4ecd8a586_2449_2_0_root)"
+        }
+      },
+      "argument_alias_0": {
+        "p0": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 98,
+          "column": 39,
+          "offset": 2694,
+          "start_offset": 2656,
+          "end_offset": 2725,
+          "node_identity": {
+            "kind": "TYPEDEF_DECL",
+            "usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_argument",
+            "referenced_usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_argument",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "TYPEDEF_DECL:2656:2725"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "typedef ag_e4ecd8a586_2449_2_0_middle ag_e4ecd8a586_2449_2_0_argument"
+        },
+        "p1": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+          "line": 98,
+          "column": 39,
+          "offset": 2702,
+          "start_offset": 2664,
+          "end_offset": 2733,
+          "node_identity": {
+            "kind": "TYPEDEF_DECL",
+            "usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_argument",
+            "referenced_usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_argument",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "TYPEDEF_DECL:2656:2725",
+            "identity_basis": "P0 AST identity transported through exact byte edit",
+            "p1_hash": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+            "p1_ast_observed": false
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "typedef ag_e4ecd8a586_2449_2_0_middle ag_e4ecd8a586_2449_2_0_argument"
+        }
+      },
+      "argument_alias_1": {
+        "p0": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 97,
+          "column": 37,
+          "offset": 2625,
+          "start_offset": 2589,
+          "end_offset": 2654,
+          "node_identity": {
+            "kind": "TYPEDEF_DECL",
+            "usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle",
+            "referenced_usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "TYPEDEF_DECL:2589:2654"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "typedef ag_e4ecd8a586_2449_2_0_root ag_e4ecd8a586_2449_2_0_middle"
+        },
+        "p1": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+          "line": 97,
+          "column": 45,
+          "offset": 2633,
+          "start_offset": 2589,
+          "end_offset": 2662,
+          "node_identity": {
+            "kind": "TYPEDEF_DECL",
+            "usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle",
+            "referenced_usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "TYPEDEF_DECL:2589:2654",
+            "identity_basis": "P0 AST identity transported through exact byte edit",
+            "p1_hash": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+            "p1_ast_observed": false
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "typedef struct ag_e4ecd8a586_2449_2_0_other ag_e4ecd8a586_2449_2_0_middle"
+        }
+      },
+      "argument_alias_2": {
+        "p0": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 96,
+          "column": 46,
+          "offset": 2560,
+          "start_offset": 2515,
+          "end_offset": 2587,
+          "node_identity": {
+            "kind": "TYPEDEF_DECL",
+            "usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_root",
+            "referenced_usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_root",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "TYPEDEF_DECL:2515:2587"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "typedef struct ag_e4ecd8a586_2449_2_0_record ag_e4ecd8a586_2449_2_0_root"
+        },
+        "p1": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+          "line": 96,
+          "column": 46,
+          "offset": 2560,
+          "start_offset": 2515,
+          "end_offset": 2587,
+          "node_identity": {
+            "kind": "TYPEDEF_DECL",
+            "usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_root",
+            "referenced_usr": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_root",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "TYPEDEF_DECL:2515:2587",
+            "identity_basis": "P0 AST identity transported through exact byte edit",
+            "p1_hash": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+            "p1_ast_observed": false
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "typedef struct ag_e4ecd8a586_2449_2_0_record ag_e4ecd8a586_2449_2_0_root"
+        }
+      }
+    },
+    "expected_error": {
+      "category": "incompatible_struct_argument",
+      "required_severities": [
+        "error",
+        "fatal"
+      ],
+      "warning_satisfies": false,
+      "standard_obligation": "diagnostic required; C11 does not prescribe severity or exact caret",
+      "severity_basis": "research contract for the configured GCC/Clang; not an ISO severity mandate",
+      "target_argument_anchor": "source_anchors.argument.p1",
+      "exact_caret_mandated_by_standard": false,
+      "confirmed_compiler_bug": false
+    },
+    "source_map": {
+      "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+      "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_158/P1.c",
+      "p0_sha256": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+      "p1_sha256": "382613d3dd3802e2e3efd6d553fc3cd3afbd148bcb98246daca8010cb91abe1a",
+      "edit": {
+        "start": 2597,
+        "end": 2624,
+        "before": "ag_e4ecd8a586_2449_2_0_root",
+        "after": "struct ag_e4ecd8a586_2449_2_0_other"
+      },
+      "unchanged_segments": [
+        {
+          "p0": [
+            0,
+            2597
+          ],
+          "p1": [
+            0,
+            2597
+          ]
+        },
+        {
+          "p0": [
+            2624,
+            6138
+          ],
+          "p1": [
+            2632,
+            6146
+          ]
+        }
+      ],
+      "byte_delta": 8
+    },
+    "dependency_graph": {
+      "edges_p0": {
+        "c:P0.c@T@edgm_td_18271_t0": "c:@T@uint64_t",
+        "c:P0.c@T@edgm_td_18271_t1": "c:P0.c@T@edgm_td_18271_t0",
+        "c:P0.c@T@edgm_td_18271_t2": "c:P0.c@T@edgm_td_18271_t1",
+        "c:P0.c@T@ag_e4ecd8a586_2449_2_0_root": "c:@S@ag_e4ecd8a586_2449_2_0_record",
+        "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_root",
+        "c:P0.c@T@ag_e4ecd8a586_2449_2_0_argument": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle"
+      },
+      "changed_edge": {
+        "source": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle",
+        "old_target": "c:P0.c@T@ag_e4ecd8a586_2449_2_0_root",
+        "new_target": "c:@S@ag_e4ecd8a586_2449_2_0_other"
+      },
+      "identity_rule": "same-TU file-scope struct declaration USR + definition anchor, not type-name inequality",
+      "constraints": [
+        "6.7.2.3p4-p5",
+        "6.2.7p1",
+        "6.7.8p3",
+        "6.5.2.2p2",
+        "6.5.16.1p1"
+      ]
+    },
+    "isolation": {
+      "affected_aliases": [
+        "c:P0.c@T@ag_e4ecd8a586_2449_2_0_argument",
+        "c:P0.c@T@ag_e4ecd8a586_2449_2_0_middle"
+      ],
+      "allowed_terminal_variable": "c:P0.c@3122@F@main@ag_e4ecd8a586_2449_2_0_object",
+      "variable_reference_count": 1,
+      "initializer": "{ argc }",
+      "unchanged_parameter_record": "c:@S@ag_e4ecd8a586_2449_2_0_record",
+      "unchanged_callback_field": "c:@S@ag_e4ecd8a586_2449_2_0_dispatch_type@FI@ag_e4ecd8a586_2449_2_0_invoke",
+      "scope": "complete direct int-field records; file-scope simple aliases; one local plain argument",
+      "initializer_proof": {
+        "parameter": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 102,
+          "column": 15,
+          "offset": 3100,
+          "start_offset": 3096,
+          "end_offset": 3104,
+          "node_identity": {
+            "kind": "PARM_DECL",
+            "usr": "c:P0.c@3096@F@main@argc",
+            "referenced_usr": "c:P0.c@3096@F@main@argc",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "PARM_DECL:3096:3104"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "int argc"
+        },
+        "read": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_033/typedef_callback_00/P0.c",
+          "line": 104,
+          "column": 67,
+          "offset": 3188,
+          "start_offset": 3188,
+          "end_offset": 3192,
+          "node_identity": {
+            "kind": "DECL_REF_EXPR",
+            "usr": "",
+            "referenced_usr": "c:P0.c@3096@F@main@argc",
+            "p0_hash": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84",
+            "origin_key": "DECL_REF_EXPR:3188:3192"
+          },
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "argc"
+        },
+        "canonical_kind": "INT",
+        "qualifiers": false,
+        "initializer_text": "{ argc }"
+      },
+      "controlled_region_policy": "physical tokens, no macro overlap, no post-record includes"
+    },
+    "provenance": {
+      "standard_reference": "https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf",
+      "standard_edition": "public C11 committee draft N1570",
+      "inference": "P0 AST graph with symbolic edge substitution; no P1 parse, compiler or diagnostics",
+      "p0_admission_sha256": "1d9d031bae88e516e8e3d6c728307fc3edb1c562a40af340777c883619af0f84"
+    },
+    "schema_version": "stage2a-witness-v1"
+  },
+  "proof_boundary": "local immutable-parameter routing plus closed controlled MR subset; not a whole-program C11/UB verifier"
+}

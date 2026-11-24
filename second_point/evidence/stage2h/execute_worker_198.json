@@ -1,0 +1,71 @@
+{
+  "result": {
+    "candidate_id": "39777ccaa5b998576c1511c3072b408add20a746b01388808819978eb00747b4",
+    "seed_id": "seed_0013_1579317268",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "family": "typedef_callback",
+    "semantic_context_signature": "fab56a6c15d5d2ebff1f6028b7711cbf423cf3292ba59b33918b2ebfb5aa6c65",
+    "origin_stage": "2G",
+    "status": "TARGET_ERRORS_OBSERVED",
+    "observations": {
+      "gcc": {
+        "status": "TARGET_ERRORS_OBSERVED",
+        "errors": [
+          {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_198/P1.c",
+            "line": 1327,
+            "column": 114,
+            "severity": "error",
+            "category": "incompatible_struct_argument",
+            "message": "incompatible type for argument 1 of 'ag_f2129382fa_89319_2_0_dispatch.ag_f2129382fa_89319_2_0_invoke'",
+            "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_198/P1.c:1327:114: error: incompatible type for argument 1 of 'ag_f2129382fa_89319_2_0_dispatch.ag_f2129382fa_89319_2_0_invoke'",
+            "exact_target_anchor": true
+          }
+        ],
+        "confirmed_bug": false
+      },
+      "clang": {
+        "status": "TARGET_ERRORS_OBSERVED",
+        "errors": [
+          {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_198/P1.c",
+            "line": 1327,
+            "column": 114,
+            "severity": "error",
+            "category": "incompatible_struct_argument",
+            "message": "passing 'ag_f2129382fa_89319_2_0_argument' (aka 'struct ag_f2129382fa_89319_2_0_other') to parameter of incompatible type 'ag_f2129382fa_89319_2_0_root' (aka 'struct ag_f2129382fa_89319_2_0_record')",
+            "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_198/P1.c:1327:114: error: passing 'ag_f2129382fa_89319_2_0_argument' (aka 'struct ag_f2129382fa_89319_2_0_other') to parameter of incompatible type 'ag_f2129382fa_89319_2_0_root' (aka 'struct ag_f2129382fa_89319_2_0_record')",
+            "exact_target_anchor": true
+          }
+        ],
+        "confirmed_bug": false
+      }
+    },
+    "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_043/typedef_callback_00/P0.c",
+    "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_198/P1.c",
+    "p0_sha256": "adc21d5ad326f42061198c0e1a7a8767e6db4dac677229762c1c6c1edcf4fd5e",
+    "p1_sha256": "13aedb9df9910265cc728213ee3a1dd0f308c804592c89dda4e2ffc8a4021b13",
+    "oracle_replay": true,
+    "oracle_unchanged": true,
+    "confirmed_bug": false
+  },
+  "worker": {
+    "command": [
+      "/usr/bin/python3",
+      "-m",
+      "edgm_second.aggregate_run",
+      "--phase",
+      "execute_worker",
+      "--out-dir",
+      "/home/pyx/edgm-experiment/second_point/evidence/stage2h",
+      "--index",
+      "198"
+    ],
+    "returncode": 0,
+    "stdout": "see result file",
+    "stderr": "",
+    "status": "ok",
+    "exception": null,
+    "elapsed_seconds": 8.728906797943637
+  }
+}

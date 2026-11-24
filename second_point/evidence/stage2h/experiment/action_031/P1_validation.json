@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_031/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_031/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_031/P1.c: In function 'func_7':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_031/P1.c:520:626: error: incompatible type for argument 1 of 'ag_a7b6bfe6ef_38555_2_0_dispatch.ag_a7b6bfe6ef_38555_2_0_invoke'\n  520 |     l_1449 = ((((-1L) >= l_1411) & (safe_rshift_func_uint32_t_u_u((((((void*)0 == l_1425) < (safe_mul_func_uint64_t_u_u(((safe_sub_func_int8_t_s_s((((safe_rshift_func_int64_t_s_u((p_8.f1 = p_10), (l_1448 |= ((safe_rshift_func_int8_t_s_s(((safe_lshift_func_uint64_t_u_u((((*l_1425) = (safe_mul_func_uint64_t_u_u((((safe_lshift_func_int32_t_s_s((***g_1398), (((*g_178) ^= (l_1440 != (void*)0)) , (+(((safe_mod_func_uint8_t_u_u((safe_mul_func_uint32_t_u_u(0x7602A5CCL, (*g_750))), 0xC4L)) != (*g_178)) && (*l_1425)))))) & 0x24L) <= 0x814BB35261FE543DLL), p_9))) ^ ag_a7b6bfe6ef_38555_2_0_dispatch.ag_a7b6bfe6ef_38555_2_0_invoke(ag_a7b6bfe6ef_38555_2_0_object)), p_9)) , (*l_1425)), g_93)) | (*g_310))))) >= g_1239[5][1][0]) >= p_9), p_9)) , (*l_1425)), g_382[0]))) || 4294967295UL) <= 0xE810L), 31))) > 0UL);\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ag_a7b6bfe6ef_38555_2_0_argument {aka struct ag_a7b6bfe6ef_38555_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_031/P1.c:520:626: note: expected 'ag_a7b6bfe6ef_38555_2_0_root' {aka 'struct ag_a7b6bfe6ef_38555_2_0_record'} but argument is of type 'ag_a7b6bfe6ef_38555_2_0_argument' {aka 'struct ag_a7b6bfe6ef_38555_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.03828972298651934
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_031/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_031/P1.c:520:626: error: passing 'ag_a7b6bfe6ef_38555_2_0_argument' (aka 'struct ag_a7b6bfe6ef_38555_2_0_other') to parameter of incompatible type 'ag_a7b6bfe6ef_38555_2_0_root' (aka 'struct ag_a7b6bfe6ef_38555_2_0_record')\n  520 |     l_1449 = ((((-1L) >= l_1411) & (safe_rshift_func_uint32_t_u_u((((((void*)0 == l_1425) < (safe_mul_func_uint64_t_u_u(((safe_sub_func_int8_t_s_s((((safe_rshift_func_int64_t_s_u((p_8.f1 = p_10), (l_1448 |= ((safe_rshift_func_int8_t_s_s(((safe_lshift_func_uint64_t_u_u((((*l_1425) = (safe_mul_func_uint64_t_u_u((((safe_lshift_func_int32_t_s_s((***g_1398), (((*g_178) ^= (l_1440 != (void*)0)) , (+(((safe_mod_func_uint8_t_u_u((safe_mul_func_uint32_t_u_u(0x7602A5CCL, (*g_750))), 0xC4L)) != (*g_178)) && (*l_1425)))))) & 0x24L) <= 0x814BB35261FE543DLL), p_9))) ^ ag_a7b6bfe6ef_38555_2_0_dispatch.ag_a7b6bfe6ef_38555_2_0_invoke(ag_a7b6bfe6ef_38555_2_0_object)), p_9)) , (*l_1425)), g_93)) | (*g_310))))) >= g_1239[5][1][0]) >= p_9), p_9)) , (*l_1425)), g_382[0]))) || 4294967295UL) <= 0xE810L), 31))) > 0UL);\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.057549474062398076
+    }
+  },
+  "sha256": "3bcaa35e0712d6ce74a9b4b03baef06cbbd826667f7b0949f25b4428a2613255",
+  "source_unchanged": true
+}

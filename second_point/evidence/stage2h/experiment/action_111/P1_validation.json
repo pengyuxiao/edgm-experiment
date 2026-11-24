@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_111/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_111/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_111/P1.c: In function 'func_5':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_111/P1.c:1061:179: error: incompatible type for argument 1 of 'ag_2dc8342543_100516_2_0_dispatch.ag_2dc8342543_100516_2_0_invoke'\n 1061 |         l_1559 = ((((((safe_sub_func_uint64_t_u_u((safe_mul_func_int8_t_s_s(((l_1540 != ((*l_1542) = l_1541)) ^ ag_2dc8342543_100516_2_0_dispatch.ag_2dc8342543_100516_2_0_invoke(ag_2dc8342543_100516_2_0_object)), ((**l_1292) = ((*p_9) || (((((safe_mul_func_int64_t_s_s(g_430, (safe_mod_func_int32_t_s_s((*p_10), ((l_1239[5] = (safe_add_func_int16_t_s_s(((((*g_1504) < (**l_1292)) & (safe_lshift_func_int8_t_s_s((l_1555 ^= (+(l_1552 != &g_1444[1][0]))), p_7))) != l_1556[5]), p_7))) & p_8))))) , p_7) , (-9L)) , l_1557) != p_9))))), p_8)) , &l_1553) != &l_1553) ^ p_6) >= l_1558) > 0xEC69E2003B940E93LL);\n      |                                                                                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                                                                                                                                   |\n      |                                                                                                                                                                                   ag_2dc8342543_100516_2_0_argument {aka struct ag_2dc8342543_100516_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_111/P1.c:1061:179: note: expected 'ag_2dc8342543_100516_2_0_root' {aka 'struct ag_2dc8342543_100516_2_0_record'} but argument is of type 'ag_2dc8342543_100516_2_0_argument' {aka 'struct ag_2dc8342543_100516_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.05319491703994572
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_111/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_111/P1.c:1061:179: error: passing 'ag_2dc8342543_100516_2_0_argument' (aka 'struct ag_2dc8342543_100516_2_0_other') to parameter of incompatible type 'ag_2dc8342543_100516_2_0_root' (aka 'struct ag_2dc8342543_100516_2_0_record')\n 1061 |         l_1559 = ((((((safe_sub_func_uint64_t_u_u((safe_mul_func_int8_t_s_s(((l_1540 != ((*l_1542) = l_1541)) ^ ag_2dc8342543_100516_2_0_dispatch.ag_2dc8342543_100516_2_0_invoke(ag_2dc8342543_100516_2_0_object)), ((**l_1292) = ((*p_9) || (((((safe_mul_func_int64_t_s_s(g_430, (safe_mod_func_int32_t_s_s((*p_10), ((l_1239[5] = (safe_add_func_int16_t_s_s(((((*g_1504) < (**l_1292)) & (safe_lshift_func_int8_t_s_s((l_1555 ^= (+(l_1552 != &g_1444[1][0]))), p_7))) != l_1556[5]), p_7))) & p_8))))) , p_7) , (-9L)) , l_1557) != p_9))))), p_8)) , &l_1553) != &l_1553) ^ p_6) >= l_1558) > 0xEC69E2003B940E93LL);\n      |                                                                                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.08261484187096357
+    }
+  },
+  "sha256": "82ecea0b3aeb923109f2e828f4a02b1e9a9dc05b594106e17da9238c9f41f069",
+  "source_unchanged": true
+}

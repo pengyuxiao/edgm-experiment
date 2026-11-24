@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_226/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_226/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_226/P1.c: In function 'func_12':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_226/P1.c:352:37: error: cannot take address of bit-field 'ag_9f6bac5ada_46655_0_0_value'\n  352 | int *ag_9f6bac5ada_46655_0_0_left = &ag_9f6bac5ada_46655_0_0_object.ag_9f6bac5ada_46655_0_0_value;\n      |                                     ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.04525622399523854
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_226/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_226/P1.c:352:37: error: address of bit-field requested\n  352 | int *ag_9f6bac5ada_46655_0_0_left = &ag_9f6bac5ada_46655_0_0_object.ag_9f6bac5ada_46655_0_0_value;\n      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.06908138701692224
+    }
+  },
+  "sha256": "96c0845e7da1a8417e9547e694b93ccf6e7ba3ea98756a00918b248e976f5422",
+  "source_unchanged": true
+}

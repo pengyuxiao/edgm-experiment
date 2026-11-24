@@ -1,0 +1,81 @@
+{
+  "index": 35,
+  "seed_id": "seed_0018_93128626",
+  "source": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0018_93128626.c",
+  "sha256": "886224ecdcdeffc6d9ea1bb084fd94b8d8ebe8a528d2f2b0a2e427aa25e192bd",
+  "positions": 1,
+  "actions": [
+    {
+      "seed_id": "seed_0018_93128626",
+      "seed_index": 35,
+      "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0018_93128626.c",
+      "s_sha256": "886224ecdcdeffc6d9ea1bb084fd94b8d8ebe8a528d2f2b0a2e427aa25e192bd",
+      "source_kind": "Enriched",
+      "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+      "enrichment_family": "aggregate_direct",
+      "position_id": "886224ecdcdeffc6d9ea1bb084fd94b8d8ebe8a528d2f2b0a2e427aa25e192bd:c:seed_0018_93128626.c@1943@F@main@argc:2007",
+      "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_035/aggregate_direct_00",
+      "origin_stage": "2H",
+      "status": "VALID_CANDIDATE",
+      "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_035/aggregate_direct_00/P0.c",
+      "P0_id": "4a69d283486e71091f43c9f6dc68459693707be6c6c084d4eb351060d5f5b8b1",
+      "semantic_context": {
+        "family": "aggregate_direct",
+        "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+        "input_type": "INT",
+        "input_role": "immutable_by_value_parameter",
+        "function_role": "entry_control",
+        "original_operator": "==",
+        "original_context": [
+          "BINARY_OPERATOR",
+          "IF_STMT",
+          "COMPOUND_STMT"
+        ],
+        "cross_statement": true,
+        "cross_scope": false,
+        "cross_function": false,
+        "record_depth": 1,
+        "target_use_points": 1,
+        "value_route": "parameter -> initialized source -> whole-record copy -> destination member -> original operation"
+      },
+      "semantic_context_signature": "e02ed3e1477c8f9c088afc6ba881b923b9defa1b144142c66d6ed7f0709f2b99",
+      "candidate_id": "09f6ba1cdf0059daac13ee0fbd0fb78a673a7b3233bd0cba4ad3452b737c4444"
+    },
+    {
+      "seed_id": "seed_0018_93128626",
+      "seed_index": 35,
+      "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0018_93128626.c",
+      "s_sha256": "886224ecdcdeffc6d9ea1bb084fd94b8d8ebe8a528d2f2b0a2e427aa25e192bd",
+      "source_kind": "Enriched",
+      "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+      "enrichment_family": "aggregate_nested",
+      "position_id": "886224ecdcdeffc6d9ea1bb084fd94b8d8ebe8a528d2f2b0a2e427aa25e192bd:c:seed_0018_93128626.c@1943@F@main@argc:2007",
+      "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_035/aggregate_nested_00",
+      "origin_stage": "2H",
+      "status": "VALID_CANDIDATE",
+      "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_035/aggregate_nested_00/P0.c",
+      "P0_id": "e197fe9ca9d21178968d7eac0ff92c71c91e5784268d0bf5cc7357d0ee5c3b2a",
+      "semantic_context": {
+        "family": "aggregate_nested",
+        "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+        "input_type": "INT",
+        "input_role": "immutable_by_value_parameter",
+        "function_role": "entry_control",
+        "original_operator": "==",
+        "original_context": [
+          "BINARY_OPERATOR",
+          "IF_STMT",
+          "COMPOUND_STMT"
+        ],
+        "cross_statement": true,
+        "cross_scope": false,
+        "cross_function": false,
+        "record_depth": 2,
+        "target_use_points": 1,
+        "value_route": "parameter -> initialized source -> whole-record copy -> destination member -> original operation"
+      },
+      "semantic_context_signature": "586233872f751fbbef6569d6862bcda274ef1f3109f5609afd317c5666175ccb",
+      "candidate_id": "56ddd92db2457a2d5715949c5dd2c16fff2712630877051491a155cc559bb5c8"
+    }
+  ]
+}

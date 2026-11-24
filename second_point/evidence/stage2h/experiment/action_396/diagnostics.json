@@ -1,0 +1,78 @@
+{
+  "gcc": {
+    "status": "TARGET_ERRORS_OBSERVED",
+    "errors": [
+      {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c",
+        "line": 2267,
+        "column": 33,
+        "severity": "error",
+        "message": "assignment of read-only variable 'ag_65cebdce71_199312_0_0_object'",
+        "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c:2267:33: error: assignment of read-only variable 'ag_65cebdce71_199312_0_0_object'",
+        "category": "aggregate_not_modifiable_due_to_const_member",
+        "matched_anchors": [
+          {
+            "violation": 0,
+            "anchor": "operator"
+          }
+        ]
+      },
+      {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c",
+        "line": 2268,
+        "column": 33,
+        "severity": "error",
+        "message": "assignment of read-only variable 'ag_65cebdce71_199312_0_0_object'",
+        "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c:2268:33: error: assignment of read-only variable 'ag_65cebdce71_199312_0_0_object'",
+        "category": "aggregate_not_modifiable_due_to_const_member",
+        "matched_anchors": [
+          {
+            "violation": 1,
+            "anchor": "operator"
+          }
+        ]
+      }
+    ],
+    "unparsed_error_headers": [],
+    "confirmed_bug": false,
+    "exact_coordinate_comparison": true
+  },
+  "clang": {
+    "status": "TARGET_ERRORS_OBSERVED",
+    "errors": [
+      {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c",
+        "line": 2267,
+        "column": 33,
+        "severity": "error",
+        "message": "cannot assign to variable 'ag_65cebdce71_199312_0_0_object' with const-qualified data member 'ag_65cebdce71_199312_0_0_value'",
+        "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c:2267:33: error: cannot assign to variable 'ag_65cebdce71_199312_0_0_object' with const-qualified data member 'ag_65cebdce71_199312_0_0_value'",
+        "category": "aggregate_not_modifiable_due_to_const_member",
+        "matched_anchors": [
+          {
+            "violation": 0,
+            "anchor": "operator"
+          }
+        ]
+      },
+      {
+        "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c",
+        "line": 2268,
+        "column": 33,
+        "severity": "error",
+        "message": "cannot assign to variable 'ag_65cebdce71_199312_0_0_object' with const-qualified data member 'ag_65cebdce71_199312_0_0_value'",
+        "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c:2268:33: error: cannot assign to variable 'ag_65cebdce71_199312_0_0_object' with const-qualified data member 'ag_65cebdce71_199312_0_0_value'",
+        "category": "aggregate_not_modifiable_due_to_const_member",
+        "matched_anchors": [
+          {
+            "violation": 1,
+            "anchor": "operator"
+          }
+        ]
+      }
+    ],
+    "unparsed_error_headers": [],
+    "confirmed_bug": false,
+    "exact_coordinate_comparison": true
+  }
+}

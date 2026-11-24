@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_086/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_086/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_086/P1.c: In function 'func_10':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_086/P1.c:485:76: error: incompatible type for argument 1 of 'ag_b366dec1c3_46394_2_0_dispatch.ag_b366dec1c3_46394_2_0_invoke'\n  485 |     return ag_b366dec1c3_46394_2_0_dispatch.ag_b366dec1c3_46394_2_0_invoke(ag_b366dec1c3_46394_2_0_object);\n      |                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                            |\n      |                                                                            ag_b366dec1c3_46394_2_0_argument {aka struct ag_b366dec1c3_46394_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_086/P1.c:485:76: note: expected 'ag_b366dec1c3_46394_2_0_root' {aka 'struct ag_b366dec1c3_46394_2_0_record'} but argument is of type 'ag_b366dec1c3_46394_2_0_argument' {aka 'struct ag_b366dec1c3_46394_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.056016637943685055
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_086/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_086/P1.c:485:76: error: passing 'ag_b366dec1c3_46394_2_0_argument' (aka 'struct ag_b366dec1c3_46394_2_0_other') to parameter of incompatible type 'ag_b366dec1c3_46394_2_0_root' (aka 'struct ag_b366dec1c3_46394_2_0_record')\n  485 |     return ag_b366dec1c3_46394_2_0_dispatch.ag_b366dec1c3_46394_2_0_invoke(ag_b366dec1c3_46394_2_0_object);\n      |                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.08707333309575915
+    }
+  },
+  "sha256": "36ae8d1d4221f811153abaf129e21c9c2b018b2137daccc6a9cd2b31ff2ac609",
+  "source_unchanged": true
+}

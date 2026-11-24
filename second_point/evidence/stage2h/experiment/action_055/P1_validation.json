@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_055/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_055/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_055/P1.c: In function 'func_8':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_055/P1.c:557:385: error: incompatible type for argument 1 of 'ag_e43cc34c28_46538_2_0_dispatch.ag_e43cc34c28_46538_2_0_invoke'\n  557 |         (*l_2225) = ((*l_2224) = (g_2206 , func_38(((~p_11) , (*g_754)), ((l_1734 != (g_2212 = l_2210)) & ((safe_mul_func_uint32_t_u_u((((*g_466) = ((safe_lshift_func_uint8_t_u_u(((-10L) ^ ((safe_mul_func_uint8_t_u_u(((*l_1756) = (+((*l_1756) == (safe_mod_func_uint64_t_u_u(l_2222, ((*g_174) = 1UL)))))), (*g_1409))) || ag_e43cc34c28_46538_2_0_dispatch.ag_e43cc34c28_46538_2_0_invoke(ag_e43cc34c28_46538_2_0_object))), p_11)) == (***g_1765))) ^ (***g_1765)), (*g_844))) <= p_9)), l_2223)));\n      |                                                                                                                                                                                                                                                                                                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                                                                                                                                                                                                                                                                                                                                                 |\n      |                                                                                                                                                                                                                                                                                                                                                                                                 ag_e43cc34c28_46538_2_0_argument {aka struct ag_e43cc34c28_46538_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_055/P1.c:557:385: note: expected 'ag_e43cc34c28_46538_2_0_root' {aka 'struct ag_e43cc34c28_46538_2_0_record'} but argument is of type 'ag_e43cc34c28_46538_2_0_argument' {aka 'struct ag_e43cc34c28_46538_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.042331224074587226
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_055/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_055/P1.c:557:385: error: passing 'ag_e43cc34c28_46538_2_0_argument' (aka 'struct ag_e43cc34c28_46538_2_0_other') to parameter of incompatible type 'ag_e43cc34c28_46538_2_0_root' (aka 'struct ag_e43cc34c28_46538_2_0_record')\n  557 |         (*l_2225) = ((*l_2224) = (g_2206 , func_38(((~p_11) , (*g_754)), ((l_1734 != (g_2212 = l_2210)) & ((safe_mul_func_uint32_t_u_u((((*g_466) = ((safe_lshift_func_uint8_t_u_u(((-10L) ^ ((safe_mul_func_uint8_t_u_u(((*l_1756) = (+((*l_1756) == (safe_mod_func_uint64_t_u_u(l_2222, ((*g_174) = 1UL)))))), (*g_1409))) || ag_e43cc34c28_46538_2_0_dispatch.ag_e43cc34c28_46538_2_0_invoke(ag_e43cc34c28_46538_2_0_object))), p_11)) == (***g_1765))) ^ (***g_1765)), (*g_844))) <= p_9)), l_2223)));\n      |                                                                                                                                                                                                                                                                                                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.06490289117209613
+    }
+  },
+  "sha256": "579582e54c158fbf5633acc71253364d54531db0d5690c86e081e8993b6a4bd6",
+  "source_unchanged": true
+}

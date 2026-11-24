@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_088/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_088/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_088/P1.c: In function 'func_41':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_088/P1.c:1446:47: error: cannot take address of bit-field 'ag_40fa08a0ff_201093_0_0_value'\n 1446 | unsigned int *ag_40fa08a0ff_201093_0_0_left = &ag_40fa08a0ff_201093_0_0_object.ag_40fa08a0ff_201093_0_0_value;\n      |                                               ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.06947808200493455
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_088/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_088/P1.c:1446:47: error: address of bit-field requested\n 1446 | unsigned int *ag_40fa08a0ff_201093_0_0_left = &ag_40fa08a0ff_201093_0_0_object.ag_40fa08a0ff_201093_0_0_value;\n      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.12923200987279415
+    }
+  },
+  "sha256": "aa60a6fc528906097b04a5c0181e4dce4755bd1ce4addbf5f4ee8e7ba701eea8",
+  "source_unchanged": true
+}

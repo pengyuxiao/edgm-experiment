@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c: In function 'main':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c:2267:33: error: assignment of read-only variable 'ag_65cebdce71_199312_0_0_object'\n 2267 | ag_65cebdce71_199312_0_0_object = ag_65cebdce71_199312_0_0_left;\n      |                                 ^\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c:2268:33: error: assignment of read-only variable 'ag_65cebdce71_199312_0_0_object'\n 2268 | ag_65cebdce71_199312_0_0_object = ag_65cebdce71_199312_0_0_left;\n      |                                 ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.05804424197413027
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c:2267:33: error: cannot assign to variable 'ag_65cebdce71_199312_0_0_object' with const-qualified data member 'ag_65cebdce71_199312_0_0_value'\n 2267 | ag_65cebdce71_199312_0_0_object = ag_65cebdce71_199312_0_0_left;\n      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c:2264:52: note: data member 'ag_65cebdce71_199312_0_0_value' declared const here\n 2264 | struct ag_65cebdce71_199312_0_0_record { const int ag_65cebdce71_199312_0_0_value; };\n      |                                          ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c:2268:33: error: cannot assign to variable 'ag_65cebdce71_199312_0_0_object' with const-qualified data member 'ag_65cebdce71_199312_0_0_value'\n 2268 | ag_65cebdce71_199312_0_0_object = ag_65cebdce71_199312_0_0_left;\n      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_396/P1.c:2264:52: note: data member 'ag_65cebdce71_199312_0_0_value' declared const here\n 2264 | struct ag_65cebdce71_199312_0_0_record { const int ag_65cebdce71_199312_0_0_value; };\n      |                                          ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n2 errors generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.09033817914314568
+    }
+  },
+  "sha256": "a5e96a6dd6b3fa88971d17fb3424552c3a4690221be121c9494eb73ac1906dee",
+  "source_unchanged": true
+}

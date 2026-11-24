@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_033/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_033/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_033/P1.c: In function 'func_14':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_033/P1.c:1035:37: error: cannot take address of bit-field 'ag_26c0094bb9_99548_0_0_value'\n 1035 | int *ag_26c0094bb9_99548_0_0_left = &ag_26c0094bb9_99548_0_0_object.ag_26c0094bb9_99548_0_0_value;\n      |                                     ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.05725553003139794
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_033/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_033/P1.c:1035:37: error: address of bit-field requested\n 1035 | int *ag_26c0094bb9_99548_0_0_left = &ag_26c0094bb9_99548_0_0_object.ag_26c0094bb9_99548_0_0_value;\n      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.09013820393010974
+    }
+  },
+  "sha256": "d4f84ec7912c6a3e8b0526f93097acd0e736518e4018585314f12489c6920b43",
+  "source_unchanged": true
+}

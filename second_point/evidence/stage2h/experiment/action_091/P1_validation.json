@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_091/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_091/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_091/P1.c: In function 'func_4':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_091/P1.c:518:88: error: incompatible type for argument 1 of 'ag_40fa08a0ff_114885_2_0_dispatch.ag_40fa08a0ff_114885_2_0_invoke'\n  518 |         (*g_2321) = (ag_40fa08a0ff_114885_2_0_dispatch.ag_40fa08a0ff_114885_2_0_invoke(ag_40fa08a0ff_114885_2_0_object) == 0UL);\n      |                                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                                        |\n      |                                                                                        ag_40fa08a0ff_114885_2_0_argument {aka struct ag_40fa08a0ff_114885_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_091/P1.c:518:88: note: expected 'ag_40fa08a0ff_114885_2_0_root' {aka 'struct ag_40fa08a0ff_114885_2_0_record'} but argument is of type 'ag_40fa08a0ff_114885_2_0_argument' {aka 'struct ag_40fa08a0ff_114885_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.06922267097979784
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_091/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_091/P1.c:518:88: error: passing 'ag_40fa08a0ff_114885_2_0_argument' (aka 'struct ag_40fa08a0ff_114885_2_0_other') to parameter of incompatible type 'ag_40fa08a0ff_114885_2_0_root' (aka 'struct ag_40fa08a0ff_114885_2_0_record')\n  518 |         (*g_2321) = (ag_40fa08a0ff_114885_2_0_dispatch.ag_40fa08a0ff_114885_2_0_invoke(ag_40fa08a0ff_114885_2_0_object) == 0UL);\n      |                                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.10752829001285136
+    }
+  },
+  "sha256": "6c85c6625c52f3c979e3df6e94f3521052a0f4ee1e767ddf0c58438b3c14963f",
+  "source_unchanged": true
+}

@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_120/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_120/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_120/P1.c: In function 'func_7':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_120/P1.c:396:548: error: incompatible type for argument 1 of 'ag_fdf3d43795_34624_2_0_dispatch.ag_fdf3d43795_34624_2_0_invoke'\n  396 |             if (((safe_mul_func_uint32_t_u_u((((((*l_2821) ^ (p_11 > (((*l_2980) = (((l_2960 = 0x653E505A89ED1C5ALL) , l_2961) != ((safe_add_func_int64_t_s_s((((0xDEL > ((*g_2468) = ((safe_div_func_int64_t_s_s((l_2977 = (safe_add_func_uint16_t_u_u(((safe_mod_func_uint8_t_u_u(((safe_mod_func_int16_t_s_s((((*l_2803) = p_9) ^ 0xDDL), ((((((safe_sub_func_int16_t_s_s(((safe_mul_func_int32_t_s_s((l_2959[5] != (void*)0), l_2976[3][1][0])) || p_9), l_2976[3][2][1])) < l_2977) , p_8) != ag_fdf3d43795_34624_2_0_dispatch.ag_fdf3d43795_34624_2_0_invoke(ag_fdf3d43795_34624_2_0_object)) | (-1L)) & p_12))) ^ 7UL), l_2976[3][1][0])) , 0xBC3BL), (*l_2821)))), l_2978)) , l_2978))) || p_11) >= l_2978), 0x74751E30F9D820D0LL)) , l_2979[5][2][0]))) , 0x46L))) || 247UL) || l_2976[2][2][0]) ^ l_2981[1]), l_2978)) , l_2981[0]))\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ag_fdf3d43795_34624_2_0_argument {aka struct ag_fdf3d43795_34624_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_120/P1.c:396:548: note: expected 'ag_fdf3d43795_34624_2_0_root' {aka 'struct ag_fdf3d43795_34624_2_0_record'} but argument is of type 'ag_fdf3d43795_34624_2_0_argument' {aka 'struct ag_fdf3d43795_34624_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.04729012819007039
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_120/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_120/P1.c:396:548: error: passing 'ag_fdf3d43795_34624_2_0_argument' (aka 'struct ag_fdf3d43795_34624_2_0_other') to parameter of incompatible type 'ag_fdf3d43795_34624_2_0_root' (aka 'struct ag_fdf3d43795_34624_2_0_record')\n  396 |             if (((safe_mul_func_uint32_t_u_u((((((*l_2821) ^ (p_11 > (((*l_2980) = (((l_2960 = 0x653E505A89ED1C5ALL) , l_2961) != ((safe_add_func_int64_t_s_s((((0xDEL > ((*g_2468) = ((safe_div_func_int64_t_s_s((l_2977 = (safe_add_func_uint16_t_u_u(((safe_mod_func_uint8_t_u_u(((safe_mod_func_int16_t_s_s((((*l_2803) = p_9) ^ 0xDDL), ((((((safe_sub_func_int16_t_s_s(((safe_mul_func_int32_t_s_s((l_2959[5] != (void*)0), l_2976[3][1][0])) || p_9), l_2976[3][2][1])) < l_2977) , p_8) != ag_fdf3d43795_34624_2_0_dispatch.ag_fdf3d43795_34624_2_0_invoke(ag_fdf3d43795_34624_2_0_object)) | (-1L)) & p_12))) ^ 7UL), l_2976[3][1][0])) , 0xBC3BL), (*l_2821)))), l_2978)) , l_2978))) || p_11) >= l_2978), 0x74751E30F9D820D0LL)) , l_2979[5][2][0]))) , 0x46L))) || 247UL) || l_2976[2][2][0]) ^ l_2981[1]), l_2978)) , l_2981[0]))\n      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.07373006409034133
+    }
+  },
+  "sha256": "cd33617205151ebec37311b5e8ccea5243a9f7a785ac42a823d4c7cb489a573c",
+  "source_unchanged": true
+}

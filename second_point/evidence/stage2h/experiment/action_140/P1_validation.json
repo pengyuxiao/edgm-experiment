@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_140/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_140/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_140/P1.c: In function 'func_36':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_140/P1.c:1272:47: error: cannot take address of bit-field 'ag_8ef07bfb0b_115248_0_0_value'\n 1272 | unsigned int *ag_8ef07bfb0b_115248_0_0_left = &ag_8ef07bfb0b_115248_0_0_object.ag_8ef07bfb0b_115248_0_0_value;\n      |                                               ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.05562567920424044
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_140/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_140/P1.c:1272:47: error: address of bit-field requested\n 1272 | unsigned int *ag_8ef07bfb0b_115248_0_0_left = &ag_8ef07bfb0b_115248_0_0_object.ag_8ef07bfb0b_115248_0_0_value;\n      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.08470989391207695
+    }
+  },
+  "sha256": "188146e3367b2f97112a1231660019dd7589261965e1cc6644220a287857a34c",
+  "source_unchanged": true
+}

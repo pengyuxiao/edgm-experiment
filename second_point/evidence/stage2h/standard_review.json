@@ -1,0 +1,14 @@
+{
+  "document": "C11 committee draft N1570",
+  "canonical_url": "https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf",
+  "checked_text": "https://www.sigbus.info/n1570",
+  "access_note": "WG14 PDF timed out; reviewed the full N1570 text mirror, not prompt assertions",
+  "rules": {
+    "6.3.2.1p1": "结构体/联合体是否可修改，须递归检查其所包含聚合或联合体的成员/元素是否有 const 限定。",
+    "6.5.16p2": "赋值运算左操作数必须满足可修改左值条件。",
+    "6.5.16.1p1": "结构体简单赋值同时要求兼容类型；本 MR 保持双方相同记录声明身份。",
+    "6.7.9p11,p13,p16-p20": "标量初始化按去限定后的类型检查；聚合初始化列表递归初始化各成员，不能当作既有对象赋值。",
+    "5.1.1.3p1": "约束违反需要诊断；并未规定本研究的 error-only 类别或唯一列号。"
+  },
+  "inference": "给既有普通整型成员增加 const，成员声明与初始化保持合法，但沿包含路径使相同记录身份的整体赋值左值失去可修改性。"
+}

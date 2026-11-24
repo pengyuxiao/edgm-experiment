@@ -1,0 +1,18 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0030_654932300.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_036/aggregate_direct_00/P0.c
+@@ -2074,9 +2074,14 @@
+ /* ---------------------------------------- */
+ int main (int argc, char* argv[])
+ {
++struct ag_f3580750ee_181796_0_0_record { int ag_f3580750ee_181796_0_0_value; };
++struct ag_f3580750ee_181796_0_0_record ag_f3580750ee_181796_0_0_left = { argc };
++struct ag_f3580750ee_181796_0_0_record ag_f3580750ee_181796_0_0_object = {0};
++ag_f3580750ee_181796_0_0_object = ag_f3580750ee_181796_0_0_left;
++
+     int i, j, k;
+     int print_hash_value = 0;
+-    if (argc == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
++    if ((ag_f3580750ee_181796_0_0_object.ag_f3580750ee_181796_0_0_value) == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
+     platform_main_begin();
+     crc32_gentab();
+     func_1();

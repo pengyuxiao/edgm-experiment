@@ -1,0 +1,17 @@
+{
+  "maximum_positions_per_family_per_seed": 2,
+  "position_order": "non-main then offset; second prefers different function",
+  "assignments_by_position_rank": [
+    1,
+    2
+  ],
+  "families": [
+    "aggregate_direct",
+    "aggregate_nested"
+  ],
+  "dedup": "S SHA + MR + normalized semantic context signature",
+  "execution": "all stage2g valid candidates in unchanged order, followed by all unique new candidates in seed/family/position order",
+  "workers": 3,
+  "worker_timeout_seconds": 600,
+  "no_diagnostic_dependent_selection": true
+}

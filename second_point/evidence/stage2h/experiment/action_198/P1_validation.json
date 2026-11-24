@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_198/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_198/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_198/P1.c: In function 'func_67':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_198/P1.c:1327:114: error: incompatible type for argument 1 of 'ag_f2129382fa_89319_2_0_dispatch.ag_f2129382fa_89319_2_0_invoke'\n 1327 |             if (((((*l_1401) = ((((0xA1C20F46L & ag_f2129382fa_89319_2_0_dispatch.ag_f2129382fa_89319_2_0_invoke(ag_f2129382fa_89319_2_0_object)) , (void*)0) != l_1399[1][1][1]) , (void*)0)) == (void*)0) < p_68))\n      |                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                                                                  |\n      |                                                                                                                  ag_f2129382fa_89319_2_0_argument {aka struct ag_f2129382fa_89319_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_198/P1.c:1327:114: note: expected 'ag_f2129382fa_89319_2_0_root' {aka 'struct ag_f2129382fa_89319_2_0_record'} but argument is of type 'ag_f2129382fa_89319_2_0_argument' {aka 'struct ag_f2129382fa_89319_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.053561639972031116
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_198/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_198/P1.c:1327:114: error: passing 'ag_f2129382fa_89319_2_0_argument' (aka 'struct ag_f2129382fa_89319_2_0_other') to parameter of incompatible type 'ag_f2129382fa_89319_2_0_root' (aka 'struct ag_f2129382fa_89319_2_0_record')\n 1327 |             if (((((*l_1401) = ((((0xA1C20F46L & ag_f2129382fa_89319_2_0_dispatch.ag_f2129382fa_89319_2_0_invoke(ag_f2129382fa_89319_2_0_object)) , (void*)0) != l_1399[1][1][1]) , (void*)0)) == (void*)0) < p_68))\n      |                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.07614554208703339
+    }
+  },
+  "sha256": "13aedb9df9910265cc728213ee3a1dd0f308c804592c89dda4e2ffc8a4021b13",
+  "source_unchanged": true
+}

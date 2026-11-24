@@ -1,0 +1,26 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0027_755910469.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_048/aggregate_direct_01/P0.c
+@@ -1538,7 +1538,13 @@
+  * writes: g_263 g_137 g_91 g_109 g_101 g_103 g_127
+  */
+ static uint64_t  func_45(uint64_t  p_46, int32_t * p_47, int32_t  p_48, uint32_t  p_49)
+-{ /* block id: 102 */
++{
++struct ag_3dd9d57378_123688_0_0_record { unsigned int ag_3dd9d57378_123688_0_0_value; };
++struct ag_3dd9d57378_123688_0_0_record ag_3dd9d57378_123688_0_0_left = { p_49 };
++struct ag_3dd9d57378_123688_0_0_record ag_3dd9d57378_123688_0_0_object = {0};
++ag_3dd9d57378_123688_0_0_object = ag_3dd9d57378_123688_0_0_left;
++ag_3dd9d57378_123688_0_0_object = ag_3dd9d57378_123688_0_0_left;
++ /* block id: 102 */
+     int32_t * const l_271 = &g_91;
+ 
+     /* edgm diversify: local typedef-chain (tag=42293) */
+@@ -1554,7 +1560,7 @@
+             g_137[g_263][p_46] = (void*)0;
+         }
+     }
+-    (*l_272) = func_94(p_49, l_271, (*l_271), &g_103);
++    (*l_272) = func_94((ag_3dd9d57378_123688_0_0_object.ag_3dd9d57378_123688_0_0_value), l_271, (*l_271), &g_103);
+ 
+     /* edgm diversify: local enum + use (tag=94340) */
+     enum edgm_le_94340 { edgm_le_94340_X = 0, edgm_le_94340_Y = 1, edgm_le_94340_Z = 3 };

@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_202/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_202/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_202/P1.c: In function 'main':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_202/P1.c:1966:75: error: incompatible type for argument 1 of 'ag_0023f9d151_156156_2_0_dispatch.ag_0023f9d151_156156_2_0_invoke'\n 1966 |     if (ag_0023f9d151_156156_2_0_dispatch.ag_0023f9d151_156156_2_0_invoke(ag_0023f9d151_156156_2_0_object) == 2 && strcmp(argv[1], \"1\") == 0) print_hash_value = 1;\n      |                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                           |\n      |                                                                           ag_0023f9d151_156156_2_0_argument {aka struct ag_0023f9d151_156156_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_202/P1.c:1966:75: note: expected 'ag_0023f9d151_156156_2_0_root' {aka 'struct ag_0023f9d151_156156_2_0_record'} but argument is of type 'ag_0023f9d151_156156_2_0_argument' {aka 'struct ag_0023f9d151_156156_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.05082650389522314
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_202/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_202/P1.c:1966:75: error: passing 'ag_0023f9d151_156156_2_0_argument' (aka 'struct ag_0023f9d151_156156_2_0_other') to parameter of incompatible type 'ag_0023f9d151_156156_2_0_root' (aka 'struct ag_0023f9d151_156156_2_0_record')\n 1966 |     if (ag_0023f9d151_156156_2_0_dispatch.ag_0023f9d151_156156_2_0_invoke(ag_0023f9d151_156156_2_0_object) == 2 && strcmp(argv[1], \"1\") == 0) print_hash_value = 1;\n      |                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.07462518499232829
+    }
+  },
+  "sha256": "ecf4240714063bf55b0477e812383670d68321355d692d9f978de86435e120ae",
+  "source_unchanged": true
+}

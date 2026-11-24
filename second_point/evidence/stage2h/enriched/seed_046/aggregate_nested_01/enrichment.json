@@ -1,0 +1,191 @@
+{
+  "schema": "stage2h-enrichment-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0007_325097610.c",
+  "s_sha256": "74e2fb34964b2524734fd67d8410a36592be41dbdbcf9a0a16b0a70066daa673",
+  "p0_sha256": "7e63c0a0c708f59f24a8824ee389c0ab4273ff2154bff90f32b63271c8fcf907",
+  "position": {
+    "position_id": "74e2fb34964b2524734fd67d8410a36592be41dbdbcf9a0a16b0a70066daa673:c:seed_0007_325097610.c@35226@F@func_11@p_13:40003",
+    "read": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0007_325097610.c",
+      "line": 469,
+      "column": 656,
+      "offset": 40003,
+      "start_offset": 40003,
+      "end_offset": 40007,
+      "node_identity": "c:seed_0007_325097610.c@35226@F@func_11@p_13:DECL_REF_EXPR:40003",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_13",
+      "usr": "",
+      "referenced_usr": "c:seed_0007_325097610.c@35226@F@func_11@p_13",
+      "kind": "DECL_REF_EXPR"
+    },
+    "declaration": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0007_325097610.c",
+      "line": 390,
+      "column": 49,
+      "offset": 35236,
+      "start_offset": 35226,
+      "end_offset": 35240,
+      "node_identity": "c:seed_0007_325097610.c@35226@F@func_11@p_13:PARM_DECL:35226",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "uint32_t  p_13",
+      "usr": "c:seed_0007_325097610.c@35226@F@func_11@p_13",
+      "referenced_usr": "c:seed_0007_325097610.c@35226@F@func_11@p_13",
+      "kind": "PARM_DECL"
+    },
+    "function_offset": 35188,
+    "body_start": 35287,
+    "kind": "UINT",
+    "parameter": "p_13",
+    "function_name": "func_11",
+    "function_usr": "c:seed_0007_325097610.c@F@func_11",
+    "operator": "function_argument",
+    "operation": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0007_325097610.c",
+      "line": 469,
+      "column": 390,
+      "offset": 39737,
+      "start_offset": 39737,
+      "end_offset": 40008,
+      "node_identity": "c:safe_math.h@F@safe_mul_func_int16_t_s_s:CALL_EXPR:39737",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "safe_mul_func_int16_t_s_s((((safe_add_func_int64_t_s_s(((g_367 , ((safe_mul_func_uint16_t_u_u(((safe_lshift_func_int64_t_s_s((((*l_816) = l_815) != l_728), 58)) >= 0xC010L), p_15)) >= 1UL)) , 0xB765247E1BF10860LL), 0xE4DCBFE7FDAD28D0LL)) && l_817) != 4294967286UL), p_13)",
+      "usr": "",
+      "referenced_usr": "c:safe_math.h@F@safe_mul_func_int16_t_s_s",
+      "kind": "CALL_EXPR"
+    },
+    "unit": [
+      39364,
+      40183
+    ],
+    "nested_supported": true,
+    "ancestor_context": [
+      "CALL_EXPR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ]
+  },
+  "enrichment_family": "aggregate_nested",
+  "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+  "semantic_context": {
+    "family": "aggregate_nested",
+    "mr_id": "MR_MEMBER_CONST_AGGREGATE_WRITE",
+    "input_type": "UINT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "function_argument",
+    "original_context": [
+      "CALL_EXPR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": false,
+    "record_depth": 2,
+    "target_use_points": 2,
+    "value_route": "parameter -> initialized source -> whole-record copy -> destination member -> original operation"
+  },
+  "semantic_context_signature": "5798121284d201657846ba5a37204c4db8f9341ef3e945c2ebbf8ba5ad5087b0",
+  "names": {
+    "record": "ag_74e2fb3496_40003_0_0_record",
+    "other": "ag_74e2fb3496_40003_0_0_other",
+    "value": "ag_74e2fb3496_40003_0_0_value",
+    "object": "ag_74e2fb3496_40003_0_0_object",
+    "left": "ag_74e2fb3496_40003_0_0_left",
+    "right": "ag_74e2fb3496_40003_0_0_right",
+    "root": "ag_74e2fb3496_40003_0_0_root",
+    "middle": "ag_74e2fb3496_40003_0_0_middle",
+    "argument": "ag_74e2fb3496_40003_0_0_argument",
+    "callback": "ag_74e2fb3496_40003_0_0_callback",
+    "dispatch_type": "ag_74e2fb3496_40003_0_0_dispatch_type",
+    "dispatch": "ag_74e2fb3496_40003_0_0_dispatch",
+    "extract": "ag_74e2fb3496_40003_0_0_extract",
+    "input": "ag_74e2fb3496_40003_0_0_input",
+    "invoke": "ag_74e2fb3496_40003_0_0_invoke"
+  },
+  "replacement": "(ag_74e2fb3496_40003_0_0_object.ag_74e2fb3496_40003_0_0_right.ag_74e2fb3496_40003_0_0_value)",
+  "edits": [
+    {
+      "start": 35288,
+      "end": 35288,
+      "before": "",
+      "after": "\nstruct ag_74e2fb3496_40003_0_0_record { unsigned int ag_74e2fb3496_40003_0_0_value; };\nstruct ag_74e2fb3496_40003_0_0_other { struct ag_74e2fb3496_40003_0_0_record ag_74e2fb3496_40003_0_0_right; int ag_74e2fb3496_40003_0_0_input; };\nstruct ag_74e2fb3496_40003_0_0_other ag_74e2fb3496_40003_0_0_left = {{ p_13 }, 0};\nstruct ag_74e2fb3496_40003_0_0_other ag_74e2fb3496_40003_0_0_object = {{0}, 0};\nag_74e2fb3496_40003_0_0_object = ag_74e2fb3496_40003_0_0_left;\nag_74e2fb3496_40003_0_0_object = ag_74e2fb3496_40003_0_0_left;\n"
+    },
+    {
+      "start": 40003,
+      "end": 40007,
+      "before": "p_13",
+      "after": "(ag_74e2fb3496_40003_0_0_object.ag_74e2fb3496_40003_0_0_right.ag_74e2fb3496_40003_0_0_value)"
+    }
+  ],
+  "source_map": [
+    {
+      "kind": "identity",
+      "s": [
+        0,
+        35288
+      ],
+      "p0": [
+        0,
+        35288
+      ]
+    },
+    {
+      "kind": "generated",
+      "s": [
+        35288,
+        35288
+      ],
+      "p0": [
+        35288,
+        35811
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        35288,
+        40003
+      ],
+      "p0": [
+        35811,
+        40526
+      ]
+    },
+    {
+      "kind": "replacement",
+      "s": [
+        40003,
+        40007
+      ],
+      "p0": [
+        40526,
+        40618
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        40007,
+        106608
+      ],
+      "p0": [
+        40618,
+        107219
+      ]
+    }
+  ],
+  "local_equivalence": {
+    "parameter_initialized": true,
+    "all_parameter_references_read_only": true,
+    "early_nonvolatile_read_has_no_observable_effect": true,
+    "value_type_preserved": true,
+    "new_objects_private": true,
+    "new_calls_pure_identity": false,
+    "original_expression_evaluation_path_preserved": true,
+    "global_ub_proof": false
+  },
+  "assignment_count": 2
+}

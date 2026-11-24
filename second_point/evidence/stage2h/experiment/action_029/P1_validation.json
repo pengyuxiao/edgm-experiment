@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_029/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_029/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_029/P1.c: In function 'func_7':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_029/P1.c:513:37: error: cannot take address of bit-field 'ag_a7b6bfe6ef_38555_1_0_value'\n  513 | int *ag_a7b6bfe6ef_38555_1_0_left = &ag_a7b6bfe6ef_38555_1_0_object.ag_a7b6bfe6ef_38555_1_0_value;\n      |                                     ^\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_029/P1.c:514:38: error: cannot take address of bit-field 'ag_a7b6bfe6ef_38555_1_0_value'\n  514 | int *ag_a7b6bfe6ef_38555_1_0_right = &ag_a7b6bfe6ef_38555_1_0_object.ag_a7b6bfe6ef_38555_1_0_value;\n      |                                      ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.03724215202964842
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_029/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_029/P1.c:513:37: error: address of bit-field requested\n  513 | int *ag_a7b6bfe6ef_38555_1_0_left = &ag_a7b6bfe6ef_38555_1_0_object.ag_a7b6bfe6ef_38555_1_0_value;\n      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_029/P1.c:514:38: error: address of bit-field requested\n  514 | int *ag_a7b6bfe6ef_38555_1_0_right = &ag_a7b6bfe6ef_38555_1_0_object.ag_a7b6bfe6ef_38555_1_0_value;\n      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n2 errors generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.05567483603954315
+    }
+  },
+  "sha256": "2f2985337eb5ee3253253f23c7ebf00b71200b2b71bfe16420c2da7ab2dfa94a",
+  "source_unchanged": true
+}

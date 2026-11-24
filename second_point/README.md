@@ -1,6 +1,8 @@
-# EDGM 第二研究点：阶段 0–2G
+# EDGM 第二研究点：阶段 0–2H
 
 独立于 EDGM 的只读基础框架。已实现环境记录、合法候选 P0 加载与双编译器验证、主文件 AST 提取。
+阶段 2H 新增第三条 `MR_MEMBER_CONST_AGGREGATE_WRITE`，冻结三条 MR 的初始库；
+报告与真实全池执行结果见[阶段 2H 验收](docs/STAGE2H_CONST_AGGREGATE_MR.md)。尚未实现学习模块。
 阶段 2G 已增加主动合法增强和两条既有 MR 的真实动作池，见[阶段 2G 验收](docs/STAGE2G_ACTIVE_SEMANTIC_ENRICHMENT.md)。
 阶段 2A 已新增单条 typedef 依赖变换及独立约束见证；完整诊断比较与强化学习尚未实现。
 阶段 2E 已实现受限的 `MR_MEMBER_BITFIELD_ADDRESSABILITY`，见
@@ -168,3 +170,29 @@ python3 -m unittest discover -s second_point/tests -v
 原始位置枚举、排除原因、所有 P0、去重排除项和全部实验结果均保留，不依据诊断补选。
 这是受控局部语义保持与闭合约束证明，不是任意 C11 程序的全局等价或无 UB 证明。
 阶段 2G 不实现学习模块或新 MR；const 方向留待另行授权的阶段 2H。
+
+## 阶段 2H：const 聚合赋值 MR 与全池验证
+
+本阶段显式支持局部普通整型字段，以及经一层真实结构体包含边递归传播 const 的受控子集。
+正式 MR 通过 AST 身份扫描 P0，仅给叶字段声明增加 const；初始化和远端整体赋值保持原字节。
+全部 2G 动作和去重后的新增动作均执行，不根据诊断抽样或补选。Oracle 先保存、重放，再编译 P1。
+历史证据保持只读，旧 P0 引用路径和 SHA，不复制。每个动作有本批次的 P0 准入和双编译诊断原文。
+
+以下目录须不存在；从仓库根运行，先恢复历史归档 JSON，并准备固定原种子和指定工具链路径。
+阶段 2G 的 source_snapshots 可核对 S；脚本不自动覆盖原种子目录。
+
+```bash
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONPATH=second_point/src
+mkdir second_point/evidence/stage2h_reproduction
+python3 -m edgm_second.aggregate_run --phase setup --out-dir second_point/evidence/stage2h_reproduction
+python3 second_point/tools/stage2h_manual.py --out-dir second_point/evidence/stage2h_reproduction
+python3 -m edgm_second.aggregate_run --phase prepare --out-dir second_point/evidence/stage2h_reproduction
+python3 -m edgm_second.aggregate_run --phase execute --out-dir second_point/evidence/stage2h_reproduction
+python3 second_point/tools/stage2h_audit.py --out-dir second_point/evidence/stage2h_reproduction
+python3 -m unittest discover -s second_point/tests -v
+```
+
+`combined_candidate_pool.json` 保留稳定身份和规范化上下文；`selection_before_compilation.json` 冻结执行顺序。
+异常候选按同环境重复编译并保留两次证据；Oracle 无效、worker 超时、编译器超时/崩溃与普通诊断差异分开记录。
+这不是完整 C11 验证器或通用诊断比较器。阶段 2H 后停止，不自动增加第四条 MR、奖励、Bandit 或 LLM。

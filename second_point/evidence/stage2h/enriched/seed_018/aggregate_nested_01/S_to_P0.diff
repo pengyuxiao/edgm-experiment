@@ -1,0 +1,27 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0009_1438768141.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2h/enriched/seed_018/aggregate_nested_01/P0.c
+@@ -434,7 +434,14 @@
+  * writes: g_936 g_2229 g_106
+  */
+ static int32_t  func_10(int64_t  p_11, int16_t  p_12, int32_t * p_13, int32_t  p_14, int32_t * p_15)
+-{ /* block id: 1822 */
++{
++struct ag_b366dec1c3_46394_0_0_record { int ag_b366dec1c3_46394_0_0_value; };
++struct ag_b366dec1c3_46394_0_0_other { struct ag_b366dec1c3_46394_0_0_record ag_b366dec1c3_46394_0_0_right; int ag_b366dec1c3_46394_0_0_input; };
++struct ag_b366dec1c3_46394_0_0_other ag_b366dec1c3_46394_0_0_left = {{ p_14 }, 0};
++struct ag_b366dec1c3_46394_0_0_other ag_b366dec1c3_46394_0_0_object = {{0}, 0};
++ag_b366dec1c3_46394_0_0_object = ag_b366dec1c3_46394_0_0_left;
++ag_b366dec1c3_46394_0_0_object = ag_b366dec1c3_46394_0_0_left;
++ /* block id: 1822 */
+     uint8_t l_4106 = 0x9AL;
+ 
+     /* edgm diversify: while + continue/break (tag=58565) */
+@@ -471,7 +478,7 @@
+             goto lbl_4107;
+         (*l_4112) = l_4108[0];
+     }
+-    return p_14;
++    return (ag_b366dec1c3_46394_0_0_object.ag_b366dec1c3_46394_0_0_right.ag_b366dec1c3_46394_0_0_value);
+ }
+ 
+ 

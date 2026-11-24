@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_358/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_358/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_358/P1.c: In function 'func_31':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_358/P1.c:521:32: error: assignment of read-only variable 'ag_eedfc54b85_29307_0_0_object'\n  521 | ag_eedfc54b85_29307_0_0_object = ag_eedfc54b85_29307_0_0_left;\n      |                                ^\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_358/P1.c:522:32: error: assignment of read-only variable 'ag_eedfc54b85_29307_0_0_object'\n  522 | ag_eedfc54b85_29307_0_0_object = ag_eedfc54b85_29307_0_0_left;\n      |                                ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.03417837410233915
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_358/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_358/P1.c:521:32: error: cannot assign to variable 'ag_eedfc54b85_29307_0_0_object' with nested const-qualified data member 'ag_eedfc54b85_29307_0_0_value'\n  521 | ag_eedfc54b85_29307_0_0_object = ag_eedfc54b85_29307_0_0_left;\n      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_358/P1.c:517:51: note: nested data member 'ag_eedfc54b85_29307_0_0_value' declared const here\n  517 | struct ag_eedfc54b85_29307_0_0_record { const int ag_eedfc54b85_29307_0_0_value; };\n      |                                         ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_358/P1.c:522:32: error: cannot assign to variable 'ag_eedfc54b85_29307_0_0_object' with nested const-qualified data member 'ag_eedfc54b85_29307_0_0_value'\n  522 | ag_eedfc54b85_29307_0_0_object = ag_eedfc54b85_29307_0_0_left;\n      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_358/P1.c:517:51: note: nested data member 'ag_eedfc54b85_29307_0_0_value' declared const here\n  517 | struct ag_eedfc54b85_29307_0_0_record { const int ag_eedfc54b85_29307_0_0_value; };\n      |                                         ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n2 errors generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.047555898083373904
+    }
+  },
+  "sha256": "8c478ecda2bf4846e3d893cdcaf26fd56758c3925710a455551b61f01e87ad0b",
+  "source_unchanged": true
+}

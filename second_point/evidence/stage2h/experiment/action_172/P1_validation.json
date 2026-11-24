@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_172/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_172/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_172/P1.c: In function 'func_61':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_172/P1.c:2155:174: error: incompatible type for argument 1 of 'ag_718620bd91_173164_2_0_dispatch.ag_718620bd91_173164_2_0_invoke'\n 2155 |         l_1238 = (safe_mod_func_int64_t_s_s((safe_add_func_int16_t_s_s((((safe_sub_func_uint32_t_u_u(l_70, ag_718620bd91_173164_2_0_dispatch.ag_718620bd91_173164_2_0_invoke(ag_718620bd91_173164_2_0_object))) < (((0xABC0L > (!(safe_sub_func_int16_t_s_s((5UL & (((p_62 , func_82((*l_68))) >= ((safe_div_func_uint64_t_u_u((l_70 , (safe_add_func_int16_t_s_s((safe_sub_func_uint32_t_u_u(g_371, (*l_68))), p_62))), l_70)) > p_62)) | p_62)), l_70)))) , l_1237[3][2]) > g_137[0])) > (*l_68)), 0x1FE5L)), l_70));\n      |                                                                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                                                                                                                              |\n      |                                                                                                                                                                              ag_718620bd91_173164_2_0_argument {aka struct ag_718620bd91_173164_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_172/P1.c:2155:174: note: expected 'ag_718620bd91_173164_2_0_root' {aka 'struct ag_718620bd91_173164_2_0_record'} but argument is of type 'ag_718620bd91_173164_2_0_argument' {aka 'struct ag_718620bd91_173164_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.05921183084137738
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_172/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_172/P1.c:2155:174: error: passing 'ag_718620bd91_173164_2_0_argument' (aka 'struct ag_718620bd91_173164_2_0_other') to parameter of incompatible type 'ag_718620bd91_173164_2_0_root' (aka 'struct ag_718620bd91_173164_2_0_record')\n 2155 |         l_1238 = (safe_mod_func_int64_t_s_s((safe_add_func_int16_t_s_s((((safe_sub_func_uint32_t_u_u(l_70, ag_718620bd91_173164_2_0_dispatch.ag_718620bd91_173164_2_0_invoke(ag_718620bd91_173164_2_0_object))) < (((0xABC0L > (!(safe_sub_func_int16_t_s_s((5UL & (((p_62 , func_82((*l_68))) >= ((safe_div_func_uint64_t_u_u((l_70 , (safe_add_func_int16_t_s_s((safe_sub_func_uint32_t_u_u(g_371, (*l_68))), p_62))), l_70)) > p_62)) | p_62)), l_70)))) , l_1237[3][2]) > g_137[0])) > (*l_68)), 0x1FE5L)), l_70));\n      |                                                                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.09279535105451941
+    }
+  },
+  "sha256": "a7a16ee9052274c98e150ebcd60603480b625a48878bea77bab55ac6bbcd9d85",
+  "source_unchanged": true
+}

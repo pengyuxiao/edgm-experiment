@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_077/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_077/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_077/P1.c: In function 'func_28':\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_077/P1.c:777:170: error: incompatible type for argument 1 of 'ag_ea3b354b09_66769_2_0_dispatch.ag_ea3b354b09_66769_2_0_invoke'\n  777 |     (*l_977) ^= (g_109 != (g_162[0] = (safe_mul_func_uint8_t_u_u(l_974, ((l_975[0][4][0] != ((g_162[0] < ag_ea3b354b09_66769_2_0_dispatch.ag_ea3b354b09_66769_2_0_invoke(ag_ea3b354b09_66769_2_0_object)) , l_975[3][0][1])) && p_30)))));\n      |                                                                                                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                                                                                                                          |\n      |                                                                                                                                                                          ag_ea3b354b09_66769_2_0_argument {aka struct ag_ea3b354b09_66769_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_077/P1.c:777:170: note: expected 'ag_ea3b354b09_66769_2_0_root' {aka 'struct ag_ea3b354b09_66769_2_0_record'} but argument is of type 'ag_ea3b354b09_66769_2_0_argument' {aka 'struct ag_ea3b354b09_66769_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.04271634481847286
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_077/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2h/experiment/action_077/P1.c:777:170: error: passing 'ag_ea3b354b09_66769_2_0_argument' (aka 'struct ag_ea3b354b09_66769_2_0_other') to parameter of incompatible type 'ag_ea3b354b09_66769_2_0_root' (aka 'struct ag_ea3b354b09_66769_2_0_record')\n  777 |     (*l_977) ^= (g_109 != (g_162[0] = (safe_mul_func_uint8_t_u_u(l_974, ((l_975[0][4][0] != ((g_162[0] < ag_ea3b354b09_66769_2_0_dispatch.ag_ea3b354b09_66769_2_0_invoke(ag_ea3b354b09_66769_2_0_object)) , l_975[3][0][1])) && p_30)))));\n      |                                                                                                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.06328298104926944
+    }
+  },
+  "sha256": "2d13b84a2823d86b7453cb7df72b91e03e1616120eb135667c33be903f318a3d",
+  "source_unchanged": true
+}
