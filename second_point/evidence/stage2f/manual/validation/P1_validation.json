@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/validation/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/validation/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/validation/P1.c: In function 'compute':\n/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/validation/P1.c:6:12: error: cannot take address of bit-field 'x'\n    6 |     int *p=&object.x;\n      |            ^\n/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/validation/P1.c:7:14: error: cannot take address of bit-field 'x'\n    7 |     { int *q=&object.x; return input + *p + *q; }\n      |              ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.006763580953702331
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/validation/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/validation/P1.c:6:12: error: address of bit-field requested\n    6 |     int *p=&object.x;\n      |            ^~~~~~~~~\n/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/validation/P1.c:7:14: error: address of bit-field requested\n    7 |     { int *q=&object.x; return input + *p + *q; }\n      |              ^~~~~~~~~\n2 errors generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.009134587831795216
+    }
+  },
+  "sha256": "2c293c6462e7ffbd77b8750fca08c47f9a8e75d2328a392d00bc8f0b3f730faf",
+  "source_unchanged": true
+}

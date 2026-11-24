@@ -1,0 +1,593 @@
+[
+  {
+    "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "constraint_category": "address_of_bitfield",
+    "seed_sha256": "b6f0f218d4046477ab91dca26582d1670d009fe2b6166d95a19b2b8d3fbc24c8",
+    "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+    "origin": "Native",
+    "target_declaration": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+      "line": 1,
+      "column": 21,
+      "offset": 20,
+      "start_offset": 16,
+      "end_offset": 21,
+      "node_identity": "c:@S@Target@FI@x:FIELD_DECL:16",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int x",
+      "usr": "c:@S@Target@FI@x",
+      "referenced_usr": "c:@S@Target@FI@x",
+      "kind": "FIELD_DECL"
+    },
+    "record_usr": "c:@S@Target",
+    "canonical_basic_type": "INT",
+    "record_kind": "STRUCT_DECL",
+    "originally_bitfield": false,
+    "qualifiers": {
+      "const": false,
+      "volatile": false
+    },
+    "related_declaration_count": 1,
+    "related_declarations": [
+      {
+        "anchor": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+          "line": 3,
+          "column": 19,
+          "offset": 69,
+          "start_offset": 55,
+          "end_offset": 79,
+          "node_identity": "c:manual_input.c@55@F@compute@object:VAR_DECL:55",
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "usr": "c:manual_input.c@55@F@compute@object",
+          "referenced_usr": "c:manual_input.c@55@F@compute@object",
+          "kind": "VAR_DECL"
+        },
+        "usr": "c:manual_input.c@55@F@compute@object",
+        "kind": "VAR_DECL",
+        "function": {
+          "usr": "c:@F@compute",
+          "name": "compute",
+          "offset": 30
+        },
+        "scope": {
+          "kind": "COMPOUND_STMT",
+          "start": 49,
+          "end": 249,
+          "id": "b6f0f218d4046477ab91dca26582d1670d009fe2b6166d95a19b2b8d3fbc24c8:COMPOUND_STMT:49:249"
+        },
+        "type_paths": [
+          [
+            {
+              "kind": "RECORD",
+              "record_usr": "c:@S@Target"
+            }
+          ]
+        ],
+        "type_graph_complete": true
+      }
+    ],
+    "record_type_references": [
+      {
+        "anchor": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+          "line": 3,
+          "column": 12,
+          "offset": 62,
+          "start_offset": 62,
+          "end_offset": 68,
+          "node_identity": "c:@S@Target:TYPE_REF:62",
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "Target",
+          "usr": "",
+          "referenced_usr": "c:@S@Target",
+          "kind": "TYPE_REF"
+        },
+        "function": {
+          "usr": "c:@F@compute",
+          "name": "compute",
+          "offset": 30
+        },
+        "scope": {
+          "kind": "COMPOUND_STMT",
+          "start": 49,
+          "end": 249,
+          "id": "b6f0f218d4046477ab91dca26582d1670d009fe2b6166d95a19b2b8d3fbc24c8:COMPOUND_STMT:49:249"
+        },
+        "parent_kind": "VAR_DECL"
+      }
+    ],
+    "direct_record_object_count": 1,
+    "all_member_expression_uses": 2,
+    "target_address_count": 2,
+    "relations": [
+      {
+        "field_usr": "c:@S@Target@FI@x",
+        "record_usr": "c:@S@Target",
+        "member": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+          "line": 6,
+          "column": 20,
+          "offset": 195,
+          "start_offset": 188,
+          "end_offset": 196,
+          "node_identity": "c:@S@Target@FI@x:MEMBER_REF_EXPR:188",
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "object.x",
+          "usr": "",
+          "referenced_usr": "c:@S@Target@FI@x",
+          "kind": "MEMBER_REF_EXPR"
+        },
+        "address": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+          "line": 6,
+          "column": 12,
+          "offset": 187,
+          "start_offset": 187,
+          "end_offset": 196,
+          "node_identity": ":UNARY_OPERATOR:187",
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "&object.x",
+          "usr": "",
+          "referenced_usr": "",
+          "kind": "UNARY_OPERATOR"
+        },
+        "declaration_function": null,
+        "use_function": {
+          "usr": "c:@F@compute",
+          "name": "compute",
+          "offset": 30
+        },
+        "declaration_scope": {
+          "kind": "TRANSLATION_UNIT",
+          "start": 0,
+          "end": 288,
+          "id": "b6f0f218d4046477ab91dca26582d1670d009fe2b6166d95a19b2b8d3fbc24c8:TRANSLATION_UNIT:0:288"
+        },
+        "use_scope": {
+          "kind": "COMPOUND_STMT",
+          "start": 49,
+          "end": 249,
+          "id": "b6f0f218d4046477ab91dca26582d1670d009fe2b6166d95a19b2b8d3fbc24c8:COMPOUND_STMT:49:249"
+        },
+        "declaration_unit": {
+          "kind": "STRUCT_DECL",
+          "start": 0,
+          "end": 24,
+          "id": "b6f0f218d4046477ab91dca26582d1670d009fe2b6166d95a19b2b8d3fbc24c8:STRUCT_DECL:0:24"
+        },
+        "use_unit": {
+          "kind": "DECL_STMT",
+          "start": 180,
+          "end": 197,
+          "id": "b6f0f218d4046477ab91dca26582d1670d009fe2b6166d95a19b2b8d3fbc24c8:DECL_STMT:180:197"
+        },
+        "same_local_expression": false,
+        "cross_statement": true,
+        "cross_scope": true,
+        "base_type_paths": [
+          [
+            {
+              "kind": "RECORD",
+              "record_usr": "c:@S@Target"
+            }
+          ]
+        ],
+        "base_type_related": true,
+        "base_references": [
+          {
+            "reference": {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+              "line": 6,
+              "column": 13,
+              "offset": 188,
+              "start_offset": 188,
+              "end_offset": 194,
+              "node_identity": "c:manual_input.c@55@F@compute@object:DECL_REF_EXPR:188",
+              "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+              "source_text": "object",
+              "usr": "",
+              "referenced_usr": "c:manual_input.c@55@F@compute@object",
+              "kind": "DECL_REF_EXPR"
+            },
+            "declaration_usr": "c:manual_input.c@55@F@compute@object",
+            "declaration": {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+              "line": 3,
+              "column": 19,
+              "offset": 69,
+              "start_offset": 55,
+              "end_offset": 79,
+              "node_identity": "c:manual_input.c@55@F@compute@object:VAR_DECL:55",
+              "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+              "usr": "c:manual_input.c@55@F@compute@object",
+              "referenced_usr": "c:manual_input.c@55@F@compute@object",
+              "kind": "VAR_DECL"
+            },
+            "declaration_function": {
+              "usr": "c:@F@compute",
+              "name": "compute",
+              "offset": 30
+            },
+            "type_paths": [
+              [
+                {
+                  "kind": "RECORD",
+                  "record_usr": "c:@S@Target"
+                }
+              ]
+            ],
+            "type_graph_complete": true
+          }
+        ],
+        "dependency_path": [
+          {
+            "kind": "record_definition",
+            "usr": "c:@S@Target"
+          },
+          {
+            "kind": "field_declaration",
+            "usr": "c:@S@Target@FI@x"
+          },
+          {
+            "kind": "member_reference",
+            "referenced_usr": "c:@S@Target@FI@x",
+            "offset": 195
+          },
+          {
+            "kind": "address_operation",
+            "offset": 187
+          }
+        ],
+        "byte_span": 167,
+        "line_span": 5
+      },
+      {
+        "field_usr": "c:@S@Target@FI@x",
+        "record_usr": "c:@S@Target",
+        "member": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+          "line": 7,
+          "column": 22,
+          "offset": 219,
+          "start_offset": 212,
+          "end_offset": 220,
+          "node_identity": "c:@S@Target@FI@x:MEMBER_REF_EXPR:212",
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "object.x",
+          "usr": "",
+          "referenced_usr": "c:@S@Target@FI@x",
+          "kind": "MEMBER_REF_EXPR"
+        },
+        "address": {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+          "line": 7,
+          "column": 14,
+          "offset": 211,
+          "start_offset": 211,
+          "end_offset": 220,
+          "node_identity": ":UNARY_OPERATOR:211",
+          "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+          "source_text": "&object.x",
+          "usr": "",
+          "referenced_usr": "",
+          "kind": "UNARY_OPERATOR"
+        },
+        "declaration_function": null,
+        "use_function": {
+          "usr": "c:@F@compute",
+          "name": "compute",
+          "offset": 30
+        },
+        "declaration_scope": {
+          "kind": "TRANSLATION_UNIT",
+          "start": 0,
+          "end": 288,
+          "id": "b6f0f218d4046477ab91dca26582d1670d009fe2b6166d95a19b2b8d3fbc24c8:TRANSLATION_UNIT:0:288"
+        },
+        "use_scope": {
+          "kind": "COMPOUND_STMT",
+          "start": 202,
+          "end": 247,
+          "id": "b6f0f218d4046477ab91dca26582d1670d009fe2b6166d95a19b2b8d3fbc24c8:COMPOUND_STMT:202:247"
+        },
+        "declaration_unit": {
+          "kind": "STRUCT_DECL",
+          "start": 0,
+          "end": 24,
+          "id": "b6f0f218d4046477ab91dca26582d1670d009fe2b6166d95a19b2b8d3fbc24c8:STRUCT_DECL:0:24"
+        },
+        "use_unit": {
+          "kind": "DECL_STMT",
+          "start": 204,
+          "end": 221,
+          "id": "b6f0f218d4046477ab91dca26582d1670d009fe2b6166d95a19b2b8d3fbc24c8:DECL_STMT:204:221"
+        },
+        "same_local_expression": false,
+        "cross_statement": true,
+        "cross_scope": true,
+        "base_type_paths": [
+          [
+            {
+              "kind": "RECORD",
+              "record_usr": "c:@S@Target"
+            }
+          ]
+        ],
+        "base_type_related": true,
+        "base_references": [
+          {
+            "reference": {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+              "line": 7,
+              "column": 15,
+              "offset": 212,
+              "start_offset": 212,
+              "end_offset": 218,
+              "node_identity": "c:manual_input.c@55@F@compute@object:DECL_REF_EXPR:212",
+              "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+              "source_text": "object",
+              "usr": "",
+              "referenced_usr": "c:manual_input.c@55@F@compute@object",
+              "kind": "DECL_REF_EXPR"
+            },
+            "declaration_usr": "c:manual_input.c@55@F@compute@object",
+            "declaration": {
+              "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+              "line": 3,
+              "column": 19,
+              "offset": 69,
+              "start_offset": 55,
+              "end_offset": 79,
+              "node_identity": "c:manual_input.c@55@F@compute@object:VAR_DECL:55",
+              "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+              "usr": "c:manual_input.c@55@F@compute@object",
+              "referenced_usr": "c:manual_input.c@55@F@compute@object",
+              "kind": "VAR_DECL"
+            },
+            "declaration_function": {
+              "usr": "c:@F@compute",
+              "name": "compute",
+              "offset": 30
+            },
+            "type_paths": [
+              [
+                {
+                  "kind": "RECORD",
+                  "record_usr": "c:@S@Target"
+                }
+              ]
+            ],
+            "type_graph_complete": true
+          }
+        ],
+        "dependency_path": [
+          {
+            "kind": "record_definition",
+            "usr": "c:@S@Target"
+          },
+          {
+            "kind": "field_declaration",
+            "usr": "c:@S@Target@FI@x"
+          },
+          {
+            "kind": "member_reference",
+            "referenced_usr": "c:@S@Target@FI@x",
+            "offset": 219
+          },
+          {
+            "kind": "address_operation",
+            "offset": 211
+          }
+        ],
+        "byte_span": 191,
+        "line_span": 6
+      }
+    ],
+    "cross_statement": true,
+    "cross_scope": true,
+    "cross_function": false,
+    "cross_function_evidence": null,
+    "runtime_cross_function_value_flow": "NOT_PROVEN",
+    "maximum_observed_type_propagation_depth": 0,
+    "impact_closed": true,
+    "safe_candidate": true,
+    "formal_rejection": null,
+    "overlapping_reasons": [],
+    "layout_analysis": {
+      "schema": "stage2f-layout-v1",
+      "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+      "p0_sha256": "b6f0f218d4046477ab91dca26582d1670d009fe2b6166d95a19b2b8d3fbc24c8",
+      "field_usr": "c:@S@Target@FI@x",
+      "record_usr": "c:@S@Target",
+      "inventory": [
+        {
+          "offset": 117,
+          "keyword": "sizeof"
+        },
+        {
+          "offset": 142,
+          "keyword": "sizeof"
+        },
+        {
+          "offset": 161,
+          "keyword": "_Alignof"
+        }
+      ],
+      "operations": [
+        {
+          "anchor": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+            "line": 5,
+            "column": 11,
+            "offset": 117,
+            "start_offset": 117,
+            "end_offset": 134,
+            "node_identity": ":CXX_UNARY_EXPR:117",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "sizeof(unrelated)",
+            "usr": "",
+            "referenced_usr": "",
+            "kind": "CXX_UNARY_EXPR"
+          },
+          "keyword": "sizeof",
+          "graphs": [
+            {
+              "root": 0,
+              "nodes": [
+                {
+                  "kind": "CONSTANTARRAY",
+                  "canonical_spelling": "int[3]",
+                  "record_usr": null,
+                  "edges": [
+                    1
+                  ],
+                  "unknown": false,
+                  "array_size": 3
+                },
+                {
+                  "kind": "INT",
+                  "canonical_spelling": "int",
+                  "record_usr": null,
+                  "edges": [],
+                  "unknown": false
+                }
+              ],
+              "target_record_usr": "c:@S@Target",
+              "related": false,
+              "unknown": false
+            },
+            {
+              "root": 0,
+              "nodes": [
+                {
+                  "kind": "CONSTANTARRAY",
+                  "canonical_spelling": "int[3]",
+                  "record_usr": null,
+                  "edges": [
+                    1
+                  ],
+                  "unknown": false,
+                  "array_size": 3
+                },
+                {
+                  "kind": "INT",
+                  "canonical_spelling": "int",
+                  "record_usr": null,
+                  "edges": [],
+                  "unknown": false
+                }
+              ],
+              "target_record_usr": "c:@S@Target",
+              "related": false,
+              "unknown": false
+            },
+            {
+              "root": 0,
+              "nodes": [
+                {
+                  "kind": "CONSTANTARRAY",
+                  "canonical_spelling": "int[3]",
+                  "record_usr": null,
+                  "edges": [
+                    1
+                  ],
+                  "unknown": false,
+                  "array_size": 3
+                },
+                {
+                  "kind": "INT",
+                  "canonical_spelling": "int",
+                  "record_usr": null,
+                  "edges": [],
+                  "unknown": false
+                }
+              ],
+              "target_record_usr": "c:@S@Target",
+              "related": false,
+              "unknown": false
+            }
+          ],
+          "references": [
+            {
+              "anchor": {
+                "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+                "line": 5,
+                "column": 18,
+                "offset": 124,
+                "start_offset": 124,
+                "end_offset": 133,
+                "node_identity": "c:manual_input.c@85@F@compute@unrelated:DECL_REF_EXPR:124",
+                "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+                "source_text": "unrelated",
+                "usr": "",
+                "referenced_usr": "c:manual_input.c@85@F@compute@unrelated",
+                "kind": "DECL_REF_EXPR"
+              },
+              "referenced_usr": "c:manual_input.c@85@F@compute@unrelated",
+              "referenced_field_record_usr": null
+            }
+          ],
+          "reasons": [],
+          "operand_type": "int[3]"
+        },
+        {
+          "anchor": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+            "line": 5,
+            "column": 36,
+            "offset": 142,
+            "start_offset": 142,
+            "end_offset": 153,
+            "node_identity": ":CXX_UNARY_EXPR:142",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "sizeof(int)",
+            "usr": "",
+            "referenced_usr": "",
+            "kind": "CXX_UNARY_EXPR"
+          },
+          "keyword": "sizeof",
+          "graphs": [],
+          "references": [],
+          "reasons": [],
+          "builtin_type_tokens": [
+            "int"
+          ]
+        },
+        {
+          "anchor": {
+            "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+            "line": 5,
+            "column": 55,
+            "offset": 161,
+            "start_offset": 161,
+            "end_offset": 174,
+            "node_identity": ":CXX_UNARY_EXPR:161",
+            "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+            "source_text": "_Alignof(int)",
+            "usr": "",
+            "referenced_usr": "",
+            "kind": "CXX_UNARY_EXPR"
+          },
+          "keyword": "_Alignof",
+          "graphs": [],
+          "references": [],
+          "reasons": [],
+          "builtin_type_tokens": [
+            "int"
+          ]
+        }
+      ],
+      "reasons": [],
+      "status": "INDEPENDENT",
+      "rule": "all physical layout tokens mapped; every sizeof/_Alignof operand and referenced declaration type is independent; all other layout markers rejected",
+      "seal": "1236625604fbd6b7356f12679b1f1e158ce581e1fe3b715a59ad6cf0ca99cafe"
+    },
+    "complexity": "cross_scope",
+    "limitations": [
+      "static declaration/type/reference facts; no runtime alias proof",
+      "rejected-field complexity is not a safe MR action",
+      "distance and AST depth do not establish semantic complexity"
+    ]
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m unittest discover -s second_point/tests -v",
+    "log": "baseline_all_tests.txt",
+    "returncode": 0,
+    "tests": 111
+  },
+  {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 /tmp/stage2f_baseline.py",
+    "driver_source": "baseline_driver.py.txt",
+    "log": "baseline_stdout.txt",
+    "returncode": 0
+  },
+  {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m unittest discover -s second_point/tests -p test_stage2f_native.py -v",
+    "log": "development_tests.txt",
+    "returncode": 1,
+    "tests": 14
+  },
+  {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m unittest discover -s second_point/tests -p test_stage2f_native.py -v",
+    "log": "development_tests_fixed.txt",
+    "returncode": 0,
+    "tests": 14
+  },
+  {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m edgm_second.native_dependency_run --phase manual --out-dir second_point/evidence/stage2f/manual",
+    "log": "manual_stdout.txt",
+    "returncode": 0
+  },
+  {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m edgm_second.native_dependency_run --phase extended --out-dir second_point/evidence/stage2f/experiment",
+    "log": "experiment_stdout.txt",
+    "returncode": 0
+  },
+  {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m unittest discover -s second_point/tests -v",
+    "log": "final_all_tests.txt",
+    "returncode": 0,
+    "tests": 125
+  },
+  {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 second_point/tools/stage2f_finalize.py",
+    "log": "finalize_stdout.txt",
+    "returncode": 0
+  },
+  {
+    "command": "python3 second_point/tools/stage2f_finalize.py",
+    "log": "finalize_stdout_final.txt",
+    "returncode": 1,
+    "note": "aggregation repackaging attempt refused existing current-stage output; no scan evidence changed"
+  },
+  {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 second_point/tools/stage2f_finalize.py",
+    "log": "finalize_stdout_delivery.txt",
+    "returncode": 0
+  }
+]

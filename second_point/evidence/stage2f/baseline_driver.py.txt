@@ -1,0 +1,40 @@
+import sys,json,subprocess,time,hashlib
+from pathlib import Path
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor,as_completed
+ROOT=Path('/home/pyx/edgm-experiment');OUT=ROOT/'second_point/evidence/stage2f'
+def save(p,data):
+ with p.open('x') as f:json.dump(data,f,ensure_ascii=False,indent=2)
+if len(sys.argv)>1:
+ from edgm_second.mr_member_bitfield_addressability import scan_candidates
+ from edgm_second.native_bitfield_candidates import scan_native
+ env=json.loads((OUT/'environment.json').read_text());profile=json.loads((OUT/'integer_profile.json').read_text())
+ path=sys.argv[1];runtime=env['runtime']['path']
+ print(json.dumps(dict(formal=scan_candidates(path,runtime,profile),discovery=scan_native(path,runtime))))
+else:
+ selection=json.loads((OUT/'selection.json').read_text());directory=OUT/'baseline_scans';directory.mkdir()
+ start=time.perf_counter()
+ def scan(r):
+  command=[sys.executable,__file__,r['source']];t=time.perf_counter()
+  try:
+   proc=subprocess.run(command,capture_output=True,timeout=300)
+   try:result=json.loads(proc.stdout) if proc.returncode==0 else {}
+   except ValueError:result={}
+   if not result:result=dict(formal=dict(status='WORKER_FAILED',candidate_count=None),discovery=dict(status='WORKER_FAILED',candidate_count=None))
+   worker=dict(command=command,returncode=proc.returncode,stderr=proc.stderr.decode(errors='replace'))
+  except subprocess.TimeoutExpired as e:
+   result=dict(formal=dict(status='SCAN_TIMEOUT',candidate_count=None),discovery=dict(status='SCAN_TIMEOUT',candidate_count=None));worker=dict(command=command,returncode=None,stderr=(e.stderr or b'').decode(errors='replace'))
+  result.update(seed_id=r['seed_id'],source=r['source'],sha256=r['sha256'],index=r['index'],worker=worker,elapsed_seconds=time.perf_counter()-t)
+  assert hashlib.sha256(Path(r['source']).read_bytes()).hexdigest()==r['sha256']
+  save(directory/f"seed_{r['index']:03}.json",result);return result
+ records=[]
+ with ThreadPoolExecutor(max_workers=2) as pool:
+  futures=[pool.submit(scan,r) for r in selection]
+  for f in as_completed(futures):
+   records.append(f.result());print('completed',len(records),'of',len(selection),records[-1]['seed_id'],flush=True)
+ records.sort(key=lambda r:r['index'])
+ valid=[r for r in records if r['formal']['status'] in ('APPLICABLE','NOT_APPLICABLE')]
+ observed=[r for r in records if r['discovery']['status'] in ('APPLICABLE','NOT_APPLICABLE')]
+ fields=[(r,e) for r in observed for e in r['discovery']['candidates']+r['discovery']['rejected_fields']]
+ summary=dict(total_seeds=len(records),formal_status_counts=dict(Counter(r['formal']['status'] for r in records)),formal_completed_seeds=len(valid),ast_success_seeds=sum(r['discovery'].get('ast_status')=='OK' for r in records),discovery_status_counts=dict(Counter(r['discovery']['status'] for r in records)),effective_denominator=len(valid),safe_fields=sum(r['formal']['candidate_count'] for r in valid),applicable_seeds=sum(r['formal']['candidate_count']>0 for r in valid),raw_address_relation_instances=sum(r['discovery'].get('raw_address_relation_count',0) for r in observed),address_seeds=sum(r['discovery'].get('raw_address_relation_count',0)>0 for r in observed),distinct_main_file_fields=len(fields),canonical_basic_type_fields=dict(Counter(e['canonical_type'] for r,e in fields)),overlapping_discovery_reason_field_counts=dict(Counter(reason for r,e in fields for reason in e.get('reasons',[]))),formal_first_reason_field_counts=dict(Counter(e['reason'] for r in valid for e in r['formal']['rejected_fields'])),per_seed=[dict(seed_id=r['seed_id'],formal_status=r['formal']['status'],candidate_count=r['formal']['candidate_count']) for r in records],elapsed_seconds=time.perf_counter()-start,counting='field identity = source SHA256 + canonical USR; reasons overlap; failure counts are never coerced to zero')
+ save(OUT/'baseline_summary.json',summary);print(json.dumps(summary,ensure_ascii=False,indent=2),flush=True)

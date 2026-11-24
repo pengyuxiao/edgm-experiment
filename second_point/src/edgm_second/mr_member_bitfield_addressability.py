@@ -109,7 +109,7 @@ def compound_closure(ctx, f, uses):
         complexity='simple_local_enhancement', cross_statement=False, cross_scope=False, cross_function=False)
 
 
-def scan_candidates(path, runtime, profile):
+def scan_candidates(path, runtime, profile, native_scanner=None):
     result = dict(status='SCAN_FAILED', candidate_count=None, candidates=[], rejected_fields=[])
     try:
         ctx = Context(path, runtime)
@@ -144,7 +144,7 @@ def scan_candidates(path, runtime, profile):
                     isolation = compound_closure(ctx, f, uses)
                 else:
                     if native is None:
-                        native = scan_native(path, runtime)
+                        native = (native_scanner or scan_native)(path, runtime)
                     accepted = next((e for e in native['candidates'] if e['field']['usr'] == identity), None)
                     rejected = next((e for e in native['rejected_fields'] if e['field']['usr'] == identity), None)
                     require(accepted is not None, 'NATIVE_CLOSURE_REJECTED:' + ','.join(
@@ -186,7 +186,7 @@ def mapped_anchor(a, data, output, edit):
                 usr=a.get('usr'), kind=a.get('kind'))
 
 
-def build_mutation(path, output, runtime, profile, admission, provenance, candidate_index=0):
+def build_mutation(path, output, runtime, profile, admission, provenance, candidate_index=0, native_scanner=None):
     path, output = Path(path).resolve(), Path(output).resolve()
     p0 = path.read_bytes()
     require(admission.get('status')=='valid' and admission.get('sha256')==digest(p0)
@@ -197,7 +197,7 @@ def build_mutation(path, output, runtime, profile, admission, provenance, candid
     require(output != path, 'OUTPUT_EQUALS_INPUT')
     from .environment import PROJECT
     require(output.is_relative_to(PROJECT) and not output.exists(), 'UNSAFE_OR_EXISTING_OUTPUT')
-    scan = scan_candidates(path,runtime,profile)
+    scan = scan_candidates(path,runtime,profile,native_scanner=native_scanner)
     if scan['status'] != 'APPLICABLE':
         return scan, None, None
     candidate = scan['candidates'][candidate_index]
@@ -294,6 +294,13 @@ def verify_bitfield_witness(witness,p0,p1,original):
         len(w['affected_uses'])>0,'INVALID_ERROR_POLICY')
     require(w['isolation']['record_uses_closed'] is True and w['isolation']['no_layout_observation'] is True,
             'IMPACT_NOT_CLOSED')
+    native = w['isolation'].get('native_proof', {})
+    if 'layout_independence' in native:
+        from .scoped_layout import verify_layout_proof
+        require(native['field']['usr'] == d['field_usr'] and native['record_usr'] == d['record_usr'],
+                'NATIVE_LAYOUT_IDENTITY_MISMATCH')
+        require(native['impact_closed'] is True and not native['reasons'],'NATIVE_LAYOUT_IMPACT_NOT_CLOSED')
+        verify_layout_proof(native['layout_independence'],p0,d['field_usr'],d['record_usr'],m['p0_file'])
     delta=len(edit.after)-len(edit.before)
     require(m['segments']==[dict(kind='identity',p0=[0,edit.start],p1=[0,edit.start]),
         dict(kind='field_declaration_replacement',p0=[edit.start,edit.end],p1=[edit.start,edit.start+len(edit.after)]),

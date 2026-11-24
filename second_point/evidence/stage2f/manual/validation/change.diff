@@ -1,0 +1,8 @@
+--- /home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/validation/P1.c
+@@ -1,4 +1,4 @@
+-struct Target { int x; };
++struct Target { signed int x : 32; };
+ int compute(int input) {
+     struct Target object={0};
+     int unrelated[3]={0};

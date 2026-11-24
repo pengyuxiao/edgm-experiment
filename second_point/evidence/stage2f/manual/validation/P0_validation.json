@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c",
+  "status": "valid",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.0069806750398129225
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2f/manual/manual_input.c"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.008729229914024472
+    }
+  },
+  "sha256": "b6f0f218d4046477ab91dca26582d1670d009fe2b6166d95a19b2b8d3fbc24c8",
+  "source_unchanged": true
+}

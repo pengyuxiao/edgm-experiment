@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/pyx/edgm-experiment/second_point/tools/stage2f_finalize.py", line 111, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/pyx/edgm-experiment/second_point/tools/stage2f_finalize.py", line 47, in main
+    save(root/'semantic_contexts.json',dict(schema='stage2f-context-index-v1',summary=context_summary,fields=index,
+  File "/home/pyx/edgm-experiment/second_point/tools/stage2f_finalize.py", line 11, in save
+    with path.open('x') as f:json.dump(data,f,ensure_ascii=False,indent=2)
+         ^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/home/pyx/edgm-experiment/second_point/evidence/stage2f/semantic_contexts.json'

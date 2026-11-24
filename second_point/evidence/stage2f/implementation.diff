@@ -1,0 +1,1162 @@
+--- before/second_point/README.md
++++ after/second_point/README.md
+@@ -1,4 +1,4 @@
+-# EDGM 第二研究点：阶段 0–2E
++# EDGM 第二研究点：阶段 0–2F
+ 
+ 独立于 EDGM 的只读基础框架。已实现环境记录、合法候选 P0 加载与双编译器验证、主文件 AST 提取。
+ 阶段 2A 已新增单条 typedef 依赖变换及独立约束见证；完整诊断比较与强化学习尚未实现。
+@@ -117,3 +117,25 @@
+ 
+ 输出目录必须不存在；只读扫描原阶段 2B 清单，固定前五个真实种子作合法增强。
+ 报告中的 0 原生候选是当前保守证明子集的结果，不是语言层面的穷尽结论。
++
++## 阶段 2F：原生依赖范围与布局独立性
++
++本阶段固定复用阶段 2B 的 50 个原始种子，先运行默认阶段 2E 检查器，
++再仅启用“无关 sizeof/_Alignof 的可重放独立性证明”。其他原生闭合限制不变。
++实际统计、零结果及下一步建议见[阶段 2F 验收](docs/STAGE2F_NATIVE_DEPENDENCY_VALIDATION.md)。
++语义上下文记录包括被拒绝字段，不将原始结构复杂性当作安全 MR 动作空间。
++
++新克隆仓库先运行 `python3 second_point/tools/restore_evidence.py`，恢复无损归档的历史 JSON。
++以下输出目录都必须尚不存在；不要直接覆盖已保存的阶段结果：
++
++```bash
++PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m edgm_second.native_dependency_run \
++  --phase baseline --out-dir second_point/evidence/stage2f/reproduce_baseline
++PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m edgm_second.native_dependency_run \
++  --phase manual --out-dir second_point/evidence/stage2f/reproduce_manual
++PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m edgm_second.native_dependency_run \
++  --phase extended --out-dir second_point/evidence/stage2f/reproduce_extended
++PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m unittest discover -s second_point/tests -v
++```
++
++阶段 2F 不新增增强模板、不实现其他 MR、Bandit、LLM 或奖励函数；默认阶段 2E 接口保持原有行为。
+--- before/second_point/docs/RESEARCH_DESIGN.md
++++ after/second_point/docs/RESEARCH_DESIGN.md
+@@ -1,4 +1,19 @@
+ # 第二研究点设计（阶段 0/1 原设计，附阶段 2A 状态）
++
++## 2026-11-24 总体方向更新（后续设计，非实现声明）
++
++硕士论文题目为《基于强化学习的错误报告缺陷检测》。第二研究点拟采用
++AST 语义依赖分析、深层语义蜕变关系、编译前独立 Oracle、Contextual Bandit、
++LLM 语义上下文与冷启动先验，以及缺陷导向联合奖励。
++后续上下文由 AST 确定性事实与 LLM 高层语义特征共同构造；
++Contextual Bandit 根据真实错误诊断反馈在线学习，联合奖励设计为
++`R(t)=λD(t)+(1−λ)E(t)`，其中 D 为缺陷发现奖励，E 为语义探索奖励。
++目标是发现更多不同的 Error Diagnostic Defects，不以测试成本、运行时间或吞吐率优化为目标。
++
++阶段 2E 已打通位域 MR 的受限增强链路；阶段 2F 只评估固定 50 个原始种子的原生候选空间，
++研究一种布局独立性证明并提取客观关系事实，见[阶段 2F 验收](STAGE2F_NATIVE_DEPENDENCY_VALIDATION.md)。
++本次没有实现上述学习器、LLM 接入、特征编码器或奖励函数。
++以下各节保留历史阶段的原始设计、阶段状态与当时建议，不能作为当前功能清单或新实验结果。
+ 
+ 阶段 2A 更新：用户确定采用修改 typedef 依赖边的方案，替代下文原建议的实参表达式替换。
+ 已实现唯一 MR `MR_TYPEDEF_INDIRECT_STRUCT_ARG` 及独立约束见证，范围与真实验证见
+--- before/second_point/docs/STAGE2F_NATIVE_DEPENDENCY_VALIDATION.md
++++ after/second_point/docs/STAGE2F_NATIVE_DEPENDENCY_VALIDATION.md
+@@ -0,0 +1,258 @@
++# 阶段 2F：原生语义依赖扩展与真实候选空间评估
++
++日期：2026-11-24，Asia/Shanghai。基准为 main 的 `9da0e876fcfb409ccd4d228d94e1fb66299b8cee`。
++本阶段仅扩展位域 MR 的一项布局独立性检查并评估固定原始语料；未实现其他 MR、Bandit、LLM、奖励函数或正式缺陷检测实验。
++
++## 1. 结论
++
++| 指标 | 默认阶段 2E 正式检查器，重新扫描 | 阶段 2F 显式启用扩展，重新扫描 |
++|---|---:|---:|
++| 固定原始种子 / AST 成功 / 正常完成 | 50 / 50 / 50 | 50 / 50 / 50 |
++| 解析失败 / 扫描失败 / 超时 / 工作进程失败 | 0 / 0 / 0 / 0 | 0 / 0 / 0 / 0 |
++| 有字段取地址关系的种子 | 19 | 19 |
++| 字段取地址关系实例 | 2,410 | 2,410 |
++| 涉及的独立主文件字段 | 69 | 69 |
++| 全文件布局原因仍未消除的字段 | 69 | 32 |
++| 全部前置条件成立的安全字段 | **0** | **0** |
++| 安全种子 / 有效分母 / 适用率 | **0 / 50 / 0%** | **0 / 50 / 0%** |
++| 真实原生 P1 / 新增强程序 | 0 / 0 | **0 / 0** |
++
++37 个字段成功消除“全文件存在布局构造”的保守拒绝，但同时存在其他阻碍，**不等于新增 37 个安全候选**。
++没有为了获得正例而联动放宽 typedef 拼写、union、指针/数组、初始化或地址使用限制。
++默认阶段 2E 行为保留；扩展只能通过显式 native_scanner 接口启用。
++
++建议阶段 2G 转向 `MR_MEMBER_CONST_AGGREGATE_WRITE` 的原生前置条件与独立 Oracle 可行性审计，
++而不是立即训练学习器或继续同时扩大位域 MR 的多个不闭合条件。本报告没有实现该 MR。
++
++## 2. 实验前基准与保护
++
++开始时读取 AGENTS.md、README、RESEARCH_DESIGN、阶段 2C 画像和候选设计、阶段 2E 验收、
++原生检查器、正式 MR、预处理、见证、诊断观察器、实验入口、AST/字节编辑以及测试和真实 2E 汇总。
++检查本地分支与 GitHub main，均为上述基准提交；原有 res/test_* 删除和 backups 保持。
++
++**任何检查器修改之前**，原 111 项测试先实际通过，无 skip，日志为 `baseline_all_tests.txt`。
++随后冻结了 942 个第一研究点受版本控制的路径（其中 7 项此前已缺失）、430 个旧 second_point 文件、
++固定 50 个原始种子的顺序、路径、SHA256 和原有合法准入回执。
++32 个现有 Csmith runtime 头文件也包含在保护清单内。
++`before_hashes.json`、`initial_git.json`、`selection.json`、`environment.json` 和 `integer_profile.json` 保存基准。
++扫描50项完成后才进行检查器修改，时间边界不是依赖事后推测。
++
++实际环境为 GCC 15.1.0、Clang 22.1.0、libclang 18.1.3，使用现有系统 Python 与原 runtime。
++完整 Python 版本、解释器、绑定及 libclang 文件哈希在 `python_analysis_environment.json`；
++结束环境复核在 `final_environment.json`。没有安装、升级或重新配置工具链。
++原有 int 整数模型仍为 CHAR_BIT=8、sizeof(int)=4、INT_WIDTH=32、INT_MAX=2147483647。
++
++样本严格复用阶段 2B 固定清单，是既有 CsmithEdge 程序经 EDGM diversify 后的合法池，
++不能外推成所有 Csmith 配置或一般 C11 程序分布。本次没有生成新种子或重新挑选样本。
++合法性准入复用既有、源 SHA 相同的双编译回执，逐项核对原文件；没有声称本阶段又执行了 100 次原 P0 编译。
++所有正式 MR 扫描均重新解析 P0。若有真实候选，验证入口会先重新双编译该 P0，再允许生成 P1；本次该分支未进入。
++
++## 3. 基准是新扫描，而不是抄录历史结果
++
++实际运行默认正式 `scan_candidates` 检查全部 50 项，同时运行未改动的原生发现检查器，
++获得独立的重叠阻碍记录。每项保存完整 worker 命令、返回码、耗时、stderr、正式结果和发现层结果。
++单任务进程有 300 秒硬时限，控制器最多两个独立种子进程；失败数量保持 null，不转成零候选。
++本次基准 wall time 为 168.343 秒，扩展扫描为 260.019 秒，仅作为执行回执，不用于成本或吞吐率优化结论。
++
++69 个字段的规范类型分布来自本次扫描：
++
++| 类型 | 字段数 |
++|---|---:|
++| INT / UINT | 11 / 11 |
++| LONG / ULONG | 8 / 7 |
++| SHORT / USHORT | 7 / 6 |
++| SCHAR / UCHAR | 8 / 10 |
++| RECORD | 1 |
++
++22 个 INT/UINT 中有 3 个受 const/volatile 限定；因此当前基本类型/限定符子集拒绝共 50 个，
++只有其余 19 个进入正式检查器的声明拼写检查。它们均被 `SINGLE_BASIC_DECLARATOR_REQUIRED` 拒绝。
++当前正式实现按前置条件顺序提前返回：**50 个类型原因和 19 个声明原因是实际首个拒绝，
++不能说正式扫描实际走到了后面的全部布局/别名检查。**
++后面的多标签统计来自独立运行的原生发现检查器，对同一批字段逐项检查，而非把首个原因当全部原因。
++
++### 全部重叠阻碍
++
++| 原生发现层原因 | 默认字段数 | 扩展后字段数 |
++|---|---:|---:|
++| 全文件布局敏感 veto | 69 | **32** |
++| 简单基本类型拼写/单声明器未证明 | 69 | 69 |
++| 指针/数组等记录派生使用 | 69 | 69 |
++| 成员基对象不在闭合自动对象集 | 69 | 69 |
++| 其他字段超出简单记录子集 | 66 | 66 |
++| 非自动局部记录对象 | 62 | 62 |
++| 字段类型/限定符不在支持子集 | 50 | 50 |
++| 没有闭合的局部记录对象 | 44 | 44 |
++| 记录类型逃逸到局部对象声明之外 | 37 | 37 |
++| union/不支持的记录 | 29 | 29 |
++| 初始化不在 `{0}` 子集 | 25 | 25 |
++| 记录值逃逸/非成员引用 | 24 | 24 |
++| 未分类字段使用 | 18 | 18 |
++
++另外 65/69 个字段有取地址以外的成员表达式使用，会触及阶段 2E 的 address-only 限制；
++这是独立清点的潜在阻碍，不伪称正式检查器已经执行过这个最后条件。
++每个原因都有字段数、种子数及单字段去重记录，见 `rejection_analysis.json`。
++其字段分母为 SHA256+canonical USR 去重的 69 个，种子分母为 50；多标签重叠，不能相加作候选总数。
++没有任何字段只剩一个发现层阻碍，单独消除一条原因不构成正式可用性证明。
++
++### 语言必要条件与工程支持范围
++
++必要的语言事实包括合法位域基本类型/宽度、目标确实直接引用该字段并取地址、
++以及没有独立的非预期约束违反。完整位宽和值域保持是当前 MR 隔离模型的要求，不能退回任意 `int:1`。
++但禁止 union、typedef 拼写、非零初始化、所有指针/数组或非局部对象，均不是 C11 对合法 P0 的普遍禁止，
++而是现有闭合证明范围的限制。标准还允许实现定义的其他位域类型，故不能将 LONG/CHAR 等当前拒绝都宣称为语言必然非法。
++const/volatile 也不是一律非法位域；本实现没有独立证明改变这些成员后的限定符及观察行为。
++
++`sizeof(record)` 可能观察布局变化，但不因成员成为位域而必然非法；`sizeof(field)` 在目标成为位域后则可能独立违反 6.5.3.4p1。
++二者不能混为同一种错误。未分类使用和别名逃逸表示尚未证明闭合，不表示已经发现语言错误。
++
++## 4. 本次唯一扩展：目标依赖范围内的布局独立性
++
++选择这一扩展，是因为布局 veto 覆盖全部 69 个字段，且其精确化可独立验证、复用于后续关系研究；
++**不是因为预期单独消除它就能得到正候选**。基准已经显示它与其他阻碍共同存在。
++本次没有顺便扩展 typedef 编辑、数组/指针对象、union 或普通成员读写。
++
++新模块 `scoped_layout.py`：
++
++1. 按 P0 物理 token 清点布局标记，并要求每个 sizeof/_Alignof 标记精确对应一个可靠的 AST 操作。
++2. 读取操作数实际类型及其子树声明引用；类型图沿 canonical pointer、array、record fields 和函数原型的参数/返回类型传播。
++   typedef 经规范类型解析，不用类型名或字段名是否出现在文本中判断关联。
++3. 记录类型按 canonical USR 区分；直接或间接到达目标记录，或引用其字段时均拒绝独立性。
++   即使指针宽度可能另有证明，也保守保留指向目标类型的依赖。
++4. 无法闭合的类型、VLA、宏映射、未对应的关键字、复杂且无完整操作数类型 cursor 的 type-name 都继续拒绝。
++   对没有子 cursor 的 builtin type-name 只接受明确的基本类型语法，不把数组界限子表达式的 int 类型当成整个数组操作数。
++5. 本次只可消除已证明无关的 sizeof/_Alignof。pragma、属性、offsetof、静态断言等其他标记仍保留 veto，未尝试同时精确化。
++6. 只从旧发现层字段的原因集合删除 `LAYOUT_SENSITIVE_CONSTRUCT_IN_FILE`，其他原因完全不变。
++   原生扫描器源码未修改，旧接口默认不启用扩展。
++
++37/69 个字段的所有布局操作在当前子集中均可证明独立；其余 32 个含未支持的 pragma，保持拒绝。
++该结果只消除了一个不必要的文件级阻碍，不说明这些字段的别名、对象、声明或其他使用已闭合。
++实际正式检查仍在更早的类型/声明拼写条件停止，因此安全候选数没有变化。
++
++依据公开 [WG14 N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf) 6.5.3.4p1–p3：
++sizeof 由操作数类型决定，VLA 有额外求值规则，_Alignof 由操作数类型的对齐要求决定。
++结合原来的无逃逸及全使用闭合子集，目标记录不可达的已知操作数类型不会因这次字段声明编辑而改变。
++6.5.3.2p1、6.7.2.1p4/p5/p10 仍提供原 MR 的取地址及合法完整宽度依据。
++本次成功访问原 WG14 草案；它不是正式付费出版物。
++
++## 5. 见证、独立性与人工验证
++
++保持 `BitfieldConstraintWitness` schema 兼容，新增证明保存在既有 isolation/native_proof 字典中：
++目标源哈希及字段/记录身份、全部布局操作的物理锚点和 token 清单、操作数类型图、声明引用、
++未闭合原因、证明状态及内容一致性 seal。seal 用于检测数据变更，不是第三方签名或完整性证明本身。
++
++原 MR 仅增加可选 native_scanner 参数和新证明的重放检查，默认选址及诊断合同不变。
++生成器仍只分析 P0；新增纯重放器核对源字节、锚点、身份绑定、操作覆盖、类型图和其他影响闭合状态。
++它不调用编译器、不解析 P1，不把 AST 前端或一致性 seal 冒充完整 C11 形式化验证器。
++保存的 AST/type facts 由受限检查器提供，重放负责内部一致性，不能重新推导任意 C 源码的全部语义。
++
++先通过 14 项新增测试和人工最小 P0，再开始真实扩展扫描。
++人工例：目标记录对象 `{0}` 初始化，两处原有 `&object.x` 位于不同语句，其中一处在内层块，
++另有无关数组 sizeof、builtin sizeof(int) 和 _Alignof(int)。
++旧检查器拒绝，新检查器有 1 个安全字段和 2 个地址点；使用 `signed int x : 32`，没有窄化。
++P0 两边 rc=0，P1 两边 rc=1，均精确报告 6:12 和 7:14 的两个目标 error，无额外 error。
++人工不是来自真实语料，不能混入 50 种子的适用率。
++
++Oracle 先写入磁盘并记录 SHA256、屏障时间和独立重放结果，再编译 P1，之后核对文件哈希不变。
++新增测试在 P0 准入后禁止 subprocess 和所有 P1 AST 解析，仍可构建并重放 Oracle；
++身份、位置、类型图或影响闭合证据篡改会被拒绝，即便重算 seal 也不能放过互相矛盾的关系。
++另覆盖直接相关布局、typedef/数组/指针/嵌套/函数原型传播、同名不同字段、多地址、宏/pragma/VLA、
++非零初始化/非局部/逃逸拒绝、拒绝不生成 P1、UTF-8/CRLF 精确坐标、解析失败及默认 2E 行为。
++
++首轮新增测试发现一个实现问题：`sizeof(int[3])` 的界限 literal cursor 被当作完整表达式操作数。
++已增加物理 token 前缀与操作数形状检查，保守拒绝该未支持的 type-name；失败及修复日志均保留。
++这是本次检查器开发问题，不是编译器缺陷，也没有用该规则对真实种子生成 P1。
++
++## 6. 客观语义上下文与复杂性边界
++
++`native_contexts.py` 输出 69 个字段、2,410 个地址关系的可复现记录，包括全部相关主文件对象/形参声明、
++规范类型和限定符、成员使用数量、全部目标地址、声明与使用函数/作用域/语句单元、真实身份路径、
++类型传播路径、字节/行跨度、Native 来源、是否安全闭合及拒绝原因。
++没有加入主观难度分、LLM 或 Bandit 特征编码器。
++`semantic_contexts.json` 是带完整计数与轻量字段指标的聚合索引；每项使用文件路径、JSON pointer 和 SHA256
++指向 `experiment/scans/seed_NNN.json` 中的完整上下文，避免重复保存全部声明与路径。完整细节没有丢弃。
++
++| 原始结构观察，按字段去重 | 字段数 |
++|---|---:|
++| 声明与目标使用跨语句/声明单元 | 69 |
++| 通过同一字段身份关联的跨词法作用域使用 | 66 |
++| 同一 canonical 记录/字段类型在多个函数内形成真实引用路径 | 49 |
++| 简单局部表达式类 | 0 |
++| 优先分类：跨函数共享类型 / 跨作用域 / 跨语句 | 49 / 17 / 3 |
++| 上述任一类别的安全原生候选 | **0** |
++
++三个跨越标志非互斥；最后一行优先分类才是互斥分区。词法跨度必须配合同一字段 USR 的引用链，
++不是因为两个变量处在不同作用域就算有关系。
++跨函数这里是**静态类型依赖**，不是已经证明的跨函数别名或运行时数据流；所有字段的后者均为 NOT_PROVEN。
++相关声明的规范类型图最大路径深度分布为 3:9、4:20、5:24、6:6、7:9、8:1。
++它统计 pointer/array/record-field 边的已观察简单路径，不是执行传播深度，也不作为深层候选的主观评分。
++
++可追溯例子：`seed_0004_1594631173.c` 的 U0::f1，声明 31:13，USR `c:@U@U0@FI@f1`，规范 INT，
++通过原有成员引用连接 `func_29` 的 634:29 与 `func_31` 的 917:22 两个地址操作。
++前者基对象引用 g_142，后者引用 l_576；原始声明/类型/成员/地址链均保存在 JSON。
++它确有跨函数共享类型关联，但 union、typedef 拼写、对象传播等尚未闭合，**不是安全 MR，也没有证明这两个对象运行时别名相同**。
++长代码行、远距离、程序中有多个函数或 AST 层数深均没有被直接作为成功依据。
++
++## 7. 真实结果与诊断边界
++
++扩展后的同一固定 50 项全部完成且仍无安全候选，故实际真实原生 P1 为 0。
++没有候选就没有真实 P1 的编译诊断；不能把人工例的结果填入真实种子表。
++没有新增增强模板，没有转而执行其他 MR。
++没有发现本阶段真实诊断异常候选，也没有确认编译器 bug；未进入真实 P1 分支不意味着已证明编译器没有诊断缺陷。
++
++人工验证继续固定 GCC 15.1.0 / Clang 22.1.0，参数 `-std=c11 -fsyntax-only -w -I <原runtime>`。
++保存完整命令、stdout/stderr、返回码、error 结构、全部目标对应关系、源码 diff、SHA 和重放结果。
++仅 error/fatal 可通过，未加 Werror；unknown、缺少目标或精确位置差异分别保留为待复核，
++没有 ±1、模糊相似度或 unknown 放行。崩溃、超时、执行失败与普通诊断异常分开。
++C11 的诊断义务与项目严格 error 合同不同，不声称标准规定唯一 caret。
++诊断观察器源码没有修改，也没有依据 P1 诊断修改 Oracle。
++
++## 8. 复现与交付
++
++首次基准使用未修改实现和有界驱动，完整驱动源码保存在 `baseline_driver.py.txt`，
++原始命令及退出码在 `commands.json`，逐项结果在 `baseline_scans/seed_001.json` 至 `seed_050.json`。
++新复现入口可以显式运行 baseline/manual/extended 三个 phase，README 提供完整命令；输出目录须新建。
++
++本次后续实际命令（仓库根目录）：
++
++```bash
++PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m edgm_second.native_dependency_run \
++  --phase manual --out-dir second_point/evidence/stage2f/manual
++PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m edgm_second.native_dependency_run \
++  --phase extended --out-dir second_point/evidence/stage2f/experiment
++PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m unittest discover \
++  -s second_point/tests -v > second_point/evidence/stage2f/final_all_tests.txt 2>&1
++PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 second_point/tools/stage2f_finalize.py
++```
++
++基准、人工、扩展扫描及最终测试的退出码均为 0；最终交付校验回执见 `finalize_stdout_delivery.txt`。
++**完整 125 项测试通过，无 skip，17.581 秒，原 111 项无回归，新增 14 项。**
++运行时间差异没有作为算法性能或成本收益。
++
++关键文件均在 `second_point/`：
++
++- 新实现：`scoped_layout.py`、`native_contexts.py`、`native_dependency_run.py`；测试 `test_stage2f_native.py`。
++- `evidence/stage2f/baseline_summary.json`、`rejection_analysis.json`、`semantic_contexts.json`。
++- `experiment/scans/` 与 `experiment/summary.json`，人工 P0/P1/Oracle/diff/完整诊断位于 `manual/validation/`。
++- `baseline_all_tests.txt`、`final_all_tests.txt`、`readonly_check.json`、`witness_replay.json`、`implementation_manifest.json`。
++
++最终保护检查核对全部第一研究点基准路径、50 个种子和旧 second_point 文件；
++第一研究点、原始种子、旧阶段所有证据无变化。旧源码仅正式位域 MR 模块增加兼容可选接口及附加重放检查，
++另外 README/RESEARCH_DESIGN 作必要阶段更新；没有改写原生检查器、预处理器、诊断观察器、环境或其他旧实现。
++旧 2E 四份见证及本次人工见证均用当前重放器再次验证，保存历史来源状态，不伪称旧实现文件哈希完全未变。
++
++## 9. 十二项验收回答
++
++1. **当前完整基准？** 本次按阶段 2E 正式检查器重新扫描 50/50，0 安全字段、0/50 适用，无失败混作零。
++2. **零的主要原因？** 正式提前拒绝为类型/限定符 50、声明拼写 19；独立发现层揭示全部69另有声明/派生类型/基对象阻碍，多标签不是单一因果归因。
++3. **语言还是工程限制？** 合法位域、真实取地址及排除独立额外错误是必要事实；整文件 veto、简单声明/初始化、union/别名/对象子集大多是保守工程范围。
++4. **扩展什么及原因？** 仅精确化无关 sizeof/_Alignof，提供独立可验证的类型闭合证明；不为增加数量同时放宽其他条件。
++5. **证明能重放吗？** 能，保留精确 AST/type facts 并纯重放一致性；人工及禁编译/禁 P1 AST 测试通过，不声称通用形式化验证。
++6. **新旧数量？** 正式安全候选均0、适用率均0/50；37个字段仅消除布局原因，其余拒绝保持。
++7. **真实跨越候选？** 原始结构有69跨语句、66跨作用域、49跨函数共享类型事实，但安全候选均0；例子见第6节，运行时跨函数值流未证明。
++8. **原生 P1 与诊断？** 真实原生P1为0；人工1份P1由两编译器各报告两条目标error，不混入真实结果。
++9. **异常候选？** 本次没有真实P1诊断异常候选或confirmed bug；开发时操作数识别错误已修复并保留日志。
++10. **测试？** 原111项全部保持通过；新增14项，完整125项通过。
++11. **保护？** 第一研究点、50原始种子和全部旧证据哈希不变；仅列明的兼容接口与阶段文档更新。
++12. **后续选择？** 建议2G先审计成员const→整体记录赋值的原生可行性与独立见证，不立即扩大位域的多项限制，也不进入Bandit/LLM或大规模实验。
++
++阶段 2F 完成后停止；不自动执行阶段 2G。
+--- before/second_point/src/edgm_second/mr_member_bitfield_addressability.py
++++ after/second_point/src/edgm_second/mr_member_bitfield_addressability.py
+@@ -109,7 +109,7 @@
+         complexity='simple_local_enhancement', cross_statement=False, cross_scope=False, cross_function=False)
+ 
+ 
+-def scan_candidates(path, runtime, profile):
++def scan_candidates(path, runtime, profile, native_scanner=None):
+     result = dict(status='SCAN_FAILED', candidate_count=None, candidates=[], rejected_fields=[])
+     try:
+         ctx = Context(path, runtime)
+@@ -144,7 +144,7 @@
+                     isolation = compound_closure(ctx, f, uses)
+                 else:
+                     if native is None:
+-                        native = scan_native(path, runtime)
++                        native = (native_scanner or scan_native)(path, runtime)
+                     accepted = next((e for e in native['candidates'] if e['field']['usr'] == identity), None)
+                     rejected = next((e for e in native['rejected_fields'] if e['field']['usr'] == identity), None)
+                     require(accepted is not None, 'NATIVE_CLOSURE_REJECTED:' + ','.join(
+@@ -186,7 +186,7 @@
+                 usr=a.get('usr'), kind=a.get('kind'))
+ 
+ 
+-def build_mutation(path, output, runtime, profile, admission, provenance, candidate_index=0):
++def build_mutation(path, output, runtime, profile, admission, provenance, candidate_index=0, native_scanner=None):
+     path, output = Path(path).resolve(), Path(output).resolve()
+     p0 = path.read_bytes()
+     require(admission.get('status')=='valid' and admission.get('sha256')==digest(p0)
+@@ -197,7 +197,7 @@
+     require(output != path, 'OUTPUT_EQUALS_INPUT')
+     from .environment import PROJECT
+     require(output.is_relative_to(PROJECT) and not output.exists(), 'UNSAFE_OR_EXISTING_OUTPUT')
+-    scan = scan_candidates(path,runtime,profile)
++    scan = scan_candidates(path,runtime,profile,native_scanner=native_scanner)
+     if scan['status'] != 'APPLICABLE':
+         return scan, None, None
+     candidate = scan['candidates'][candidate_index]
+@@ -294,6 +294,13 @@
+         len(w['affected_uses'])>0,'INVALID_ERROR_POLICY')
+     require(w['isolation']['record_uses_closed'] is True and w['isolation']['no_layout_observation'] is True,
+             'IMPACT_NOT_CLOSED')
++    native = w['isolation'].get('native_proof', {})
++    if 'layout_independence' in native:
++        from .scoped_layout import verify_layout_proof
++        require(native['field']['usr'] == d['field_usr'] and native['record_usr'] == d['record_usr'],
++                'NATIVE_LAYOUT_IDENTITY_MISMATCH')
++        require(native['impact_closed'] is True and not native['reasons'],'NATIVE_LAYOUT_IMPACT_NOT_CLOSED')
++        verify_layout_proof(native['layout_independence'],p0,d['field_usr'],d['record_usr'],m['p0_file'])
+     delta=len(edit.after)-len(edit.before)
+     require(m['segments']==[dict(kind='identity',p0=[0,edit.start],p1=[0,edit.start]),
+         dict(kind='field_declaration_replacement',p0=[edit.start,edit.end],p1=[edit.start,edit.start+len(edit.after)]),
+--- before/second_point/src/edgm_second/scoped_layout.py
++++ after/second_point/src/edgm_second/scoped_layout.py
+@@ -0,0 +1,201 @@
++"""One opt-in extension: discharge only unrelated sizeof/_Alignof vetoes.
++
++Every other stage 2D/2E restriction remains. AST facts are supplied by P0;
++replay checks those serialized facts, not arbitrary C semantics from scratch.
++"""
++from copy import deepcopy
++from collections import Counter
++import json
++from .seed_enrichment import Context, K, T, ParseFailure
++from .semantic_profile import usr, INTS, ARRAYS
++from .source_edit import digest, anchor
++from .native_bitfield_candidates import scan_native
++
++LAYOUT = {'sizeof','_Alignof','_Alignas','__attribute__','__attribute',
++          '__builtin_offsetof','offsetof','_Static_assert','pragma','asm','__asm__'}
++SUPPORTED = {'sizeof','_Alignof'}
++BUILTIN_WORDS = {'char','short','int','long','signed','unsigned','float','double','_Bool','const','volatile'}
++SCALARS = INTS | {T.FLOAT,T.DOUBLE,T.LONGDOUBLE,T.VOID}
++
++
++def type_graph(type_, target_record):
++    """Follow canonical pointer/array/record fields; cycles are explicit edges.
++
++    Pointer dependencies are deliberately retained even where pointer size could
++    be proven invariant. Unknown/incomplete records and VLAs fail closed.
++    """
++    nodes=[]; cache={}
++    def visit(typ, depth=0):
++        typ=typ.get_canonical(); decl=typ.get_declaration()
++        rid=usr(decl) if typ.kind==T.RECORD else None
++        key=(typ.kind.name,rid,typ.spelling)
++        if key in cache:return cache[key]
++        index=len(nodes);cache[key]=index
++        node=dict(kind=typ.kind.name,canonical_spelling=typ.spelling,record_usr=rid,
++                  edges=[],unknown=False);nodes.append(node)
++        if depth>32:node['unknown']=True
++        elif typ.kind==T.POINTER:node['edges']=[visit(typ.get_pointee(),depth+1)]
++        elif typ.kind in ARRAYS:
++            node['array_size']=typ.get_array_size()
++            node['unknown']=typ.kind!=T.CONSTANTARRAY
++            node['edges']=[visit(typ.get_array_element_type(),depth+1)]
++        elif typ.kind==T.FUNCTIONPROTO:
++            node['edges']=[visit(typ.get_result(),depth+1)]+[visit(t,depth+1) for t in typ.argument_types()]
++        elif typ.kind==T.RECORD:
++            definition=decl.get_definition()
++            if not definition or not definition.is_definition():node['unknown']=True
++            else:
++                fields=[f for f in definition.get_children() if f.kind==K.FIELD_DECL]
++                node['field_usrs']=[usr(f) for f in fields]
++                node['edges']=[visit(f.type,depth+1) for f in fields]
++                node['definition_file']=str(definition.location.file) if definition.location.file else None
++        elif typ.kind not in SCALARS:node['unknown']=True
++        return index
++    root=visit(type_)
++    return dict(root=root,nodes=nodes,target_record_usr=target_record,
++        related=any(n['record_usr']==target_record for n in nodes),unknown=any(n['unknown'] for n in nodes))
++
++
++def descendants(ctx,index):
++    stack=list(ctx.children[index])
++    while stack:
++        i=stack.pop();yield i;stack.extend(ctx.children[i])
++
++
++def seal(proof):
++    return digest(json.dumps({k:v for k,v in proof.items() if k!='seal'},sort_keys=True,ensure_ascii=False).encode())
++
++
++class LayoutAnalysis:
++    def __init__(self, ctx):
++        self.ctx=ctx
++        self.tokens=[t for t in ctx.tu.get_tokens(extent=ctx.tu.cursor.extent) if t.spelling in LAYOUT]
++        self.operations=[]
++        for i,n in enumerate(ctx.nodes):
++            if n.kind==K.CXX_UNARY_EXPR:
++                tokens=list(n.get_tokens())
++                if tokens and tokens[0].spelling in SUPPORTED:self.operations.append((i,tokens))
++
++    def prove(self, field):
++        ctx=self.ctx; f=ctx.nodes[field]; rid=usr(f.semantic_parent)
++        proof=dict(schema='stage2f-layout-v1',p0_file=str(ctx.path),p0_sha256=digest(ctx.data),field_usr=usr(f),record_usr=rid,
++            inventory=[dict(offset=t.extent.start.offset,keyword=t.spelling) for t in self.tokens],
++            operations=[],reasons=[],status='UNPROVEN',
++            rule='all physical layout tokens mapped; every sizeof/_Alignof operand and referenced declaration type is independent; all other layout markers rejected')
++        starts=set()
++        for i,tokens in self.operations:
++            op=dict(anchor=ctx.anchor(i),keyword=tokens[0].spelling,graphs=[],references=[],reasons=[])
++            starts.add(tokens[0].extent.start.offset)
++            if not ctx.clean(i):op['reasons'].append('LAYOUT_MACRO_OR_LOCATION_UNPROVEN')
++            kids=ctx.children[i]
++            if not kids:
++                # Exact builtin type-name grammar; pointer/array/typeof type
++                # declarators are not inferred from an absent operand cursor.
++                ts=[t.spelling for t in tokens]
++                if not (len(ts)>=4 and ts[1]=='(' and ts[-1]==')' and set(ts[2:-1])<=BUILTIN_WORDS):
++                    op['reasons'].append('LAYOUT_OPERAND_TYPE_UNAVAILABLE')
++                op['builtin_type_tokens']=ts[2:-1]
++            elif len(kids)==1 and ctx.nodes[kids[0]].kind.is_expression():
++                op['operand_type']=ctx.nodes[kids[0]].type.get_canonical().spelling
++                prefix=[t.spelling for t in tokens[1:] if t.extent.start.offset < ctx.nodes[kids[0]].extent.start.offset]
++                if any(t!='(' for t in prefix):
++                    op['reasons'].append('LAYOUT_OPERAND_TYPE_UNAVAILABLE')
++            elif len(kids)==1 and ctx.nodes[kids[0]].kind==K.TYPE_REF:
++                ts=[t.spelling for t in tokens]
++                # Only a simple type name: complex type operands have no full
++                # type cursor in libclang's public API and remain unproven.
++                if any(t in ts for t in ('*','[',']','__typeof__','typeof')):
++                    op['reasons'].append('COMPLEX_LAYOUT_TYPE_OPERAND_UNSUPPORTED')
++                op['operand_type']=ctx.nodes[kids[0]].type.get_canonical().spelling
++            else:op['reasons'].append('LAYOUT_OPERAND_TYPE_UNAVAILABLE')
++            for j in descendants(ctx,i):
++                n=ctx.nodes[j]
++                if n.type.kind!=T.INVALID:
++                    graph=type_graph(n.type,rid);op['graphs'].append(graph)
++                    if graph['related']:op['reasons'].append('LAYOUT_REACHES_TARGET_RECORD')
++                    if graph['unknown']:op['reasons'].append('LAYOUT_TYPE_GRAPH_UNCLOSED')
++                ref=n.referenced
++                if ref and n.kind in (K.DECL_REF_EXPR,K.MEMBER_REF_EXPR,K.TYPE_REF):
++                    ref_record=usr(ref.semantic_parent) if ref.kind==K.FIELD_DECL else None
++                    op['references'].append(dict(anchor=ctx.anchor(j),referenced_usr=usr(ref),
++                        referenced_field_record_usr=ref_record))
++                    if usr(ref)==usr(f) or ref_record==rid:
++                        op['reasons'].append('LAYOUT_REFERENCES_TARGET_RECORD_MEMBER')
++                    if ref.type.kind!=T.INVALID:
++                        graph=type_graph(ref.type,rid);op['graphs'].append(graph)
++                        if graph['related']:op['reasons'].append('LAYOUT_REACHES_TARGET_RECORD')
++                        if graph['unknown']:op['reasons'].append('LAYOUT_TYPE_GRAPH_UNCLOSED')
++            op['reasons']=sorted(set(op['reasons']));proof['operations'].append(op)
++        for token in self.tokens:
++            if token.spelling not in SUPPORTED:proof['reasons'].append('OTHER_LAYOUT_MARKER_UNSUPPORTED:'+token.spelling)
++            elif token.extent.start.offset not in starts:proof['reasons'].append('LAYOUT_KEYWORD_WITHOUT_PHYSICAL_AST')
++        proof['reasons']=sorted(set(proof['reasons']+[r for op in proof['operations'] for r in op['reasons']]))
++        proof['status']='INDEPENDENT' if not proof['reasons'] else 'UNPROVEN'
++        proof['seal']=seal(proof)
++        return proof
++
++
++def verify_layout_proof(proof,p0,field_usr,record_usr,p0_file=None):
++    """Pure replay of conditional AST/type evidence, not a C parser."""
++    def need(condition):
++        if not condition:raise ValueError('LAYOUT_PROOF_INVALID')
++    need(proof['schema']=='stage2f-layout-v1' and proof['status']=='INDEPENDENT' and not proof['reasons'])
++    need(proof['p0_sha256']==digest(p0) and proof['field_usr']==field_usr and proof['record_usr']==record_usr)
++    if p0_file is not None:need(proof['p0_file']==p0_file)
++    need(proof['seal']==seal(proof))
++    inventory={(a['offset'],a['keyword']) for a in proof['inventory']}
++    operations={(o['anchor']['start_offset'],o['keyword']) for o in proof['operations']}
++    need(inventory==operations and all(k in SUPPORTED for _,k in inventory))
++    for op in proof['operations']:
++        need(not op['reasons'])
++        a=op['anchor'];need(a['file']==proof['p0_file'])
++        expected=anchor(a['file'],p0,a['offset'],a['start_offset'],a['end_offset'],a['node_identity'])
++        need(all(a[k]==v for k,v in expected.items()))
++        need(p0[a['start_offset']:a['start_offset']+len(op['keyword'])]==op['keyword'].encode())
++        if 'builtin_type_tokens' in op:
++            words=op['builtin_type_tokens']
++            need(bool(words) and set(words)<=BUILTIN_WORDS)
++            need(''.join(a['source_text'].split())==op['keyword']+'('+''.join(words)+')')
++        else:need(bool(op['graphs']))
++        for ref in op['references']:
++            need(ref['referenced_usr']!=field_usr and ref['referenced_field_record_usr']!=record_usr)
++            ra=ref['anchor'];need(ra['file']==proof['p0_file'] and a['start_offset']<=ra['start_offset']<=ra['end_offset']<=a['end_offset'])
++            expected_ref=anchor(ra['file'],p0,ra['offset'],ra['start_offset'],ra['end_offset'],ra['node_identity'])
++            need(all(ra[k]==v for k,v in expected_ref.items()))
++        for graph in op['graphs']:
++            need(graph['target_record_usr']==record_usr and not graph['related'] and not graph['unknown'])
++            nodes=graph['nodes'];need(0<=graph['root']<len(nodes))
++            for n in nodes:
++                need(not n['unknown'] and n['record_usr']!=record_usr and all(0<=e<len(nodes) for e in n['edges']))
++                need(n['kind'] in {t.name for t in SCALARS}|{'POINTER','CONSTANTARRAY','RECORD','FUNCTIONPROTO'})
++                if n['kind'] in ('POINTER','CONSTANTARRAY'):need(len(n['edges'])==1)
++                if n['kind']=='RECORD':need(len(n['edges'])==len(n['field_usrs']))
++    return True
++
++
++def scan_native_scoped_layout(path,runtime, *, context=None, legacy=None):
++    """Remove exactly one legacy reason, and only with an independent proof."""
++    result=deepcopy(legacy if legacy is not None else scan_native(path,runtime))
++    if result['status'] not in ('APPLICABLE','NOT_APPLICABLE'):return result
++    ctx=context or Context(path,runtime)
++    if result.get('sha256') != digest(ctx.data):raise ValueError('STALE_NATIVE_SCAN')
++    analysis=LayoutAnalysis(ctx)
++    fields={usr(n):i for i,n in enumerate(ctx.nodes) if n.kind==K.FIELD_DECL}
++    kept=[];audits=[]
++    for entry in result['rejected_fields']:
++        if 'LAYOUT_SENSITIVE_CONSTRUCT_IN_FILE' not in entry['reasons']:
++            kept.append(entry);continue
++        proof=analysis.prove(fields[entry['field']['usr']]);entry['layout_independence']=proof
++        audits.append(dict(field_usr=entry['field']['usr'],status=proof['status'],reasons=proof['reasons']))
++        if proof['status']=='INDEPENDENT':
++            verify_layout_proof(proof,ctx.data,entry['field']['usr'],entry['record_usr'])
++            entry['reasons'].remove('LAYOUT_SENSITIVE_CONSTRUCT_IN_FILE')
++        if entry['reasons']:kept.append(entry)
++        else:
++            entry['impact_closed']=True
++            entry['proof']=['unchanged stage2d closed-object rules','stage2f unrelated layout operand/type graphs']
++            result['candidates'].append(entry)
++    result.update(rejected_fields=kept,candidate_count=len(result['candidates']),layout_audits=audits,
++        rejection_counts=dict(Counter(r for e in kept for r in e['reasons'])),
++        status='APPLICABLE' if result['candidates'] else 'NOT_APPLICABLE',extension='unrelated_layout_only')
++    return result
+--- before/second_point/src/edgm_second/native_contexts.py
++++ after/second_point/src/edgm_second/native_contexts.py
+@@ -0,0 +1,128 @@
++"""Objective, source-linked facts for address-bearing fields, including rejects.
++
++This is a census, not an action encoder or a runtime points-to analysis.
++Shared canonical record identity establishes static type dependencies only.
++"""
++from .seed_enrichment import Context, K, T
++from .semantic_profile import usr
++from .source_edit import digest
++from .scoped_layout import type_graph
++
++
++def target_paths(graph):
++    paths=[]
++    def walk(i,path,seen):
++        n=graph['nodes'][i]
++        if n['record_usr']==graph['target_record_usr']:
++            paths.append(path+[i]);return
++        if i in seen:return
++        for child in n['edges']:walk(child,path+[i],seen|{i})
++    walk(graph['root'],[],set())
++    return [[dict(kind=graph['nodes'][i]['kind'],record_usr=graph['nodes'][i]['record_usr']) for i in p] for p in paths]
++
++
++def extract_contexts(path,runtime,formal,discovery,origin='Native',context=None):
++    ctx=context or Context(path,runtime); source_hash=digest(ctx.data)
++    owners={}; scopes={}; units={}
++    def owner(i):
++        if i in owners:return owners[i]
++        p=i
++        while p>=0:
++            n=ctx.nodes[p]
++            if n.kind==K.FUNCTION_DECL:
++                result=dict(usr=usr(n),name=n.spelling,offset=n.location.offset)
++                owners[i]=result;return result
++            p=ctx.parents[p]
++        owners[i]=None;return None
++    def container(i,kind):
++        cache=scopes if kind=='scope' else units
++        if i in cache:return cache[i]
++        p=i
++        while p>=0:
++            n=ctx.nodes[p]
++            is_scope=n.kind in (K.TRANSLATION_UNIT,K.COMPOUND_STMT)
++            is_unit=n.kind.is_statement() or (ctx.parents[p]==0 and n.kind.is_declaration())
++            if (is_scope if kind=='scope' else is_unit):
++                a=dict(kind=n.kind.name,start=n.extent.start.offset,end=n.extent.end.offset,
++                    id=f'{source_hash}:{n.kind.name}:{n.extent.start.offset}:{n.extent.end.offset}')
++                cache[i]=a;return a
++            p=ctx.parents[p]
++        return None
++    accepted={e['field']['usr']:e for e in formal['candidates']}
++    formal_rejects={e['field']['usr']:e['reason'] for e in formal['rejected_fields']}
++    fields={usr(n):i for i,n in enumerate(ctx.nodes) if n.kind==K.FIELD_DECL}
++    refs={usr(n):i for i,n in enumerate(ctx.nodes) if n.kind in (K.VAR_DECL,K.PARM_DECL)}
++    entries=discovery['candidates']+discovery['rejected_fields'];result=[]
++    graph_cache={}
++    for entry in entries:
++        fid=entry['field']['usr'];f=fields[fid];field=ctx.nodes[f];rid=usr(field.semantic_parent)
++        def graph_for(t):
++            t=t.get_canonical();key=(rid,t.kind.name,t.spelling)
++            if key not in graph_cache:graph_cache[key]=type_graph(t,rid)
++            return graph_cache[key]
++        declarations=[]
++        for identity,i in refs.items():
++            g=graph_for(ctx.nodes[i].type)
++            if g['related']:
++                declarations.append(dict(anchor=ctx.anchor(i),usr=identity,kind=ctx.nodes[i].kind.name,
++                    function=owner(i),scope=container(i,'scope'),type_paths=target_paths(g),
++                    type_graph_complete=not g['unknown']))
++        # Avoid embedding full function/variable initializers repeatedly in the
++        # declaration census: retain the exact anchor range and physical position.
++        for d in declarations:d['anchor'].pop('source_text',None)
++        uses=[i for i in ctx.refs[fid] if ctx.nodes[i].kind==K.MEMBER_REF_EXPR]
++        relations=[]
++        for m in uses:
++            _,a=ctx.operation_parent(m)
++            if a<0 or ctx.nodes[a].kind!=K.UNARY_OPERATOR or ctx.op(a)!='&':continue
++            base=ctx.children[m][0] if ctx.children[m] else None
++            g=graph_for(ctx.nodes[base].type) if base is not None else None
++            path_refs=[]
++            stack=list(ctx.children[m])
++            while stack:
++                j=stack.pop();n=ctx.nodes[j]
++                if n.kind==K.DECL_REF_EXPR and n.referenced:
++                    rg=graph_for(n.referenced.type)
++                    path_refs.append(dict(reference=ctx.anchor(j),declaration_usr=usr(n.referenced),
++                        declaration=ctx.anchor(ctx.index[n.referenced]) if n.referenced in ctx.index else None,
++                        declaration_function=owner(ctx.index[n.referenced]) if n.referenced in ctx.index else None,
++                        type_paths=target_paths(rg),type_graph_complete=not rg['unknown']))
++                stack.extend(ctx.children[j])
++            for d in path_refs:
++                if d['declaration']:d['declaration'].pop('source_text',None)
++            same_expression=ctx.nodes[a].extent.start.offset<=field.extent.start.offset and field.extent.end.offset<=ctx.nodes[a].extent.end.offset
++            relations.append(dict(field_usr=fid,record_usr=rid,member=ctx.anchor(m),address=ctx.anchor(a),
++                declaration_function=owner(f),use_function=owner(m),declaration_scope=container(f,'scope'),
++                use_scope=container(m,'scope'),declaration_unit=container(f,'unit'),use_unit=container(m,'unit'),
++                same_local_expression=same_expression,cross_statement=container(f,'unit')!=container(m,'unit'),
++                cross_scope=container(f,'scope')!=container(m,'scope'),
++                base_type_paths=target_paths(g) if g else [],base_type_related=bool(g and g['related']),
++                base_references=path_refs,dependency_path=[dict(kind='record_definition',usr=rid),
++                    dict(kind='field_declaration',usr=fid),dict(kind='member_reference',referenced_usr=usr(ctx.nodes[m].referenced),offset=ctx.nodes[m].location.offset),
++                    dict(kind='address_operation',offset=ctx.nodes[a].location.offset)],
++                byte_span=abs(ctx.nodes[a].location.offset-field.location.offset),
++                line_span=abs(ctx.anchor(a)['line']-ctx.anchor(f)['line'])))
++        functions={e['use_function']['usr'] for e in relations if e['use_function'] and e['base_type_related']}
++        cross_function=len(functions)>1
++        depths=[len(p)-1 for d in declarations for p in d['type_paths']]
++        result.append(dict(mr_id='MR_MEMBER_BITFIELD_ADDRESSABILITY',constraint_category='address_of_bitfield',
++            seed_sha256=source_hash,source=str(ctx.path),origin=origin,target_declaration=ctx.anchor(f),record_usr=rid,
++            canonical_basic_type=field.type.get_canonical().kind.name,record_kind=field.semantic_parent.kind.name,
++            originally_bitfield=field.is_bitfield(),qualifiers=dict(const=field.type.get_canonical().is_const_qualified(),volatile=field.type.get_canonical().is_volatile_qualified()),
++            related_declaration_count=len(declarations),related_declarations=declarations,
++            record_type_references=[dict(anchor=ctx.anchor(i),function=owner(i),scope=container(i,'scope'),
++                parent_kind=ctx.nodes[ctx.parents[i]].kind.name if ctx.parents[i]>=0 else None)
++                for i in ctx.refs[rid] if ctx.nodes[i].kind==K.TYPE_REF],
++            direct_record_object_count=sum(ctx.nodes[refs[d['usr']]].type.get_canonical().kind==T.RECORD for d in declarations),
++            all_member_expression_uses=len(uses),target_address_count=len(relations),relations=relations,
++            cross_statement=any(e['cross_statement'] for e in relations),cross_scope=any(e['cross_scope'] for e in relations),
++            cross_function=cross_function,cross_function_evidence=dict(kind='shared_canonical_record_type',functions=sorted(functions),
++                paths=[e['dependency_path'] for e in relations if e['use_function'] and e['base_type_related']]) if cross_function else None,
++            runtime_cross_function_value_flow='NOT_PROVEN',maximum_observed_type_propagation_depth=max(depths) if depths else None,
++            impact_closed=fid in accepted,safe_candidate=fid in accepted,formal_rejection=formal_rejects.get(fid),
++            overlapping_reasons=entry.get('reasons',[]),layout_analysis=entry.get('layout_independence'),
++            complexity=('simple_local_expression' if all(e['same_local_expression'] for e in relations) else
++                        'shared_type_across_functions' if cross_function else 'cross_scope' if any(e['cross_scope'] for e in relations) else 'cross_statement'),
++            limitations=['static declaration/type/reference facts; no runtime alias proof',
++                         'rejected-field complexity is not a safe MR action', 'distance and AST depth do not establish semantic complexity']))
++    return result
+--- before/second_point/src/edgm_second/native_dependency_run.py
++++ after/second_point/src/edgm_second/native_dependency_run.py
+@@ -0,0 +1,174 @@
++"""Bounded stage 2F reproduction: fixed 50 inputs, one opt-in extension."""
++import argparse
++from collections import Counter
++from concurrent.futures import ThreadPoolExecutor, as_completed
++import difflib
++import json
++from pathlib import Path
++import sys
++import time
++from .environment import PROJECT, inspect_environment, load_config, run_process
++from .bitfield_validation import collect_integer_profile, observe_errors
++from .mr_member_bitfield_addressability import scan_candidates, build_mutation, verify_bitfield_witness
++from .native_bitfield_candidates import scan_native
++from .scoped_layout import scan_native_scoped_layout
++from .native_contexts import extract_contexts
++from .seed_enrichment import Context, ParseFailure
++from .seeds import validate_seed
++from .source_edit import digest
++
++COMPLETE = {'APPLICABLE','NOT_APPLICABLE'}
++MANUAL = '''struct Target { int x; };
++int compute(int input) {
++    struct Target object={0};
++    int unrelated[3]={0};
++    (void)sizeof(unrelated); (void)sizeof(int); (void)_Alignof(int);
++    int *p=&object.x;
++    { int *q=&object.x; return input + *p + *q; }
++}
++int main(void) { return compute(0); }
++'''
++
++
++def save(path,data):
++    with Path(path).open('x') as f:json.dump(data,f,ensure_ascii=False,indent=2)
++
++
++def selection():
++    raw=json.loads((PROJECT/'evidence/stage2b/corpus/records.json').read_text())
++    if len(raw)!=50:raise ValueError('fixed corpus must have 50 entries')
++    result=[]
++    for index,r in enumerate(raw,1):
++        if digest(Path(r['source']).read_bytes())!=r['sha256'] or r['validation']['status']!='valid':
++            raise ValueError('fixed source or historical admission changed')
++        result.append(dict(index=index,seed_id=r['seed_id'],source=r['source'],sha256=r['sha256']))
++    return result
++
++
++def worker(path,runtime,profile,phase):
++    discovery=scan_native(path,runtime)
++    if phase=='baseline':return dict(formal=scan_candidates(path,runtime,profile),discovery=discovery)
++    if discovery['status'] not in COMPLETE:return dict(formal=discovery,discovery=discovery,contexts=[])
++    try:
++        ctx=Context(path,runtime)
++        scoped=scan_native_scoped_layout(path,runtime,context=ctx,legacy=discovery)
++        formal=scan_candidates(path,runtime,profile,native_scanner=lambda p,r:scoped)
++        contexts=extract_contexts(path,runtime,formal,scoped,context=ctx) if formal['status'] in COMPLETE else []
++        return dict(formal=formal,discovery=scoped,contexts=contexts,legacy_reasons=discovery)
++    except ParseFailure as exc:
++        return dict(formal=dict(status='PARSE_FAILED',candidate_count=None,diagnostics=exc.args[0]),discovery=discovery,contexts=[])
++    except Exception as exc:
++        return dict(formal=dict(status='SCAN_FAILED',candidate_count=None,exception=f'{type(exc).__name__}: {exc}'),
++                    discovery=discovery,contexts=[])
++
++
++def isolated(item,runtime,profile_path,phase,timeout):
++    command=[sys.executable,'-m','edgm_second.native_dependency_run','--worker',item['source'],
++        '--runtime',runtime,'--profile',str(profile_path),'--phase',phase]
++    process=run_process(command,timeout)
++    if process['status']=='timeout':status='SCAN_TIMEOUT'
++    elif process['status']!='ok':status='WORKER_FAILED'
++    else:status=None
++    try:
++        data=json.loads(process['stdout']) if status is None else None
++    except ValueError:status='WORKER_FAILED';data=None
++    if data is None:data=dict(formal=dict(status=status,candidate_count=None),discovery=dict(status=status,candidate_count=None),contexts=[])
++    process['stdout']='structured JSON is persisted in this scan record' if status is None else process['stdout']
++    return dict(data,**item,worker=process)
++
++
++def summarize(records):
++    valid=[r for r in records if r['formal']['status'] in COMPLETE]
++    observed=[r for r in records if r['discovery']['status'] in COMPLETE]
++    fields=[(r,e) for r in observed for e in r['discovery']['candidates']+r['discovery']['rejected_fields']]
++    return dict(total_seeds=len(records),formal_status_counts=dict(Counter(r['formal']['status'] for r in records)),
++        formal_completed_seeds=len(valid),effective_denominator=len(valid),
++        ast_success_seeds=sum(r['discovery'].get('ast_status')=='OK' for r in records),
++        discovery_status_counts=dict(Counter(r['discovery']['status'] for r in records)),
++        safe_fields=sum(r['formal']['candidate_count'] for r in valid),
++        applicable_seeds=sum(r['formal']['candidate_count']>0 for r in valid),
++        applicability_rate=sum(r['formal']['candidate_count']>0 for r in valid)/len(valid) if valid else None,
++        raw_address_relation_instances=sum(r['discovery'].get('raw_address_relation_count',0) for r in observed),
++        address_seeds=sum(r['discovery'].get('raw_address_relation_count',0)>0 for r in observed),
++        distinct_main_file_fields=len(fields),canonical_basic_type_fields=dict(Counter(e['canonical_type'] for _,e in fields)),
++        overlapping_discovery_reason_field_counts=dict(Counter(reason for _,e in fields for reason in e.get('reasons',[]))),
++        formal_first_reason_field_counts=dict(Counter(e['reason'] for r in valid for e in r['formal']['rejected_fields'])),
++        per_seed=[dict(seed_id=r['seed_id'],status=r['formal']['status'],candidate_count=r['formal']['candidate_count']) for r in records],
++        counting='unique field = source SHA256 + canonical USR; overlapping reasons are not a partition; failure count stays null')
++
++
++def validate_one(path,out,env,profile):
++    out.mkdir();data=path.read_bytes()
++    with (out/'P0.c').open('xb') as f:f.write(data)
++    admission=validate_seed(path,env);save(out/'P0_validation.json',admission)
++    if admission['status']!='valid':return dict(status='P0_ADMISSION_FAILED',admission=admission)
++    scan,p1,witness=build_mutation(path,out/'P1.c',env['runtime']['path'],profile,admission,
++        dict(source_kind='Native',original_path=str(path),original_sha256=digest(data)),native_scanner=scan_native_scoped_layout)
++    save(out/'scan.json',scan)
++    if witness is None:return dict(status='REJECTED',scan_status=scan['status'])
++    with (out/'P1.c').open('xb') as f:f.write(p1)
++    with (out/'change.diff').open('x') as f:f.write(''.join(difflib.unified_diff(data.decode().splitlines(True),p1.decode().splitlines(True),fromfile=str(path),tofile=str(out/'P1.c'))))
++    with (out/'Oracle.json').open('x') as f:f.write(witness.to_json())
++    sha=digest((out/'Oracle.json').read_bytes())
++    save(out/'oracle_before_compilation.json',dict(oracle_sha256=sha,persisted_before_p1_compile=True,
++        barrier_time_ns=time.time_ns(),independent_replay=verify_bitfield_witness(witness,data,p1,data)))
++    validation=validate_seed(out/'P1.c',env);save(out/'P1_validation.json',validation)
++    observations={}
++    for name,process in validation['checks'].items():
++        for stream in ('stdout','stderr'):
++            with (out/f'{name}.{stream}.txt').open('x') as f:f.write(process[stream])
++        observations[name]=observe_errors(process,witness)
++    save(out/'diagnostics.json',observations)
++    unchanged=digest((out/'Oracle.json').read_bytes())==sha
++    replay=verify_bitfield_witness(json.loads((out/'Oracle.json').read_text()),data,p1,data)
++    contexts=extract_contexts(path,env['runtime']['path'],scan,scan_native_scoped_layout(path,env['runtime']['path']))
++    save(out/'semantic_contexts.json',contexts)
++    result=dict(status='VALIDATED' if unchanged and all(v['status']=='TARGET_ERRORS_OBSERVED' for v in observations.values()) else 'REVIEW_CANDIDATE',
++        p0_sha256=digest(data),p1_sha256=digest(p1),all_expected_addresses=len(witness.affected_uses),observations=observations,
++        oracle_unchanged=unchanged,independent_replay=replay,original_unchanged=path.read_bytes()==data,confirmed_bug=False)
++    save(out/'result.json',result);return result
++
++
++def run(out,phase,timeout=300):
++    if not out.resolve().is_relative_to(PROJECT):raise ValueError('output must be within second_point')
++    out.mkdir();start=time.perf_counter()
++    env=inspect_environment(load_config());save(out/'environment.json',env)
++    if not env['ready']:raise RuntimeError('required environment unavailable')
++    profile=collect_integer_profile(env);save(out/'integer_profile.json',profile)
++    if profile['status']!='VERIFIED':raise RuntimeError('integer model unverified')
++    if phase=='manual':
++        path=out/'manual_input.c';path.write_text(MANUAL)
++        result=validate_one(path,out/'validation',env,profile);save(out/'summary.json',result)
++        if result['status']!='VALIDATED':raise RuntimeError('manual validation failed')
++        print(json.dumps(result,ensure_ascii=False,indent=2));return
++    items=selection();save(out/'selection.json',items);(out/'scans').mkdir();records=[]
++    with ThreadPoolExecutor(max_workers=2) as pool:
++        pending={pool.submit(isolated,r,env['runtime']['path'],out/'integer_profile.json',phase,timeout):r for r in items}
++        for future in as_completed(pending):
++            result=future.result()
++            if digest(Path(result['source']).read_bytes())!=result['sha256']:raise ValueError('source changed during scan')
++            save(out/'scans'/f"seed_{result['index']:03}.json",result);records.append(result)
++            print(f"completed {len(records)}/50 {result['seed_id']} {result['formal']['status']}",flush=True)
++    records.sort(key=lambda r:r['index']);summary=summarize(records);summary['elapsed_seconds']=time.perf_counter()-start
++    if phase=='extended':
++        # All 50 scans finish before selection. No fallback enrichment; at most
++        # one field per seed and three distinct seeds in original fixed order.
++        selected=[r for r in records if r['formal']['status']=='APPLICABLE'][:3]
++        real=[]
++        for r in selected:real.append(dict(seed_id=r['seed_id'],result=validate_one(Path(r['source']),out/f"real_{r['index']:03}",env,profile)))
++        summary.update(real_native_p1_count=len(real),real_results=real,selection_rule='first up to three applicable distinct seeds in immutable stage2b order',new_enriched_programs=0)
++    save(out/'summary.json',summary);print(json.dumps(summary,ensure_ascii=False,indent=2))
++
++
++def main():
++    p=argparse.ArgumentParser(description=__doc__)
++    p.add_argument('--phase',choices=('baseline','manual','extended'),required=True)
++    p.add_argument('--out-dir',type=Path);p.add_argument('--timeout',type=float,default=300)
++    p.add_argument('--worker');p.add_argument('--runtime');p.add_argument('--profile',type=Path)
++    args=p.parse_args()
++    if args.worker:print(json.dumps(worker(args.worker,args.runtime,json.loads(args.profile.read_text()),args.phase)))
++    elif args.out_dir:run(args.out_dir.resolve(),args.phase,args.timeout)
++    else:p.error('--out-dir required')
++
++
++if __name__=='__main__':main()
+--- before/second_point/tests/test_stage2f_native.py
++++ after/second_point/tests/test_stage2f_native.py
+@@ -0,0 +1,164 @@
++"""Safety and replay checks for the one stage 2F layout extension."""
++import copy
++import json
++from pathlib import Path
++import tempfile
++import unittest
++from unittest.mock import patch
++from edgm_second.environment import PROJECT,inspect_environment,load_config
++from edgm_second.bitfield_validation import collect_integer_profile,observe_errors
++from edgm_second.seeds import validate_seed
++from edgm_second.source_edit import digest
++from edgm_second.seed_enrichment import Context,K
++from edgm_second.semantic_profile import usr
++from edgm_second.native_bitfield_candidates import scan_native
++from edgm_second.scoped_layout import scan_native_scoped_layout,LayoutAnalysis,seal,verify_layout_proof
++from edgm_second.native_contexts import extract_contexts
++from edgm_second.mr_member_bitfield_addressability import scan_candidates,build_mutation,verify_bitfield_witness
++
++BASE='''struct Target { int x; };
++int compute(int input) {
++    struct Target object={0};
++    int unrelated[3]={0};
++    (void)sizeof(unrelated);
++    (void)sizeof(int);
++    (void)_Alignof(int);
++    int *p=&object.x;
++    { int *q=&object.x; return input + *p + *q; }
++}
++int main(void) { return compute(0); }
++'''
++
++
++class NativeLayoutTests(unittest.TestCase):
++    @classmethod
++    def setUpClass(cls):
++        cls.env=inspect_environment(load_config());cls.runtime=cls.env['runtime']['path']
++        cls.profile=collect_integer_profile(cls.env)
++        if not cls.env['ready']:raise RuntimeError('required toolchain unavailable')
++
++    def setUp(self):
++        self.tmp=tempfile.TemporaryDirectory(dir=PROJECT);self.addCleanup(self.tmp.cleanup)
++        self.p0=Path(self.tmp.name)/'P0.c';self.p0.write_text(BASE);self.p1=self.p0.with_name('P1.c')
++
++    def scan(self,text=None):
++        if text is not None:self.p0.write_text(text)
++        return scan_candidates(self.p0,self.runtime,self.profile,native_scanner=scan_native_scoped_layout)
++
++    def build(self,admission=None):
++        return build_mutation(self.p0,self.p1,self.runtime,self.profile,admission or validate_seed(self.p0,self.env),
++            dict(source_kind='Native',original_path=str(self.p0),original_sha256=digest(self.p0.read_bytes())),
++            native_scanner=scan_native_scoped_layout)
++
++    def proof(self):
++        ctx=Context(self.p0,self.runtime);f=next(i for i,n in enumerate(ctx.nodes) if n.kind==K.FIELD_DECL and n.semantic_parent.spelling=='Target')
++        return LayoutAnalysis(ctx).prove(f)
++
++    def test_unrelated_scalar_array_size_and_builtin_align_positive(self):
++        self.assertEqual(scan_candidates(self.p0,self.runtime,self.profile)['candidate_count'],0)
++        r=self.scan();self.assertEqual(r['candidate_count'],1,r)
++        self.assertEqual(len(r['candidates'][0]['address_anchors']),2)
++        _,p1,w=self.build();self.assertIn(b'signed int x : 32',p1)
++        self.assertTrue(verify_bitfield_witness(w,self.p0.read_bytes(),p1,self.p0.read_bytes()))
++        self.p1.write_bytes(p1)
++        for check in validate_seed(self.p1,self.env)['checks'].values():
++            self.assertEqual(observe_errors(check,w)['status'],'TARGET_ERRORS_OBSERVED',check['stderr'])
++
++    def test_oracle_without_compiler_or_p1_ast(self):
++        admission=validate_seed(self.p0,self.env)
++        def guard(path,runtime):
++            self.assertEqual(Path(path),self.p0);return Context(path,runtime)
++        with patch('subprocess.run',side_effect=AssertionError('forbidden')), \
++             patch('edgm_second.mr_member_bitfield_addressability.Context',side_effect=guard), \
++             patch('edgm_second.scoped_layout.Context',side_effect=guard):
++            _,p1,w=self.build(admission)
++            self.assertTrue(verify_bitfield_witness(w,self.p0.read_bytes(),p1,self.p0.read_bytes()))
++        self.assertFalse(self.p1.exists())
++
++    def test_direct_record_and_member_size_rejected(self):
++        for expression in ['sizeof(object)','sizeof(struct Target)','sizeof(object.x)','_Alignof(struct Target)']:
++            with self.subTest(expression=expression):
++                self.p0.write_text(BASE.replace('sizeof(unrelated)',expression))
++                self.assertEqual(self.scan()['candidate_count'],0)
++                self.assertEqual(self.proof()['status'],'UNPROVEN')
++
++    def test_typedef_pointer_array_and_nested_type_dependency_rejected(self):
++        cases=[('typedef struct Target Alias;','sizeof(Alias)'),
++               ('struct Target *pointer;','sizeof(pointer)'),
++               ('struct Target array[3];','sizeof(array)'),
++               ('struct Outer { struct Target inner; };','sizeof(struct Outer)'),
++               ('struct Target (*fp)(void);','sizeof(fp)')]
++        for declaration,expression in cases:
++            with self.subTest(declaration=declaration):
++                self.p0.write_text(BASE.replace('int compute',declaration+'\nint compute').replace('sizeof(unrelated)',expression))
++                self.assertEqual(self.scan()['candidate_count'],0)
++                self.assertIn('LAYOUT_REACHES_TARGET_RECORD',self.proof()['reasons'])
++
++    def test_same_spelling_different_field_identity_is_unrelated(self):
++        text=BASE.replace('int compute','struct Other {int x;};\nint compute').replace('int unrelated[3]={0};','struct Other other={0};').replace('sizeof(unrelated)','sizeof(other.x)')
++        self.assertEqual(self.scan(text)['candidate_count'],1)
++
++    def test_unrelated_typedef_scalar_expression_supported(self):
++        text=BASE.replace('int compute','typedef unsigned Other;\nint compute').replace('int unrelated[3]={0};','Other unrelated=0;')
++        self.assertEqual(self.scan(text)['candidate_count'],1)
++
++    def test_macro_unknown_pragma_and_vla_rejected(self):
++        cases=['#define SZ(x) sizeof(x)\n'+BASE.replace('sizeof(unrelated)','SZ(unrelated)'),
++               '#pragma pack(1)\n'+BASE,
++               BASE.replace('int unrelated[3]={0};','int unrelated[input+1];'),
++               BASE.replace('sizeof(unrelated)','sizeof(int[3])')]
++        for text in cases:
++            with self.subTest(text=text):self.assertEqual(self.scan(text)['candidate_count'],0)
++
++    def test_other_closure_rules_not_relaxed_and_no_p1(self):
++        for text in [BASE.replace('{0};','{2};',1),BASE.replace('struct Target object','static struct Target object'),
++                     BASE.replace('int *p=', 'struct Target *escape=&object; int *p=')]:
++            with self.subTest(text=text):
++                self.p0.write_text(text);scan,p1,w=self.build()
++                self.assertEqual(scan['candidate_count'],0);self.assertIsNone(p1);self.assertIsNone(w)
++                self.assertFalse(self.p1.exists())
++
++    def test_exact_utf8_crlf_source_transport(self):
++        self.p0.write_bytes(('/* 字节位置 */\r\n'+BASE.replace('\n','\r\n')).encode())
++        _,p1,w=self.build();self.assertTrue(verify_bitfield_witness(w,self.p0.read_bytes(),p1,self.p0.read_bytes()))
++
++    def test_tamper_identity_position_or_impact_evidence_rejected(self):
++        _,p1,w=self.build();p0=self.p0.read_bytes()
++        changes=[lambda x:x['isolation']['native_proof']['layout_independence'].update(record_usr='wrong'),
++                 lambda x:x['isolation']['native_proof'].update(impact_closed=False),
++                 lambda x:x['isolation']['native_proof']['layout_independence']['operations'][0]['anchor'].update(column=999),
++                 lambda x:x['affected_uses'][0]['address']['p1'].update(column=999),
++                 lambda x:x['isolation']['native_proof']['layout_independence']['operations'][0]['graphs'][0].update(related=True)]
++        for change in changes:
++            value=copy.deepcopy(w.to_dict());change(value)
++            proof=value['isolation']['native_proof']['layout_independence'];proof['seal']=seal(proof)
++            with self.assertRaises(ValueError):verify_bitfield_witness(value,p0,p1,p0)
++
++    def test_context_cross_scope_and_statement_has_identity_path(self):
++        formal=self.scan();discovery=scan_native_scoped_layout(self.p0,self.runtime)
++        fields=extract_contexts(self.p0,self.runtime,formal,discovery)
++        self.assertEqual(len(fields),1);field=fields[0]
++        self.assertTrue(field['cross_statement']);self.assertTrue(field['cross_scope'])
++        self.assertFalse(field['cross_function']);self.assertTrue(field['impact_closed'])
++        self.assertEqual(field['target_address_count'],2)
++        for edge in field['relations']:
++            self.assertEqual(edge['dependency_path'][1]['usr'],field['target_declaration']['usr'])
++
++    def test_shared_type_across_functions_not_runtime_flow_claim(self):
++        text=BASE+'\nint other(void) { struct Target second={0};int *p=&second.x;return *p; }\n'
++        formal=self.scan(text);fields=extract_contexts(self.p0,self.runtime,formal,scan_native_scoped_layout(self.p0,self.runtime))
++        self.assertTrue(fields[0]['cross_function']);self.assertEqual(fields[0]['runtime_cross_function_value_flow'],'NOT_PROVEN')
++        self.assertEqual(len(fields[0]['cross_function_evidence']['functions']),2)
++
++    def test_parse_failure_is_not_zero(self):
++        r=self.scan('int main( {');self.assertEqual(r['status'],'PARSE_FAILED');self.assertIsNone(r['candidate_count'])
++
++    def test_default_2e_scanner_and_old_evidence_remain(self):
++        r=scan_candidates(self.p0,self.runtime,self.profile)
++        self.assertEqual(r['candidate_count'],0)
++        self.assertEqual(scan_native(self.p0,self.runtime)['candidate_count'],0)
++        proof=self.proof();self.assertEqual(proof['status'],'INDEPENDENT')
++        self.assertTrue(verify_layout_proof(proof,self.p0.read_bytes(),proof['field_usr'],proof['record_usr']))
++
++
++if __name__=='__main__':unittest.main()
+--- before/second_point/tools/stage2f_finalize.py
++++ after/second_point/tools/stage2f_finalize.py
+@@ -0,0 +1,111 @@
++"""Aggregate actual stage 2F scans, replay witnesses, and check frozen inputs."""
++from collections import Counter
++import json
++from pathlib import Path
++from edgm_second.environment import PROJECT,EDGM
++from edgm_second.source_edit import digest
++from edgm_second.mr_member_bitfield_addressability import verify_bitfield_witness
++
++
++def save(path,data):
++    with path.open('x') as f:json.dump(data,f,ensure_ascii=False,indent=2)
++
++
++def main():
++    root=PROJECT/'evidence/stage2f'
++    baseline=[json.loads(p.read_text()) for p in sorted((root/'baseline_scans').glob('seed_*.json'))]
++    extended=[json.loads(p.read_text()) for p in sorted((root/'experiment/scans').glob('seed_*.json'))]
++    assert len(baseline)==len(extended)==50
++    assert [(r['sha256'],r['index']) for r in baseline]==[(r['sha256'],r['index']) for r in extended]
++    contexts=[c for r in extended for c in r.get('contexts',[])]
++    baseline_summary=json.loads((root/'baseline_summary.json').read_text())
++    completed=[r for r in extended if r['formal']['status'] in ('APPLICABLE','NOT_APPLICABLE')]
++    context_summary=dict(fields=len(contexts),addresses=sum(c['target_address_count'] for c in contexts),
++        complexity_field_counts=dict(Counter(c['complexity'] for c in contexts)),
++        cross_statement_fields=sum(c['cross_statement'] for c in contexts),cross_scope_fields=sum(c['cross_scope'] for c in contexts),
++        shared_type_cross_function_fields=sum(c['cross_function'] for c in contexts),
++        safe_cross_statement_fields=sum(c['safe_candidate'] and c['cross_statement'] for c in contexts),
++        safe_cross_scope_fields=sum(c['safe_candidate'] and c['cross_scope'] for c in contexts),
++        safe_cross_function_fields=sum(c['safe_candidate'] and c['cross_function'] for c in contexts),
++        runtime_cross_function_flow='NOT_PROVEN',
++        type_propagation_depth_fields=dict(Counter(str(c['maximum_observed_type_propagation_depth']) for c in contexts)),
++        failed_scan_count=50-len(completed))
++    if len(completed)==50:
++        assert len(contexts)==baseline_summary['distinct_main_file_fields']
++        assert context_summary['addresses']==baseline_summary['raw_address_relation_instances']
++    # Full paths, declarations and layout evidence already live in each frozen
++    # scan. Publish a hash-bound index instead of duplicating those 21 MB here.
++    index=[]
++    detail_keys={'related_declarations','record_type_references','relations','layout_analysis','cross_function_evidence'}
++    for scan_path in sorted((root/'experiment/scans').glob('seed_*.json')):
++        record=json.loads(scan_path.read_text());scan_hash=digest(scan_path.read_bytes())
++        for position,c in enumerate(record.get('contexts',[])):
++            index.append(dict({k:v for k,v in c.items() if k not in detail_keys},
++                details_ref=dict(file=str(scan_path.relative_to(root)),json_pointer=f'/contexts/{position}',
++                                 file_sha256=scan_hash)))
++    assert len(index)==len(contexts)
++    save(root/'semantic_contexts.json',dict(schema='stage2f-context-index-v1',summary=context_summary,fields=index,
++        details='Each entry references complete frozen AST/type/use facts by file, JSON pointer and SHA256.'))
++    def fields(records):
++        return {(r['sha256'],e['field']['usr']):(r,e) for r in records
++            if r['discovery']['status'] in ('APPLICABLE','NOT_APPLICABLE')
++            for e in r['discovery']['candidates']+r['discovery']['rejected_fields']}
++    old=fields(baseline);new=fields(extended)
++    reasons=set(reason for _,e in old.values() for reason in e.get('reasons',[]))
++    rows=[]
++    for reason in sorted(reasons):
++        matches=[(r,e) for r,e in old.values() if reason in e.get('reasons',[])]
++        rows.append(dict(reason=reason,old_unique_fields=len(matches),old_unique_seeds=len({r['seed_id'] for r,e in matches}),
++            new_unique_fields=sum(reason in e.get('reasons',[]) for _,e in new.values()),
++            sole_discovery_blocker_fields=sum(set(e.get('reasons',[]))=={reason} for _,e in matches)))
++    detailed=[]
++    for key,(r,e) in old.items():
++        newer=new.get(key,(None,None))[1]
++        detailed.append(dict(seed_id=r['seed_id'],source_sha256=key[0],field_usr=key[1],canonical_type=e['canonical_type'],
++            old_overlapping_reasons=e.get('reasons',[]),new_overlapping_reasons=newer.get('reasons',[]) if newer else None,
++            member_use_count=e['member_use_count'],target_address_count=len(e['address_anchors']),
++            address_only_rule_would_reject=e['member_use_count']!=len(e['address_anchors']),
++            layout_independence_status=newer.get('layout_independence',{}).get('status') if newer else None))
++    classification={reason:'conservative implementation scope; not proof that C11 prohibits this construct' for reason in reasons}
++    classification['FIELD_NOT_SUPPORTED_ORDINARY_INT_UINT_BOOL']='mixed: legal bitfield base/range must be proved; omitted implementation-defined base types and qualifiers are model exclusions, not universal C11 illegality'
++    classification['UNCLASSIFIED_FIELD_USE']='unclosed analysis; some sizeof/other uses could cause independent violations, so no language-level conclusion follows from this label alone'
++    analysis=dict(field_denominator=len(old),seed_denominator=len(baseline),reason_rows=rows,per_field=detailed,
++        classification=classification,counts_overlap=True,
++        formal_first_reason_counts=baseline_summary['formal_first_reason_field_counts'],
++        distinction='formal scanner short-circuits; discovery reports independently evaluated overlapping blockers, not additional formal failures',
++        non_address_member_use_fields=sum(d['address_only_rule_would_reject'] for d in detailed),
++        layout_proven_independent_fields=sum(d['layout_independence_status']=='INDEPENDENT' for d in detailed),
++        layout_unproven_detail_field_counts=dict(Counter(reason for _,e in new.values() for reason in e.get('layout_independence',{}).get('reasons',[]))),
++        single_limit_relaxation_note='sole discovery blocker is a necessary counterfactual filter, not a claim that a formal MR would become applicable')
++    save(root/'rejection_analysis.json',analysis)
++    replays=[]
++    for oracle in [*sorted((PROJECT/'evidence/stage2e/experiment').glob('*/Oracle.json')),*sorted((root/'manual').glob('*/Oracle.json')),*sorted((root/'experiment').glob('real_*/Oracle.json'))]:
++        w=json.loads(oracle.read_text());p0=Path(w['source_map']['p0_file']).read_bytes();p1=Path(w['source_map']['p1_file']).read_bytes()
++        original=Path(w['provenance']['original_path']).read_bytes()
++        replays.append(dict(oracle=str(oracle),replay=verify_bitfield_witness(w,p0,p1,original)))
++    save(root/'witness_replay.json',replays)
++    before=json.loads((root/'before_hashes.json').read_text())
++    def current(path):return digest(path.read_bytes()) if path.is_file() else None
++    first_changed=[p for p,h in before['first_research'].items() if current(EDGM/p)!=h]
++    second_changed=[p for p,h in before['old_second_point'].items() if current(EDGM/p)!=h]
++    allowed={'second_point/README.md','second_point/docs/RESEARCH_DESIGN.md','second_point/src/edgm_second/mr_member_bitfield_addressability.py'}
++    unintended=[p for p in second_changed if p not in allowed]
++    selection=json.loads((root/'selection.json').read_text())
++    seed_changes=[r['source'] for r in selection if current(Path(r['source']))!=r['sha256']]
++    evidence_changes=[p for p in second_changed if '/evidence/' in p]
++    checks=dict(first_research_files_checked=len(before['first_research']),first_research_changed=first_changed,
++        preexisting_missing_first_research=[p for p,h in before['first_research'].items() if h is None],
++        old_second_point_files_checked=len(before['old_second_point']),intentional_old_changes=second_changed,
++        unintended_old_changes=unintended,old_evidence_changed=evidence_changes,seeds_checked=50,seeds_changed=seed_changes,
++        runtime_headers_checked=sum('/csmith/runtime/' in p for p in before['first_research']),all_saved_witnesses_replayed=replays)
++    assert not first_changed and not unintended and not evidence_changes and not seed_changes
++    save(root/'readonly_check.json',checks)
++    files=[*sorted((PROJECT/'src/edgm_second').glob('*.py')),*sorted((PROJECT/'tests').glob('test_stage2f*.py')),
++        Path(__file__).resolve(),PROJECT/'README.md',PROJECT/'docs/RESEARCH_DESIGN.md',PROJECT/'docs/STAGE2F_NATIVE_DEPENDENCY_VALIDATION.md']
++    save(root/'implementation_manifest.json',{str(p.relative_to(PROJECT)):digest(p.read_bytes()) for p in files})
++    print(json.dumps(dict(context_summary=context_summary,layout_proven_independent_fields=analysis['layout_proven_independent_fields'],
++        baseline_safe_fields=baseline_summary['safe_fields'],extended_safe_fields=sum(r['formal']['candidate_count'] for r in completed),
++        readonly_ok=True,replays=len(replays)),ensure_ascii=False,indent=2))
++
++
++if __name__=='__main__':main()

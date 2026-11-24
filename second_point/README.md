@@ -1,4 +1,4 @@
-# EDGM 第二研究点：阶段 0–2E
+# EDGM 第二研究点：阶段 0–2F
 
 独立于 EDGM 的只读基础框架。已实现环境记录、合法候选 P0 加载与双编译器验证、主文件 AST 提取。
 阶段 2A 已新增单条 typedef 依赖变换及独立约束见证；完整诊断比较与强化学习尚未实现。
@@ -117,3 +117,25 @@ PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m edgm_second.enr
 
 输出目录必须不存在；只读扫描原阶段 2B 清单，固定前五个真实种子作合法增强。
 报告中的 0 原生候选是当前保守证明子集的结果，不是语言层面的穷尽结论。
+
+## 阶段 2F：原生依赖范围与布局独立性
+
+本阶段固定复用阶段 2B 的 50 个原始种子，先运行默认阶段 2E 检查器，
+再仅启用“无关 sizeof/_Alignof 的可重放独立性证明”。其他原生闭合限制不变。
+实际统计、零结果及下一步建议见[阶段 2F 验收](docs/STAGE2F_NATIVE_DEPENDENCY_VALIDATION.md)。
+语义上下文记录包括被拒绝字段，不将原始结构复杂性当作安全 MR 动作空间。
+
+新克隆仓库先运行 `python3 second_point/tools/restore_evidence.py`，恢复无损归档的历史 JSON。
+以下输出目录都必须尚不存在；不要直接覆盖已保存的阶段结果：
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m edgm_second.native_dependency_run \
+  --phase baseline --out-dir second_point/evidence/stage2f/reproduce_baseline
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m edgm_second.native_dependency_run \
+  --phase manual --out-dir second_point/evidence/stage2f/reproduce_manual
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m edgm_second.native_dependency_run \
+  --phase extended --out-dir second_point/evidence/stage2f/reproduce_extended
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m unittest discover -s second_point/tests -v
+```
+
+阶段 2F 不新增增强模板、不实现其他 MR、Bandit、LLM 或奖励函数；默认阶段 2E 接口保持原有行为。
