@@ -1,0 +1,22 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0040_1851076961.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_017/split_pointer_00/P0.c
+@@ -80,6 +80,10 @@
+ /* ---------------------------------------- */
+ int main (int argc, char* argv[])
+ {
++struct ag_a667a21d07_2396_0_0_record { int ag_a667a21d07_2396_0_0_value; };
++struct ag_a667a21d07_2396_0_0_record ag_a667a21d07_2396_0_0_object = { argc };
++int *ag_a667a21d07_2396_0_0_left = &ag_a667a21d07_2396_0_0_object.ag_a667a21d07_2396_0_0_value;
++
+     int i;
+ 
+     /* edgm diversify: do/while + nested while (tag=34367) */
+@@ -91,7 +95,7 @@
+         }
+     } while (0);
+     int print_hash_value = 0;
+-    if (argc == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
++    if ((*ag_a667a21d07_2396_0_0_left) == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
+ 
+     /* edgm diversify: local enum + use (tag=49763) */
+     enum edgm_le_49763 { edgm_le_49763_X = 0, edgm_le_49763_Y = 1, edgm_le_49763_Z = 3 };

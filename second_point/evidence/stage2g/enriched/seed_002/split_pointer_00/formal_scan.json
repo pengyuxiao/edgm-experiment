@@ -1,0 +1,87 @@
+{
+  "status": "APPLICABLE",
+  "candidates": [
+    {
+      "field_usr": "c:P0.c@30725@F@func_6@S@ag_fdc4e62fe8_31872_0_0_record@FI@ag_fdc4e62fe8_31872_0_0_value",
+      "expected_addresses": 1
+    }
+  ],
+  "route": {
+    "parameter": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_002/split_pointer_00/P0.c",
+      "line": 379,
+      "column": 70,
+      "offset": 30697,
+      "start_offset": 30688,
+      "end_offset": 30700,
+      "node_identity": "c:P0.c@30688@F@func_6@p_9:PARM_DECL:30688",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int32_t  p_9",
+      "usr": "c:P0.c@30688@F@func_6@p_9",
+      "referenced_usr": "c:P0.c@30688@F@func_6@p_9",
+      "kind": "PARM_DECL"
+    },
+    "initializer_read": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_002/split_pointer_00/P0.c",
+      "line": 382,
+      "column": 74,
+      "offset": 30876,
+      "start_offset": 30876,
+      "end_offset": 30879,
+      "node_identity": "c:P0.c@30688@F@func_6@p_9:DECL_REF_EXPR:30876",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_9",
+      "usr": "",
+      "referenced_usr": "c:P0.c@30688@F@func_6@p_9",
+      "kind": "DECL_REF_EXPR"
+    },
+    "object": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_002/split_pointer_00/P0.c",
+      "line": 382,
+      "column": 39,
+      "offset": 30841,
+      "start_offset": 30803,
+      "end_offset": 30881,
+      "node_identity": "c:P0.c@30803@F@func_6@ag_fdc4e62fe8_31872_0_0_object:VAR_DECL:30803",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "struct ag_fdc4e62fe8_31872_0_0_record ag_fdc4e62fe8_31872_0_0_object = { p_9 }",
+      "usr": "c:P0.c@30803@F@func_6@ag_fdc4e62fe8_31872_0_0_object",
+      "referenced_usr": "c:P0.c@30803@F@func_6@ag_fdc4e62fe8_31872_0_0_object",
+      "kind": "VAR_DECL"
+    },
+    "original_operation": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_002/split_pointer_00/P0.c",
+      "line": 396,
+      "column": 83,
+      "offset": 31601,
+      "start_offset": 31601,
+      "end_offset": 32162,
+      "node_identity": "c:safe_math.h@F@safe_lshift_func_int16_t_s_s:CALL_EXPR:31601",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "safe_lshift_func_int16_t_s_s(((*l_1881) = (safe_div_func_uint8_t_u_u((safe_lshift_func_uint16_t_u_u(((g_1860[4] = g_1860[4]) == (g_1862 = &g_1861)), ((safe_lshift_func_int8_t_s_s((((safe_div_func_uint8_t_u_u((((safe_add_func_uint32_t_u_u(((safe_unary_minus_func_int32_t_s(((*g_1594) = ((safe_rshift_func_int32_t_s_u((l_1851 = ((l_1874 = l_1874) != (l_1875 = l_1875))), 12)) < l_1850)))) & (safe_unary_minus_func_uint16_t_u(l_1878))), (-1L))) > l_1879) ^ 0xD8C3L), l_1880)) ^ 65535UL) >= 0UL), 4)) <= (***g_105)))), (*g_1493)))), (*ag_fdc4e62fe8_31872_0_0_left))",
+      "usr": "",
+      "referenced_usr": "c:safe_math.h@F@safe_lshift_func_int16_t_s_s",
+      "kind": "CALL_EXPR"
+    },
+    "route_expression": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_002/split_pointer_00/P0.c",
+      "line": 396,
+      "column": 612,
+      "offset": 32130,
+      "start_offset": 32130,
+      "end_offset": 32161,
+      "node_identity": ":PAREN_EXPR:32130",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "(*ag_fdc4e62fe8_31872_0_0_left)",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "PAREN_EXPR"
+    },
+    "record_usr": "c:P0.c@30725@F@func_6@S@ag_fdc4e62fe8_31872_0_0_record",
+    "helper_usr": null,
+    "helper_anchor": null,
+    "cross_function_value_route": false,
+    "proof": "immutable initialized parameter -> private member initialized once -> known pointer/identity-callback -> same original binary operation"
+  },
+  "reasons": []
+}

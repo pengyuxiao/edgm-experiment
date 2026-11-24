@@ -1,0 +1,13 @@
+{
+  "maximum_positions_per_family_per_seed": 2,
+  "families": [
+    "split_pointer",
+    "nested_two_addresses",
+    "typedef_callback"
+  ],
+  "position_order": "non-main then byte offset; second prefers a distinct function",
+  "p1_selection": "10 distinct seeds per family; family i rotates fixed seed order by i*10, first position per seed; no diagnostic-dependent replacement",
+  "p1_limit": 30,
+  "expected_seed_count": 50,
+  "original_seed_generation": false
+}

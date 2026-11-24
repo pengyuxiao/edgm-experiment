@@ -1,0 +1,27 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0034_760340181.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_010/nested_two_addresses_00/P0.c
+@@ -503,7 +503,10 @@
+  * writes: g_58
+  */
+ static int8_t  func_24(int32_t  p_25, int32_t * p_26, const int32_t * p_27, int32_t * p_28)
+-{ 
++{
++struct ag_fe81a3e7f2_31755_1_0_record { int ag_fe81a3e7f2_31755_1_0_value; };
++struct ag_fe81a3e7f2_31755_1_0_record ag_fe81a3e7f2_31755_1_0_object = { p_25 };
++ 
+ /* edgm diversify: do/while + nested while (tag=30922) */
+ do {
+     unsigned edgm_d_30922 = (((((((((unsigned)0u) + 17u) & 0xFFu)) << 1) & 0xFFu)) & 3u) + 1u;
+@@ -537,7 +540,11 @@
+             break;
+         }
+     } while (0);
+-    (*l_1668) = (0L >= (safe_lshift_func_int8_t_s_s(p_25, 3)));
++    {
++int *ag_fe81a3e7f2_31755_1_0_left = &ag_fe81a3e7f2_31755_1_0_object.ag_fe81a3e7f2_31755_1_0_value;
++int *ag_fe81a3e7f2_31755_1_0_right = &ag_fe81a3e7f2_31755_1_0_object.ag_fe81a3e7f2_31755_1_0_value;
++(*l_1668) = (0L >= (safe_lshift_func_int8_t_s_s((*(ag_fe81a3e7f2_31755_1_0_left == ag_fe81a3e7f2_31755_1_0_right ? ag_fe81a3e7f2_31755_1_0_left : ag_fe81a3e7f2_31755_1_0_right)), 3)));
++}
+     return (*l_1668);
+ }
+ 

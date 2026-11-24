@@ -1,0 +1,87 @@
+{
+  "status": "APPLICABLE",
+  "candidates": [
+    {
+      "field_usr": "c:P0.c@134001@F@func_55@S@ag_26c0094bb9_147646_1_0_record@FI@ag_26c0094bb9_147646_1_0_value",
+      "expected_addresses": 2
+    }
+  ],
+  "route": {
+    "parameter": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_008/nested_two_addresses_01/P0.c",
+      "line": 1576,
+      "column": 66,
+      "offset": 133993,
+      "start_offset": 133984,
+      "end_offset": 133997,
+      "node_identity": "c:P0.c@133984@F@func_55@p_58:PARM_DECL:133984",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int32_t  p_58",
+      "usr": "c:P0.c@133984@F@func_55@p_58",
+      "referenced_usr": "c:P0.c@133984@F@func_55@p_58",
+      "kind": "PARM_DECL"
+    },
+    "initializer_read": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_008/nested_two_addresses_01/P0.c",
+      "line": 1579,
+      "column": 76,
+      "offset": 134156,
+      "start_offset": 134156,
+      "end_offset": 134160,
+      "node_identity": "c:P0.c@133984@F@func_55@p_58:DECL_REF_EXPR:134156",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_58",
+      "usr": "",
+      "referenced_usr": "c:P0.c@133984@F@func_55@p_58",
+      "kind": "DECL_REF_EXPR"
+    },
+    "object": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_008/nested_two_addresses_01/P0.c",
+      "line": 1579,
+      "column": 40,
+      "offset": 134120,
+      "start_offset": 134081,
+      "end_offset": 134162,
+      "node_identity": "c:P0.c@134081@F@func_55@ag_26c0094bb9_147646_1_0_object:VAR_DECL:134081",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "struct ag_26c0094bb9_147646_1_0_record ag_26c0094bb9_147646_1_0_object = { p_58 }",
+      "usr": "c:P0.c@134081@F@func_55@ag_26c0094bb9_147646_1_0_object",
+      "referenced_usr": "c:P0.c@134081@F@func_55@ag_26c0094bb9_147646_1_0_object",
+      "kind": "VAR_DECL"
+    },
+    "original_operation": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_008/nested_two_addresses_01/P0.c",
+      "line": 1725,
+      "column": 149,
+      "offset": 148017,
+      "start_offset": 148017,
+      "end_offset": 148679,
+      "node_identity": ":BINARY_OPERATOR:148017",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "(*(ag_26c0094bb9_147646_1_0_left == ag_26c0094bb9_147646_1_0_right ? ag_26c0094bb9_147646_1_0_left : ag_26c0094bb9_147646_1_0_right)) <= (p_58 < ((safe_sub_func_int16_t_s_s(l_714, (((safe_rshift_func_int32_t_s_s((safe_mod_func_uint32_t_u_u(g_787, (safe_mod_func_int16_t_s_s((((-8L) & (safe_add_func_uint64_t_u_u(((safe_sub_func_uint16_t_u_u((safe_rshift_func_int32_t_s_s((safe_add_func_int16_t_s_s(((~((safe_mul_func_int32_t_s_s((((safe_mul_func_uint64_t_u_u((*g_436), 0x983D74373A461B1ELL)) & 0x1D5CL) && 0L), p_58)) < p_57)) | 0x51DF64CC5AAD56B9LL), 0x359AL)), 11)), (*g_192))) | l_803), p_58))) < 0x03C7L), p_58)))), (*p_56))) > p_57) >= g_740.f2))) != p_57))",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "BINARY_OPERATOR"
+    },
+    "route_expression": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_008/nested_two_addresses_01/P0.c",
+      "line": 1725,
+      "column": 149,
+      "offset": 148017,
+      "start_offset": 148017,
+      "end_offset": 148150,
+      "node_identity": ":PAREN_EXPR:148017",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "(*(ag_26c0094bb9_147646_1_0_left == ag_26c0094bb9_147646_1_0_right ? ag_26c0094bb9_147646_1_0_left : ag_26c0094bb9_147646_1_0_right))",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "PAREN_EXPR"
+    },
+    "record_usr": "c:P0.c@134001@F@func_55@S@ag_26c0094bb9_147646_1_0_record",
+    "helper_usr": null,
+    "helper_anchor": null,
+    "cross_function_value_route": false,
+    "proof": "immutable initialized parameter -> private member initialized once -> known pointer/identity-callback -> same original binary operation"
+  },
+  "reasons": []
+}

@@ -1,0 +1,44 @@
+{
+  "seed_id": "seed_0006_1782222726",
+  "seed_index": 31,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0006_1782222726.c",
+  "s_sha256": "ce66220d87d64cdfa24dfbe352cdb63597477fdfaec7706c4f6b3c8a5ed4c2eb",
+  "position_id": "ce66220d87d64cdfa24dfbe352cdb63597477fdfaec7706c4f6b3c8a5ed4c2eb:c:seed_0006_1782222726.c@71023@F@func_98@p_101:71643",
+  "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+  "enrichment_family": "split_pointer",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_031/split_pointer_00",
+  "P0_id": "0ff83c454b3d6bd2140f5cb7f37a822043a6a5e459e2b891a09aa7225b366626",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_031/split_pointer_00/P0.c",
+  "semantic_context_signature": "7b18f98be8dc6922a2b15dd46c80ecd296834d8f2d45bf170514790444adeffb",
+  "semantic_context": {
+    "family": "split_pointer",
+    "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "input_type": "UINT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "return_value",
+    "original_context": [
+      "RETURN_STMT",
+      "RETURN_STMT",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 1,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": false,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "private_pointer_dereference",
+    "value_route": "private member -> address -> pointer selection -> dereference",
+    "typedef_depth": 0
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:P0.c@71042@F@func_98@S@ag_ce66220d87_71643_0_0_record@FI@ag_ce66220d87_71643_0_0_value",
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "c75317f9a93ecdb6385c9bcb19b968f9133729fd26ade220b79d5274a9347735"
+}

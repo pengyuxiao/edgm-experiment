@@ -1,0 +1,32 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0050_1010242943.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_047/typedef_callback_01/P0.c
+@@ -479,8 +479,19 @@
+  * reads : g_64 g_1220 g_548 g_176 g_567 g_1412 g_146 g_210 g_2373 g_2380 g_1521 g_1383.f0
+  * writes: g_567 g_223 g_549 g_235 g_64 g_176 g_210 g_91 g_2380
+  */
++struct ag_58fb5d4bba_51958_2_0_record { int ag_58fb5d4bba_51958_2_0_value; };
++struct ag_58fb5d4bba_51958_2_0_other { int ag_58fb5d4bba_51958_2_0_value; };
++typedef struct ag_58fb5d4bba_51958_2_0_record ag_58fb5d4bba_51958_2_0_root;
++typedef ag_58fb5d4bba_51958_2_0_root ag_58fb5d4bba_51958_2_0_middle;
++typedef ag_58fb5d4bba_51958_2_0_middle ag_58fb5d4bba_51958_2_0_argument;
++typedef int (*ag_58fb5d4bba_51958_2_0_callback)(ag_58fb5d4bba_51958_2_0_root);
++struct ag_58fb5d4bba_51958_2_0_dispatch_type { ag_58fb5d4bba_51958_2_0_callback ag_58fb5d4bba_51958_2_0_invoke; };
++static int ag_58fb5d4bba_51958_2_0_extract(ag_58fb5d4bba_51958_2_0_root ag_58fb5d4bba_51958_2_0_input) { return ag_58fb5d4bba_51958_2_0_input.ag_58fb5d4bba_51958_2_0_value; }
+ static uint8_t  func_23(uint64_t * p_24, int32_t  p_25)
+-{ /* block id: 899 */
++{
++ag_58fb5d4bba_51958_2_0_argument ag_58fb5d4bba_51958_2_0_object = { p_25 };
++struct ag_58fb5d4bba_51958_2_0_dispatch_type ag_58fb5d4bba_51958_2_0_dispatch = { ag_58fb5d4bba_51958_2_0_extract };
++ /* block id: 899 */
+     uint16_t l_2064 = 0x560FL;
+     int32_t l_2065 = 7L;
+     int32_t *l_2066 = (void*)0;
+@@ -540,7 +551,7 @@
+     int i, j, k;
+     for (i = 0; i < 8; i++)
+         l_2308[i] = &g_1521[6][1][1];
+-    if ((p_25 != (g_64 | (((l_2065 = ((l_2064 && p_25) | l_2064)) , l_2066) != &g_1093[4][4][0]))))
++    if ((ag_58fb5d4bba_51958_2_0_dispatch.ag_58fb5d4bba_51958_2_0_invoke(ag_58fb5d4bba_51958_2_0_object) != (g_64 | (((l_2065 = ((l_2064 && p_25) | l_2064)) , l_2066) != &g_1093[4][4][0]))))
+     { /* block id: 901 */
+         int32_t **l_2067 = (void*)0;
+         int32_t **l_2068 = &l_2066;

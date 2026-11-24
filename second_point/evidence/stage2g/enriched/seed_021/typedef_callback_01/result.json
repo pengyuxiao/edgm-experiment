@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0041_835489636",
+  "seed_index": 21,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0041_835489636.c",
+  "s_sha256": "f2e0c7a7bd07f9c76da1ce66680dabf3e7befcf8853692df63c4e9bc06c353bd",
+  "position_id": "f2e0c7a7bd07f9c76da1ce66680dabf3e7befcf8853692df63c4e9bc06c353bd:c:seed_0041_835489636.c@140456@F@func_90@p_95:141206",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_021/typedef_callback_01",
+  "P0_id": "290dcd8eb2fbf1d09139d7fb2fc6b0f7de23f44eb266d7554bc28a9fd7db51df",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_021/typedef_callback_01/P0.c",
+  "semantic_context_signature": "f2aac628e848917cca32e8ddd018ee33e45ea08365675cf8c0cef255bf76817b",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "function_argument",
+    "original_context": [
+      "CALL_EXPR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_f2e0c7a7bd_141206_2_0_dispatch_type@FI@ag_f2e0c7a7bd_141206_2_0_invoke",
+      "argument_usr": "c:P0.c@141235@F@func_90@ag_f2e0c7a7bd_141206_2_0_object",
+      "call_offset": 142167,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "20a3f44d797f98ac7d39d5ce42d1a6471c9211f8a2bca87b97eb966811f394f3"
+}

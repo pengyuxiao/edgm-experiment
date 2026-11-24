@@ -87,6 +87,27 @@ def verify_constraint_witness(witness, p0, p1):
         'P0_PARAMETER_ARGUMENT_SAME_DECLARATION_IDENTITY', 'ONE_ISOLATED_ARGUMENT_VARIABLE',
         'ZERO_INITIALIZER_VALID_FOR_BOTH_RECORDS', 'AFFECTED_TYPE_REFERENCES_CLOSED',
         'NO_MACROS_ATTRIBUTES_OR_TAG_CAPTURE'}
+    initializer=w['isolation'].get('initializer_proof')
+    if initializer:
+        required_preconditions.remove('ZERO_INITIALIZER_VALID_FOR_BOTH_RECORDS')
+        required_preconditions.add('INT_PARAMETER_INITIALIZER_VALID_FOR_BOTH_RECORDS')
+        if initializer['canonical_kind']!='INT' or initializer['qualifiers'] is not False:
+            raise ValueError('invalid parameter initializer type')
+        read=initializer['read'];parameter=initializer['parameter']
+        for a in (read,parameter):
+            if a['file']!=mapping['p0_file'] or p0[a['start_offset']:a['end_offset']].decode()!=a['source_text']:
+                raise ValueError('invalid initializer anchor')
+            from .source_edit import anchor
+            expected_anchor=anchor(a['file'],p0,a['offset'],a['start_offset'],a['end_offset'],a['node_identity'])
+            if any(a[k]!=v for k,v in expected_anchor.items()):raise ValueError('initializer coordinates mismatch')
+        variable_anchor=w['source_anchors']['argument_declaration']['p0']
+        if not variable_anchor['start_offset']<=read['start_offset']<read['end_offset']<=variable_anchor['end_offset']:
+            raise ValueError('initializer read outside argument declaration')
+        if read['node_identity']['referenced_usr']!=parameter['node_identity']['usr']:
+            raise ValueError('initializer declaration identity mismatch')
+        if initializer['initializer_text']!='{ '+read['source_text']+' }':raise ValueError('initializer syntax mismatch')
+        for record in (w['expected_parameter_type'],w['actual_argument_type']['p1']):
+            if not record['fields'] or any(f['kind']!='int' for f in record['fields']):raise ValueError('initializer not valid for both records')
     if {p['id'] for p in w['preconditions']} != required_preconditions:
         raise ValueError('missing or unexpected preconditions')
     error = w['expected_error']

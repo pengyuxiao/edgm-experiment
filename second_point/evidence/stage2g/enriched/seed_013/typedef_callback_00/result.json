@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0044_901282285",
+  "seed_index": 13,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0044_901282285.c",
+  "s_sha256": "1dfd952939eada7aeb3f0cdd5150c699d30b4a3b39197b12f5fed04b87d168dc",
+  "position_id": "1dfd952939eada7aeb3f0cdd5150c699d30b4a3b39197b12f5fed04b87d168dc:c:seed_0044_901282285.c@44867@F@func_13@p_17:45963",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_013/typedef_callback_00",
+  "P0_id": "402e2971b97acad8ecb49a0e552527a0c36ad9c7101c14f676b45872cdbc6320",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_013/typedef_callback_00/P0.c",
+  "semantic_context_signature": "b47d9970dfc2fb078e579a99a92ec7e871b868dee24074627b5423a0091291f6",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "return_value",
+    "original_context": [
+      "RETURN_STMT",
+      "RETURN_STMT",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_1dfd952939_45963_2_0_dispatch_type@FI@ag_1dfd952939_45963_2_0_invoke",
+      "argument_usr": "c:P0.c@45626@F@func_13@ag_1dfd952939_45963_2_0_object",
+      "call_offset": 46899,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "af6661e297af13f8142b1d28f6514a20f1caca15d9afaf6a30ee8df3a5a82e4e"
+}

@@ -1,0 +1,87 @@
+{
+  "status": "APPLICABLE",
+  "candidates": [
+    {
+      "field_usr": "c:P0.c@58052@F@func_15@S@ag_706d7e2b0e_60559_0_0_record@FI@ag_706d7e2b0e_60559_0_0_value",
+      "expected_addresses": 1
+    }
+  ],
+  "route": {
+    "parameter": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_028/split_pointer_00/P0.c",
+      "line": 639,
+      "column": 103,
+      "offset": 58044,
+      "start_offset": 58034,
+      "end_offset": 58048,
+      "node_identity": "c:P0.c@58034@F@func_15@p_20:PARM_DECL:58034",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "uint32_t  p_20",
+      "usr": "c:P0.c@58034@F@func_15@p_20",
+      "referenced_usr": "c:P0.c@58034@F@func_15@p_20",
+      "kind": "PARM_DECL"
+    },
+    "initializer_read": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_028/split_pointer_00/P0.c",
+      "line": 642,
+      "column": 74,
+      "offset": 58212,
+      "start_offset": 58212,
+      "end_offset": 58216,
+      "node_identity": "c:P0.c@58034@F@func_15@p_20:DECL_REF_EXPR:58212",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_20",
+      "usr": "",
+      "referenced_usr": "c:P0.c@58034@F@func_15@p_20",
+      "kind": "DECL_REF_EXPR"
+    },
+    "object": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_028/split_pointer_00/P0.c",
+      "line": 642,
+      "column": 39,
+      "offset": 58177,
+      "start_offset": 58139,
+      "end_offset": 58218,
+      "node_identity": "c:P0.c@58139@F@func_15@ag_706d7e2b0e_60559_0_0_object:VAR_DECL:58139",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "struct ag_706d7e2b0e_60559_0_0_record ag_706d7e2b0e_60559_0_0_object = { p_20 }",
+      "usr": "c:P0.c@58139@F@func_15@ag_706d7e2b0e_60559_0_0_object",
+      "referenced_usr": "c:P0.c@58139@F@func_15@ag_706d7e2b0e_60559_0_0_object",
+      "kind": "VAR_DECL"
+    },
+    "original_operation": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_028/split_pointer_00/P0.c",
+      "line": 654,
+      "column": 12,
+      "offset": 60811,
+      "start_offset": 60811,
+      "end_offset": 61131,
+      "node_identity": "c:safe_math.h@F@safe_div_func_int8_t_s_s:CALL_EXPR:60811",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "safe_div_func_int8_t_s_s((*ag_706d7e2b0e_60559_0_0_left), (safe_mul_func_int32_t_s_s((l_1572 != (((0x0DEEL || (**g_835)) <= (safe_lshift_func_uint16_t_u_u(((safe_mod_func_uint64_t_u_u(l_1577, 0x577B7293C1B96038LL)) && ((safe_rshift_func_uint64_t_u_u(g_162, ((void*)0 == l_1572))) ^ 0L)), 12))) , l_1572)), 0xF39A8034L)))",
+      "usr": "",
+      "referenced_usr": "c:safe_math.h@F@safe_div_func_int8_t_s_s",
+      "kind": "CALL_EXPR"
+    },
+    "route_expression": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_028/split_pointer_00/P0.c",
+      "line": 654,
+      "column": 37,
+      "offset": 60836,
+      "start_offset": 60836,
+      "end_offset": 60867,
+      "node_identity": ":PAREN_EXPR:60836",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "(*ag_706d7e2b0e_60559_0_0_left)",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "PAREN_EXPR"
+    },
+    "record_usr": "c:P0.c@58052@F@func_15@S@ag_706d7e2b0e_60559_0_0_record",
+    "helper_usr": null,
+    "helper_anchor": null,
+    "cross_function_value_route": false,
+    "proof": "immutable initialized parameter -> private member initialized once -> known pointer/identity-callback -> same original binary operation"
+  },
+  "reasons": []
+}

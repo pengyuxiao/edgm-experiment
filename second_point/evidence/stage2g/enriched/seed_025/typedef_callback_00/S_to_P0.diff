@@ -1,0 +1,32 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0049_54484730.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_025/typedef_callback_00/P0.c
+@@ -269,8 +269,19 @@
+  * reads : g_30 g_37 g_28 g_35 g_670 g_2468 g_2991 g_1172 g_127 g_1598 g_1056 g_3007 g_2717 g_1405 g_1406 g_2632 g_2633 g_547 g_420 g_2487 g_898 g_377 g_388 g_389 g_1925 g_1923 g_3126 g_3127 g_2662
+  * writes: g_37 g_28 g_35 g_670 g_946 g_2664 g_547 g_127 g_276 g_2760 g_2991 g_1599 g_1056 g_1269 g_450 g_1274 g_420 g_2631 g_898 g_377 g_1924
+  */
++struct ag_fdf3d43795_34624_2_0_record { int ag_fdf3d43795_34624_2_0_value; };
++struct ag_fdf3d43795_34624_2_0_other { int ag_fdf3d43795_34624_2_0_value; };
++typedef struct ag_fdf3d43795_34624_2_0_record ag_fdf3d43795_34624_2_0_root;
++typedef ag_fdf3d43795_34624_2_0_root ag_fdf3d43795_34624_2_0_middle;
++typedef ag_fdf3d43795_34624_2_0_middle ag_fdf3d43795_34624_2_0_argument;
++typedef int (*ag_fdf3d43795_34624_2_0_callback)(ag_fdf3d43795_34624_2_0_root);
++struct ag_fdf3d43795_34624_2_0_dispatch_type { ag_fdf3d43795_34624_2_0_callback ag_fdf3d43795_34624_2_0_invoke; };
++static int ag_fdf3d43795_34624_2_0_extract(ag_fdf3d43795_34624_2_0_root ag_fdf3d43795_34624_2_0_input) { return ag_fdf3d43795_34624_2_0_input.ag_fdf3d43795_34624_2_0_value; }
+ static uint8_t  func_7(uint8_t  p_8, uint32_t  p_9, uint32_t  p_10, uint32_t  p_11, int32_t  p_12)
+-{ /* block id: 7 */
++{
++ag_fdf3d43795_34624_2_0_argument ag_fdf3d43795_34624_2_0_object = { p_12 };
++struct ag_fdf3d43795_34624_2_0_dispatch_type ag_fdf3d43795_34624_2_0_dispatch = { ag_fdf3d43795_34624_2_0_extract };
++ /* block id: 7 */
+     int32_t *l_36[7][10] = {{&g_37[3],&g_37[3],(void*)0,&g_37[1],&g_37[1],&g_37[1],(void*)0,&g_37[3],&g_37[3],(void*)0},{&g_37[1],&g_37[1],&g_37[2],&g_37[2],&g_37[1],&g_37[1],(void*)0,&g_37[1],&g_37[1],&g_37[2]},{&g_37[1],&g_37[3],&g_37[1],&g_37[2],(void*)0,(void*)0,&g_37[2],&g_37[1],&g_37[3],&g_37[1]},{&g_37[1],&g_37[1],&g_37[3],&g_37[1],&g_37[3],&g_37[1],&g_37[1],&g_37[1],&g_37[1],&g_37[3]},{&g_37[1],&g_37[1],&g_37[1],&g_37[1],&g_37[3],&g_37[1],&g_37[3],&g_37[1],&g_37[1],&g_37[1]},{&g_37[3],&g_37[1],&g_37[2],(void*)0,(void*)0,&g_37[2],&g_37[1],&g_37[3],&g_37[1],&g_37[2]},{&g_37[1],&g_37[1],(void*)0,&g_37[1],&g_37[1],&g_37[2],&g_37[2],&g_37[1],&g_37[1],(void*)0}};
+     int32_t l_68 = (-1L);
+     const uint32_t *l_2783 = &g_723[1];
+@@ -382,7 +393,7 @@
+                 l_2981[i] = 1L;
+             for (i = 0; i < 4; i++)
+                 l_3235[i] = 8L;
+-            if (((safe_mul_func_uint32_t_u_u((((((*l_2821) ^ (p_11 > (((*l_2980) = (((l_2960 = 0x653E505A89ED1C5ALL) , l_2961) != ((safe_add_func_int64_t_s_s((((0xDEL > ((*g_2468) = ((safe_div_func_int64_t_s_s((l_2977 = (safe_add_func_uint16_t_u_u(((safe_mod_func_uint8_t_u_u(((safe_mod_func_int16_t_s_s((((*l_2803) = p_9) ^ 0xDDL), ((((((safe_sub_func_int16_t_s_s(((safe_mul_func_int32_t_s_s((l_2959[5] != (void*)0), l_2976[3][1][0])) || p_9), l_2976[3][2][1])) < l_2977) , p_8) != p_12) | (-1L)) & p_12))) ^ 7UL), l_2976[3][1][0])) , 0xBC3BL), (*l_2821)))), l_2978)) , l_2978))) || p_11) >= l_2978), 0x74751E30F9D820D0LL)) , l_2979[5][2][0]))) , 0x46L))) || 247UL) || l_2976[2][2][0]) ^ l_2981[1]), l_2978)) , l_2981[0]))
++            if (((safe_mul_func_uint32_t_u_u((((((*l_2821) ^ (p_11 > (((*l_2980) = (((l_2960 = 0x653E505A89ED1C5ALL) , l_2961) != ((safe_add_func_int64_t_s_s((((0xDEL > ((*g_2468) = ((safe_div_func_int64_t_s_s((l_2977 = (safe_add_func_uint16_t_u_u(((safe_mod_func_uint8_t_u_u(((safe_mod_func_int16_t_s_s((((*l_2803) = p_9) ^ 0xDDL), ((((((safe_sub_func_int16_t_s_s(((safe_mul_func_int32_t_s_s((l_2959[5] != (void*)0), l_2976[3][1][0])) || p_9), l_2976[3][2][1])) < l_2977) , p_8) != ag_fdf3d43795_34624_2_0_dispatch.ag_fdf3d43795_34624_2_0_invoke(ag_fdf3d43795_34624_2_0_object)) | (-1L)) & p_12))) ^ 7UL), l_2976[3][1][0])) , 0xBC3BL), (*l_2821)))), l_2978)) , l_2978))) || p_11) >= l_2978), 0x74751E30F9D820D0LL)) , l_2979[5][2][0]))) , 0x46L))) || 247UL) || l_2976[2][2][0]) ^ l_2981[1]), l_2978)) , l_2981[0]))
+             { /* block id: 1318 */
+                 uint64_t l_2982 = 0xD3C58BD62423FCBDLL;
+ 

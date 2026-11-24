@@ -1,0 +1,188 @@
+[
+  {
+    "family": "split_pointer",
+    "compiler": "gcc",
+    "build": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-w",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/split_pointer/P0.c",
+        "-o",
+        "/tmp/stage2g-range-os62ezcx/gcc"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.06288458895869553
+    },
+    "execution": {
+      "command": [
+        "/tmp/stage2g-range-os62ezcx/gcc"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.0009408788755536079
+    }
+  },
+  {
+    "family": "split_pointer",
+    "compiler": "clang",
+    "build": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-w",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/split_pointer/P0.c",
+        "-o",
+        "/tmp/stage2g-range-os62ezcx/clang"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.09198748390190303
+    },
+    "execution": {
+      "command": [
+        "/tmp/stage2g-range-os62ezcx/clang"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.0009479720611125231
+    }
+  },
+  {
+    "family": "nested_two_addresses",
+    "compiler": "gcc",
+    "build": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-w",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/nested_two_addresses/P0.c",
+        "-o",
+        "/tmp/stage2g-range-h_08qf9q/gcc"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.06194843910634518
+    },
+    "execution": {
+      "command": [
+        "/tmp/stage2g-range-h_08qf9q/gcc"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.0007821640465408564
+    }
+  },
+  {
+    "family": "nested_two_addresses",
+    "compiler": "clang",
+    "build": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-w",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/nested_two_addresses/P0.c",
+        "-o",
+        "/tmp/stage2g-range-h_08qf9q/clang"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.04773749900050461
+    },
+    "execution": {
+      "command": [
+        "/tmp/stage2g-range-h_08qf9q/clang"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.0008160860743373632
+    }
+  },
+  {
+    "family": "typedef_callback",
+    "compiler": "gcc",
+    "build": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-w",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/typedef_callback/P0.c",
+        "-o",
+        "/tmp/stage2g-range-bjtbc09_/gcc"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.05756198801100254
+    },
+    "execution": {
+      "command": [
+        "/tmp/stage2g-range-bjtbc09_/gcc"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.0008627551142126322
+    }
+  },
+  {
+    "family": "typedef_callback",
+    "compiler": "clang",
+    "build": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-w",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/typedef_callback/P0.c",
+        "-o",
+        "/tmp/stage2g-range-bjtbc09_/clang"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.13827619585208595
+    },
+    "execution": {
+      "command": [
+        "/tmp/stage2g-range-bjtbc09_/clang"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.0009331689216196537
+    }
+  }
+]

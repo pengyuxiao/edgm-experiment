@@ -1,0 +1,27 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0016_902851612.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_028/nested_two_addresses_01/P0.c
+@@ -2153,7 +2153,10 @@
+  * writes: g_192 g_72
+  */
+ static int32_t  func_63(uint32_t  p_64, int32_t  p_65, uint64_t  p_66)
+-{ /* block id: 75 */
++{
++struct ag_706d7e2b0e_172861_1_0_record { int ag_706d7e2b0e_172861_1_0_value; };
++struct ag_706d7e2b0e_172861_1_0_record ag_706d7e2b0e_172861_1_0_object = { p_65 };
++ /* block id: 75 */
+     int32_t * const l_252 = (void*)0;
+     const uint16_t l_292 = 0xC9C8L;
+     int64_t *l_306 = &g_268;
+@@ -2185,7 +2188,11 @@
+         int i, j, k;
+     }
+     (*l_331) = (18446744073709551608UL & ((safe_mul_func_uint8_t_u_u(((g_6[1][2][0] , l_252) == l_252), (safe_lshift_func_int8_t_s_s(((void*)0 == &l_292), 5)))) , (safe_unary_minus_func_uint32_t_u(p_66))));
+-    return p_65;
++    {
++int *ag_706d7e2b0e_172861_1_0_left = &ag_706d7e2b0e_172861_1_0_object.ag_706d7e2b0e_172861_1_0_value;
++int *ag_706d7e2b0e_172861_1_0_right = &ag_706d7e2b0e_172861_1_0_object.ag_706d7e2b0e_172861_1_0_value;
++return (*(ag_706d7e2b0e_172861_1_0_left == ag_706d7e2b0e_172861_1_0_right ? ag_706d7e2b0e_172861_1_0_left : ag_706d7e2b0e_172861_1_0_right));
++}
+ }
+ 
+ 

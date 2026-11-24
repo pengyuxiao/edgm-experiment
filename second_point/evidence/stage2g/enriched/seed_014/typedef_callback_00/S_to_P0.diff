@@ -1,0 +1,32 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0005_556354055.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_014/typedef_callback_00/P0.c
+@@ -819,8 +819,19 @@
+  * reads : g_466 g_1440 g_493 g_2196 g_149 g_142 g_88 g_75 g_69 g_2680
+  * writes: g_466 g_24 g_75 g_69 g_77
+  */
++struct ag_d38b9d8d5c_74218_2_0_record { int ag_d38b9d8d5c_74218_2_0_value; };
++struct ag_d38b9d8d5c_74218_2_0_other { int ag_d38b9d8d5c_74218_2_0_value; };
++typedef struct ag_d38b9d8d5c_74218_2_0_record ag_d38b9d8d5c_74218_2_0_root;
++typedef ag_d38b9d8d5c_74218_2_0_root ag_d38b9d8d5c_74218_2_0_middle;
++typedef ag_d38b9d8d5c_74218_2_0_middle ag_d38b9d8d5c_74218_2_0_argument;
++typedef int (*ag_d38b9d8d5c_74218_2_0_callback)(ag_d38b9d8d5c_74218_2_0_root);
++struct ag_d38b9d8d5c_74218_2_0_dispatch_type { ag_d38b9d8d5c_74218_2_0_callback ag_d38b9d8d5c_74218_2_0_invoke; };
++static int ag_d38b9d8d5c_74218_2_0_extract(ag_d38b9d8d5c_74218_2_0_root ag_d38b9d8d5c_74218_2_0_input) { return ag_d38b9d8d5c_74218_2_0_input.ag_d38b9d8d5c_74218_2_0_value; }
+ static uint64_t  func_2(int32_t  p_3)
+-{ /* block id: 1058 */
++{
++ag_d38b9d8d5c_74218_2_0_argument ag_d38b9d8d5c_74218_2_0_object = { p_3 };
++struct ag_d38b9d8d5c_74218_2_0_dispatch_type ag_d38b9d8d5c_74218_2_0_dispatch = { ag_d38b9d8d5c_74218_2_0_extract };
++ /* block id: 1058 */
+     int8_t **l_2524 = &g_1155;
+     int32_t l_2550 = 0x736E25D0L;
+     int32_t l_2605 = 0L;
+@@ -842,7 +853,7 @@
+         uint8_t l_2655 = 0xAFL;
+         int i, j, k;
+     }
+-    (*g_2680) = ((&g_1440 == ((*l_2662) = &g_2196)) != (safe_lshift_func_int32_t_s_s(((*g_88) ^= (safe_mul_func_uint8_t_u_u(p_3, (((l_2605 = (l_2668 , (safe_mul_func_uint16_t_u_u((safe_lshift_func_uint32_t_u_s(0x619775E7L, 4)), 7UL)))) ^ (((safe_div_func_int8_t_s_s(((+((((safe_mul_func_uint8_t_u_u((l_2550 = (p_3 || (g_24[3] = (((((safe_mul_func_uint64_t_u_u((*g_1440), l_2629)) ^ l_2629) && 255UL) < (-1L)) >= (*g_2196))))), p_3)) ^ p_3) || l_2550) , p_3)) , l_2550), 1L)) != l_2629) , l_2629)) > 0L)))), l_2668)));
++    (*g_2680) = ((&g_1440 == ((*l_2662) = &g_2196)) != (safe_lshift_func_int32_t_s_s(((*g_88) ^= (safe_mul_func_uint8_t_u_u(ag_d38b9d8d5c_74218_2_0_dispatch.ag_d38b9d8d5c_74218_2_0_invoke(ag_d38b9d8d5c_74218_2_0_object), (((l_2605 = (l_2668 , (safe_mul_func_uint16_t_u_u((safe_lshift_func_uint32_t_u_s(0x619775E7L, 4)), 7UL)))) ^ (((safe_div_func_int8_t_s_s(((+((((safe_mul_func_uint8_t_u_u((l_2550 = (p_3 || (g_24[3] = (((((safe_mul_func_uint64_t_u_u((*g_1440), l_2629)) ^ l_2629) && 255UL) < (-1L)) >= (*g_2196))))), p_3)) ^ p_3) || l_2550) , p_3)) , l_2550), 1L)) != l_2629) , l_2629)) > 0L)))), l_2668)));
+     return p_3;
+ }
+ 

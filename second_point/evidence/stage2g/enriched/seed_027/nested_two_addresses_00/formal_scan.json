@@ -1,0 +1,87 @@
+{
+  "status": "APPLICABLE",
+  "candidates": [
+    {
+      "field_usr": "c:P0.c@36167@F@func_58@S@ag_3d91dcd099_36833_1_0_record@FI@ag_3d91dcd099_36833_1_0_value",
+      "expected_addresses": 2
+    }
+  ],
+  "route": {
+    "parameter": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_027/nested_two_addresses_00/P0.c",
+      "line": 604,
+      "column": 50,
+      "offset": 36159,
+      "start_offset": 36150,
+      "end_offset": 36163,
+      "node_identity": "c:P0.c@36150@F@func_58@p_60:PARM_DECL:36150",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int32_t  p_60",
+      "usr": "c:P0.c@36150@F@func_58@p_60",
+      "referenced_usr": "c:P0.c@36150@F@func_58@p_60",
+      "kind": "PARM_DECL"
+    },
+    "initializer_read": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_027/nested_two_addresses_00/P0.c",
+      "line": 607,
+      "column": 74,
+      "offset": 36318,
+      "start_offset": 36318,
+      "end_offset": 36322,
+      "node_identity": "c:P0.c@36150@F@func_58@p_60:DECL_REF_EXPR:36318",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_60",
+      "usr": "",
+      "referenced_usr": "c:P0.c@36150@F@func_58@p_60",
+      "kind": "DECL_REF_EXPR"
+    },
+    "object": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_027/nested_two_addresses_00/P0.c",
+      "line": 607,
+      "column": 39,
+      "offset": 36283,
+      "start_offset": 36245,
+      "end_offset": 36324,
+      "node_identity": "c:P0.c@36245@F@func_58@ag_3d91dcd099_36833_1_0_object:VAR_DECL:36245",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "struct ag_3d91dcd099_36833_1_0_record ag_3d91dcd099_36833_1_0_object = { p_60 }",
+      "usr": "c:P0.c@36245@F@func_58@ag_3d91dcd099_36833_1_0_object",
+      "referenced_usr": "c:P0.c@36245@F@func_58@ag_3d91dcd099_36833_1_0_object",
+      "kind": "VAR_DECL"
+    },
+    "original_operation": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_027/nested_two_addresses_00/P0.c",
+      "line": 631,
+      "column": 1,
+      "offset": 37187,
+      "start_offset": 37187,
+      "end_offset": 37323,
+      "node_identity": ":RETURN_STMT:37187",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "return (*(ag_3d91dcd099_36833_1_0_left == ag_3d91dcd099_36833_1_0_right ? ag_3d91dcd099_36833_1_0_left : ag_3d91dcd099_36833_1_0_right))",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "RETURN_STMT"
+    },
+    "route_expression": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_027/nested_two_addresses_00/P0.c",
+      "line": 631,
+      "column": 8,
+      "offset": 37194,
+      "start_offset": 37194,
+      "end_offset": 37323,
+      "node_identity": ":PAREN_EXPR:37194",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "(*(ag_3d91dcd099_36833_1_0_left == ag_3d91dcd099_36833_1_0_right ? ag_3d91dcd099_36833_1_0_left : ag_3d91dcd099_36833_1_0_right))",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "PAREN_EXPR"
+    },
+    "record_usr": "c:P0.c@36167@F@func_58@S@ag_3d91dcd099_36833_1_0_record",
+    "helper_usr": null,
+    "helper_anchor": null,
+    "cross_function_value_route": false,
+    "proof": "immutable initialized parameter -> private member initialized once -> known pointer/identity-callback -> same original binary operation"
+  },
+  "reasons": []
+}

@@ -1,0 +1,193 @@
+{
+  "schema": "stage2g-enrichment-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0025_1831379652.c",
+  "s_sha256": "9f6bac5ada210bc5f4525acd8e80ac9ef151b4ca7c8210ee6ec6ad860096def8",
+  "p0_sha256": "483fea386aa63dafe56489ea28ec7939ccb4c85f11e920e8cb74def418dde59f",
+  "position": {
+    "position_id": "9f6bac5ada210bc5f4525acd8e80ac9ef151b4ca7c8210ee6ec6ad860096def8:c:seed_0025_1831379652.c@123292@F@main@argc:123373",
+    "read": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0025_1831379652.c",
+      "line": 1466,
+      "column": 9,
+      "offset": 123373,
+      "start_offset": 123373,
+      "end_offset": 123377,
+      "node_identity": "c:seed_0025_1831379652.c@123292@F@main@argc:DECL_REF_EXPR:123373",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "argc",
+      "usr": "",
+      "referenced_usr": "c:seed_0025_1831379652.c@123292@F@main@argc",
+      "kind": "DECL_REF_EXPR"
+    },
+    "declaration": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0025_1831379652.c",
+      "line": 1462,
+      "column": 15,
+      "offset": 123296,
+      "start_offset": 123292,
+      "end_offset": 123300,
+      "node_identity": "c:seed_0025_1831379652.c@123292@F@main@argc:PARM_DECL:123292",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int argc",
+      "usr": "c:seed_0025_1831379652.c@123292@F@main@argc",
+      "referenced_usr": "c:seed_0025_1831379652.c@123292@F@main@argc",
+      "kind": "PARM_DECL"
+    },
+    "function_offset": 123282,
+    "body_start": 123316,
+    "kind": "INT",
+    "parameter": "argc",
+    "function_name": "main",
+    "function_usr": "c:@F@main",
+    "operator": "==",
+    "operation": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0025_1831379652.c",
+      "line": 1466,
+      "column": 9,
+      "offset": 123373,
+      "start_offset": 123373,
+      "end_offset": 123382,
+      "node_identity": ":BINARY_OPERATOR:123373",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "argc == 2",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "BINARY_OPERATOR"
+    },
+    "unit": [
+      123369,
+      123434
+    ],
+    "nested_supported": true,
+    "ancestor_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ]
+  },
+  "enrichment_family": "nested_two_addresses",
+  "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+  "semantic_context": {
+    "family": "nested_two_addresses",
+    "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "entry_control",
+    "original_operator": "==",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 2,
+    "cross_statement": true,
+    "cross_scope": true,
+    "cross_function": false,
+    "target_use_points": 2,
+    "record_shape": "single_integer_member",
+    "access_form": "private_pointer_dereference",
+    "value_route": "private member -> address -> pointer selection -> dereference",
+    "typedef_depth": 0
+  },
+  "semantic_context_signature": "9a70470986a5e6b3251072a1601ae3000e7286fda69125baec089c64e5d1e7ca",
+  "names": {
+    "record": "ag_9f6bac5ada_123373_1_0_record",
+    "other": "ag_9f6bac5ada_123373_1_0_other",
+    "value": "ag_9f6bac5ada_123373_1_0_value",
+    "object": "ag_9f6bac5ada_123373_1_0_object",
+    "left": "ag_9f6bac5ada_123373_1_0_left",
+    "right": "ag_9f6bac5ada_123373_1_0_right",
+    "root": "ag_9f6bac5ada_123373_1_0_root",
+    "middle": "ag_9f6bac5ada_123373_1_0_middle",
+    "argument": "ag_9f6bac5ada_123373_1_0_argument",
+    "callback": "ag_9f6bac5ada_123373_1_0_callback",
+    "dispatch_type": "ag_9f6bac5ada_123373_1_0_dispatch_type",
+    "dispatch": "ag_9f6bac5ada_123373_1_0_dispatch",
+    "extract": "ag_9f6bac5ada_123373_1_0_extract",
+    "input": "ag_9f6bac5ada_123373_1_0_input",
+    "invoke": "ag_9f6bac5ada_123373_1_0_invoke"
+  },
+  "replacement": "(*(ag_9f6bac5ada_123373_1_0_left == ag_9f6bac5ada_123373_1_0_right ? ag_9f6bac5ada_123373_1_0_left : ag_9f6bac5ada_123373_1_0_right))",
+  "edits": [
+    {
+      "start": 123317,
+      "end": 123317,
+      "before": "",
+      "after": "\nstruct ag_9f6bac5ada_123373_1_0_record { int ag_9f6bac5ada_123373_1_0_value; };\nstruct ag_9f6bac5ada_123373_1_0_record ag_9f6bac5ada_123373_1_0_object = { argc };\n"
+    },
+    {
+      "start": 123369,
+      "end": 123434,
+      "before": "if (argc == 2 && strcmp(argv[1], \"1\") == 0) print_hash_value = 1;",
+      "after": "{\nint *ag_9f6bac5ada_123373_1_0_left = &ag_9f6bac5ada_123373_1_0_object.ag_9f6bac5ada_123373_1_0_value;\nint *ag_9f6bac5ada_123373_1_0_right = &ag_9f6bac5ada_123373_1_0_object.ag_9f6bac5ada_123373_1_0_value;\nif ((*(ag_9f6bac5ada_123373_1_0_left == ag_9f6bac5ada_123373_1_0_right ? ag_9f6bac5ada_123373_1_0_left : ag_9f6bac5ada_123373_1_0_right)) == 2 && strcmp(argv[1], \"1\") == 0) print_hash_value = 1;\n}"
+    }
+  ],
+  "source_map": [
+    {
+      "kind": "identity",
+      "s": [
+        0,
+        123317
+      ],
+      "p0": [
+        0,
+        123317
+      ]
+    },
+    {
+      "kind": "generated",
+      "s": [
+        123317,
+        123317
+      ],
+      "p0": [
+        123317,
+        123481
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        123317,
+        123369
+      ],
+      "p0": [
+        123481,
+        123533
+      ]
+    },
+    {
+      "kind": "replacement",
+      "s": [
+        123369,
+        123434
+      ],
+      "p0": [
+        123533,
+        123936
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        123434,
+        132286
+      ],
+      "p0": [
+        123936,
+        132788
+      ]
+    }
+  ],
+  "local_equivalence": {
+    "parameter_initialized": true,
+    "all_parameter_references_read_only": true,
+    "early_nonvolatile_read_has_no_observable_effect": true,
+    "value_type_preserved": true,
+    "new_objects_private": true,
+    "new_calls_pure_identity": false,
+    "original_expression_evaluation_path_preserved": true,
+    "global_ub_proof": false
+  }
+}

@@ -1,0 +1,26 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0016_902851612.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_028/typedef_callback_01/P0.c
+@@ -2365,11 +2365,22 @@
+ 
+ 
+ /* ---------------------------------------- */
++struct ag_706d7e2b0e_189799_2_0_record { int ag_706d7e2b0e_189799_2_0_value; };
++struct ag_706d7e2b0e_189799_2_0_other { int ag_706d7e2b0e_189799_2_0_value; };
++typedef struct ag_706d7e2b0e_189799_2_0_record ag_706d7e2b0e_189799_2_0_root;
++typedef ag_706d7e2b0e_189799_2_0_root ag_706d7e2b0e_189799_2_0_middle;
++typedef ag_706d7e2b0e_189799_2_0_middle ag_706d7e2b0e_189799_2_0_argument;
++typedef int (*ag_706d7e2b0e_189799_2_0_callback)(ag_706d7e2b0e_189799_2_0_root);
++struct ag_706d7e2b0e_189799_2_0_dispatch_type { ag_706d7e2b0e_189799_2_0_callback ag_706d7e2b0e_189799_2_0_invoke; };
++static int ag_706d7e2b0e_189799_2_0_extract(ag_706d7e2b0e_189799_2_0_root ag_706d7e2b0e_189799_2_0_input) { return ag_706d7e2b0e_189799_2_0_input.ag_706d7e2b0e_189799_2_0_value; }
+ int main (int argc, char* argv[])
+ {
++ag_706d7e2b0e_189799_2_0_argument ag_706d7e2b0e_189799_2_0_object = { argc };
++struct ag_706d7e2b0e_189799_2_0_dispatch_type ag_706d7e2b0e_189799_2_0_dispatch = { ag_706d7e2b0e_189799_2_0_extract };
++
+     int i, j, k;
+     int print_hash_value = 0;
+-    if (argc == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
++    if (ag_706d7e2b0e_189799_2_0_dispatch.ag_706d7e2b0e_189799_2_0_invoke(ag_706d7e2b0e_189799_2_0_object) == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
+     platform_main_begin();
+     crc32_gentab();
+     func_1();

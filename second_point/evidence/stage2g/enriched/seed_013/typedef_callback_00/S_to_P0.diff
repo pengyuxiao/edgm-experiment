@@ -1,0 +1,32 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0044_901282285.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_013/typedef_callback_00/P0.c
+@@ -457,8 +457,19 @@
+  * reads :
+  * writes:
+  */
++struct ag_1dfd952939_45963_2_0_record { int ag_1dfd952939_45963_2_0_value; };
++struct ag_1dfd952939_45963_2_0_other { int ag_1dfd952939_45963_2_0_value; };
++typedef struct ag_1dfd952939_45963_2_0_record ag_1dfd952939_45963_2_0_root;
++typedef ag_1dfd952939_45963_2_0_root ag_1dfd952939_45963_2_0_middle;
++typedef ag_1dfd952939_45963_2_0_middle ag_1dfd952939_45963_2_0_argument;
++typedef int (*ag_1dfd952939_45963_2_0_callback)(ag_1dfd952939_45963_2_0_root);
++struct ag_1dfd952939_45963_2_0_dispatch_type { ag_1dfd952939_45963_2_0_callback ag_1dfd952939_45963_2_0_invoke; };
++static int ag_1dfd952939_45963_2_0_extract(ag_1dfd952939_45963_2_0_root ag_1dfd952939_45963_2_0_input) { return ag_1dfd952939_45963_2_0_input.ag_1dfd952939_45963_2_0_value; }
+ static int8_t  func_13(const int16_t  p_14, uint32_t  p_15, int16_t  p_16, int32_t  p_17)
+-{ 
++{
++ag_1dfd952939_45963_2_0_argument ag_1dfd952939_45963_2_0_object = { p_17 };
++struct ag_1dfd952939_45963_2_0_dispatch_type ag_1dfd952939_45963_2_0_dispatch = { ag_1dfd952939_45963_2_0_extract };
++ 
+ /* edgm diversify: switch/case (tag=76228) */
+ do {
+     unsigned edgm_sw_76228 = (((((unsigned)(sizeof(int) * 13u)) << 1) & 0xFFu)) & 3u;
+@@ -499,7 +510,7 @@
+     }
+ } while (0);
+ /* block id: 503 */
+-    return p_17;
++    return ag_1dfd952939_45963_2_0_dispatch.ag_1dfd952939_45963_2_0_invoke(ag_1dfd952939_45963_2_0_object);
+ }
+ 
+ 

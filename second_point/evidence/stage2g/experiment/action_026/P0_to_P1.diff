@@ -1,0 +1,11 @@
+--- /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_026/typedef_callback_01/P0.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_026/P1.c
+@@ -1798,7 +1798,7 @@
+ struct ag_d584a7a569_115245_2_0_record { int ag_d584a7a569_115245_2_0_value; };
+ struct ag_d584a7a569_115245_2_0_other { int ag_d584a7a569_115245_2_0_value; };
+ typedef struct ag_d584a7a569_115245_2_0_record ag_d584a7a569_115245_2_0_root;
+-typedef ag_d584a7a569_115245_2_0_root ag_d584a7a569_115245_2_0_middle;
++typedef struct ag_d584a7a569_115245_2_0_other ag_d584a7a569_115245_2_0_middle;
+ typedef ag_d584a7a569_115245_2_0_middle ag_d584a7a569_115245_2_0_argument;
+ typedef int (*ag_d584a7a569_115245_2_0_callback)(ag_d584a7a569_115245_2_0_root);
+ struct ag_d584a7a569_115245_2_0_dispatch_type { ag_d584a7a569_115245_2_0_callback ag_d584a7a569_115245_2_0_invoke; };

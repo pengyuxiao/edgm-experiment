@@ -1,0 +1,32 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0010_1118400526.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_023/typedef_callback_00/P0.c
+@@ -977,8 +977,19 @@
+  * reads : g_67 g_83 g_1182 g_430 g_1504 g_155 g_1181 g_297 g_25 g_1445 g_21
+  * writes: g_67 g_83 g_1182 g_225 g_607 g_25 g_179
+  */
++struct ag_2dc8342543_100516_2_0_record { int ag_2dc8342543_100516_2_0_value; };
++struct ag_2dc8342543_100516_2_0_other { int ag_2dc8342543_100516_2_0_value; };
++typedef struct ag_2dc8342543_100516_2_0_record ag_2dc8342543_100516_2_0_root;
++typedef ag_2dc8342543_100516_2_0_root ag_2dc8342543_100516_2_0_middle;
++typedef ag_2dc8342543_100516_2_0_middle ag_2dc8342543_100516_2_0_argument;
++typedef int (*ag_2dc8342543_100516_2_0_callback)(ag_2dc8342543_100516_2_0_root);
++struct ag_2dc8342543_100516_2_0_dispatch_type { ag_2dc8342543_100516_2_0_callback ag_2dc8342543_100516_2_0_invoke; };
++static int ag_2dc8342543_100516_2_0_extract(ag_2dc8342543_100516_2_0_root ag_2dc8342543_100516_2_0_input) { return ag_2dc8342543_100516_2_0_input.ag_2dc8342543_100516_2_0_value; }
+ static int32_t * func_5(const uint32_t  p_6, int32_t  p_7, uint8_t  p_8, int32_t * p_9, int32_t * p_10)
+-{ /* block id: 563 */
++{
++ag_2dc8342543_100516_2_0_argument ag_2dc8342543_100516_2_0_object = { p_7 };
++struct ag_2dc8342543_100516_2_0_dispatch_type ag_2dc8342543_100516_2_0_dispatch = { ag_2dc8342543_100516_2_0_extract };
++ /* block id: 563 */
+     int64_t l_1199 = 0x76BB7BAEA5C445A9LL;
+     int32_t l_1201 = 1L;
+     int32_t l_1238 = 3L;
+@@ -1047,7 +1058,7 @@
+             for (i = 0; i < 9; i++)
+                 l_1242[i] = 0x0A20117BL;
+         }
+-        l_1559 = ((((((safe_sub_func_uint64_t_u_u((safe_mul_func_int8_t_s_s(((l_1540 != ((*l_1542) = l_1541)) ^ p_7), ((**l_1292) = ((*p_9) || (((((safe_mul_func_int64_t_s_s(g_430, (safe_mod_func_int32_t_s_s((*p_10), ((l_1239[5] = (safe_add_func_int16_t_s_s(((((*g_1504) < (**l_1292)) & (safe_lshift_func_int8_t_s_s((l_1555 ^= (+(l_1552 != &g_1444[1][0]))), p_7))) != l_1556[5]), p_7))) & p_8))))) , p_7) , (-9L)) , l_1557) != p_9))))), p_8)) , &l_1553) != &l_1553) ^ p_6) >= l_1558) > 0xEC69E2003B940E93LL);
++        l_1559 = ((((((safe_sub_func_uint64_t_u_u((safe_mul_func_int8_t_s_s(((l_1540 != ((*l_1542) = l_1541)) ^ ag_2dc8342543_100516_2_0_dispatch.ag_2dc8342543_100516_2_0_invoke(ag_2dc8342543_100516_2_0_object)), ((**l_1292) = ((*p_9) || (((((safe_mul_func_int64_t_s_s(g_430, (safe_mod_func_int32_t_s_s((*p_10), ((l_1239[5] = (safe_add_func_int16_t_s_s(((((*g_1504) < (**l_1292)) & (safe_lshift_func_int8_t_s_s((l_1555 ^= (+(l_1552 != &g_1444[1][0]))), p_7))) != l_1556[5]), p_7))) & p_8))))) , p_7) , (-9L)) , l_1557) != p_9))))), p_8)) , &l_1553) != &l_1553) ^ p_6) >= l_1558) > 0xEC69E2003B940E93LL);
+         for (l_1555 = 0; (l_1555 <= 1); l_1555 += 1)
+         { /* block id: 696 */
+             uint8_t l_1564 = 0x86L;

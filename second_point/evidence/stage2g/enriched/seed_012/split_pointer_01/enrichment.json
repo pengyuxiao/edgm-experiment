@@ -1,0 +1,193 @@
+{
+  "schema": "stage2g-enrichment-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0047_1704664439.c",
+  "s_sha256": "e43cc34c2867fffe1b9441f2c10d3078333943b863fcc20fa847085b84a30055",
+  "p0_sha256": "cb1dd10f6786680465299b20aef99010eb7448a7cc71dce409ff24161a4daf9c",
+  "position": {
+    "position_id": "e43cc34c2867fffe1b9441f2c10d3078333943b863fcc20fa847085b84a30055:c:seed_0047_1704664439.c@35431@F@func_8@p_11:46538",
+    "read": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0047_1704664439.c",
+      "line": 546,
+      "column": 321,
+      "offset": 46538,
+      "start_offset": 46538,
+      "end_offset": 46542,
+      "node_identity": "c:seed_0047_1704664439.c@35431@F@func_8@p_11:DECL_REF_EXPR:46538",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_11",
+      "usr": "",
+      "referenced_usr": "c:seed_0047_1704664439.c@35431@F@func_8@p_11",
+      "kind": "DECL_REF_EXPR"
+    },
+    "declaration": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0047_1704664439.c",
+      "line": 429,
+      "column": 65,
+      "offset": 35440,
+      "start_offset": 35431,
+      "end_offset": 35444,
+      "node_identity": "c:seed_0047_1704664439.c@35431@F@func_8@p_11:PARM_DECL:35431",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int32_t  p_11",
+      "usr": "c:seed_0047_1704664439.c@35431@F@func_8@p_11",
+      "referenced_usr": "c:seed_0047_1704664439.c@35431@F@func_8@p_11",
+      "kind": "PARM_DECL"
+    },
+    "function_offset": 35376,
+    "body_start": 35461,
+    "kind": "INT",
+    "parameter": "p_11",
+    "function_name": "func_8",
+    "function_usr": "c:seed_0047_1704664439.c@F@func_8",
+    "operator": "||",
+    "operation": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0047_1704664439.c",
+      "line": 546,
+      "column": 191,
+      "offset": 46408,
+      "start_offset": 46408,
+      "end_offset": 46542,
+      "node_identity": ":BINARY_OPERATOR:46408",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "(safe_mul_func_uint8_t_u_u(((*l_1756) = (+((*l_1756) == (safe_mod_func_uint64_t_u_u(l_2222, ((*g_174) = 1UL)))))), (*g_1409))) || p_11",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "BINARY_OPERATOR"
+    },
+    "unit": [
+      46226,
+      46617
+    ],
+    "nested_supported": true,
+    "ancestor_context": [
+      "BINARY_OPERATOR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ]
+  },
+  "enrichment_family": "split_pointer",
+  "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+  "semantic_context": {
+    "family": "split_pointer",
+    "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "||",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 1,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": false,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "private_pointer_dereference",
+    "value_route": "private member -> address -> pointer selection -> dereference",
+    "typedef_depth": 0
+  },
+  "semantic_context_signature": "ed6019e00e3a718cff6cd10c95382e54e6b2fb0842ce956a7baea151e4d6aea9",
+  "names": {
+    "record": "ag_e43cc34c28_46538_0_0_record",
+    "other": "ag_e43cc34c28_46538_0_0_other",
+    "value": "ag_e43cc34c28_46538_0_0_value",
+    "object": "ag_e43cc34c28_46538_0_0_object",
+    "left": "ag_e43cc34c28_46538_0_0_left",
+    "right": "ag_e43cc34c28_46538_0_0_right",
+    "root": "ag_e43cc34c28_46538_0_0_root",
+    "middle": "ag_e43cc34c28_46538_0_0_middle",
+    "argument": "ag_e43cc34c28_46538_0_0_argument",
+    "callback": "ag_e43cc34c28_46538_0_0_callback",
+    "dispatch_type": "ag_e43cc34c28_46538_0_0_dispatch_type",
+    "dispatch": "ag_e43cc34c28_46538_0_0_dispatch",
+    "extract": "ag_e43cc34c28_46538_0_0_extract",
+    "input": "ag_e43cc34c28_46538_0_0_input",
+    "invoke": "ag_e43cc34c28_46538_0_0_invoke"
+  },
+  "replacement": "(*ag_e43cc34c28_46538_0_0_left)",
+  "edits": [
+    {
+      "start": 35462,
+      "end": 35462,
+      "before": "",
+      "after": "\nstruct ag_e43cc34c28_46538_0_0_record { int ag_e43cc34c28_46538_0_0_value; };\nstruct ag_e43cc34c28_46538_0_0_record ag_e43cc34c28_46538_0_0_object = { p_11 };\nint *ag_e43cc34c28_46538_0_0_left = &ag_e43cc34c28_46538_0_0_object.ag_e43cc34c28_46538_0_0_value;\n"
+    },
+    {
+      "start": 46538,
+      "end": 46542,
+      "before": "p_11",
+      "after": "(*ag_e43cc34c28_46538_0_0_left)"
+    }
+  ],
+  "source_map": [
+    {
+      "kind": "identity",
+      "s": [
+        0,
+        35462
+      ],
+      "p0": [
+        0,
+        35462
+      ]
+    },
+    {
+      "kind": "generated",
+      "s": [
+        35462,
+        35462
+      ],
+      "p0": [
+        35462,
+        35721
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        35462,
+        46538
+      ],
+      "p0": [
+        35721,
+        46797
+      ]
+    },
+    {
+      "kind": "replacement",
+      "s": [
+        46538,
+        46542
+      ],
+      "p0": [
+        46797,
+        46828
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        46542,
+        132903
+      ],
+      "p0": [
+        46828,
+        133189
+      ]
+    }
+  ],
+  "local_equivalence": {
+    "parameter_initialized": true,
+    "all_parameter_references_read_only": true,
+    "early_nonvolatile_read_has_no_observable_effect": true,
+    "value_type_preserved": true,
+    "new_objects_private": true,
+    "new_calls_pure_identity": false,
+    "original_expression_evaluation_path_preserved": true,
+    "global_ub_proof": false
+  }
+}

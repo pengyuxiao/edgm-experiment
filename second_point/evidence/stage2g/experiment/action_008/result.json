@@ -1,0 +1,62 @@
+{
+  "candidate_id": "a37955cf4673f4a91a7a2d0e7d17c109bb9620b0c0a3bf15bd99fa329a0c290d",
+  "seed_id": "seed_0036_1509457500",
+  "family": "split_pointer",
+  "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+  "status": "VALIDATED",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_008/split_pointer_01/P0.c",
+  "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_008/P1.c",
+  "p0_sha256": "ac1c9ef211192c186ebeac5c919247ea1d544ffb65cfc630b8002e7b992e72a5",
+  "p1_sha256": "87a6aa5fcf1c2af98723fc3c2e186d95f3675850ac39b159045cf09873ee4142",
+  "observations": {
+    "gcc": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_008/P1.c",
+          "line": 1580,
+          "column": 38,
+          "severity": "error",
+          "message": "cannot take address of bit-field 'ag_26c0094bb9_146122_0_0_value'",
+          "category": "address_of_bitfield",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_008/P1.c:1580:38: error: cannot take address of bit-field 'ag_26c0094bb9_146122_0_0_value'",
+          "matched_anchors": [
+            {
+              "violation": 0,
+              "anchor": "address"
+            }
+          ]
+        }
+      ],
+      "confirmed_bug": false,
+      "expected_violation_count": 1,
+      "exact_coordinate_comparison": true
+    },
+    "clang": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_008/P1.c",
+          "line": 1580,
+          "column": 38,
+          "severity": "error",
+          "message": "address of bit-field requested",
+          "category": "address_of_bitfield",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_008/P1.c:1580:38: error: address of bit-field requested",
+          "matched_anchors": [
+            {
+              "violation": 0,
+              "anchor": "address"
+            }
+          ]
+        }
+      ],
+      "confirmed_bug": false,
+      "expected_violation_count": 1,
+      "exact_coordinate_comparison": true
+    }
+  },
+  "oracle_replay": true,
+  "oracle_unchanged": true,
+  "confirmed_bug": false
+}

@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0007_325097610",
+  "seed_index": 46,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0007_325097610.c",
+  "s_sha256": "74e2fb34964b2524734fd67d8410a36592be41dbdbcf9a0a16b0a70066daa673",
+  "position_id": "74e2fb34964b2524734fd67d8410a36592be41dbdbcf9a0a16b0a70066daa673:c:seed_0007_325097610.c@92131@F@main@argc:92212",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_046/typedef_callback_01",
+  "P0_id": "48eb8b95337e7cb01556d5f65b481c84c42051a98579cd345d42d9bb1dc57bed",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_046/typedef_callback_01/P0.c",
+  "semantic_context_signature": "e733e51609b6a00d3a3db754d12227dfe95bff962a69576c1affa3248513bf77",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "entry_control",
+    "original_operator": "==",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_74e2fb3496_92212_2_0_dispatch_type@FI@ag_74e2fb3496_92212_2_0_invoke",
+      "argument_usr": "c:P0.c@92899@F@main@ag_74e2fb3496_92212_2_0_object",
+      "call_offset": 93148,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "3e7dc49d0b8fae2632301e4368776773897aa326bb8eeead71b71509c5b44d69"
+}

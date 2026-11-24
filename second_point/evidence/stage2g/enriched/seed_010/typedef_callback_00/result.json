@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0034_760340181",
+  "seed_index": 10,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0034_760340181.c",
+  "s_sha256": "fe81a3e7f2c512edb0a0b53b6154c60d7d496b990d117e6a75841ace1779fd88",
+  "position_id": "fe81a3e7f2c512edb0a0b53b6154c60d7d496b990d117e6a75841ace1779fd88:c:seed_0034_760340181.c@30574@F@func_24@p_25:31755",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_010/typedef_callback_00",
+  "P0_id": "61fc5227d683aab96056c4b4a5f38e487bc89d039f2e725faafdf2fa86fae216",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_010/typedef_callback_00/P0.c",
+  "semantic_context_signature": "f2aac628e848917cca32e8ddd018ee33e45ea08365675cf8c0cef255bf76817b",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "function_argument",
+    "original_context": [
+      "CALL_EXPR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_fe81a3e7f2_31755_2_0_dispatch_type@FI@ag_fe81a3e7f2_31755_2_0_invoke",
+      "argument_usr": "c:P0.c@31387@F@func_24@ag_fe81a3e7f2_31755_2_0_object",
+      "call_offset": 32691,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "30048061c9950bffbe3c0f3f6f7be8e3e445a42f3ba9f43d1cdc24a05116ce3f"
+}

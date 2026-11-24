@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_024/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_024/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_024/P1.c: In function 'main':\n/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_024/P1.c:2956:75: error: incompatible type for argument 1 of 'ag_568f74ab9c_237367_2_0_dispatch.ag_568f74ab9c_237367_2_0_invoke'\n 2956 |     if (ag_568f74ab9c_237367_2_0_dispatch.ag_568f74ab9c_237367_2_0_invoke(ag_568f74ab9c_237367_2_0_object) == 2 && strcmp(argv[1], \"1\") == 0) print_hash_value = 1;\n      |                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                           |\n      |                                                                           ag_568f74ab9c_237367_2_0_argument {aka struct ag_568f74ab9c_237367_2_0_other}\n/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_024/P1.c:2956:75: note: expected 'ag_568f74ab9c_237367_2_0_root' {aka 'struct ag_568f74ab9c_237367_2_0_record'} but argument is of type 'ag_568f74ab9c_237367_2_0_argument' {aka 'struct ag_568f74ab9c_237367_2_0_other'}\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.06051897397264838
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_024/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_024/P1.c:2956:75: error: passing 'ag_568f74ab9c_237367_2_0_argument' (aka 'struct ag_568f74ab9c_237367_2_0_other') to parameter of incompatible type 'ag_568f74ab9c_237367_2_0_root' (aka 'struct ag_568f74ab9c_237367_2_0_record')\n 2956 |     if (ag_568f74ab9c_237367_2_0_dispatch.ag_568f74ab9c_237367_2_0_invoke(ag_568f74ab9c_237367_2_0_object) == 2 && strcmp(argv[1], \"1\") == 0) print_hash_value = 1;\n      |                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.09447654196992517
+    }
+  },
+  "sha256": "f38b20c2d5af84c3f730a646b1f9f8013d6e250f899c254e151031bb489becec",
+  "source_unchanged": true
+}

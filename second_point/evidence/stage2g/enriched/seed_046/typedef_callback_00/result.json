@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0007_325097610",
+  "seed_index": 46,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0007_325097610.c",
+  "s_sha256": "74e2fb34964b2524734fd67d8410a36592be41dbdbcf9a0a16b0a70066daa673",
+  "position_id": "74e2fb34964b2524734fd67d8410a36592be41dbdbcf9a0a16b0a70066daa673:c:seed_0007_325097610.c@22066@F@func_2@p_3:33337",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_046/typedef_callback_00",
+  "P0_id": "ba652ee5099cff8e486aa98097b521a25f87dbe95654e46f0d3dfae403e56cef",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_046/typedef_callback_00/P0.c",
+  "semantic_context_signature": "3d792f05b3ed72aa74cb0bb88497eaf3da237bc5c3a08ce0fdcc65fe837e6abe",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "==",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "COMPOUND_ASSIGNMENT_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_74e2fb3496_33337_2_0_dispatch_type@FI@ag_74e2fb3496_33337_2_0_invoke",
+      "argument_usr": "c:P0.c@22858@F@func_2@ag_74e2fb3496_33337_2_0_object",
+      "call_offset": 34272,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "39dcfefd6ecfe3b85bfcb6dddb065f632775c3bc4d19582be1bf49cdd2ab7492"
+}

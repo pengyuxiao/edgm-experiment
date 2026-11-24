@@ -1,0 +1,84 @@
+{
+  "cwd": "/home/pyx/edgm-experiment",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "second_point/src"
+  },
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "second_point/tests",
+        "-v"
+      ],
+      "log": "baseline_all_tests.txt",
+      "exitcode": 0,
+      "tests": 125,
+      "scope": "before new implementation"
+    },
+    {
+      "command": [
+        "python3",
+        "second_point/tools/stage2g_manual.py"
+      ],
+      "log": "manual_stdout.txt",
+      "exitcode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "edgm_second.active_run",
+        "--phase",
+        "prepare",
+        "--out-dir",
+        "second_point/evidence/stage2g"
+      ],
+      "log": "enrichment_stdout.txt",
+      "exitcode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "edgm_second.active_run",
+        "--phase",
+        "verify",
+        "--out-dir",
+        "second_point/evidence/stage2g"
+      ],
+      "log": "verification_stdout.txt",
+      "exitcode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "second_point/tests",
+        "-v"
+      ],
+      "log": "final_all_tests.txt",
+      "exitcode": 0,
+      "tests": 141
+    },
+    {
+      "command": [
+        "python3",
+        "second_point/tools/stage2g_audit.py"
+      ],
+      "log": "audit_stdout.txt",
+      "exitcode": 0
+    }
+  ],
+  "initial_setup": "inspect_environment(load_config()), collect_integer_profile(env), tracked-file/50-seed SHA snapshots (Python API); equivalent --phase init now available",
+  "compiler_command_evidence": "complete per-process argv/returncode/stdout/stderr/time in each P0_validation.json and P1_validation.json",
+  "entrypoint_smoke": "entrypoint_smoke.txt: fresh init and overwrite refusal; temporary directory removed",
+  "original_program_execution": false
+}

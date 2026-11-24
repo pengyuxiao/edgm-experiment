@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/split_pointer/P0.c",
+  "status": "valid",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/split_pointer/P0.c"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.0085442871786654
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/split_pointer/P0.c"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "ok",
+      "exception": null,
+      "elapsed_seconds": 0.009392650099471211
+    }
+  },
+  "sha256": "0b526e55345ecbe732652b0c4e233845cc815b07d4726e2b643ee035a374cf9f",
+  "source_unchanged": true
+}

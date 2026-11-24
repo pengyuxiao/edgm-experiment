@@ -1,0 +1,87 @@
+{
+  "status": "APPLICABLE",
+  "candidates": [
+    {
+      "field_usr": "c:P0.c@83428@F@func_67@S@ag_f2129382fa_89990_1_0_record@FI@ag_f2129382fa_89990_1_0_value",
+      "expected_addresses": 2
+    }
+  ],
+  "route": {
+    "parameter": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_043/nested_two_addresses_00/P0.c",
+      "line": 1250,
+      "column": 56,
+      "offset": 83420,
+      "start_offset": 83411,
+      "end_offset": 83424,
+      "node_identity": "c:P0.c@83411@F@func_67@p_69:PARM_DECL:83411",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int32_t  p_69",
+      "usr": "c:P0.c@83411@F@func_67@p_69",
+      "referenced_usr": "c:P0.c@83411@F@func_67@p_69",
+      "kind": "PARM_DECL"
+    },
+    "initializer_read": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_043/nested_two_addresses_00/P0.c",
+      "line": 1253,
+      "column": 74,
+      "offset": 83579,
+      "start_offset": 83579,
+      "end_offset": 83583,
+      "node_identity": "c:P0.c@83411@F@func_67@p_69:DECL_REF_EXPR:83579",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_69",
+      "usr": "",
+      "referenced_usr": "c:P0.c@83411@F@func_67@p_69",
+      "kind": "DECL_REF_EXPR"
+    },
+    "object": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_043/nested_two_addresses_00/P0.c",
+      "line": 1253,
+      "column": 39,
+      "offset": 83544,
+      "start_offset": 83506,
+      "end_offset": 83585,
+      "node_identity": "c:P0.c@83506@F@func_67@ag_f2129382fa_89990_1_0_object:VAR_DECL:83506",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "struct ag_f2129382fa_89990_1_0_record ag_f2129382fa_89990_1_0_object = { p_69 }",
+      "usr": "c:P0.c@83506@F@func_67@ag_f2129382fa_89990_1_0_object",
+      "referenced_usr": "c:P0.c@83506@F@func_67@ag_f2129382fa_89990_1_0_object",
+      "kind": "VAR_DECL"
+    },
+    "original_operation": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_043/nested_two_addresses_00/P0.c",
+      "line": 1330,
+      "column": 41,
+      "offset": 90114,
+      "start_offset": 90114,
+      "end_offset": 90481,
+      "node_identity": "c:safe_math.h@F@safe_mul_func_int16_t_s_s:CALL_EXPR:90114",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "safe_mul_func_int16_t_s_s((0xABL >= (65533UL & (((safe_unary_minus_func_uint64_t_u(((*l_1419) = (l_1418 != (void*)0)))) ^ 0UL) && ((((*l_1421) = l_1420) == &l_1400[0][1]) , (safe_add_func_int8_t_s_s((*g_504), (l_1424 != (void*)0))))))), (*(ag_f2129382fa_89990_1_0_left == ag_f2129382fa_89990_1_0_right ? ag_f2129382fa_89990_1_0_left : ag_f2129382fa_89990_1_0_right)))",
+      "usr": "",
+      "referenced_usr": "c:safe_math.h@F@safe_mul_func_int16_t_s_s",
+      "kind": "CALL_EXPR"
+    },
+    "route_expression": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_043/nested_two_addresses_00/P0.c",
+      "line": 1330,
+      "column": 278,
+      "offset": 90351,
+      "start_offset": 90351,
+      "end_offset": 90480,
+      "node_identity": ":PAREN_EXPR:90351",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "(*(ag_f2129382fa_89990_1_0_left == ag_f2129382fa_89990_1_0_right ? ag_f2129382fa_89990_1_0_left : ag_f2129382fa_89990_1_0_right))",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "PAREN_EXPR"
+    },
+    "record_usr": "c:P0.c@83428@F@func_67@S@ag_f2129382fa_89990_1_0_record",
+    "helper_usr": null,
+    "helper_anchor": null,
+    "cross_function_value_route": false,
+    "proof": "immutable initialized parameter -> private member initialized once -> known pointer/identity-callback -> same original binary operation"
+  },
+  "reasons": []
+}

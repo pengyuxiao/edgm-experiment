@@ -1,0 +1,193 @@
+{
+  "schema": "stage2g-enrichment-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+  "s_sha256": "ea3b354b090dd68d80abe17b2bef359c2147fa3d321270fa03e094db764144af",
+  "p0_sha256": "e825e45bd83454010cb671ddc4bd03c008be171d64072c659fcdec9d53a93a65",
+  "position": {
+    "position_id": "ea3b354b090dd68d80abe17b2bef359c2147fa3d321270fa03e094db764144af:c:seed_0023_9745728.c@23859@F@func_11@p_14:26084",
+    "read": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+      "line": 284,
+      "column": 66,
+      "offset": 26084,
+      "start_offset": 26084,
+      "end_offset": 26088,
+      "node_identity": "c:seed_0023_9745728.c@23859@F@func_11@p_14:DECL_REF_EXPR:26084",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_14",
+      "usr": "",
+      "referenced_usr": "c:seed_0023_9745728.c@23859@F@func_11@p_14",
+      "kind": "DECL_REF_EXPR"
+    },
+    "declaration": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+      "line": 239,
+      "column": 74,
+      "offset": 23868,
+      "start_offset": 23859,
+      "end_offset": 23872,
+      "node_identity": "c:seed_0023_9745728.c@23859@F@func_11@p_14:PARM_DECL:23859",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int32_t  p_14",
+      "usr": "c:seed_0023_9745728.c@23859@F@func_11@p_14",
+      "referenced_usr": "c:seed_0023_9745728.c@23859@F@func_11@p_14",
+      "kind": "PARM_DECL"
+    },
+    "function_offset": 23795,
+    "body_start": 23896,
+    "kind": "INT",
+    "parameter": "p_14",
+    "function_name": "func_11",
+    "function_usr": "c:seed_0023_9745728.c@F@func_11",
+    "operator": "|",
+    "operation": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c",
+      "line": 284,
+      "column": 66,
+      "offset": 26084,
+      "start_offset": 26084,
+      "end_offset": 26216,
+      "node_identity": ":BINARY_OPERATOR:26084",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_14 | (safe_mod_func_int16_t_s_s((l_1593 , (safe_unary_minus_func_uint64_t_u((*g_142)))), ((l_1595[0] == g_1597[5][3][1]) , p_14)))",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "BINARY_OPERATOR"
+    },
+    "unit": [
+      26027,
+      26221
+    ],
+    "nested_supported": true,
+    "ancestor_context": [
+      "BINARY_OPERATOR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ]
+  },
+  "enrichment_family": "split_pointer",
+  "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+  "semantic_context": {
+    "family": "split_pointer",
+    "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "|",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 1,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": false,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "private_pointer_dereference",
+    "value_route": "private member -> address -> pointer selection -> dereference",
+    "typedef_depth": 0
+  },
+  "semantic_context_signature": "b04c4730b0fe3507d0f92239dcab7e8ba0a0f604a30385c6e798ef214d065d43",
+  "names": {
+    "record": "ag_ea3b354b09_26084_0_0_record",
+    "other": "ag_ea3b354b09_26084_0_0_other",
+    "value": "ag_ea3b354b09_26084_0_0_value",
+    "object": "ag_ea3b354b09_26084_0_0_object",
+    "left": "ag_ea3b354b09_26084_0_0_left",
+    "right": "ag_ea3b354b09_26084_0_0_right",
+    "root": "ag_ea3b354b09_26084_0_0_root",
+    "middle": "ag_ea3b354b09_26084_0_0_middle",
+    "argument": "ag_ea3b354b09_26084_0_0_argument",
+    "callback": "ag_ea3b354b09_26084_0_0_callback",
+    "dispatch_type": "ag_ea3b354b09_26084_0_0_dispatch_type",
+    "dispatch": "ag_ea3b354b09_26084_0_0_dispatch",
+    "extract": "ag_ea3b354b09_26084_0_0_extract",
+    "input": "ag_ea3b354b09_26084_0_0_input",
+    "invoke": "ag_ea3b354b09_26084_0_0_invoke"
+  },
+  "replacement": "(*ag_ea3b354b09_26084_0_0_left)",
+  "edits": [
+    {
+      "start": 23897,
+      "end": 23897,
+      "before": "",
+      "after": "\nstruct ag_ea3b354b09_26084_0_0_record { int ag_ea3b354b09_26084_0_0_value; };\nstruct ag_ea3b354b09_26084_0_0_record ag_ea3b354b09_26084_0_0_object = { p_14 };\nint *ag_ea3b354b09_26084_0_0_left = &ag_ea3b354b09_26084_0_0_object.ag_ea3b354b09_26084_0_0_value;\n"
+    },
+    {
+      "start": 26084,
+      "end": 26088,
+      "before": "p_14",
+      "after": "(*ag_ea3b354b09_26084_0_0_left)"
+    }
+  ],
+  "source_map": [
+    {
+      "kind": "identity",
+      "s": [
+        0,
+        23897
+      ],
+      "p0": [
+        0,
+        23897
+      ]
+    },
+    {
+      "kind": "generated",
+      "s": [
+        23897,
+        23897
+      ],
+      "p0": [
+        23897,
+        24156
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        23897,
+        26084
+      ],
+      "p0": [
+        24156,
+        26343
+      ]
+    },
+    {
+      "kind": "replacement",
+      "s": [
+        26084,
+        26088
+      ],
+      "p0": [
+        26343,
+        26374
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        26088,
+        123182
+      ],
+      "p0": [
+        26374,
+        123468
+      ]
+    }
+  ],
+  "local_equivalence": {
+    "parameter_initialized": true,
+    "all_parameter_references_read_only": true,
+    "early_nonvolatile_read_has_no_observable_effect": true,
+    "value_type_preserved": true,
+    "new_objects_private": true,
+    "new_calls_pure_identity": false,
+    "original_expression_evaluation_path_preserved": true,
+    "global_ub_proof": false
+  }
+}

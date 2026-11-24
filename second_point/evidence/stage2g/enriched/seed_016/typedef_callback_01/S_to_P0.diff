@@ -1,0 +1,32 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0023_9745728.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_016/typedef_callback_01/P0.c
+@@ -750,8 +750,19 @@
+  * reads : g_109 g_162 g_80.f0
+  * writes: g_162 g_80.f0
+  */
++struct ag_ea3b354b09_66769_2_0_record { int ag_ea3b354b09_66769_2_0_value; };
++struct ag_ea3b354b09_66769_2_0_other { int ag_ea3b354b09_66769_2_0_value; };
++typedef struct ag_ea3b354b09_66769_2_0_record ag_ea3b354b09_66769_2_0_root;
++typedef ag_ea3b354b09_66769_2_0_root ag_ea3b354b09_66769_2_0_middle;
++typedef ag_ea3b354b09_66769_2_0_middle ag_ea3b354b09_66769_2_0_argument;
++typedef int (*ag_ea3b354b09_66769_2_0_callback)(ag_ea3b354b09_66769_2_0_root);
++struct ag_ea3b354b09_66769_2_0_dispatch_type { ag_ea3b354b09_66769_2_0_callback ag_ea3b354b09_66769_2_0_invoke; };
++static int ag_ea3b354b09_66769_2_0_extract(ag_ea3b354b09_66769_2_0_root ag_ea3b354b09_66769_2_0_input) { return ag_ea3b354b09_66769_2_0_input.ag_ea3b354b09_66769_2_0_value; }
+ static union U0  func_28(int32_t * p_29, const int8_t  p_30, int32_t  p_31, int32_t * p_32)
+-{ /* block id: 438 */
++{
++ag_ea3b354b09_66769_2_0_argument ag_ea3b354b09_66769_2_0_object = { p_31 };
++struct ag_ea3b354b09_66769_2_0_dispatch_type ag_ea3b354b09_66769_2_0_dispatch = { ag_ea3b354b09_66769_2_0_extract };
++ /* block id: 438 */
+     const int32_t l_974 = 0x33C446F8L;
+     uint64_t ***l_975[9][7][4] = {{{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,&g_505,(void*)0},{&g_505,(void*)0,(void*)0,&g_505},{&g_505,(void*)0,(void*)0,(void*)0},{(void*)0,&g_505,&g_505,&g_505}},{{&g_505,&g_505,&g_505,&g_505},{(void*)0,&g_505,(void*)0,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,&g_505,(void*)0},{&g_505,(void*)0,(void*)0,&g_505}},{{&g_505,(void*)0,(void*)0,(void*)0},{(void*)0,&g_505,&g_505,&g_505},{&g_505,&g_505,&g_505,&g_505},{(void*)0,&g_505,(void*)0,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,(void*)0,&g_505}},{{&g_505,&g_505,&g_505,(void*)0},{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,(void*)0,(void*)0},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,&g_505,&g_505}},{{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,&g_505,(void*)0},{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,(void*)0,(void*)0},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,(void*)0,&g_505}},{{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,&g_505,(void*)0},{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,(void*)0,(void*)0}},{{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,&g_505,(void*)0}},{{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,(void*)0,(void*)0},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,&g_505,&g_505}},{{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,&g_505,(void*)0},{&g_505,&g_505,&g_505,&g_505},{&g_505,&g_505,(void*)0,(void*)0},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,(void*)0,&g_505},{&g_505,&g_505,(void*)0,&g_505}}};
+     int32_t *l_976 = (void*)0;
+@@ -763,7 +774,7 @@
+     typedef edgm_ltd_24255_t1 edgm_ltd_24255_t2;
+     union U0 l_978 = {0UL};
+     int i, j, k;
+-    (*l_977) ^= (g_109 != (g_162[0] = (safe_mul_func_uint8_t_u_u(l_974, ((l_975[0][4][0] != ((g_162[0] < p_31) , l_975[3][0][1])) && p_30)))));
++    (*l_977) ^= (g_109 != (g_162[0] = (safe_mul_func_uint8_t_u_u(l_974, ((l_975[0][4][0] != ((g_162[0] < ag_ea3b354b09_66769_2_0_dispatch.ag_ea3b354b09_66769_2_0_invoke(ag_ea3b354b09_66769_2_0_object)) , l_975[3][0][1])) && p_30)))));
+     return l_978;
+ }
+ 

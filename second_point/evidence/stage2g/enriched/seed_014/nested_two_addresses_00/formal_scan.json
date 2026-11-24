@@ -1,0 +1,87 @@
+{
+  "status": "APPLICABLE",
+  "candidates": [
+    {
+      "field_usr": "c:P0.c@72629@F@func_2@S@ag_d38b9d8d5c_74218_1_0_record@FI@ag_d38b9d8d5c_74218_1_0_value",
+      "expected_addresses": 2
+    }
+  ],
+  "route": {
+    "parameter": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_014/nested_two_addresses_00/P0.c",
+      "line": 822,
+      "column": 34,
+      "offset": 72622,
+      "start_offset": 72613,
+      "end_offset": 72625,
+      "node_identity": "c:P0.c@72613@F@func_2@p_3:PARM_DECL:72613",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int32_t  p_3",
+      "usr": "c:P0.c@72613@F@func_2@p_3",
+      "referenced_usr": "c:P0.c@72613@F@func_2@p_3",
+      "kind": "PARM_DECL"
+    },
+    "initializer_read": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_014/nested_two_addresses_00/P0.c",
+      "line": 825,
+      "column": 74,
+      "offset": 72780,
+      "start_offset": 72780,
+      "end_offset": 72783,
+      "node_identity": "c:P0.c@72613@F@func_2@p_3:DECL_REF_EXPR:72780",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_3",
+      "usr": "",
+      "referenced_usr": "c:P0.c@72613@F@func_2@p_3",
+      "kind": "DECL_REF_EXPR"
+    },
+    "object": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_014/nested_two_addresses_00/P0.c",
+      "line": 825,
+      "column": 39,
+      "offset": 72745,
+      "start_offset": 72707,
+      "end_offset": 72785,
+      "node_identity": "c:P0.c@72707@F@func_2@ag_d38b9d8d5c_74218_1_0_object:VAR_DECL:72707",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "struct ag_d38b9d8d5c_74218_1_0_record ag_d38b9d8d5c_74218_1_0_object = { p_3 }",
+      "usr": "c:P0.c@72707@F@func_2@ag_d38b9d8d5c_74218_1_0_object",
+      "referenced_usr": "c:P0.c@72707@F@func_2@ag_d38b9d8d5c_74218_1_0_object",
+      "kind": "VAR_DECL"
+    },
+    "original_operation": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_014/nested_two_addresses_00/P0.c",
+      "line": 851,
+      "column": 95,
+      "offset": 74552,
+      "start_offset": 74552,
+      "end_offset": 75083,
+      "node_identity": "c:safe_math.h@F@safe_mul_func_uint8_t_u_u:CALL_EXPR:74552",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "safe_mul_func_uint8_t_u_u((*(ag_d38b9d8d5c_74218_1_0_left == ag_d38b9d8d5c_74218_1_0_right ? ag_d38b9d8d5c_74218_1_0_left : ag_d38b9d8d5c_74218_1_0_right)), (((l_2605 = (l_2668 , (safe_mul_func_uint16_t_u_u((safe_lshift_func_uint32_t_u_s(0x619775E7L, 4)), 7UL)))) ^ (((safe_div_func_int8_t_s_s(((+((((safe_mul_func_uint8_t_u_u((l_2550 = (p_3 || (g_24[3] = (((((safe_mul_func_uint64_t_u_u((*g_1440), l_2629)) ^ l_2629) && 255UL) < (-1L)) >= (*g_2196))))), p_3)) ^ p_3) || l_2550) , p_3)) , l_2550), 1L)) != l_2629) , l_2629)) > 0L))",
+      "usr": "",
+      "referenced_usr": "c:safe_math.h@F@safe_mul_func_uint8_t_u_u",
+      "kind": "CALL_EXPR"
+    },
+    "route_expression": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_014/nested_two_addresses_00/P0.c",
+      "line": 851,
+      "column": 121,
+      "offset": 74578,
+      "start_offset": 74578,
+      "end_offset": 74707,
+      "node_identity": ":PAREN_EXPR:74578",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "(*(ag_d38b9d8d5c_74218_1_0_left == ag_d38b9d8d5c_74218_1_0_right ? ag_d38b9d8d5c_74218_1_0_left : ag_d38b9d8d5c_74218_1_0_right))",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "PAREN_EXPR"
+    },
+    "record_usr": "c:P0.c@72629@F@func_2@S@ag_d38b9d8d5c_74218_1_0_record",
+    "helper_usr": null,
+    "helper_anchor": null,
+    "cross_function_value_route": false,
+    "proof": "immutable initialized parameter -> private member initialized once -> known pointer/identity-callback -> same original binary operation"
+  },
+  "reasons": []
+}

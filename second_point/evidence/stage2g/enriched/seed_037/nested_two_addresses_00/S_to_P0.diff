@@ -1,0 +1,27 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0043_1742173162.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_037/nested_two_addresses_00/P0.c
+@@ -2047,7 +2047,10 @@
+  * writes: g_40 g_67 g_69 g_102
+  */
+ static uint8_t  func_61(int32_t  p_62, uint16_t * p_63)
+-{ /* block id: 16 */
++{
++struct ag_718620bd91_173164_1_0_record { int ag_718620bd91_173164_1_0_value; };
++struct ag_718620bd91_173164_1_0_record ag_718620bd91_173164_1_0_object = { p_62 };
++ /* block id: 16 */
+     uint64_t l_70 = 0x94210AB9CA2468F5LL;
+     int32_t l_1238 = (-1L);
+     uint32_t l_1324 = 4294967295UL;
+@@ -2141,7 +2144,11 @@
+         int i, j;
+         (*l_68) = ((*l_66) = g_65[g_40]);
+         l_70 = (*l_68);
+-        l_1238 = (safe_mod_func_int64_t_s_s((safe_add_func_int16_t_s_s((((safe_sub_func_uint32_t_u_u(l_70, p_62)) < (((0xABC0L > (!(safe_sub_func_int16_t_s_s((5UL & (((p_62 , func_82((*l_68))) >= ((safe_div_func_uint64_t_u_u((l_70 , (safe_add_func_int16_t_s_s((safe_sub_func_uint32_t_u_u(g_371, (*l_68))), p_62))), l_70)) > p_62)) | p_62)), l_70)))) , l_1237[3][2]) > g_137[0])) > (*l_68)), 0x1FE5L)), l_70));
++        {
++int *ag_718620bd91_173164_1_0_left = &ag_718620bd91_173164_1_0_object.ag_718620bd91_173164_1_0_value;
++int *ag_718620bd91_173164_1_0_right = &ag_718620bd91_173164_1_0_object.ag_718620bd91_173164_1_0_value;
++l_1238 = (safe_mod_func_int64_t_s_s((safe_add_func_int16_t_s_s((((safe_sub_func_uint32_t_u_u(l_70, (*(ag_718620bd91_173164_1_0_left == ag_718620bd91_173164_1_0_right ? ag_718620bd91_173164_1_0_left : ag_718620bd91_173164_1_0_right)))) < (((0xABC0L > (!(safe_sub_func_int16_t_s_s((5UL & (((p_62 , func_82((*l_68))) >= ((safe_div_func_uint64_t_u_u((l_70 , (safe_add_func_int16_t_s_s((safe_sub_func_uint32_t_u_u(g_371, (*l_68))), p_62))), l_70)) > p_62)) | p_62)), l_70)))) , l_1237[3][2]) > g_137[0])) > (*l_68)), 0x1FE5L)), l_70));
++}
+     }
+     return (****g_1367);
+ }

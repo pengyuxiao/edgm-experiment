@@ -1,6 +1,7 @@
-# EDGM 第二研究点：阶段 0–2F
+# EDGM 第二研究点：阶段 0–2G
 
 独立于 EDGM 的只读基础框架。已实现环境记录、合法候选 P0 加载与双编译器验证、主文件 AST 提取。
+阶段 2G 已增加主动合法增强和两条既有 MR 的真实动作池，见[阶段 2G 验收](docs/STAGE2G_ACTIVE_SEMANTIC_ENRICHMENT.md)。
 阶段 2A 已新增单条 typedef 依赖变换及独立约束见证；完整诊断比较与强化学习尚未实现。
 阶段 2E 已实现受限的 `MR_MEMBER_BITFIELD_ADDRESSABILITY`，见
 [位域 MR 验收](docs/STAGE2E_BITFIELD_MR_VALIDATION.md)。5 个既有增强 P0 均有安全候选，
@@ -139,3 +140,31 @@ PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=second_point/src python3 -m unittest discov
 ```
 
 阶段 2F 不新增增强模板、不实现其他 MR、Bandit、LLM 或奖励函数；默认阶段 2E 接口保持原有行为。
+
+## 阶段 2G：主动合法增强和有效动作池
+
+[验收报告](docs/STAGE2G_ACTIVE_SEMANTIC_ENRICHMENT.md)记录固定 50 个 S 的真实实验。
+S 为原始程序，P0 为合法增强程序，P1 为已有正式 MR 的非法结果；全部候选标为 Enriched。
+三个受控结构族连接原始只读 int/unsigned int 参数与原计算：同作用域指针、嵌套块双地址、typedef 回调值传递。
+默认原生检查器保持原有保守行为；新支持范围必须显式启用。
+
+从仓库根目录运行以下命令；复现目录必须不存在，旧结果禁止覆盖。先恢复前述历史 JSON，
+并保证固定的原始种子路径、runtime 和指定工具链可用。`source_snapshots/` 保存本次 50 个 S 的精确副本，
+`source_snapshot_index.json` 给出其原路径与 SHA256；不会自动写回原种子目录。
+
+```bash
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONPATH=second_point/src
+python3 -m edgm_second.active_run --phase init --out-dir second_point/evidence/stage2g_reproduction
+python3 second_point/tools/stage2g_manual.py --out-dir second_point/evidence/stage2g_reproduction
+python3 -m edgm_second.active_run --phase prepare --out-dir second_point/evidence/stage2g_reproduction
+python3 -m edgm_second.active_run --phase verify --out-dir second_point/evidence/stage2g_reproduction
+python3 second_point/tools/stage2g_audit.py --out-dir second_point/evidence/stage2g_reproduction
+python3 -m unittest discover -s second_point/tests -v
+```
+
+准备阶段每个 S/结构族最多保留两个位置，优先不同函数；验证前先按 S+MR+规范化上下文去重。
+验证阶段按预定轮转规则，每族最多选择 10 个不同种子；Oracle 保存并重放后才编译 P1。
+原始位置枚举、排除原因、所有 P0、去重排除项和全部实验结果均保留，不依据诊断补选。
+这是受控局部语义保持与闭合约束证明，不是任意 C11 程序的全局等价或无 UB 证明。
+阶段 2G 不实现学习模块或新 MR；const 方向留待另行授权的阶段 2H。

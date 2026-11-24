@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0012_183715985",
+  "seed_index": 19,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0012_183715985.c",
+  "s_sha256": "40fa08a0ff5f9a195a273daa08b842117072f8dc9bc3687c817ba773b0c4498b",
+  "position_id": "40fa08a0ff5f9a195a273daa08b842117072f8dc9bc3687c817ba773b0c4498b:c:seed_0012_183715985.c@113485@F@func_4@p_5:114885",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_019/typedef_callback_00",
+  "P0_id": "66614ed75ea1276ef4b96c67776f12840cb89acf33da1b9a41e535614734696a",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_019/typedef_callback_00/P0.c",
+  "semantic_context_signature": "6d39156dbcd933cce71ab1aa0c62d96bb413d6a4b486e079e92d99c7d8cb0e2f",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "==",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_40fa08a0ff_114885_2_0_dispatch_type@FI@ag_40fa08a0ff_114885_2_0_invoke",
+      "argument_usr": "c:P0.c@114263@F@func_4@ag_40fa08a0ff_114885_2_0_object",
+      "call_offset": 115845,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "aaf5e11639f6ed38398a72c7769466f43cdd7f4d23a4db396ae3cce5f5925cd0"
+}

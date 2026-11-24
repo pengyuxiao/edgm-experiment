@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0014_1752360340",
+  "seed_index": 6,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0014_1752360340.c",
+  "s_sha256": "194c80cb56ba02e0230646b8e294c5971b3040ed308a2a4b75312b0de40f6709",
+  "position_id": "194c80cb56ba02e0230646b8e294c5971b3040ed308a2a4b75312b0de40f6709:c:seed_0014_1752360340.c@115517@F@func_88@p_89:121784",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_006/typedef_callback_00",
+  "P0_id": "943ec6f6b5b828bbfb7296ba7290eb1462d7094457a920e44507651e37cb9664",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_006/typedef_callback_00/P0.c",
+  "semantic_context_signature": "f2aac628e848917cca32e8ddd018ee33e45ea08365675cf8c0cef255bf76817b",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "function_argument",
+    "original_context": [
+      "CALL_EXPR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_194c80cb56_121784_2_0_dispatch_type@FI@ag_194c80cb56_121784_2_0_invoke",
+      "argument_usr": "c:P0.c@116312@F@func_88@ag_194c80cb56_121784_2_0_object",
+      "call_offset": 122745,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "203a559275f2987f7d01a8243696eea0c18159a21fa4001b88d348ee07190c44"
+}

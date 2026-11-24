@@ -65,11 +65,13 @@ def simple_record(node):
 
 
 class Analysis:
-    def __init__(self, path, runtime):
+    def __init__(self, path, runtime, controlled=False):
+        self.controlled = controlled
         self.path = Path(path).resolve()
         self.data = self.path.read_bytes()
         started = time.perf_counter()
-        self.tu = parse_translation_unit(self.path, runtime)
+        self.tu = (parse_translation_unit(self.path, runtime, detailed_processing=True) if controlled
+                   else parse_translation_unit(self.path, runtime))
         self.timings = dict(parse_seconds=time.perf_counter() - started)
         self.diagnostics = [dict(severity=d.severity, text=str(d)) for d in self.tu.diagnostics]
         if any(d['severity'] >= c.Diagnostic.Error for d in self.diagnostics):
@@ -148,8 +150,18 @@ class Analysis:
         # A single automatic, unqualified scalar-record object with universal zero initialization.
         require(variable.semantic_parent.kind == K.FUNCTION_DECL and variable.type.get_canonical().kind == T.RECORD,
                 'ARGUMENT_NOT_AUTOMATIC_LOCAL')
-        require(spelling(variable) == [refs[0].referenced.spelling, variable.spelling, '=', '{', '0', '}'],
-                'ARGUMENT_INITIALIZER_OR_DECLARATOR_UNSUPPORTED')
+        initializer_proof = None
+        if spelling(variable) != [refs[0].referenced.spelling, variable.spelling, '=', '{', '0', '}']:
+            require(self.controlled, 'ARGUMENT_INITIALIZER_OR_DECLARATOR_UNSUPPORTED')
+            reads=[n for n in self.nodes if n.kind==K.DECL_REF_EXPR and variable.extent.start.offset<=n.extent.start.offset<variable.extent.end.offset]
+            require(len(reads)==1 and reads[0].referenced.kind==K.PARM_DECL,'INITIALIZER_NOT_SINGLE_PARAMETER')
+            read=reads[0];parameter=read.referenced;typ=parameter.type.get_canonical()
+            require(typ.kind==T.INT and not typ.is_const_qualified() and not typ.is_volatile_qualified()
+                    and parameter.semantic_parent==variable.semantic_parent,'INITIALIZER_PARAMETER_TYPE_OR_SCOPE')
+            require(spelling(variable)==[refs[0].referenced.spelling,variable.spelling,'=','{',parameter.spelling,'}'],
+                    'INITIALIZER_GRAMMAR_UNSUPPORTED')
+            initializer_proof=dict(parameter=self.node_anchor(parameter),read=self.node_anchor(read),
+                canonical_kind='INT',qualifiers=False,initializer_text='{ '+parameter.spelling+' }')
         uses = [n for n in self.nodes if n.kind == K.DECL_REF_EXPR and n.referenced
                 and uid(n.referenced) == uid(variable)]
         require(len(uses) == 1 and uses[0].location.offset == arg.location.offset, 'ARGUMENT_HAS_OTHER_USES')
@@ -157,8 +169,9 @@ class Analysis:
                 [spelling(member)[0], '.', field.spelling, '(', variable.spelling, ')'],
                 'REQUIRES_PLAIN_DOT_MEMBER_CALL')
         # Both payload records and the rewritten typedef must be file-scope and macro-free.
-        require(not any(t.spelling in ('#', '##', '__attribute__', '__declspec', '_Pragma')
-                        for t in self.tu.get_tokens(extent=self.tu.cursor.extent)), 'PREPROCESSING_OR_ATTRIBUTES_UNSUPPORTED')
+        if not self.controlled:
+            require(not any(t.spelling in ('#', '##', '__attribute__', '__declspec', '_Pragma')
+                            for t in self.tu.get_tokens(extent=self.tu.cursor.extent)), 'PREPROCESSING_OR_ATTRIBUTES_UNSUPPORTED')
         errors = []
         for changed in chain[1:]:  # Leave the variable's immediate alias, change an actual dependency edge.
             node = self.typedefs[changed]
@@ -196,9 +209,12 @@ class Analysis:
                                 ts[1].spelling.encode('utf-8'), replacement)
                 require(self.resolve(uid(refs[0].referenced), (changed, uid(other)))[0] == uid(other),
                         'SYMBOLIC_OVERRIDE_FAILED')
+                if self.controlled:
+                    from .controlled_typedef import check_regions
+                    check_regions(self,[call,variable,field,self.records[actual_id],other,*[self.typedefs[x] for x in affected]])
                 return dict(call=call, member=member, field=field, argument=arg, variable=variable,
                             expected_id=expected_id, actual_id=actual_id, changed=changed,
-                            replacement_id=uid(other), affected=sorted(affected), chain=chain, edit=edit)
+                            replacement_id=uid(other), affected=sorted(affected), chain=chain, edit=edit,initializer_proof=initializer_proof)
             except NotApplicable as exc:
                 errors.append(str(exc))
         raise NotApplicable(';'.join(sorted(set(errors))) or 'NO_ISOLATED_TYPEDEF_EDGE')
@@ -230,7 +246,7 @@ def scan_candidates(path, runtime):
     return analyze_candidates(path, runtime)
 
 
-def build_mutation(path, output_path, runtime, p0_validation):
+def build_mutation(path, output_path, runtime, p0_validation, controlled=False):
     """Return P1 bytes + a witness; no files are written and no P1 is parsed.
 
     P0 validation is the stage-1 receipt; it is admission evidence only, never
@@ -244,7 +260,7 @@ def build_mutation(path, output_path, runtime, p0_validation):
             and all(p0_validation.get('checks', {}).get(name, {}).get('returncode') == 0
                     and p0_validation['checks'][name]['command'][1:4] == ['-std=c11', '-fsyntax-only', '-w']
                     for name in ('gcc', 'clang')), 'MISSING_OR_STALE_P0_VALIDATION')
-    analysis = Analysis(path, runtime)
+    analysis = Analysis(path, runtime, controlled=True) if controlled else Analysis(path, runtime)
     require(analysis.data == data, 'SOURCE_CHANGED_DURING_ANALYSIS')
     item, reasons = analysis.scan()
     if item is None:
@@ -277,6 +293,9 @@ def build_mutation(path, output_path, runtime, p0_validation):
         'P0_PARAMETER_ARGUMENT_SAME_DECLARATION_IDENTITY', 'ONE_ISOLATED_ARGUMENT_VARIABLE',
         'ZERO_INITIALIZER_VALID_FOR_BOTH_RECORDS', 'AFFECTED_TYPE_REFERENCES_CLOSED',
         'NO_MACROS_ATTRIBUTES_OR_TAG_CAPTURE')]
+    if item.get('initializer_proof'):
+        for condition in preconditions:
+            if condition['id']=='ZERO_INITIALIZER_VALID_FOR_BOTH_RECORDS':condition['id']='INT_PARAMETER_INITIALIZER_VALID_FOR_BOTH_RECORDS'
     witness = ConstraintWitness(
         mr_id=MR_ID, seed_id=digest(data), constraint_id='C11:6.5.2.2p2', preconditions=preconditions,
         changed_declaration=dict(usr=item['changed'], spelling=changed.spelling,
@@ -313,6 +332,9 @@ def build_mutation(path, output_path, runtime, p0_validation):
         provenance=dict(standard_reference=STANDARD, standard_edition='public C11 committee draft N1570',
             inference='P0 AST graph with symbolic edge substitution; no P1 parse, compiler or diagnostics',
             p0_admission_sha256=p0_validation['sha256']))
+    if item.get('initializer_proof'):
+        witness.isolation.update(initializer_proof=item['initializer_proof'],initializer=item['initializer_proof']['initializer_text'],
+            controlled_region_policy='physical tokens, no macro overlap, no post-record includes')
     return dict(status='APPLIED', reasons=[], witness=witness, p1=p1)
 
 

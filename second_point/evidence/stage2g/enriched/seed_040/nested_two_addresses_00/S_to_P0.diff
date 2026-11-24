@@ -1,0 +1,27 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0042_1026382441.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_040/nested_two_addresses_00/P0.c
+@@ -1787,7 +1787,10 @@
+  * writes: g_55 g_59 g_81 g_213 g_5 g_141 g_91 g_190 g_156 g_187 g_451.f3 g_355 g_116 g_101
+  */
+ static const struct S1  func_43(union U2 * p_44, uint32_t  p_45)
+-{ /* block id: 11 */
++{
++struct ag_ea04c17107_176888_1_0_record { unsigned int ag_ea04c17107_176888_1_0_value; };
++struct ag_ea04c17107_176888_1_0_record ag_ea04c17107_176888_1_0_object = { p_45 };
++ /* block id: 11 */
+     uint32_t l_52[5][6][3] = {{{3UL,4294967295UL,0x0027488FL},{4294967295UL,4294967288UL,4294967288UL},{9UL,3UL,0x0027488FL},{3UL,4294967295UL,3UL},{3UL,0x34BB1B2BL,4294967295UL},{9UL,0x6B862B33L,9UL}},{{4294967295UL,0x34BB1B2BL,3UL},{3UL,4294967295UL,3UL},{0x0027488FL,3UL,9UL},{4294967288UL,4294967288UL,4294967295UL},{0x0027488FL,4294967295UL,3UL},{3UL,4294967295UL,0x0027488FL}},{{4294967295UL,4294967288UL,4294967288UL},{9UL,3UL,0x0027488FL},{3UL,4294967295UL,3UL},{3UL,0x34BB1B2BL,4294967295UL},{9UL,0x6B862B33L,9UL},{4294967295UL,0x34BB1B2BL,3UL}},{{3UL,4294967295UL,3UL},{0x0027488FL,3UL,9UL},{4294967288UL,4294967288UL,4294967295UL},{0x0027488FL,4294967295UL,3UL},{3UL,4294967295UL,0x0027488FL},{4294967295UL,4294967288UL,4294967288UL}},{{9UL,3UL,0x0027488FL},{3UL,4294967295UL,3UL},{3UL,0x34BB1B2BL,4294967295UL},{9UL,0x6B862B33L,9UL},{4294967295UL,0x34BB1B2BL,3UL},{3UL,4294967295UL,3UL}}};
+     uint64_t *l_863 = (void*)0;
+     uint64_t **l_862 = &l_863;
+@@ -1833,7 +1836,11 @@
+             int32_t *l_882[4] = {(void*)0,(void*)0,(void*)0,(void*)0};
+             int i, j, k;
+             (*g_354) = (*g_354);
+-            (*l_864) = (&g_448 != (((safe_mul_func_int16_t_s_s((g_6 < ((g_176.f3 >= ((&g_333 == l_871[0][5][4]) , (g_156[4][2][2] & ((*g_713) ^= (*l_864))))) < (l_872 | (g_101 = (safe_rshift_func_int64_t_s_u((safe_lshift_func_uint16_t_u_u((!(p_45 == 0x1BE11AFCBEA2302BLL)), l_878)), 29)))))), 0x0973L)) > p_45) , l_879));
++            {
++unsigned int *ag_ea04c17107_176888_1_0_left = &ag_ea04c17107_176888_1_0_object.ag_ea04c17107_176888_1_0_value;
++unsigned int *ag_ea04c17107_176888_1_0_right = &ag_ea04c17107_176888_1_0_object.ag_ea04c17107_176888_1_0_value;
++(*l_864) = (&g_448 != (((safe_mul_func_int16_t_s_s((g_6 < ((g_176.f3 >= ((&g_333 == l_871[0][5][4]) , (g_156[4][2][2] & ((*g_713) ^= (*l_864))))) < (l_872 | (g_101 = (safe_rshift_func_int64_t_s_u((safe_lshift_func_uint16_t_u_u((!((*(ag_ea04c17107_176888_1_0_left == ag_ea04c17107_176888_1_0_right ? ag_ea04c17107_176888_1_0_left : ag_ea04c17107_176888_1_0_right)) == 0x1BE11AFCBEA2302BLL)), l_878)), 29)))))), 0x0973L)) > p_45) , l_879));
++}
+             l_887--;
+             if (g_507.f5)
+                 goto lbl_890;

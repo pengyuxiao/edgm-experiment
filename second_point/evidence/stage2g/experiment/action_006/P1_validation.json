@@ -1,0 +1,42 @@
+{
+  "source": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_006/P1.c",
+  "status": "rejected",
+  "checks": {
+    "gcc": {
+      "command": [
+        "/opt/gcc-15.1.0/bin/gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_006/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_006/P1.c: In function 'func_88':\n/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_006/P1.c:1498:38: error: cannot take address of bit-field 'ag_194c80cb56_121784_0_0_value'\n 1498 | int *ag_194c80cb56_121784_0_0_left = &ag_194c80cb56_121784_0_0_object.ag_194c80cb56_121784_0_0_value;\n      |                                      ^\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.0520694931037724
+    },
+    "clang": {
+      "command": [
+        "/opt/llvm-22.1.0/bin/clang-22",
+        "-std=c11",
+        "-fsyntax-only",
+        "-w",
+        "-I",
+        "/home/pyx/edgm-experiment/src/csmithedge/csmith/runtime",
+        "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_006/P1.c"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_006/P1.c:1498:38: error: address of bit-field requested\n 1498 | int *ag_194c80cb56_121784_0_0_left = &ag_194c80cb56_121784_0_0_object.ag_194c80cb56_121784_0_0_value;\n      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "status": "nonzero",
+      "exception": null,
+      "elapsed_seconds": 0.08286555204540491
+    }
+  },
+  "sha256": "42cd9eae92a9e5e3b33f961d2dc771e43debe7d556e86aa20ac1c2da4f872bfc",
+  "source_unchanged": true
+}

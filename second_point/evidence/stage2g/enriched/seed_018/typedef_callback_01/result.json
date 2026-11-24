@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0009_1438768141",
+  "seed_index": 18,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0009_1438768141.c",
+  "s_sha256": "b366dec1c3d42c951e76f95afdc50be28bb829e4bd5e7811f491357ce2f3c900",
+  "position_id": "b366dec1c3d42c951e76f95afdc50be28bb829e4bd5e7811f491357ce2f3c900:c:seed_0009_1438768141.c@42975@F@func_10@p_14:46394",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_018/typedef_callback_01",
+  "P0_id": "f5cdf2a59198a2522c37f2765f8f4f3eb0e998325d90395041776f3409776001",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_018/typedef_callback_01/P0.c",
+  "semantic_context_signature": "b47d9970dfc2fb078e579a99a92ec7e871b868dee24074627b5423a0091291f6",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "return_value",
+    "original_context": [
+      "RETURN_STMT",
+      "RETURN_STMT",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_b366dec1c3_46394_2_0_dispatch_type@FI@ag_b366dec1c3_46394_2_0_invoke",
+      "argument_usr": "c:P0.c@43750@F@func_10@ag_b366dec1c3_46394_2_0_object",
+      "call_offset": 47330,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "5ea7e706e3bbbafbc1e26b749142e9c0eb70c5f37f82f0ed16b0e8fbb8439098"
+}

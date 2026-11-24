@@ -1,0 +1,24 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0003_192201221.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_038/split_pointer_00/P0.c
+@@ -358,7 +358,11 @@
+  * writes: g_241 g_164 g_116 g_60 g_99 g_493
+  */
+ static int64_t  func_17(int16_t  p_18, int32_t  p_19, uint32_t  p_20, const int32_t * p_21)
+-{ /* block id: 163 */
++{
++struct ag_eedfc54b85_21979_0_0_record { int ag_eedfc54b85_21979_0_0_value; };
++struct ag_eedfc54b85_21979_0_0_record ag_eedfc54b85_21979_0_0_object = { p_19 };
++int *ag_eedfc54b85_21979_0_0_left = &ag_eedfc54b85_21979_0_0_object.ag_eedfc54b85_21979_0_0_value;
++ /* block id: 163 */
+     int32_t l_416[6];
+     int32_t l_417 = (-1L);
+     const uint64_t *l_422[6] = {&g_423,&g_423,&g_423,&g_423,&g_423,&g_423};
+@@ -415,7 +419,7 @@
+             int8_t *l_474 = &g_99;
+             int i, j, k;
+             l_434 = (safe_add_func_int32_t_s_s(((l_429 != l_431) <= g_412[0][0][1]), l_433));
+-            l_455 ^= (l_434 = ((((safe_mul_func_uint32_t_u_u(g_64[2], (&g_249 == l_437[0][0][2]))) < (safe_mod_func_int32_t_s_s(((safe_mul_func_int8_t_s_s((((safe_lshift_func_uint64_t_u_s(0UL, g_249)) && 0xDF80L) || (safe_rshift_func_int32_t_s_u((safe_rshift_func_int32_t_s_s((safe_rshift_func_int64_t_s_s((l_450 != l_451[1][6][3]), (safe_rshift_func_int16_t_s_s(g_16, 12)))), 2)), l_454))), l_417)) < p_19), 0x021A93FCL))) , g_99) , l_416[4]));
++            l_455 ^= (l_434 = ((((safe_mul_func_uint32_t_u_u(g_64[2], (&g_249 == l_437[0][0][2]))) < (safe_mod_func_int32_t_s_s(((safe_mul_func_int8_t_s_s((((safe_lshift_func_uint64_t_u_s(0UL, g_249)) && 0xDF80L) || (safe_rshift_func_int32_t_s_u((safe_rshift_func_int32_t_s_s((safe_rshift_func_int64_t_s_s((l_450 != l_451[1][6][3]), (safe_rshift_func_int16_t_s_s(g_16, 12)))), 2)), l_454))), l_417)) < (*ag_eedfc54b85_21979_0_0_left)), 0x021A93FCL))) , g_99) , l_416[4]));
+             l_455 = ((safe_add_func_uint64_t_u_u(((safe_lshift_func_uint8_t_u_s(((*l_450) = 0x20L), ((((safe_lshift_func_uint64_t_u_u((safe_add_func_int32_t_s_s(((((safe_mul_func_uint32_t_u_u((safe_div_func_uint8_t_u_u((0L <= ((l_451[0][6][3] != (void*)0) || (++(*l_424)))), ((l_416[4] = g_188) & (g_192[1] , g_16)))), (safe_add_func_int8_t_s_s(((*l_474) = (g_60 = (((g_412[1][0][1] || ((l_437[0][0][2] != l_422[3]) <= 0x2BL)) , (void*)0) == &g_105))), 0L)))) ^ 0UL) & g_305) && g_412[0][4][1]), 1L)), g_403)) < p_20) , p_19) & 0xAC21L))) & g_28), p_18)) > 0xCFE2L);
+             l_475 = l_475;
+         }

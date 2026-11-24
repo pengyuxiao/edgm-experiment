@@ -1,0 +1,87 @@
+{
+  "status": "APPLICABLE",
+  "candidates": [
+    {
+      "field_usr": "c:P0.c@35289@F@func_11@S@ag_74e2fb3496_40003_1_0_record@FI@ag_74e2fb3496_40003_1_0_value",
+      "expected_addresses": 2
+    }
+  ],
+  "route": {
+    "parameter": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_046/nested_two_addresses_01/P0.c",
+      "line": 390,
+      "column": 49,
+      "offset": 35236,
+      "start_offset": 35226,
+      "end_offset": 35240,
+      "node_identity": "c:P0.c@35226@F@func_11@p_13:PARM_DECL:35226",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "uint32_t  p_13",
+      "usr": "c:P0.c@35226@F@func_11@p_13",
+      "referenced_usr": "c:P0.c@35226@F@func_11@p_13",
+      "kind": "PARM_DECL"
+    },
+    "initializer_read": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_046/nested_two_addresses_01/P0.c",
+      "line": 393,
+      "column": 74,
+      "offset": 35449,
+      "start_offset": 35449,
+      "end_offset": 35453,
+      "node_identity": "c:P0.c@35226@F@func_11@p_13:DECL_REF_EXPR:35449",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_13",
+      "usr": "",
+      "referenced_usr": "c:P0.c@35226@F@func_11@p_13",
+      "kind": "DECL_REF_EXPR"
+    },
+    "object": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_046/nested_two_addresses_01/P0.c",
+      "line": 393,
+      "column": 39,
+      "offset": 35414,
+      "start_offset": 35376,
+      "end_offset": 35455,
+      "node_identity": "c:P0.c@35376@F@func_11@ag_74e2fb3496_40003_1_0_object:VAR_DECL:35376",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "struct ag_74e2fb3496_40003_1_0_record ag_74e2fb3496_40003_1_0_object = { p_13 }",
+      "usr": "c:P0.c@35376@F@func_11@ag_74e2fb3496_40003_1_0_object",
+      "referenced_usr": "c:P0.c@35376@F@func_11@ag_74e2fb3496_40003_1_0_object",
+      "kind": "VAR_DECL"
+    },
+    "original_operation": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_046/nested_two_addresses_01/P0.c",
+      "line": 475,
+      "column": 374,
+      "offset": 40125,
+      "start_offset": 40125,
+      "end_offset": 40521,
+      "node_identity": "c:safe_math.h@F@safe_mul_func_int16_t_s_s:CALL_EXPR:40125",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "safe_mul_func_int16_t_s_s((((safe_add_func_int64_t_s_s(((g_367 , ((safe_mul_func_uint16_t_u_u(((safe_lshift_func_int64_t_s_s((((*l_816) = l_815) != l_728), 58)) >= 0xC010L), p_15)) >= 1UL)) , 0xB765247E1BF10860LL), 0xE4DCBFE7FDAD28D0LL)) && l_817) != 4294967286UL), (*(ag_74e2fb3496_40003_1_0_left == ag_74e2fb3496_40003_1_0_right ? ag_74e2fb3496_40003_1_0_left : ag_74e2fb3496_40003_1_0_right)))",
+      "usr": "",
+      "referenced_usr": "c:safe_math.h@F@safe_mul_func_int16_t_s_s",
+      "kind": "CALL_EXPR"
+    },
+    "route_expression": {
+      "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_046/nested_two_addresses_01/P0.c",
+      "line": 475,
+      "column": 640,
+      "offset": 40391,
+      "start_offset": 40391,
+      "end_offset": 40520,
+      "node_identity": ":PAREN_EXPR:40391",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "(*(ag_74e2fb3496_40003_1_0_left == ag_74e2fb3496_40003_1_0_right ? ag_74e2fb3496_40003_1_0_left : ag_74e2fb3496_40003_1_0_right))",
+      "usr": "",
+      "referenced_usr": "",
+      "kind": "PAREN_EXPR"
+    },
+    "record_usr": "c:P0.c@35289@F@func_11@S@ag_74e2fb3496_40003_1_0_record",
+    "helper_usr": null,
+    "helper_anchor": null,
+    "cross_function_value_route": false,
+    "proof": "immutable initialized parameter -> private member initialized once -> known pointer/identity-callback -> same original binary operation"
+  },
+  "reasons": []
+}

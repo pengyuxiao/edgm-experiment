@@ -1,0 +1,24 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0025_1831379652.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_049/split_pointer_00/P0.c
+@@ -346,7 +346,11 @@
+  * writes: g_56 g_75 g_244 g_463 g_57
+  */
+ static int64_t  func_12(int32_t  p_13, uint8_t  p_14, uint64_t  p_15, int32_t  p_16, uint32_t  p_17)
+-{ 
++{
++struct ag_9f6bac5ada_46655_0_0_record { int ag_9f6bac5ada_46655_0_0_value; };
++struct ag_9f6bac5ada_46655_0_0_record ag_9f6bac5ada_46655_0_0_object = { p_13 };
++int *ag_9f6bac5ada_46655_0_0_left = &ag_9f6bac5ada_46655_0_0_object.ag_9f6bac5ada_46655_0_0_value;
++ 
+ /* edgm diversify: while + continue/break (tag=72944) */
+ do {
+     volatile unsigned edgm_w_72944 = ((((((unsigned)0u) + 17u) & 0xFFu)) & 7u);
+@@ -389,7 +393,7 @@
+     } while (0);
+     int i, j;
+     (**g_1278) = (**g_1278);
+-    (*g_56) = ((safe_add_func_uint8_t_u_u(((safe_add_func_int16_t_s_s((***g_2227), (safe_add_func_int32_t_s_s((safe_sub_func_int64_t_s_s((p_14 >= (safe_mul_func_int16_t_s_s(((safe_add_func_int16_t_s_s(p_14, (*g_2054))) & (((*l_3170) = (safe_lshift_func_uint8_t_u_s(((p_15 , (safe_rshift_func_int64_t_s_s((safe_mod_func_uint32_t_u_u((l_3166 != ((safe_mul_func_int64_t_s_s((1UL < ((***g_610) = p_17)), (((**g_2758) & (*g_2466)) || 0x714D70BDE575C00ALL))) , (void*)0)), l_3169[8][0])), p_17))) , 0xAFL), p_15))) ^ p_13)), (***g_2757)))), l_3169[1][3])), (***g_1278))))) <= p_15), l_3171)) >= l_3172);
++    (*g_56) = ((safe_add_func_uint8_t_u_u(((safe_add_func_int16_t_s_s((***g_2227), (safe_add_func_int32_t_s_s((safe_sub_func_int64_t_s_s((p_14 >= (safe_mul_func_int16_t_s_s(((safe_add_func_int16_t_s_s(p_14, (*g_2054))) & (((*l_3170) = (safe_lshift_func_uint8_t_u_s(((p_15 , (safe_rshift_func_int64_t_s_s((safe_mod_func_uint32_t_u_u((l_3166 != ((safe_mul_func_int64_t_s_s((1UL < ((***g_610) = p_17)), (((**g_2758) & (*g_2466)) || 0x714D70BDE575C00ALL))) , (void*)0)), l_3169[8][0])), p_17))) , 0xAFL), p_15))) ^ (*ag_9f6bac5ada_46655_0_0_left))), (***g_2757)))), l_3169[1][3])), (***g_1278))))) <= p_15), l_3171)) >= l_3172);
+     return (*g_428);
+ }
+ 

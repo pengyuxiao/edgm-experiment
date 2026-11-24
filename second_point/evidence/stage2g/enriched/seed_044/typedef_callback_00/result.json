@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0037_536687708",
+  "seed_index": 44,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0037_536687708.c",
+  "s_sha256": "0023f9d1518d0b94d7f538f84b4e5380f5aa2c8f1848f36568ae9dfafcaad258",
+  "position_id": "0023f9d1518d0b94d7f538f84b4e5380f5aa2c8f1848f36568ae9dfafcaad258:c:seed_0037_536687708.c@155878@F@main@argc:156156",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_044/typedef_callback_00",
+  "P0_id": "63b36fe95fd88f36e91835ec0e06c20cd6037632b227a4043987c98ec39a19fc",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_044/typedef_callback_00/P0.c",
+  "semantic_context_signature": "e733e51609b6a00d3a3db754d12227dfe95bff962a69576c1affa3248513bf77",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "entry_control",
+    "original_operator": "==",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_0023f9d151_156156_2_0_dispatch_type@FI@ag_0023f9d151_156156_2_0_invoke",
+      "argument_usr": "c:P0.c@156666@F@main@ag_0023f9d151_156156_2_0_object",
+      "call_offset": 157117,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "36f7f014f53c050c6331c2d8cbac36ddf99573619221644fd882c3ffa8bebfa3"
+}

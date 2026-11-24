@@ -1,0 +1,24 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0001_997117443.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_011/nested_two_addresses_00/P0.c
+@@ -1344,13 +1344,20 @@
+ /* ---------------------------------------- */
+ int main (int argc, char* argv[])
+ {
++struct ag_036d98f596_95200_1_0_record { int ag_036d98f596_95200_1_0_value; };
++struct ag_036d98f596_95200_1_0_record ag_036d98f596_95200_1_0_object = { argc };
++
+     int i, j, k;
+     int print_hash_value = 0;
+ 
+     /* edgm diversify: local enum + use (tag=51427) */
+     enum edgm_le_51427 { edgm_le_51427_X = 0, edgm_le_51427_Y = 1, edgm_le_51427_Z = 3 };
+     do { volatile unsigned edgm_le_use_51427 = (((((((((unsigned)((unsigned long)(g_1474))) << 1) & 0xFFu)) >> 1) & 0xFFu)) & 3u) + (unsigned)edgm_le_51427_Z; (void)edgm_le_use_51427; } while (0);
+-    if (argc == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
++    {
++int *ag_036d98f596_95200_1_0_left = &ag_036d98f596_95200_1_0_object.ag_036d98f596_95200_1_0_value;
++int *ag_036d98f596_95200_1_0_right = &ag_036d98f596_95200_1_0_object.ag_036d98f596_95200_1_0_value;
++if ((*(ag_036d98f596_95200_1_0_left == ag_036d98f596_95200_1_0_right ? ag_036d98f596_95200_1_0_left : ag_036d98f596_95200_1_0_right)) == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
++}
+     platform_main_begin();
+     crc32_gentab();
+     func_1();

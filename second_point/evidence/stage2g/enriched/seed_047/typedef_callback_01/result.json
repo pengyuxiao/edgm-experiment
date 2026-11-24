@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0050_1010242943",
+  "seed_index": 47,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0050_1010242943.c",
+  "s_sha256": "58fb5d4bba42bbba8051f8350a8ac4c05dace72066439af31703ccff9ad85925",
+  "position_id": "58fb5d4bba42bbba8051f8350a8ac4c05dace72066439af31703ccff9ad85925:c:seed_0050_1010242943.c@43169@F@func_23@p_25:51958",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_047/typedef_callback_01",
+  "P0_id": "d7a5fa4fd628febe946a562c120534401c3e074710ef3f4a4f542e7d8ce40ad2",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_047/typedef_callback_01/P0.c",
+  "semantic_context_signature": "9b139ed6fbcb300ddb64765c540ff77330c207bc99499bd52beafce102fd4179",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "!=",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_58fb5d4bba_51958_2_0_dispatch_type@FI@ag_58fb5d4bba_51958_2_0_invoke",
+      "argument_usr": "c:P0.c@43928@F@func_23@ag_58fb5d4bba_51958_2_0_object",
+      "call_offset": 52894,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "cf63a2d1f9bb35080ee474d1ad235903bb30f0d7814494de038a4b8ac7a38455"
+}

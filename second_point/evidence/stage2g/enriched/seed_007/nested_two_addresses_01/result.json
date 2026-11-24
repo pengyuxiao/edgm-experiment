@@ -1,0 +1,44 @@
+{
+  "seed_id": "seed_0011_494209296",
+  "seed_index": 7,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0011_494209296.c",
+  "s_sha256": "a7b6bfe6efd09e1e6e971a7376477d8db967339924bd7a2b0d876c1d01098893",
+  "position_id": "a7b6bfe6efd09e1e6e971a7376477d8db967339924bd7a2b0d876c1d01098893:c:seed_0011_494209296.c@53839@F@func_50@p_51:55944",
+  "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+  "enrichment_family": "nested_two_addresses",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_007/nested_two_addresses_01",
+  "P0_id": "b271953617d4e5d074a5569c8938ecc2bfd4ff2f274f308569679221e39b5994",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_007/nested_two_addresses_01/P0.c",
+  "semantic_context_signature": "3d11833ffabaef8679da44501ae1ddee8b6388805e58b004551fa39844e31d89",
+  "semantic_context": {
+    "family": "nested_two_addresses",
+    "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "&&",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 2,
+    "cross_statement": true,
+    "cross_scope": true,
+    "cross_function": false,
+    "target_use_points": 2,
+    "record_shape": "single_integer_member",
+    "access_form": "private_pointer_dereference",
+    "value_route": "private member -> address -> pointer selection -> dereference",
+    "typedef_depth": 0
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:P0.c@53856@F@func_50@S@ag_a7b6bfe6ef_55944_1_0_record@FI@ag_a7b6bfe6ef_55944_1_0_value",
+      "expected_addresses": 2
+    }
+  ],
+  "candidate_id": "08e2ceb62d222c7d87b2824fa0019e0bd6ff595bb9371c32b1d3e67854c6b2b8"
+}

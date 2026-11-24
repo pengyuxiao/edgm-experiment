@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0047_1704664439",
+  "seed_index": 12,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0047_1704664439.c",
+  "s_sha256": "e43cc34c2867fffe1b9441f2c10d3078333943b863fcc20fa847085b84a30055",
+  "position_id": "e43cc34c2867fffe1b9441f2c10d3078333943b863fcc20fa847085b84a30055:c:seed_0047_1704664439.c@35431@F@func_8@p_11:46538",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_012/typedef_callback_00",
+  "P0_id": "70ae2ad60c100eb9fac0a767836754f6cdeaba87f617671d17936f9c20eeba54",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_012/typedef_callback_00/P0.c",
+  "semantic_context_signature": "aae092ad59b2444f62e5c494fdea94244baae18ed96b1f8a24beb68c1a6ff01c",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "||",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_e43cc34c28_46538_2_0_dispatch_type@FI@ag_e43cc34c28_46538_2_0_invoke",
+      "argument_usr": "c:P0.c@36205@F@func_8@ag_e43cc34c28_46538_2_0_object",
+      "call_offset": 47474,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "c412d59f212e2e368daffa378257b58858051686263b48fa348a9bb107721dd8"
+}

@@ -226,6 +226,12 @@ def build_mutation(path, output, runtime, profile, admission, provenance, candid
         require(s==p0, 'NATIVE_SOURCE_NOT_IDENTICAL')
         provenance=dict(provenance,original_to_p0=dict(kind='identity',original=[0,len(s)],p0=[0,len(p0)],
             original_sha256=digest(s),p0_sha256=digest(p0)))
+    elif 'active_enrichment' in provenance:
+        from .active_enrichment import verify_enrichment,mapped_offset
+        active=provenance['active_enrichment'];verify_enrichment(active,s,p0)
+        flow=candidate['isolation']['native_proof']['controlled_flow']
+        require(flow['parameter_declaration']['offset']==mapped_offset(active,active['position']['declaration']['offset']),
+                'ACTIVE_PARAMETER_PROVENANCE_MISMATCH')
     else:
         verify_enrichment_provenance(s,p0,provenance['enrichment'])
         receipt = provenance['enrichment']
@@ -295,6 +301,10 @@ def verify_bitfield_witness(witness,p0,p1,original):
     require(w['isolation']['record_uses_closed'] is True and w['isolation']['no_layout_observation'] is True,
             'IMPACT_NOT_CLOSED')
     native = w['isolation'].get('native_proof', {})
+    if 'controlled_flow' in native:
+        from .controlled_bitfield import verify_controlled_flow
+        require(native['impact_closed'] is True and not native['reasons'],'CONTROLLED_IMPACT_NOT_CLOSED')
+        verify_controlled_flow(native['controlled_flow'],p0,d['field_usr'],d['record_usr'])
     if 'layout_independence' in native:
         from .scoped_layout import verify_layout_proof
         require(native['field']['usr'] == d['field_usr'] and native['record_usr'] == d['record_usr'],
@@ -326,7 +336,11 @@ def verify_bitfield_witness(witness,p0,p1,original):
         'AFFECTED_MEMBER_COVERAGE_MISMATCH')
     provenance=w['provenance']
     require(digest(original)==w['seed_id']==provenance['original_sha256'],'SEED_HASH_MISMATCH')
-    if provenance['source_kind']=='Enriched':verify_enrichment_provenance(original,p0,provenance['enrichment'])
+    if provenance['source_kind']=='Enriched' and 'active_enrichment' in provenance:
+        from .active_enrichment import verify_enrichment,mapped_offset
+        active=provenance['active_enrichment'];verify_enrichment(active,original,p0)
+        require(w['isolation']['native_proof']['controlled_flow']['parameter_declaration']['offset']==mapped_offset(active,active['position']['declaration']['offset']), 'ACTIVE_PARAMETER_PROVENANCE_MISMATCH')
+    elif provenance['source_kind']=='Enriched':verify_enrichment_provenance(original,p0,provenance['enrichment'])
     else:
         require(provenance['source_kind']=='Native' and original==p0,'NATIVE_PROVENANCE_MISMATCH')
         require(provenance['original_to_p0']==dict(kind='identity',original=[0,len(original)],p0=[0,len(p0)],

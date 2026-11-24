@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0025_1831379652",
+  "seed_index": 49,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0025_1831379652.c",
+  "s_sha256": "9f6bac5ada210bc5f4525acd8e80ac9ef151b4ca7c8210ee6ec6ad860096def8",
+  "position_id": "9f6bac5ada210bc5f4525acd8e80ac9ef151b4ca7c8210ee6ec6ad860096def8:c:seed_0025_1831379652.c@44366@F@func_12@p_13:46655",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_049/typedef_callback_00",
+  "P0_id": "3009b4b744b1ed9c68cf86794ae29179ae1f78383a2b71b4ab33c9223d5b365e",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_049/typedef_callback_00/P0.c",
+  "semantic_context_signature": "4640f9144b7ab70ac876f4742e23684dddef3660225c93f762472e9d3794004e",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "^",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_9f6bac5ada_46655_2_0_dispatch_type@FI@ag_9f6bac5ada_46655_2_0_invoke",
+      "argument_usr": "c:P0.c@45187@F@func_12@ag_9f6bac5ada_46655_2_0_object",
+      "call_offset": 47591,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "e4f5448f682a39249ec82bf2ad5c8d5bbd15bbc711c5d8e953888b86d93010d6"
+}

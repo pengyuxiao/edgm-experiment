@@ -1,0 +1,24 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0033_1818365261.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_050/split_pointer_00/P0.c
+@@ -972,7 +972,11 @@
+  * writes: g_83 g_911.f4 g_801 g_183.f1 g_330.f5 g_98 g_1217 g_183.f8 g_323 g_333.f5 g_127
+  */
+ static uint32_t  func_11(uint32_t  p_12)
+-{ /* block id: 562 */
++{
++struct ag_65cebdce71_103549_0_0_record { unsigned int ag_65cebdce71_103549_0_0_value; };
++struct ag_65cebdce71_103549_0_0_record ag_65cebdce71_103549_0_0_object = { p_12 };
++unsigned int *ag_65cebdce71_103549_0_0_left = &ag_65cebdce71_103549_0_0_object.ag_65cebdce71_103549_0_0_value;
++ /* block id: 562 */
+     const int32_t *l_1290 = &g_6;
+     const int32_t **l_1289[3][3][4] = {{{&l_1290,&l_1290,&l_1290,&l_1290},{(void*)0,(void*)0,&l_1290,&l_1290},{&l_1290,&l_1290,&l_1290,&l_1290}},{{&l_1290,&l_1290,(void*)0,&l_1290},{(void*)0,&l_1290,&l_1290,&l_1290},{(void*)0,(void*)0,&l_1290,&l_1290}},{{(void*)0,&l_1290,&l_1290,(void*)0},{(void*)0,&l_1290,(void*)0,&l_1290},{&l_1290,&l_1290,&l_1290,(void*)0}}};
+     int8_t l_1300[9] = {0xF8L,0x4FL,0x4FL,0xF8L,0x4FL,0x4FL,0xF8L,0x4FL,0x4FL};
+@@ -1020,7 +1024,7 @@
+         union U3 * const **l_1321 = &l_1322;
+         int32_t *l_1329 = &l_1303;
+         int i;
+-        l_1301[1] &= ((l_1294 = l_1293) ^ ((safe_mul_func_int16_t_s_s((safe_add_func_uint32_t_u_u((safe_unary_minus_func_uint8_t_u(248UL)), p_12)), (g_330.f5 |= ((((*g_575) = l_1293) & (**g_954)) , l_1300[5])))) || 255UL));
++        l_1301[1] &= ((l_1294 = l_1293) ^ ((safe_mul_func_int16_t_s_s((safe_add_func_uint32_t_u_u((safe_unary_minus_func_uint8_t_u(248UL)), (*ag_65cebdce71_103549_0_0_left))), (g_330.f5 |= ((((*g_575) = l_1293) & (**g_954)) , l_1300[5])))) || 255UL));
+         l_1303 ^= g_1302;
+         for (g_98 = (-10); (g_98 >= 25); ++g_98)
+         { /* block id: 574 */

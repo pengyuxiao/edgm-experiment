@@ -1,0 +1,48 @@
+{
+  "candidate_id": "813d15a27ff68a2b9d81487602b91880775012df6f23f5a06255b2edc393f127",
+  "seed_id": "manual_control",
+  "family": "typedef_callback",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "status": "VALIDATED",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/typedef_callback/P0.c",
+  "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/experiment/action_003/P1.c",
+  "p0_sha256": "f409bb0076c192edd41cca64877075845f0557f2de443bb19eb89444ccdcd3da",
+  "p1_sha256": "4397083fef100ebebc2c7e6ffed7741d5237d6231cb1ad8bf085b0d171cd4735",
+  "observations": {
+    "gcc": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/experiment/action_003/P1.c",
+          "line": 13,
+          "column": 66,
+          "severity": "error",
+          "category": "incompatible_struct_argument",
+          "message": "incompatible type for argument 1 of 'ag_42846fbf77_50_2_0_dispatch.ag_42846fbf77_50_2_0_invoke'",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/experiment/action_003/P1.c:13:66: error: incompatible type for argument 1 of 'ag_42846fbf77_50_2_0_dispatch.ag_42846fbf77_50_2_0_invoke'",
+          "exact_target_anchor": true
+        }
+      ],
+      "confirmed_bug": false
+    },
+    "clang": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/experiment/action_003/P1.c",
+          "line": 13,
+          "column": 66,
+          "severity": "error",
+          "category": "incompatible_struct_argument",
+          "message": "passing 'ag_42846fbf77_50_2_0_argument' (aka 'struct ag_42846fbf77_50_2_0_other') to parameter of incompatible type 'ag_42846fbf77_50_2_0_root' (aka 'struct ag_42846fbf77_50_2_0_record')",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/manual/experiment/action_003/P1.c:13:66: error: passing 'ag_42846fbf77_50_2_0_argument' (aka 'struct ag_42846fbf77_50_2_0_other') to parameter of incompatible type 'ag_42846fbf77_50_2_0_root' (aka 'struct ag_42846fbf77_50_2_0_record')",
+          "exact_target_anchor": true
+        }
+      ],
+      "confirmed_bug": false
+    }
+  },
+  "oracle_replay": true,
+  "oracle_unchanged": true,
+  "confirmed_bug": false
+}

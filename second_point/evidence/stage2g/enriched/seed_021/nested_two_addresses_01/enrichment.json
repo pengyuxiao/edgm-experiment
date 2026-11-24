@@ -1,0 +1,193 @@
+{
+  "schema": "stage2g-enrichment-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0041_835489636.c",
+  "s_sha256": "f2e0c7a7bd07f9c76da1ce66680dabf3e7befcf8853692df63c4e9bc06c353bd",
+  "p0_sha256": "3b7ad2f876a65e39cbfec5abb39f23a58058d14a8312cdbedcda2eacdbee4119",
+  "position": {
+    "position_id": "f2e0c7a7bd07f9c76da1ce66680dabf3e7befcf8853692df63c4e9bc06c353bd:c:seed_0041_835489636.c@140456@F@func_90@p_95:141206",
+    "read": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0041_835489636.c",
+      "line": 1861,
+      "column": 264,
+      "offset": 141206,
+      "start_offset": 141206,
+      "end_offset": 141210,
+      "node_identity": "c:seed_0041_835489636.c@140456@F@func_90@p_95:DECL_REF_EXPR:141206",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_95",
+      "usr": "",
+      "referenced_usr": "c:seed_0041_835489636.c@140456@F@func_90@p_95",
+      "kind": "DECL_REF_EXPR"
+    },
+    "declaration": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0041_835489636.c",
+      "line": 1851,
+      "column": 103,
+      "offset": 140465,
+      "start_offset": 140456,
+      "end_offset": 140469,
+      "node_identity": "c:seed_0041_835489636.c@140456@F@func_90@p_95:PARM_DECL:140456",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "int32_t  p_95",
+      "usr": "c:seed_0041_835489636.c@140456@F@func_90@p_95",
+      "referenced_usr": "c:seed_0041_835489636.c@140456@F@func_90@p_95",
+      "kind": "PARM_DECL"
+    },
+    "function_offset": 140363,
+    "body_start": 140471,
+    "kind": "INT",
+    "parameter": "p_95",
+    "function_name": "func_90",
+    "function_usr": "c:seed_0041_835489636.c@F@func_90",
+    "operator": "function_argument",
+    "operation": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0041_835489636.c",
+      "line": 1861,
+      "column": 239,
+      "offset": 141181,
+      "start_offset": 141181,
+      "end_offset": 141221,
+      "node_identity": "c:safe_math.h@F@safe_mul_func_int8_t_s_s:CALL_EXPR:141181",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "safe_mul_func_int8_t_s_s(p_95, (*l_107))",
+      "usr": "",
+      "referenced_usr": "c:safe_math.h@F@safe_mul_func_int8_t_s_s",
+      "kind": "CALL_EXPR"
+    },
+    "unit": [
+      140947,
+      141332
+    ],
+    "nested_supported": true,
+    "ancestor_context": [
+      "CALL_EXPR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ]
+  },
+  "enrichment_family": "nested_two_addresses",
+  "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+  "semantic_context": {
+    "family": "nested_two_addresses",
+    "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "function_argument",
+    "original_context": [
+      "CALL_EXPR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 2,
+    "cross_statement": true,
+    "cross_scope": true,
+    "cross_function": false,
+    "target_use_points": 2,
+    "record_shape": "single_integer_member",
+    "access_form": "private_pointer_dereference",
+    "value_route": "private member -> address -> pointer selection -> dereference",
+    "typedef_depth": 0
+  },
+  "semantic_context_signature": "a37566dad5b8e68ea8814a1ef09eb82fec156baf6d6de2b409ab4de04144653c",
+  "names": {
+    "record": "ag_f2e0c7a7bd_141206_1_0_record",
+    "other": "ag_f2e0c7a7bd_141206_1_0_other",
+    "value": "ag_f2e0c7a7bd_141206_1_0_value",
+    "object": "ag_f2e0c7a7bd_141206_1_0_object",
+    "left": "ag_f2e0c7a7bd_141206_1_0_left",
+    "right": "ag_f2e0c7a7bd_141206_1_0_right",
+    "root": "ag_f2e0c7a7bd_141206_1_0_root",
+    "middle": "ag_f2e0c7a7bd_141206_1_0_middle",
+    "argument": "ag_f2e0c7a7bd_141206_1_0_argument",
+    "callback": "ag_f2e0c7a7bd_141206_1_0_callback",
+    "dispatch_type": "ag_f2e0c7a7bd_141206_1_0_dispatch_type",
+    "dispatch": "ag_f2e0c7a7bd_141206_1_0_dispatch",
+    "extract": "ag_f2e0c7a7bd_141206_1_0_extract",
+    "input": "ag_f2e0c7a7bd_141206_1_0_input",
+    "invoke": "ag_f2e0c7a7bd_141206_1_0_invoke"
+  },
+  "replacement": "(*(ag_f2e0c7a7bd_141206_1_0_left == ag_f2e0c7a7bd_141206_1_0_right ? ag_f2e0c7a7bd_141206_1_0_left : ag_f2e0c7a7bd_141206_1_0_right))",
+  "edits": [
+    {
+      "start": 140472,
+      "end": 140472,
+      "before": "",
+      "after": "\nstruct ag_f2e0c7a7bd_141206_1_0_record { int ag_f2e0c7a7bd_141206_1_0_value; };\nstruct ag_f2e0c7a7bd_141206_1_0_record ag_f2e0c7a7bd_141206_1_0_object = { p_95 };\n"
+    },
+    {
+      "start": 140947,
+      "end": 141332,
+      "before": "(*l_107) = (l_107 != ((((void*)0 != l_107) && (safe_lshift_func_int16_t_s_u((8L <= ((*l_124) |= ((*l_122) = (safe_add_func_int16_t_s_s(0x5D26L, ((((safe_div_func_int16_t_s_s((safe_mod_func_int16_t_s_s((safe_lshift_func_int64_t_s_u((((safe_mul_func_int8_t_s_s(p_95, (*l_107))) >= ((void*)0 == &g_27)) & 0UL), 4)), g_71[2][4])), (*l_107))) , g_70) < 0x7E42L) && 0L)))))), 8))) , l_107));",
+      "after": "{\nint *ag_f2e0c7a7bd_141206_1_0_left = &ag_f2e0c7a7bd_141206_1_0_object.ag_f2e0c7a7bd_141206_1_0_value;\nint *ag_f2e0c7a7bd_141206_1_0_right = &ag_f2e0c7a7bd_141206_1_0_object.ag_f2e0c7a7bd_141206_1_0_value;\n(*l_107) = (l_107 != ((((void*)0 != l_107) && (safe_lshift_func_int16_t_s_u((8L <= ((*l_124) |= ((*l_122) = (safe_add_func_int16_t_s_s(0x5D26L, ((((safe_div_func_int16_t_s_s((safe_mod_func_int16_t_s_s((safe_lshift_func_int64_t_s_u((((safe_mul_func_int8_t_s_s((*(ag_f2e0c7a7bd_141206_1_0_left == ag_f2e0c7a7bd_141206_1_0_right ? ag_f2e0c7a7bd_141206_1_0_left : ag_f2e0c7a7bd_141206_1_0_right)), (*l_107))) >= ((void*)0 == &g_27)) & 0UL), 4)), g_71[2][4])), (*l_107))) , g_70) < 0x7E42L) && 0L)))))), 8))) , l_107));\n}"
+    }
+  ],
+  "source_map": [
+    {
+      "kind": "identity",
+      "s": [
+        0,
+        140472
+      ],
+      "p0": [
+        0,
+        140472
+      ]
+    },
+    {
+      "kind": "generated",
+      "s": [
+        140472,
+        140472
+      ],
+      "p0": [
+        140472,
+        140636
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        140472,
+        140947
+      ],
+      "p0": [
+        140636,
+        141111
+      ]
+    },
+    {
+      "kind": "replacement",
+      "s": [
+        140947,
+        141332
+      ],
+      "p0": [
+        141111,
+        141834
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        141332,
+        150527
+      ],
+      "p0": [
+        141834,
+        151029
+      ]
+    }
+  ],
+  "local_equivalence": {
+    "parameter_initialized": true,
+    "all_parameter_references_read_only": true,
+    "early_nonvolatile_read_has_no_observable_effect": true,
+    "value_type_preserved": true,
+    "new_objects_private": true,
+    "new_calls_pure_identity": false,
+    "original_expression_evaluation_path_preserved": true,
+    "global_ub_proof": false
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0011_494209296",
+  "seed_index": 7,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0011_494209296.c",
+  "s_sha256": "a7b6bfe6efd09e1e6e971a7376477d8db967339924bd7a2b0d876c1d01098893",
+  "position_id": "a7b6bfe6efd09e1e6e971a7376477d8db967339924bd7a2b0d876c1d01098893:c:seed_0011_494209296.c@53839@F@func_50@p_51:55944",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_007/typedef_callback_01",
+  "P0_id": "43702da1a09483a283863cdc2908796ea9f8adf31d919b92abaa59984bdb1967",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_007/typedef_callback_01/P0.c",
+  "semantic_context_signature": "9e3d2eb6f0d33677fa90909daf9f3c4984b84aa4a7b0233f86671b45bb5e97b3",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "&&",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_a7b6bfe6ef_55944_2_0_dispatch_type@FI@ag_a7b6bfe6ef_55944_2_0_invoke",
+      "argument_usr": "c:P0.c@54598@F@func_50@ag_a7b6bfe6ef_55944_2_0_object",
+      "call_offset": 56880,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "e442bf4cde97a2b5824c3bcbb80b0a0a47beb95384777860d5a6c83be393d965"
+}

@@ -1,0 +1,16 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0026_1768382021.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_034/split_pointer_00/P0.c
+@@ -78,8 +78,12 @@
+ /* ---------------------------------------- */
+ int main (int argc, char* argv[])
+ {
++struct ag_a389ca940c_1801_0_0_record { int ag_a389ca940c_1801_0_0_value; };
++struct ag_a389ca940c_1801_0_0_record ag_a389ca940c_1801_0_0_object = { argc };
++int *ag_a389ca940c_1801_0_0_left = &ag_a389ca940c_1801_0_0_object.ag_a389ca940c_1801_0_0_value;
++
+     int print_hash_value = 0;
+-    if (argc == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
++    if ((*ag_a389ca940c_1801_0_0_left) == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
+     platform_main_begin();
+     crc32_gentab();
+     func_1();

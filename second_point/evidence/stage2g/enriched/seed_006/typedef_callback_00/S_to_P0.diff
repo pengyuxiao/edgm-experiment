@@ -1,0 +1,32 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0014_1752360340.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_006/typedef_callback_00/P0.c
+@@ -1491,8 +1491,19 @@
+  * reads : g_270 g_827 g_684 g_368 g_369 g_159 g_902.f0 g_2 g_204 g_640 g_423 g_116 g_117 g_44 g_218 g_932 g_938 g_157 g_74 g_325 g_73 g_975 g_586 g_136 g_422 g_585 g_1005 g_639 g_161 g_1016 g_212.f0 g_137 g_903 g_1056 g_567 g_207 g_822 g_838.f2 g_1091 g_333 g_900 g_283 g_1139 g_1155 g_222 g_1156 g_1157 g_1183 g_1210 g_1006 g_198 g_933 g_121 g_1250 g_1251
+  * writes: g_270 g_68 g_137 g_157 g_44 g_161 g_932 g_218 g_222 g_1012 g_74 g_325 g_121 g_975 g_207 g_370 g_1155 g_822 g_136 g_423 g_159 g_198 g_204 g_902.f0 g_826
+  */
++struct ag_194c80cb56_121784_2_0_record { int ag_194c80cb56_121784_2_0_value; };
++struct ag_194c80cb56_121784_2_0_other { int ag_194c80cb56_121784_2_0_value; };
++typedef struct ag_194c80cb56_121784_2_0_record ag_194c80cb56_121784_2_0_root;
++typedef ag_194c80cb56_121784_2_0_root ag_194c80cb56_121784_2_0_middle;
++typedef ag_194c80cb56_121784_2_0_middle ag_194c80cb56_121784_2_0_argument;
++typedef int (*ag_194c80cb56_121784_2_0_callback)(ag_194c80cb56_121784_2_0_root);
++struct ag_194c80cb56_121784_2_0_dispatch_type { ag_194c80cb56_121784_2_0_callback ag_194c80cb56_121784_2_0_invoke; };
++static int ag_194c80cb56_121784_2_0_extract(ag_194c80cb56_121784_2_0_root ag_194c80cb56_121784_2_0_input) { return ag_194c80cb56_121784_2_0_input.ag_194c80cb56_121784_2_0_value; }
+ static uint16_t * func_88(int32_t  p_89, int32_t * p_90)
+-{ /* block id: 450 */
++{
++ag_194c80cb56_121784_2_0_argument ag_194c80cb56_121784_2_0_object = { p_89 };
++struct ag_194c80cb56_121784_2_0_dispatch_type ag_194c80cb56_121784_2_0_dispatch = { ag_194c80cb56_121784_2_0_extract };
++ /* block id: 450 */
+     int32_t ***l_921[6] = {&g_207,&g_207,&g_207,&g_207,&g_207,&g_207};
+     int8_t l_976 = 0x93L;
+     int16_t * const *l_1011 = &g_369;
+@@ -1572,7 +1583,7 @@
+                 int32_t l_955 = 0x57E2F35DL;
+                 int32_t l_960[2][9] = {{(-5L),5L,(-5L),5L,(-5L),5L,(-5L),5L,(-5L)},{0L,0xC2F3E85DL,0xC2F3E85DL,0L,0L,0xC2F3E85DL,0xC2F3E85DL,0L,0L}};
+                 int i, j;
+-                (*p_90) = (safe_mod_func_uint16_t_u_u((((((safe_mul_func_uint16_t_u_u(((((l_926 = ((**g_116) = ((*g_827) , ((safe_div_func_uint16_t_u_u(((&g_875 == l_912) >= ((((**g_640) = (safe_lshift_func_int64_t_s_s((((safe_mod_func_uint64_t_u_u((safe_lshift_func_int16_t_s_s((**g_368), ((((*l_924) = ((((*g_369) , ((l_920 == ((void*)0 == l_921[1])) , ((((*l_923) = l_922) == &g_270) | g_902.f0))) < 0x5BL) & g_2)) == 0L) | 0x3C3BCBEC75FBD47FLL))), 0x58E9BDA60166A205LL)) >= 1L) , g_204[9]), 42))) & 0x76E02960L) <= l_905[0][2][0])), (**g_116))) & (-1L))))) , (*l_904)) , 0x2ABEL) , (**g_116)), p_89)) , &g_586) == l_927[2][4][5]) & g_218) <= p_89), l_905[0][2][0]));
++                (*p_90) = (safe_mod_func_uint16_t_u_u((((((safe_mul_func_uint16_t_u_u(((((l_926 = ((**g_116) = ((*g_827) , ((safe_div_func_uint16_t_u_u(((&g_875 == l_912) >= ((((**g_640) = (safe_lshift_func_int64_t_s_s((((safe_mod_func_uint64_t_u_u((safe_lshift_func_int16_t_s_s((**g_368), ((((*l_924) = ((((*g_369) , ((l_920 == ((void*)0 == l_921[1])) , ((((*l_923) = l_922) == &g_270) | g_902.f0))) < 0x5BL) & g_2)) == 0L) | 0x3C3BCBEC75FBD47FLL))), 0x58E9BDA60166A205LL)) >= 1L) , g_204[9]), 42))) & 0x76E02960L) <= l_905[0][2][0])), (**g_116))) & (-1L))))) , (*l_904)) , 0x2ABEL) , (**g_116)), ag_194c80cb56_121784_2_0_dispatch.ag_194c80cb56_121784_2_0_invoke(ag_194c80cb56_121784_2_0_object))) , &g_586) == l_927[2][4][5]) & g_218) <= p_89), l_905[0][2][0]));
+                 for (g_161 = 0; (g_161 <= 1); g_161 += 1)
+                 { /* block id: 467 */
+                     int32_t l_929 = 0x46FBAEFBL;

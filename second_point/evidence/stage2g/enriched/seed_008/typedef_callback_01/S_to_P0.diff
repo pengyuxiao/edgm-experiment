@@ -1,0 +1,32 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0036_1509457500.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_008/typedef_callback_01/P0.c
+@@ -1573,8 +1573,19 @@
+  * reads : g_39 g_436 g_106.f2 g_43 g_327 g_787 g_192 g_138 g_740.f2 g_88 g_236 g_237 g_184 g_104 g_824 g_106.f1 g_740.f3 g_556.f1 g_174 g_576.f2 g_556.f3 g_853 g_867 g_244 g_303.f1 g_914 g_920 g_470 g_136 g_836 g_424 g_1002 g_1019 g_1022 g_576.f0 g_90 g_8 g_353 g_388.f3 g_685 g_1067
+  * writes: g_39 g_424 g_43 g_106.f2 g_685 g_88 g_138 g_174 g_836 g_842 g_576.f2 g_852 g_868 g_787 g_104 g_353 g_136 g_244 g_1036
+  */
++struct ag_26c0094bb9_146122_2_0_record { int ag_26c0094bb9_146122_2_0_value; };
++struct ag_26c0094bb9_146122_2_0_other { int ag_26c0094bb9_146122_2_0_value; };
++typedef struct ag_26c0094bb9_146122_2_0_record ag_26c0094bb9_146122_2_0_root;
++typedef ag_26c0094bb9_146122_2_0_root ag_26c0094bb9_146122_2_0_middle;
++typedef ag_26c0094bb9_146122_2_0_middle ag_26c0094bb9_146122_2_0_argument;
++typedef int (*ag_26c0094bb9_146122_2_0_callback)(ag_26c0094bb9_146122_2_0_root);
++struct ag_26c0094bb9_146122_2_0_dispatch_type { ag_26c0094bb9_146122_2_0_callback ag_26c0094bb9_146122_2_0_invoke; };
++static int ag_26c0094bb9_146122_2_0_extract(ag_26c0094bb9_146122_2_0_root ag_26c0094bb9_146122_2_0_input) { return ag_26c0094bb9_146122_2_0_input.ag_26c0094bb9_146122_2_0_value; }
+ static int32_t  func_55(int32_t * p_56, uint32_t  p_57, int32_t  p_58)
+-{ /* block id: 319 */
++{
++ag_26c0094bb9_146122_2_0_argument ag_26c0094bb9_146122_2_0_object = { p_58 };
++struct ag_26c0094bb9_146122_2_0_dispatch_type ag_26c0094bb9_146122_2_0_dispatch = { ag_26c0094bb9_146122_2_0_extract };
++ /* block id: 319 */
+     int64_t l_726 = (-1L);
+     int16_t l_741 = 0x2D71L;
+     int32_t l_753 = (-1L);
+@@ -1701,7 +1712,7 @@
+                     for (i = 0; i < 1; i++)
+                         l_739[i] = &g_740;
+                     l_739[0] = (l_727 , &g_556);
+-                    if ((p_58 & 0xE2E96B3EL))
++                    if ((ag_26c0094bb9_146122_2_0_dispatch.ag_26c0094bb9_146122_2_0_invoke(ag_26c0094bb9_146122_2_0_object) & 0xE2E96B3EL))
+                     { /* block id: 336 */
+                         int32_t *l_742 = &g_88;
+                         int32_t *l_743 = &l_738;

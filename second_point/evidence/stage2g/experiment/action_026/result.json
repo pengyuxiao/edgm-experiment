@@ -1,0 +1,48 @@
+{
+  "candidate_id": "73b08ab2133d3b71b0f97afe5a96d5ddf464bef730054d05cf4ac9ac8cf79f86",
+  "seed_id": "seed_0028_897884999",
+  "family": "typedef_callback",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "status": "VALIDATED",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_026/typedef_callback_01/P0.c",
+  "p1_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_026/P1.c",
+  "p0_sha256": "6f50a213ed259ec9e28f220cb3bc50f39d0294437f32f25e05207386f777aabc",
+  "p1_sha256": "51d80544f1e4044a1f2aaf5b1ff960e1a4d843fb4be6d5bd742cbf9c3bff3aef",
+  "observations": {
+    "gcc": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_026/P1.c",
+          "line": 1813,
+          "column": 75,
+          "severity": "error",
+          "category": "incompatible_struct_argument",
+          "message": "incompatible type for argument 1 of 'ag_d584a7a569_115245_2_0_dispatch.ag_d584a7a569_115245_2_0_invoke'",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_026/P1.c:1813:75: error: incompatible type for argument 1 of 'ag_d584a7a569_115245_2_0_dispatch.ag_d584a7a569_115245_2_0_invoke'",
+          "exact_target_anchor": true
+        }
+      ],
+      "confirmed_bug": false
+    },
+    "clang": {
+      "status": "TARGET_ERRORS_OBSERVED",
+      "errors": [
+        {
+          "file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_026/P1.c",
+          "line": 1813,
+          "column": 75,
+          "severity": "error",
+          "category": "incompatible_struct_argument",
+          "message": "passing 'ag_d584a7a569_115245_2_0_argument' (aka 'struct ag_d584a7a569_115245_2_0_other') to parameter of incompatible type 'ag_d584a7a569_115245_2_0_root' (aka 'struct ag_d584a7a569_115245_2_0_record')",
+          "raw": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/experiment/action_026/P1.c:1813:75: error: passing 'ag_d584a7a569_115245_2_0_argument' (aka 'struct ag_d584a7a569_115245_2_0_other') to parameter of incompatible type 'ag_d584a7a569_115245_2_0_root' (aka 'struct ag_d584a7a569_115245_2_0_record')",
+          "exact_target_anchor": true
+        }
+      ],
+      "confirmed_bug": false
+    }
+  },
+  "oracle_replay": true,
+  "oracle_unchanged": true,
+  "confirmed_bug": false
+}

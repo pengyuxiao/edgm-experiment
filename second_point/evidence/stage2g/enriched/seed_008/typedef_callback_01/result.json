@@ -1,0 +1,46 @@
+{
+  "seed_id": "seed_0036_1509457500",
+  "seed_index": 8,
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0036_1509457500.c",
+  "s_sha256": "26c0094bb998453bcebdf8509d50e104e8f2bc3b8e019be922baa826fb66a530",
+  "position_id": "26c0094bb998453bcebdf8509d50e104e8f2bc3b8e019be922baa826fb66a530:c:seed_0036_1509457500.c@133984@F@func_55@p_58:146122",
+  "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+  "enrichment_family": "typedef_callback",
+  "status": "VALID_CANDIDATE",
+  "directory": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_008/typedef_callback_01",
+  "P0_id": "ffc2cd2f4d7bd108c83fb73182d470200aaca39db2521cb04d0297d6f3ff950f",
+  "p0_file": "/home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_008/typedef_callback_01/P0.c",
+  "semantic_context_signature": "fab56a6c15d5d2ebff1f6028b7711cbf423cf3292ba59b33918b2ebfb5aa6c65",
+  "semantic_context": {
+    "family": "typedef_callback",
+    "mr_id": "MR_TYPEDEF_INDIRECT_STRUCT_ARG",
+    "input_type": "INT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "&",
+    "original_context": [
+      "BINARY_OPERATOR",
+      "IF_STMT",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 0,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": true,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "dot_member_function_pointer_call",
+    "value_route": "record_argument -> member callback -> identity return",
+    "typedef_depth": 3
+  },
+  "formal_candidates": [
+    {
+      "field_usr": "c:@S@ag_26c0094bb9_146122_2_0_dispatch_type@FI@ag_26c0094bb9_146122_2_0_invoke",
+      "argument_usr": "c:P0.c@134763@F@func_55@ag_26c0094bb9_146122_2_0_object",
+      "call_offset": 147083,
+      "expected_addresses": 1
+    }
+  ],
+  "candidate_id": "370e2538e385c002df387979567c9c6e9c9248fad4fab90742034ed16958560b"
+}

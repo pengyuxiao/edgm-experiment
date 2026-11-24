@@ -1,0 +1,27 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0012_183715985.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_019/nested_two_addresses_01/P0.c
+@@ -1440,7 +1440,10 @@
+  * writes: g_1173 g_338 g_171 g_275 g_189 g_80 g_1192 g_1197
+  */
+ static uint64_t  func_41(uint32_t  p_42, int16_t  p_43, int16_t  p_44)
+-{ /* block id: 435 */
++{
++struct ag_40fa08a0ff_201093_1_0_record { unsigned int ag_40fa08a0ff_201093_1_0_value; };
++struct ag_40fa08a0ff_201093_1_0_record ag_40fa08a0ff_201093_1_0_object = { p_42 };
++ /* block id: 435 */
+     int32_t l_1171 = (-1L);
+ 
+     /* edgm diversify: do/while + nested while (tag=21099) */
+@@ -1497,7 +1500,11 @@
+     typedef edgm_ltd_27740_t0 edgm_ltd_27740_t1;
+     typedef edgm_ltd_27740_t1 edgm_ltd_27740_t2;
+     int i;
+-    (*g_1190) &= (safe_rshift_func_int16_t_s_s(((l_1171 < ((g_1173 = l_1172[2]) != (void*)0)) == (((*l_1187) = (((((((0x9A75E47DL == ((*g_338) || ((*l_1180) = (((safe_sub_func_uint64_t_u_u((safe_rshift_func_uint32_t_u_u((safe_add_func_int32_t_s_s((&g_746 == ((*l_1182) = l_1180)), ((*l_1185) |= (((((p_42 == ((((void*)0 == l_1183) | 0xC1EDA1F9ECE5D431LL) == p_43)) , l_1171) & l_1184[9]) & l_1171) | (*g_770))))), 7)), p_44)) ^ p_44) | l_1184[9])))) == l_1184[1]) && p_42) >= 0x52E6L) == l_1186) || 0L) == l_1186)) == 8L)), 14));
++    {
++unsigned int *ag_40fa08a0ff_201093_1_0_left = &ag_40fa08a0ff_201093_1_0_object.ag_40fa08a0ff_201093_1_0_value;
++unsigned int *ag_40fa08a0ff_201093_1_0_right = &ag_40fa08a0ff_201093_1_0_object.ag_40fa08a0ff_201093_1_0_value;
++(*g_1190) &= (safe_rshift_func_int16_t_s_s(((l_1171 < ((g_1173 = l_1172[2]) != (void*)0)) == (((*l_1187) = (((((((0x9A75E47DL == ((*g_338) || ((*l_1180) = (((safe_sub_func_uint64_t_u_u((safe_rshift_func_uint32_t_u_u((safe_add_func_int32_t_s_s((&g_746 == ((*l_1182) = l_1180)), ((*l_1185) |= ((((((*(ag_40fa08a0ff_201093_1_0_left == ag_40fa08a0ff_201093_1_0_right ? ag_40fa08a0ff_201093_1_0_left : ag_40fa08a0ff_201093_1_0_right)) == ((((void*)0 == l_1183) | 0xC1EDA1F9ECE5D431LL) == p_43)) , l_1171) & l_1184[9]) & l_1171) | (*g_770))))), 7)), p_44)) ^ p_44) | l_1184[9])))) == l_1184[1]) && p_42) >= 0x52E6L) == l_1186) || 0L) == l_1186)) == 8L)), 14));
++}
+     g_1197 = (g_1192 = &l_1186);
+     return l_1198[3];
+ }

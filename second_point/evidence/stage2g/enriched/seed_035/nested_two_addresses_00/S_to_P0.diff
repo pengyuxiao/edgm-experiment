@@ -1,0 +1,19 @@
+--- /home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0018_93128626.c
++++ /home/pyx/edgm-experiment/second_point/evidence/stage2g/enriched/seed_035/nested_two_addresses_00/P0.c
+@@ -80,8 +80,15 @@
+ /* ---------------------------------------- */
+ int main (int argc, char* argv[])
+ {
++struct ag_886224ecdc_2007_1_0_record { int ag_886224ecdc_2007_1_0_value; };
++struct ag_886224ecdc_2007_1_0_record ag_886224ecdc_2007_1_0_object = { argc };
++
+     int print_hash_value = 0;
+-    if (argc == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
++    {
++int *ag_886224ecdc_2007_1_0_left = &ag_886224ecdc_2007_1_0_object.ag_886224ecdc_2007_1_0_value;
++int *ag_886224ecdc_2007_1_0_right = &ag_886224ecdc_2007_1_0_object.ag_886224ecdc_2007_1_0_value;
++if ((*(ag_886224ecdc_2007_1_0_left == ag_886224ecdc_2007_1_0_right ? ag_886224ecdc_2007_1_0_left : ag_886224ecdc_2007_1_0_right)) == 2 && strcmp(argv[1], "1") == 0) print_hash_value = 1;
++}
+     platform_main_begin();
+     crc32_gentab();
+     func_1();

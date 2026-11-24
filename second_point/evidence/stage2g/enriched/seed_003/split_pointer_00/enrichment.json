@@ -1,0 +1,193 @@
+{
+  "schema": "stage2g-enrichment-v1",
+  "source_kind": "Enriched",
+  "s_file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0008_2017672589.c",
+  "s_sha256": "4fec05c15d529bf57b4298aed92d8ef74a5ea9b999f20cc47c86540b7cebee8e",
+  "p0_sha256": "e4e338543e343a6bc74e055058c6f2aad6566215f79b0a3ec9b424025469c41e",
+  "position": {
+    "position_id": "4fec05c15d529bf57b4298aed92d8ef74a5ea9b999f20cc47c86540b7cebee8e:c:seed_0008_2017672589.c@57273@F@func_62@p_64:61994",
+    "read": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0008_2017672589.c",
+      "line": 779,
+      "column": 105,
+      "offset": 61994,
+      "start_offset": 61994,
+      "end_offset": 61998,
+      "node_identity": "c:seed_0008_2017672589.c@57273@F@func_62@p_64:DECL_REF_EXPR:61994",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "p_64",
+      "usr": "",
+      "referenced_usr": "c:seed_0008_2017672589.c@57273@F@func_62@p_64",
+      "kind": "DECL_REF_EXPR"
+    },
+    "declaration": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0008_2017672589.c",
+      "line": 678,
+      "column": 53,
+      "offset": 57283,
+      "start_offset": 57273,
+      "end_offset": 57287,
+      "node_identity": "c:seed_0008_2017672589.c@57273@F@func_62@p_64:PARM_DECL:57273",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "uint32_t  p_64",
+      "usr": "c:seed_0008_2017672589.c@57273@F@func_62@p_64",
+      "referenced_usr": "c:seed_0008_2017672589.c@57273@F@func_62@p_64",
+      "kind": "PARM_DECL"
+    },
+    "function_offset": 57231,
+    "body_start": 57306,
+    "kind": "UINT",
+    "parameter": "p_64",
+    "function_name": "func_62",
+    "function_usr": "c:seed_0008_2017672589.c@F@func_62",
+    "operator": "function_argument",
+    "operation": {
+      "file": "/home/pyx/edgm-experiment/data/seeds/diverse/clean_diversify_syntax/seed_0008_2017672589.c",
+      "line": 779,
+      "column": 79,
+      "offset": 61968,
+      "start_offset": 61968,
+      "end_offset": 62007,
+      "node_identity": "c:safe_math.h@F@safe_div_func_int64_t_s_s:CALL_EXPR:61968",
+      "coordinate_system": "physical byte columns, 1-based; byte offsets, 0-based",
+      "source_text": "safe_div_func_int64_t_s_s(p_64, l_1473)",
+      "usr": "",
+      "referenced_usr": "c:safe_math.h@F@safe_div_func_int64_t_s_s",
+      "kind": "CALL_EXPR"
+    },
+    "unit": [
+      61902,
+      62361
+    ],
+    "nested_supported": true,
+    "ancestor_context": [
+      "CALL_EXPR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ]
+  },
+  "enrichment_family": "split_pointer",
+  "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+  "semantic_context": {
+    "family": "split_pointer",
+    "mr_id": "MR_MEMBER_BITFIELD_ADDRESSABILITY",
+    "input_type": "UINT",
+    "input_role": "immutable_by_value_parameter",
+    "function_role": "ordinary_function",
+    "original_operator": "function_argument",
+    "original_context": [
+      "CALL_EXPR",
+      "BINARY_OPERATOR",
+      "COMPOUND_STMT"
+    ],
+    "address_points": 1,
+    "cross_statement": true,
+    "cross_scope": false,
+    "cross_function": false,
+    "target_use_points": 1,
+    "record_shape": "single_integer_member",
+    "access_form": "private_pointer_dereference",
+    "value_route": "private member -> address -> pointer selection -> dereference",
+    "typedef_depth": 0
+  },
+  "semantic_context_signature": "94be2ad7be24cea5e0268652c3d27efeae6e60b78a319788646c122f7240780b",
+  "names": {
+    "record": "ag_4fec05c15d_61994_0_0_record",
+    "other": "ag_4fec05c15d_61994_0_0_other",
+    "value": "ag_4fec05c15d_61994_0_0_value",
+    "object": "ag_4fec05c15d_61994_0_0_object",
+    "left": "ag_4fec05c15d_61994_0_0_left",
+    "right": "ag_4fec05c15d_61994_0_0_right",
+    "root": "ag_4fec05c15d_61994_0_0_root",
+    "middle": "ag_4fec05c15d_61994_0_0_middle",
+    "argument": "ag_4fec05c15d_61994_0_0_argument",
+    "callback": "ag_4fec05c15d_61994_0_0_callback",
+    "dispatch_type": "ag_4fec05c15d_61994_0_0_dispatch_type",
+    "dispatch": "ag_4fec05c15d_61994_0_0_dispatch",
+    "extract": "ag_4fec05c15d_61994_0_0_extract",
+    "input": "ag_4fec05c15d_61994_0_0_input",
+    "invoke": "ag_4fec05c15d_61994_0_0_invoke"
+  },
+  "replacement": "(*ag_4fec05c15d_61994_0_0_left)",
+  "edits": [
+    {
+      "start": 57307,
+      "end": 57307,
+      "before": "",
+      "after": "\nstruct ag_4fec05c15d_61994_0_0_record { unsigned int ag_4fec05c15d_61994_0_0_value; };\nstruct ag_4fec05c15d_61994_0_0_record ag_4fec05c15d_61994_0_0_object = { p_64 };\nunsigned int *ag_4fec05c15d_61994_0_0_left = &ag_4fec05c15d_61994_0_0_object.ag_4fec05c15d_61994_0_0_value;\n"
+    },
+    {
+      "start": 61994,
+      "end": 61998,
+      "before": "p_64",
+      "after": "(*ag_4fec05c15d_61994_0_0_left)"
+    }
+  ],
+  "source_map": [
+    {
+      "kind": "identity",
+      "s": [
+        0,
+        57307
+      ],
+      "p0": [
+        0,
+        57307
+      ]
+    },
+    {
+      "kind": "generated",
+      "s": [
+        57307,
+        57307
+      ],
+      "p0": [
+        57307,
+        57584
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        57307,
+        61994
+      ],
+      "p0": [
+        57584,
+        62271
+      ]
+    },
+    {
+      "kind": "replacement",
+      "s": [
+        61994,
+        61998
+      ],
+      "p0": [
+        62271,
+        62302
+      ]
+    },
+    {
+      "kind": "identity",
+      "s": [
+        61998,
+        126214
+      ],
+      "p0": [
+        62302,
+        126518
+      ]
+    }
+  ],
+  "local_equivalence": {
+    "parameter_initialized": true,
+    "all_parameter_references_read_only": true,
+    "early_nonvolatile_read_has_no_observable_effect": true,
+    "value_type_preserved": true,
+    "new_objects_private": true,
+    "new_calls_pure_identity": false,
+    "original_expression_evaluation_path_preserved": true,
+    "global_ub_proof": false
+  }
+}
